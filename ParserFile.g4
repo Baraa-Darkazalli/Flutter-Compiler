@@ -5,7 +5,6 @@ options {
 }
 
 // The entry point for the parser.
-
 flutterApp
   :  scaffold | appContent+
   ;
