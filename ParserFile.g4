@@ -11,7 +11,7 @@ widget: scaffold|container|text|image|listView|appBar|textField|column|row|card|
 
 
 //---------------------------    WIDGETS     -------------------------------
-scaffold:bodyAttr|drawerAttr|appBarAttr|bottomNavigationBarAttr|floatingActionButtonAttr|backGroundColorAttr ;
+scaffold:SCAFFOLD PARENTHESES_OPEN scaffoldAttributes* PARENTHESES_CLOSE;
 container: ;
 text: ;
 image: ;
@@ -39,6 +39,7 @@ textButton: ;
 icon: ;
 
 //---------------------------    SCAFFOLD ATTRIBUTES     -------------------------------
+scaffoldAttributes:bodyAttr|drawerAttr|appBarAttr|bottomNavigationBarAttr|floatingActionButtonAttr|backGroundColorAttr;
 bodyAttr: ;
 drawerAttr: ;
 appBarAttr: ;
