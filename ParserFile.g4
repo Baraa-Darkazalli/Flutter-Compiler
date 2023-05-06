@@ -27,7 +27,7 @@ radio: ;
 inkWell: ;
 expanded: ;
 bottomNavigationBar: ;
-slider: ;
+slider: SLIDER PARENTHESES_OPEN  sliderAttributes PARENTHESES_CLOSE;
 tabBar: ;
 tabView: ;
 drawer: ;
@@ -48,6 +48,14 @@ floatingActionButtonAttr: ;
 backGroundColorAttr: ;
 
 //---------------------------    CONTAINER ATTRIBUTES     -------------------------------
+sliderAttributes:
+
+
+
+
+
+
+//---------------------------    Slider ATTRIBUTES     -------------------------------
 
 
 

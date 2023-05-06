@@ -6,8 +6,8 @@
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/ParserFile.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="C:\Users\AHMAD AL BAGHDADI\IdeaProjects\compiler_project" />
-          <option name="libDir" value="C:\Users\AHMAD AL BAGHDADI\IdeaProjects\compiler_project" />
+          <option name="outputDir" value="C:\Users\vision\IdeaProjects\compiler" />
+          <option name="libDir" value="C:\Users\vision\IdeaProjects\compiler" />
           <option name="encoding" value="" />
           <option name="pkg" value="gen" />
           <option name="language" value="" />
@@ -16,8 +16,8 @@
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/LexerFile.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="C:\Users\AHMAD AL BAGHDADI\IdeaProjects\compiler_project" />
-          <option name="libDir" value="C:\Users\AHMAD AL BAGHDADI\IdeaProjects\compiler_project" />
+          <option name="outputDir" value="C:\Users\vision\IdeaProjects\compiler" />
+          <option name="libDir" value="C:\Users\vision\IdeaProjects\compiler" />
           <option name="encoding" value="" />
           <option name="pkg" value="gen" />
           <option name="language" value="" />

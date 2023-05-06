@@ -7,6 +7,10 @@ LETTER
     :    'a' .. 'z'
     |    'A' .. 'Z'
     ;
+
+    IDENTIFIER: [a-zA-Z_$][a-zA-Z0-9_$]*;
+    ARROW: '=>';
+    WS: [ \t\n\r]+ -> skip;
 //---------------  SYMBOLS  ------------
 COMMA: ',';
 SEMICOLON: ' '* ';';
@@ -59,6 +63,19 @@ NORMAL:'normal';
 //------------------- WIDGETS --------------------
 SCAFFOLD:'Scaffold';
 
+//Besher's..
+SLIDER: 'Slider'; //
+
+
+
 
 //------------------ ATTRIBUTES  --------------
 BODY_ATTR:'body';
+
+// Besher's ..
+VALUE : 'value';
+ONCHANGED: 'onChanged';
+MAX: 'max';
+MIN:'min';
+INACTIVE_COLOR:'inactiveColor';
+LABEL: 'label';
