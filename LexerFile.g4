@@ -62,3 +62,8 @@ SCAFFOLD:'Scaffold';
 
 //------------------ ATTRIBUTES  --------------
 BODY_ATTR:'body';
+DRAWER_ATTR:'drawer';
+APP_BAR_ATTR:'appBar';
+BOTTOM_NAVIGATION_BAR_ATTR:'bottonNavigationBar';
+FLOATING_ACTION_BUTTON_ATTR:'floatinActionButton';
+BACKGROUNG_COLOR_ATTR:'backgroundColor';

@@ -11,7 +11,7 @@ widget: scaffold|container|text|image|listView|appBar|textField|column|row|card|
 
 
 //---------------------------    WIDGETS     -------------------------------
-scaffold:SCAFFOLD PARENTHESES_OPEN scaffoldAttributes PARENTHESES_CLOSE;
+scaffold:SCAFFOLD PARENTHESES_OPEN (scaffoldAttributes COMMA)* scaffoldAttributes? PARENTHESES_CLOSE;
 container: ;
 text: ;
 image: ;
@@ -39,15 +39,12 @@ textButton: ;
 icon: ;
 
 //---------------------------    SCAFFOLD ATTRIBUTES     -------------------------------
-scaffoldAttributes:bodyAttr|drawerAttr|appBarAttr|bottomNavigationBarAttr|floatingActionButtonAttr|backGroundColorAttr;
-bodyAttr: ;
-drawerAttr: ;
-appBarAttr: ;
-bottomNavigationBarAttr: ;
-floatingActionButtonAttr: ;
-backGroundColorAttr: ;
+scaffoldAttributes:scaffoldAttrBody|scaffoldAttrDrawer|scaffoldAttrAppBar|bottomNavigationBarAttr|floatingActionButtonAttr|backGroundColorAttr;
+scaffoldAttrBody:BODY_ATTR COLON widget;
+scaffoldAttrDrawer:DRAWER_ATTR COLON widget ;
+scaffoldAttrAppBar: APP_BAR_ATTR COLON widget;
+bottomNavigationBarAttr:BOTTOM_NAVIGATION_BAR_ATTR COLON widget ;
+floatingActionButtonAttr: FLOATING_ACTION_BUTTON_ATTR COLON widget;
+backGroundColorAttr:BACKGROUNG_COLOR_ATTR COLON widget ;
 
 //---------------------------    CONTAINER ATTRIBUTES     -------------------------------
-
-
-
