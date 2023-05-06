@@ -340,6 +340,18 @@ public class ParserFileBaseListener implements ParserFileListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterScaffoldAttributes(ParserFile.ScaffoldAttributesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitScaffoldAttributes(ParserFile.ScaffoldAttributesContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterBodyAttr(ParserFile.BodyAttrContext ctx) { }
 	/**
 	 * {@inheritDoc}

@@ -1,4 +1,4 @@
-parser grammar ParserFile;
+parser grammar OldParserFile;
 
 options {
   tokenVocab=OldLexerFile;

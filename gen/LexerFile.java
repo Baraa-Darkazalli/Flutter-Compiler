@@ -1,4 +1,5 @@
 // Generated from C:/Users/AHMAD AL BAGHDADI/IdeaProjects/compiler_project\LexerFile.g4 by ANTLR 4.10.1
+package gen;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -16,7 +17,7 @@ public class LexerFile extends Lexer {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		EMPTY=1;
+		PARENTHESES_OPEN=1, PARENTHESES_CLOSE=2, SCAFFOLD=3;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -27,20 +28,20 @@ public class LexerFile extends Lexer {
 
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"EMPTY"
+			"PARENTHESES_OPEN", "PARENTHESES_CLOSE", "SCAFFOLD"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "' '"
+			null, null, null, "'Scaffold'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "EMPTY"
+			null, "PARENTHESES_OPEN", "PARENTHESES_CLOSE", "SCAFFOLD"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -102,11 +103,31 @@ public class LexerFile extends Lexer {
 	public ATN getATN() { return _ATN; }
 
 	public static final String _serializedATN =
-		"\u0004\u0000\u0001\u0005\u0006\uffff\uffff\u0002\u0000\u0007\u0000\u0001"+
-		"\u0000\u0001\u0000\u0000\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0004"+
-		"\u0000\u0001\u0001\u0000\u0000\u0000\u0001\u0003\u0001\u0000\u0000\u0000"+
-		"\u0003\u0004\u0005 \u0000\u0000\u0004\u0002\u0001\u0000\u0000\u0000\u0001"+
-		"\u0000\u0000";
+		"\u0004\u0000\u0003%\u0006\uffff\uffff\u0002\u0000\u0007\u0000\u0002\u0001"+
+		"\u0007\u0001\u0002\u0002\u0007\u0002\u0001\u0000\u0005\u0000\t\b\u0000"+
+		"\n\u0000\f\u0000\f\t\u0000\u0001\u0000\u0001\u0000\u0005\u0000\u0010\b"+
+		"\u0000\n\u0000\f\u0000\u0013\t\u0000\u0001\u0001\u0005\u0001\u0016\b\u0001"+
+		"\n\u0001\f\u0001\u0019\t\u0001\u0001\u0001\u0001\u0001\u0001\u0002\u0001"+
+		"\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0001"+
+		"\u0002\u0001\u0002\u0000\u0000\u0003\u0001\u0001\u0003\u0002\u0005\u0003"+
+		"\u0001\u0000\u0000\'\u0000\u0001\u0001\u0000\u0000\u0000\u0000\u0003\u0001"+
+		"\u0000\u0000\u0000\u0000\u0005\u0001\u0000\u0000\u0000\u0001\n\u0001\u0000"+
+		"\u0000\u0000\u0003\u0017\u0001\u0000\u0000\u0000\u0005\u001c\u0001\u0000"+
+		"\u0000\u0000\u0007\t\u0005 \u0000\u0000\b\u0007\u0001\u0000\u0000\u0000"+
+		"\t\f\u0001\u0000\u0000\u0000\n\b\u0001\u0000\u0000\u0000\n\u000b\u0001"+
+		"\u0000\u0000\u0000\u000b\r\u0001\u0000\u0000\u0000\f\n\u0001\u0000\u0000"+
+		"\u0000\r\u0011\u0005(\u0000\u0000\u000e\u0010\u0005 \u0000\u0000\u000f"+
+		"\u000e\u0001\u0000\u0000\u0000\u0010\u0013\u0001\u0000\u0000\u0000\u0011"+
+		"\u000f\u0001\u0000\u0000\u0000\u0011\u0012\u0001\u0000\u0000\u0000\u0012"+
+		"\u0002\u0001\u0000\u0000\u0000\u0013\u0011\u0001\u0000\u0000\u0000\u0014"+
+		"\u0016\u0005 \u0000\u0000\u0015\u0014\u0001\u0000\u0000\u0000\u0016\u0019"+
+		"\u0001\u0000\u0000\u0000\u0017\u0015\u0001\u0000\u0000\u0000\u0017\u0018"+
+		"\u0001\u0000\u0000\u0000\u0018\u001a\u0001\u0000\u0000\u0000\u0019\u0017"+
+		"\u0001\u0000\u0000\u0000\u001a\u001b\u0005)\u0000\u0000\u001b\u0004\u0001"+
+		"\u0000\u0000\u0000\u001c\u001d\u0005S\u0000\u0000\u001d\u001e\u0005c\u0000"+
+		"\u0000\u001e\u001f\u0005a\u0000\u0000\u001f \u0005f\u0000\u0000 !\u0005"+
+		"f\u0000\u0000!\"\u0005o\u0000\u0000\"#\u0005l\u0000\u0000#$\u0005d\u0000"+
+		"\u0000$\u0006\u0001\u0000\u0000\u0000\u0004\u0000\n\u0011\u0017\u0000";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

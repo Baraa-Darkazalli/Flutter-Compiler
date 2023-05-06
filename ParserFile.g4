@@ -11,7 +11,7 @@ widget: scaffold|container|text|image|listView|appBar|textField|column|row|card|
 
 
 //---------------------------    WIDGETS     -------------------------------
-scaffold:SCAFFOLD PARENTHESES_OPEN scaffoldAttributes* PARENTHESES_CLOSE;
+scaffold:SCAFFOLD PARENTHESES_OPEN scaffoldAttributes PARENTHESES_CLOSE;
 container: ;
 text: ;
 image: ;

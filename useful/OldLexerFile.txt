@@ -1,4 +1,4 @@
-lexer grammar LexerFile;
+lexer grammar OldLexerFile;
 // ---------------------------------------- Lexer rules.
 
 INT :  '0'| [1-9][0-9]* ;

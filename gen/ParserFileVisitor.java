@@ -173,6 +173,12 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIcon(ParserFile.IconContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link ParserFile#scaffoldAttributes}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitScaffoldAttributes(ParserFile.ScaffoldAttributesContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link ParserFile#bodyAttr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

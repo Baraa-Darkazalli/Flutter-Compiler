@@ -206,6 +206,13 @@ public class ParserFileBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitScaffoldAttributes(ParserFile.ScaffoldAttributesContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitBodyAttr(ParserFile.BodyAttrContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

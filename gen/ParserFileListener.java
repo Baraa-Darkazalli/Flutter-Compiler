@@ -278,6 +278,16 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitIcon(ParserFile.IconContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ParserFile#scaffoldAttributes}.
+	 * @param ctx the parse tree
+	 */
+	void enterScaffoldAttributes(ParserFile.ScaffoldAttributesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#scaffoldAttributes}.
+	 * @param ctx the parse tree
+	 */
+	void exitScaffoldAttributes(ParserFile.ScaffoldAttributesContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ParserFile#bodyAttr}.
 	 * @param ctx the parse tree
 	 */
