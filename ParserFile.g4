@@ -27,7 +27,7 @@ radio: ;
 inkWell: ;
 expanded: ;
 bottomNavigationBar: ;
-slider: ;
+slider: SLIDER PARENTHESES_OPEN  sliderAttributes PARENTHESES_CLOSE;
 tabBar: ;
 tabView: ;
 drawer: ;
@@ -48,3 +48,14 @@ floatingActionButtonAttr: FLOATING_ACTION_BUTTON_ATTR COLON widget;
 backGroundColorAttr:BACKGROUNG_COLOR_ATTR COLON widget ;
 
 //---------------------------    CONTAINER ATTRIBUTES     -------------------------------
+sliderAttributes:
+
+
+
+
+
+
+//---------------------------    Slider ATTRIBUTES     -------------------------------
+
+
+
