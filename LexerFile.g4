@@ -1,5 +1,30 @@
 lexer grammar LexerFile;
 
+
+//------------------- WIDGETS --------------------
+SCAFFOLD: 'Scaffold' ;
+CONTAINER: 'Container' ;
+
+//-------------------- UTILS  ------------------
+DECORATION: 'Decoration' ;
+
+//------------------ ATTRIBUTES  --------------
+BODY_ATTR: 'body' ;
+DRAWER_ATTR:'drawer';
+APP_BAR_ATTR:'appBar';
+BOTTOM_NAVIGATION_BAR_ATTR:'bottonNavigationBar';
+FLOATING_ACTION_BUTTON_ATTR:'floatinActionButton';
+BACKGROUNG_COLOR_ATTR:'backgroundColor';
+CHILD_ATTR: 'child' ;
+WIDTH_ATTR: 'width' ;
+HEIGHT_ATTR: 'height' ;
+COLOR_ATTR: 'color' ;
+DECORATION_ATTR: 'decoration' ;
+PADDING_ATTR: 'padding' ;
+
+//-----------------------  CLASS   -------------
+COLORS: 'Colors' ;
+EDGEINSETS: 'EdgeInsets' ;
 //----------------- BASE -------------------------
 INT :  '0'| [1-9][0-9]* ;
 DOUBLE : '-'? INT (DOT [0-9])*;
@@ -18,13 +43,12 @@ COLON: ':';
 DOT: '.';
 
 //------------------ BRACKETS  --------------------
-PARENTHESES_OPEN: ' '* '(' ' '*;
-PARENTHESES_CLOSE: ' '* ')';
-SQUARE_OPEN: '[';
-SQUARE_CLOSE: ']';
-CURLY_OPEN: '{';
-CURLY_CLOSE: '}';
-
+OPEN_PAREN: ' '* '(' ' '*;
+CLOSE_PAREN: ' '* ')';
+OPEN_SQUARE: '[';
+CLOSE_SQUARE: ']';
+OPEN_BRACE: '{';
+CLOSE_BRACE: '}';
 
 //-------------------  OPERATORS  -------------------
 PLUS: '+';
@@ -60,8 +84,7 @@ PINK:'pink';
 ITALIC:'italic';
 NORMAL:'normal';
 
-//------------------- WIDGETS --------------------
-SCAFFOLD:'Scaffold';
+
 
 //Besher's..
 SLIDER: 'Slider'; //
@@ -69,13 +92,7 @@ SLIDER: 'Slider'; //
 
 
 
-//------------------ ATTRIBUTES  --------------
-BODY_ATTR:'body';
-DRAWER_ATTR:'drawer';
-APP_BAR_ATTR:'appBar';
-BOTTOM_NAVIGATION_BAR_ATTR:'bottonNavigationBar';
-FLOATING_ACTION_BUTTON_ATTR:'floatinActionButton';
-BACKGROUNG_COLOR_ATTR:'backgroundColor';
+
 
 // Besher's ..
 VALUE : 'value';
