@@ -77,10 +77,10 @@ sliderAttributes:;
 
 
 //-------------------------- SHARED ATTRIBUTES  ------------------
-sharedBackGroundColorAttr: BACKGROUNG_COLOR_ATTR COLON widget ;
+sharedBackGroundColorAttr: BACKGROUNG_COLOR_ATTR COLON colorClass ;
 sharedChildAttr: CHILD_ATTR COLON widget ;
-sharedWidthAttr: WIDTH_ATTR COLON widget ;
-sharedHeightAttr: HEIGHT_ATTR COLON widget ;
+sharedWidthAttr: WIDTH_ATTR COLON DOUBLE ;
+sharedHeightAttr: HEIGHT_ATTR COLON DOUBLE ;
 sharedColorAttr: COLOR_ATTR COLON colorClass;
 sharedDecorationAttr: DECORATION_ATTR COLON decoration;
 sharedPaddingAttr: PADDING_ATTR COLON padding;
@@ -127,7 +127,7 @@ statement : expr_Stmt
           | print_Stmt
           ;
 
-expr_Stmt : expr ';' ;
+expr_Stmt :  ;
 
 if_Stmt : IF OPEN_PAREN expr CLOSE_PAREN statement (ELSE statement)? ;
 
@@ -135,14 +135,7 @@ while_Stmt : WHILE OPEN_PAREN expr CLOSE_PAREN statement ;
 
 print_Stmt : PRINT expr COMMA ;
 
-expr : INT
-     | DOUBLE
-     | STRING
-     | ID
-     | expr op=('*'|'/'|'+'|'-'|'%'|'~/') expr
-     | '(' expr ')'
-     | '-' expr
-     | '!' expr
+expr :
      ;
 
 
