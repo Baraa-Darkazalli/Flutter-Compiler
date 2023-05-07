@@ -6,20 +6,20 @@
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/ParserFile.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="C:\Users\vision\IdeaProjects\compiler" />
-          <option name="libDir" value="C:\Users\vision\IdeaProjects\compiler" />
+          <option name="outputDir" value="" />
+          <option name="libDir" value="" />
           <option name="encoding" value="" />
-          <option name="pkg" value="gen" />
+          <option name="pkg" value="" />
           <option name="language" value="" />
           <option name="generateVisitor" value="true" />
         </PerGrammarGenerationSettings>
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/LexerFile.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="C:\Users\vision\IdeaProjects\compiler" />
-          <option name="libDir" value="C:\Users\vision\IdeaProjects\compiler" />
+          <option name="outputDir" value="" />
+          <option name="libDir" value="" />
           <option name="encoding" value="" />
-          <option name="pkg" value="gen" />
+          <option name="pkg" value="" />
           <option name="language" value="" />
           <option name="generateVisitor" value="true" />
         </PerGrammarGenerationSettings>
