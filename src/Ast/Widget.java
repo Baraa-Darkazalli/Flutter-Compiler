@@ -2,32 +2,32 @@ package Ast;
 
 public class Widget {
     //---------------------------    Attributes     -------------------------------
-    Scaffold scaffold;
-    Container container ;
-    Text text;
-    Image image;
-    ListView listView;
-    AppBar appBar;
-    TextField textField;
-    Column column;
-    Row row;
-    Card card;
-    IconButton iconButton;
-    CheckBox checkBox;
-    Radio radio;
-    InkWell inkWell;
-    Expanded expanded;
-    BottomNavigationBar bottomNavigationBar;
-    Slider slider;
-    TabBar tabBar;
-    TabView tabView;
-    Drawer drawer;
-    FloatingActionButton floatingActionButton;
-    Wrap wrap;
-    Flex flex;
-    TextFormField textFormField;
-    TextButton textButton;
-    Icon icon;
+    private Scaffold scaffold;
+    private Container container;
+    private Text text;
+    private Image image;
+    private ListView listView;
+    private AppBar appBar;
+    private TextField textField;
+    private Column column;
+    private Row row;
+    private Card card;
+    private IconButton iconButton;
+    private CheckBox checkBox;
+    private Radio radio;
+    private InkWell inkWell;
+    private Expanded expanded;
+    private BottomNavigationBar bottomNavigationBar;
+    private Slider slider;
+    private TabBar tabBar;
+    private TabView tabView;
+    private Drawer drawer;
+    private FloatingActionButton floatingActionButton;
+    private Wrap wrap;
+    private Flex flex;
+    private TextFormField textFormField;
+    private TextButton textButton;
+    private Icon icon;
 
     //---------------------------    Setters & Getters     -------------------------------
 
@@ -244,161 +244,37 @@ public class Widget {
 
     @Override
     public String toString() {
-        if (scaffold != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + scaffold +
-                    "\n }";
-        }
-        else if (container != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + container +
-                    "\n }";
-        }
-        else if (text != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + text +
-                    "\n }";
-        }
-        else if (image != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + image +
-                    "\n }";
-        }
-        else if (listView != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + listView +
-                    "\n }";
-        }
-        else if (appBar != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + appBar +
-                    "\n }";
-        }
-        else if (textField != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + textField +
-                    "\n }";
-        }
-        else if (column != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + column +
-                    "\n }";
-        }
-        else if (row != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + row +
-                    "\n }";
-        }
-        else if (card != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + card +
-                    "\n }";
-        }
-        else if (iconButton != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + iconButton +
-                    "\n }";
-        }
-        else if (checkBox != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + checkBox +
-                    "\n }";
-        }
-        else if (radio != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + radio +
-                    "\n }";
-        }
-        else if (inkWell != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + inkWell +
-                    "\n }";
-        }
-        else if (expanded != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + expanded +
-                    "\n }";
-        }
-        else if (bottomNavigationBar != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + bottomNavigationBar +
-                    "\n }";
-        }
-        else if (slider != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + slider +
-                    "\n }";
-        }
-        else if (tabBar != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + tabBar +
-                    "\n }";
-        }
-        else if (tabView != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + tabView +
-                    "\n }";
-        }
-        else if (drawer != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + drawer +
-                    "\n }";
-        }
-        else if (floatingActionButton != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + floatingActionButton +
-                    "\n }";
-        }
-        else if (wrap != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + wrap +
-                    "\n }";
-        }
-        else if (flex != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + flex +
-                    "\n }";
-        }
-        else if (textFormField != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + textFormField +
-                    "\n }";
-        }
-        else if (textButton != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + textButton +
-                    "\n }";
-        }
-        else if (icon != null)
-        {
-            return "\n Widget{" +
-                    "\n\t " + icon +
-                    "\n }";
-        }
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Widget\n");
+        sb.append("Scaffold: ").append(scaffold != null ? scaffold.toString() : "null").append("\n");
+        sb.append("Container: ").append(container != null ? container.toString() : "null").append("\n");
+        sb.append("Text: ").append(text != null ? text.toString() : "null").append("\n");
+        sb.append("Image: ").append(image != null ? image.toString() : "null").append("\n");
+        sb.append("ListView: ").append(listView != null ? listView.toString() : "null").append("\n");
+        sb.append("AppBar: ").append(appBar != null ? appBar.toString() : "null").append("\n");
+        sb.append("TextField: ").append(textField != null ? textField.toString() : "null").append("\n");
+        sb.append("Column: ").append(column != null ? column.toString() : "null").append("\n");
+        sb.append("Row: ").append(row != null ? row.toString() : "null").append("\n");
+        sb.append("Card: ").append(card != null ? card.toString() : "null").append("\n");
+        sb.append("IconButton: ").append(iconButton != null ? iconButton.toString() : "null").append("\n");
+        sb.append("CheckBox: ").append(checkBox != null ? checkBox.toString() : "null").append("\n");
+        sb.append("Radio: ").append(radio != null ? radio.toString() : "null").append("\n");
+        sb.append("InkWell: ").append(inkWell != null ? inkWell.toString() : "null").append("\n");
+        sb.append("Expanded: ").append(expanded != null ? expanded.toString() : "null").append("\n");
+        sb.append("BottomNavigationBar: ").append(bottomNavigationBar != null ? bottomNavigationBar.toString() : "null").append("\n");
+        sb.append("Slider: ").append(slider != null ? slider.toString() : "null").append("\n");
+        sb.append("TabBar: ").append(tabBar != null ? tabBar.toString() : "null").append("\n");
+        sb.append("TabView: ").append(tabView != null ? tabView.toString() : "null").append("\n");
+        sb.append("Drawer: ").append(drawer != null ? drawer.toString() : "null").append("\n");
+        sb.append("FloatingActionButton: ").append(floatingActionButton != null ? floatingActionButton.toString() : "null").append("\n");
+        sb.append("Wrap: ").append(wrap != null ? wrap.toString() : "null").append("\n");
+        sb.append("Flex: ").append(flex != null ? flex.toString() : "null").append("\n");
+        sb.append("TextFormField: ").append(textFormField != null ? textFormField.toString() : "null").append("\n");
+        sb.append("TextButton: ").append(textButton != null ? textButton.toString() : "null").append("\n");
+        sb.append("Icon: ").append(icon != null ? icon.toString() : "null").append("\n");
+
+        return sb.toString();
     }
+
 }
