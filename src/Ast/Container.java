@@ -1,32 +1,32 @@
 package Ast;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Scaffold {
+public class Container {
     //---------------------------    Attributes     -------------------------------
-    List<ScaffoldAttribute> scaffoldAttributes;
+    private List<ContainerAttribute> containerAttributes;
 
     //---------------------------    Constructor     -------------------------------
-    public Scaffold() {
-        this.scaffoldAttributes = new ArrayList<ScaffoldAttribute>();
+    public Container() {
+        this.containerAttributes = new ArrayList<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
-    public List<ScaffoldAttribute> getScaffoldAttributes() {
-        return scaffoldAttributes;
+    public List<ContainerAttribute> getContainerAttributes() {
+        return containerAttributes;
     }
 
-    public void setScaffoldAttributes(List<ScaffoldAttribute> scaffoldAttributes) {
-        this.scaffoldAttributes = scaffoldAttributes;
+    public void setContainerAttributes(List<ContainerAttribute> containerAttributes) {
+        this.containerAttributes = containerAttributes;
     }
 
     //---------------------------    ToString Func     -------------------------------
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Scaffold\n");
-        sb.append("Attributes:\n");
-        for (ScaffoldAttribute attribute : scaffoldAttributes) {
+        sb.append("Container\n");
+        for (ContainerAttribute attribute : containerAttributes) {
             sb.append(attribute.toString()).append("\n");
         }
         return sb.toString();

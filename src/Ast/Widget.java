@@ -30,7 +30,6 @@ public class Widget {
     private Icon icon;
 
     //---------------------------    Setters & Getters     -------------------------------
-
     public Scaffold getScaffold() {
         return scaffold;
     }
@@ -239,9 +238,7 @@ public class Widget {
         this.icon = icon;
     }
 
-
     //---------------------------    ToString Func     -------------------------------
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

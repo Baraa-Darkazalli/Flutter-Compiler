@@ -8,6 +8,7 @@ public class ScaffoldAttribute {
     private ScaffoldAttrBottomNavigationBar scaffoldAttrBottomNavigationBar;
     private ScaffoldAttrFloatingActionButton scaffoldAttrFloatingActionButton;
     private SharedBackGroundColorAttr sharedBackGroundColorAttr;
+
     //---------------------------    Setters & Getters     -------------------------------
 
     public ScaffoldAttrBody getScaffoldAttrBody() {
@@ -57,6 +58,7 @@ public class ScaffoldAttribute {
     public void setSharedBackGroundColorAttr(SharedBackGroundColorAttr sharedBackGroundColorAttr) {
         this.sharedBackGroundColorAttr = sharedBackGroundColorAttr;
     }
+
     //---------------------------    ToString Func     -------------------------------
     @Override
     public String toString() {
