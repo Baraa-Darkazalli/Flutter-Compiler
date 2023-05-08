@@ -5,14 +5,11 @@ import java.util.ArrayList;
 public class Scaffold {
 //---------------------------    Attributes     -------------------------------
     List<ScaffoldAttribute> scaffoldAttributes;
-
 //---------------------------    Constructor     -------------------------------
-
     public Scaffold() {
         this.scaffoldAttributes = new ArrayList<ScaffoldAttribute>();
     }
 //---------------------------    Setters & Getters     -------------------------------
-
     public List<ScaffoldAttribute> getScaffoldAttributes() {
         return scaffoldAttributes;
     }
@@ -21,10 +18,7 @@ public class Scaffold {
         this.scaffoldAttributes = scaffoldAttributes;
     }
 
-
 //---------------------------    ToString Func     -------------------------------
-
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
