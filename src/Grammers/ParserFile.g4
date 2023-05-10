@@ -6,94 +6,100 @@ options {
 
 // The entry point for the parser.
 widget: scaffold | container | text | image | listView | appBar | textField | column | row | card | iconButton
-        | checkBox | radio | inkWell | expanded | bottomNavigationBar | slider | tabBar | tabView | drawer
+        |   inkWell | expanded | bottomNavigationBar | slider | tabBar | tabBarView | drawer
         | floatingActionButton | wrap | flex | textFormField | textButton | icon | sizedBox;
 
-
 //---------------------------    WIDGETS     -------------------------------
-scaffold: SCAFFOLD OPEN_PAREN (scaffoldAttributes COMMA)* scaffoldAttributes? CLOSE_PAREN;
-container: CONTAINER OPEN_PAREN (containerAttributes COMMA)* containerAttributes? CLOSE_PAREN;
-text: COLON;
-image: COLON;
-listView: LISTVIEW OPEN_PAREN listviewArgs CLOSE_PAREN COMMA;
-appBar: COLON;
-textField: COLON;
-column: COLUMN OPEN_PAREN columnArgs CLOSE_PAREN COMMA;
-row: ROW OPEN_PAREN rowArgs CLOSE_PAREN COMMA;
-card: CARD OPEN_PAREN cardArgs?  CLOSE_PAREN COMMA;
-iconButton: ICONBUTTON OPEN_PAREN iconArgs CLOSE_PAREN COMMA;
-checkBox: COLON;
-radio:COLON ;
-inkWell:  INKWELL OPEN_PAREN inkwellArgs? CLOSE_PAREN COMMA;
-expanded: EXPANDED OPEN_PAREN expandedArgs CLOSE_PAREN COMMA;
-bottomNavigationBar: BOTTOM_NAVIGATION_BAR_ATTR OPEN_PAREN bottomNavigationBarArgs  CLOSE_PAREN COMMA;
-slider: SLIDER OPEN_PAREN  sliderAttributes CLOSE_PAREN;
-tabBar: COLON;
-tabView: COLON;
-drawer:COLON ;
-floatingActionButton: COLON;
-wrap: COLON;
-flex: COLON;
-textFormField:COLON ;
-textButton: COLON;
-icon: COLON;
-sizedBox: SIZEDBOX OPEN_PAREN width COMMA height COMMA child CLOSE_PAREN COMMA;
+scaffold: SCAFFOLD OPEN_PAREN scaffoldArgs*  CLOSE_PAREN;
+container: CONTAINER OPEN_PAREN containerArgs* CLOSE_PAREN;
+text: TEXT OPEN_PAREN textArgs* CLOSE_PAREN;
+textStyle:TEXT_STYLE OPEN_PAREN textStyleArgs* CLOSE_PAREN;
+image: IMAGE OPEN_PAREN imageArgs* CLOSE_PAREN;
+listView: LIST_VIEW OPEN_PAREN listviewArgs* CLOSE_PAREN ;
+appBar: APP_BAR OPEN_PAREN appBarArgs* CLOSE_PAREN;
+textField: TEXT_FIELD OPEN_PAREN textFieldArgs* CLOSE_PAREN;
+column: COLUMN OPEN_PAREN columnArgs* CLOSE_PAREN;
+row: ROW OPEN_PAREN rowArgs* CLOSE_PAREN;
+card: CARD OPEN_PAREN cardArgs* CLOSE_PAREN;
+iconButton: ICON_BUTTON OPEN_PAREN iconButtonArgs* CLOSE_PAREN;
+inkWell:  INK_WELL OPEN_PAREN inkwellArgs* CLOSE_PAREN;
+expanded: EXPANDED OPEN_PAREN expandedArgs* CLOSE_PAREN;
+bottomNavigationBar: BOTTOM_NAVIGATION_BAR OPEN_PAREN bottomNavigationBarArgs*  CLOSE_PAREN;
+slider: SLIDER OPEN_PAREN  sliderArgs* CLOSE_PAREN;
+tabBar: TAB_BAR OPEN_PAREN  tabBarArgs* CLOSE_PAREN;
+tabBarView: TAB_BAR_VIEW OPEN_PAREN  tabBarViewArgs* CLOSE_PAREN;
+drawer: DRAWER OPEN_PAREN  drawerArgs* CLOSE_PAREN;
+floatingActionButton: FLOATING_ACTION_BUTTON OPEN_PAREN  floatingActionButtonArgs* CLOSE_PAREN;
+wrap: WRAP OPEN_PAREN  wrapArgs* CLOSE_PAREN;
+flex: FLEX OPEN_PAREN  flexArgs* CLOSE_PAREN;
+textFormField: TEXT_FORM_FIELD OPEN_PAREN  textFormFieldArgs* CLOSE_PAREN;
+textButton: TEXT_BUTTON OPEN_PAREN  textButtonArgs* CLOSE_PAREN;
+icon: ICON OPEN_PAREN  iconArgs* CLOSE_PAREN;
+sizedBox: SIZED_BOX OPEN_PAREN sizedBoxArgs* CLOSE_PAREN ;
+
+//------------------------- WIDGETS ARGS ---------------------
+scaffoldArgs:body|drawerArg|appBarArg|bottomNavigationBarArg|floatingActionButtonArg|backGroundColor;
+containerArgs:child|width|height|color|margin|padding;
+textArgs:STRING style;
+imageArgs: imageArg|color|height|width;
+listviewArgs:children|padding;
+appBarArgs:title|leading|actions|backGroundColor;
+textFieldArgs:style;
+columnArgs:children|mainAxis|crossAxis;
+rowArgs:children|mainAxis|crossAxis;
+cardArgs:color|margin|child;
+iconButtonArgs:iconArg|color|padding;
+inkwellArgs:child;
+expandedArgs:child|flexArg;
+bottomNavigationBarArgs:items|backGroundColor|currentIndex;
+sliderArgs:min|max;
+tabBarArgs:tabs|padding;
+tabBarViewArgs:children;
+drawerArgs:backGroundColor|child|width;
+floatingActionButtonArgs:child|backGroundColor;
+wrapArgs:children|crossAxis;
+flexArgs:child|flex;
+textFormFieldArgs:style;
+textButtonArgs:child|style;
+iconArgs:size|color;
+sizedBoxArgs:child|height|width;
+textStyleArgs: backGroundColor|color|fontSize;
 
 
-//----------------------------- UTILS ------------------------
-decoration: DECORATION OPEN_PAREN (decorationAttr COMMA)* decorationAttr? CLOSE_PAREN;
-padding: EDGEINSETS OPEN_PAREN (paddingAttr COMMA)* paddingAttr? CLOSE_PAREN;
+//---------------------------- ARGS --------------------------
 
-//-----------------    BOTTOM_NAVIGATION_BAR ATTRIBUTES     -------------------------------
-bottomNavigationBarArgs: currentIndex onTap items ;
-currentIndex: CURRENTINDEX COLON INT COMMA ;
-items: ITEMS COLON SQUARE_OPEN bottomNavigationBarItem+ SQUARE_CLOSE COMMA ;
-bottomNavigationBarItem: BOTTOM_NAVIGATION_BAR_ITEM  OPEN_PAREN icon label CLOSE_PAREN COMMA ;
-label: LABEL COLON STRING COMMA;
+body:BODY COLON widget;
+drawerArg:DRAWER_ARG COLON drawer;
+appBarArg:APP_BAR_ARG COLON appBar;
+bottomNavigationBarArg:BOTTOM_NAVIGATION_BAR_ARG COLON bottomNavigationBar;
+floatingActionButtonArg:FLOATING_ACTION_BUTTON_ARG COLON floatingActionButton;
+child:CHILD COLON widget;
+children: CHILDREN COLON OPEN_SQUARE widget* CLOSE_SQUARE;
+height:HEIGHT COLON (DOUBLE|INT);
+width:WIDTH COLON (DOUBLE|INT);
+color:COLOR COLON colors;
+margin:MARGIN COLON (DOUBLE|INT);
+padding:PADDING COLON (DOUBLE|INT);
+items:ITEMS COLON OPEN_SQUARE widget* CLOSE_SQUARE;
+currentIndex: CURRENT_INDEX COLON INT;
+backGroundColor:BACKGROUND_COLOR COLON colors;
+crossAxis:CROSS_AXIS_ALIGNMENT COLON axisValues;
+mainAxis:MAIN_AXIS_ALIGNMENT COLON axisValues;
+style:STYLE COLON textStyle;
+fontSize:FONT_SIZE COLON (DOUBLE|INT);
+imageArg:IMAGE_ARG COLON STRING;
+leading:LEADING COLON widget;
+title:TITLE COLON widget;
+actions:ACTIONS COLON OPEN_SQUARE widget* CLOSE_SQUARE;
+iconArg:ICON_ARG COLON widget;
+flexArg:FLEX_ARG COLON INT;
+min:MIN COLON (DOUBLE|INT);
+max:MAX COLON (DOUBLE|INT);
+tabs:TABS COLON OPEN_SQUARE widget* CLOSE_SQUARE;
+size:SIZE COLON (DOUBLE|INT);
 
-//---------------------------    SCAFFOLD ATTRIBUTES     -------------------------------
-scaffoldAttributes: scaffoldAttrBody | scaffoldAttrDrawer | scaffoldAttrAppBar
-                  | scaffoldAttrBottomNavigationBar | scaffoldAttrFloatingActionButton
-                  | sharedBackGroundColorAttr ;
-scaffoldAttrBody:BODY_ATTR COLON widget;
-scaffoldAttrDrawer:DRAWER_ATTR COLON drawer ;
-scaffoldAttrAppBar: APP_BAR_ATTR COLON appBar;
-scaffoldAttrBottomNavigationBar:BOTTOM_NAVIGATION_BAR_ATTR COLON bottomNavigationBar ;
-scaffoldAttrFloatingActionButton: FLOATING_ACTION_BUTTON_ATTR COLON floatingActionButton;
-
-//---------------------------    CONTAINER ATTRIBUTES     -------------------------------
-containerAttributes: sharedChildAttr | sharedWidthAttr | sharedHeightAttr | sharedColorAttr | sharedDecorationAttr
-                   | sharedPaddingAttr ;
-
-
-//-------------------------- DECORATION ATTRIBUTES ----------------------------
-decorationAttr:;
-paddingAttr:;
-
-
-//---------------------------    Slider ATTRIBUTES     -------------------------------
-sliderAttributes:;
-
-
-
-//-------------------------- SHARED ATTRIBUTES  ------------------
-sharedBackGroundColorAttr: BACKGROUNG_COLOR_ATTR COLON colorClass ;
-sharedChildAttr: CHILD_ATTR COLON widget ;
-sharedWidthAttr: WIDTH_ATTR COLON DOUBLE ;
-sharedHeightAttr: HEIGHT_ATTR COLON DOUBLE ;
-sharedColorAttr: COLOR_ATTR COLON colorClass;
-sharedDecorationAttr: DECORATION_ATTR COLON decoration;
-sharedPaddingAttr: PADDING_ATTR COLON padding;
-crossAxisAlignmentCrossAxisAlignmentContent:  CROSSAXISALIGNMENT COLON CROSSAXISALIGNMENT_CLASS DOT IDENTIFIER COMMA;
-mainAxisAlignmentMainAxisAlignmentContent: MAINAXISALIGNMENT COLON MAINAXISALIGNMENT_CLASS DOT IDENTIFIER COMMA ;
-children: CHILDREN COLON SQUARE_OPEN (widget)+ SQUARE_CLOSE COMMA;
-child: CHILD COLON widget ;
-onTap: ONTAP Colon functionExpr;
-onPressed:ONPRESSED Colon functionExpr;
-width:WIDTH COLON (DOUBLE|INT) COMMA;
-height:HEIGHT COLON (DOUBLE|INT) COMMA;
-color: COLOR COLON COLORS DOT colorValue COMMA;
-colorValue: RED
+//---------------------------- CONST ---------------------
+colors: RED
           | BLUE
           | YELLOW
           | BLACK
@@ -104,64 +110,25 @@ colorValue: RED
           | PURBLE
           | PINK ;
 
-
-//------------------------- CLASS ----------------------
-colorClass: COLORS DOT colorStatic ;
+axisValues:START|CENTER|END;
 
 
 
-
-//------------------------  STATIC ----------------
-colorStatic: RED | BLUE | YELLOW | BLACK | WHITE | GREY | GREEN | GOLD | PURBLE | PINK ;
-
-
-//-----------------    DART     -------------------------------
-functionExpr: OPEN_PAREN parameterList? CLOSE_PAREN functionBody;
-parameterList: IDENTIFIER (Comma IDENTIFIER)*;
-functionBody: expression | block;
-expression: ARROW statement COMMA;
-block: CURLY_OPEN statement* CURLY_CLOSE COMMA;
-statement : expr_Stmt
-          | if_Stmt
-          | while_Stmt
-          | print_Stmt
-          ;
-
-expr_Stmt :  ;
-
-if_Stmt : IF OPEN_PAREN expr CLOSE_PAREN statement (ELSE statement)? ;
-
-while_Stmt : WHILE OPEN_PAREN expr CLOSE_PAREN statement ;
-
-print_Stmt : PRINT expr COMMA ;
-
-expr :
-     ;
-
-
-//-----------------    ListView ATTRIBUTES     -------------------------------
-listviewArgs: (padding)? children;
-
-//-----------------    Column ATTRIBUTES     -------------------------------
-columnArgs: (crossAxisAlignmentCrossAxisAlignmentContent | mainAxisAlignmentMainAxisAlignmentContent)?  children ;
-
-//-----------------    Row ATTRIBUTES     -------------------------------
-rowArgs: (crossAxisAlignmentCrossAxisAlignmentContent | mainAxisAlignmentMainAxisAlignmentContent)?  children ;
-
-//-----------------    INKWELL ATTRIBUTES     -------------------------------
-inkwellArgs: (onTap)? child;
-
-//-----------------    SIZEDBOX ATTRIBUTES     -------------------------------
-
-//-----------------    EXPANDED ATTRIBUTES     -------------------------------
-expandedArgs: expandedflex? (child)? ;
-expandedflex: FLEX COLON (INT) COMMA ;
-
-//-----------------    CARD ATTRIBUTES     -------------------------------
-cardArgs: elevationArgs? child? ;
-elevationArgs: ELEVATION COLON (DOUBLE|INT) COMMA ;
-
-//-----------------    ICON_BUTTON ATTRIBUTES     -------------------------------
-iconArgs: iconParam COMMA onPressed? ;
-iconParam : ICON COLON ICON_CLASS  OPEN_PAREN ICON_CLASS DOT STRING COMMA color? CLOSE_PAREN COMMA ;
-
+//styleExpr -> "," styleProperty ("," styleProperty)*
+//styleProperty -> fontStyle | fontWeight | fontSize | color | letterSpacing | wordSpacing
+//fontStyle -> "fontStyle" ":" fontStyleValue
+//fontWeight -> "fontWeight" ":" fontWeightValue
+//fontSize -> "fontSize" ":" doubleValue
+//color -> "color" ":" colorValue
+//letterSpacing -> "letterSpacing" ":" doubleValue
+//wordSpacing -> "wordSpacing" ":" doubleValue
+//fontStyleValue -> "normal" | "italic"
+//fontWeightValue -> "normal" | "bold" | "w100" | "w200" | "w300" | "w400" | "w500" | "w600" | "w700" | "w800" | "w900"
+//colorValue -> "#"? hexColor | "black" | "white" | "red" | "green" | "blue" | "yellow" | "purple" | "pink" | "orange" | "gray" | "cyan" | "magenta"
+//hexColor -> hexDigit{6}
+//hexDigit -> "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "A" | "B" | "C" | "D" | "E" | "F"
+//number -> intValue | doubleValue
+//intValue -> digit+
+//doubleValue -> digit+ "." digit* ( "e" ( "+" | "-" )? digit+ )?
+//digit -> "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+//
