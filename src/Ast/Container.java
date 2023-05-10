@@ -2,25 +2,25 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Container extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private List<ContainerAttribute> containerAttributes;
+    private Set<ContainerArg> containerArgs;
 
     //---------------------------    Constructor     -------------------------------
     public Container() {
-        this.containerAttributes = new ArrayList<>();
+        this.containerArgs = new HashSet<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
-    public List<ContainerAttribute> getContainerAttributes() {
-        return containerAttributes;
+    public Set<ContainerArg> getContainerArgs() {
+        return containerArgs;
     }
 
-    public void setContainerAttributes(List<ContainerAttribute> containerAttributes) {
-        this.containerAttributes = containerAttributes;
+    public void setContainerArgs(Set<ContainerArg> containerArgs) {
+        this.containerArgs = containerArgs;
     }
 
     //---------------------------    ToString Func     -------------------------------
@@ -28,7 +28,7 @@ public class Container extends HtmlElement {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Container\n");
-        for (ContainerAttribute attribute : containerAttributes) {
+        for (ContainerArg attribute : containerArgs) {
             sb.append(attribute.toString()).append("\n");
         }
         return sb.toString();
@@ -50,9 +50,9 @@ public class Container extends HtmlElement {
         sb.append("<div class=\"container\"");
 
         // add Html attributes if exists
-        if (containerAttributes != null && !containerAttributes.isEmpty())
+        if (containerArgs != null && !containerArgs.isEmpty())
         {
-            for (ContainerAttribute attribute : containerAttributes)
+            for (ContainerArg attribute : containerArgs)
             {
                 sb.append(" ").append(attribute.generateHtmlAttribute());
             }
@@ -60,9 +60,9 @@ public class Container extends HtmlElement {
         sb.append(">\n");
 
         // add Tag Body
-        if (containerAttributes != null && !containerAttributes.isEmpty())
+        if (containerArgs != null && !containerArgs.isEmpty())
         {
-            for (ContainerAttribute attribute : containerAttributes)
+            for (ContainerArg attribute : containerArgs)
             {
                 sb.append(attribute.generateHtmlCode());
             }

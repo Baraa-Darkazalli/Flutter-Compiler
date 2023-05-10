@@ -1,35 +1,47 @@
 package Ast;
 
-import java.util.ArrayList;
-import java.util.List;
+import Ast.Classes.HtmlElement;
 
-public class Scaffold {
+import java.util.HashSet;
+import java.util.Set;
+
+public class Scaffold extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private List<ScaffoldAttribute> scaffoldAttributes;
+    private Set<ScaffoldArg> scaffoldArgs;
 
     //---------------------------    Constructor     -------------------------------
     public Scaffold() {
-        this.scaffoldAttributes = new ArrayList<ScaffoldAttribute>();
+        this.scaffoldArgs = new HashSet<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
-    public List<ScaffoldAttribute> getScaffoldAttributes() {
-        return scaffoldAttributes;
+    public Set<ScaffoldArg> getScaffoldArgs() {
+        return scaffoldArgs;
     }
 
-    public void setScaffoldAttributes(List<ScaffoldAttribute> scaffoldAttributes) {
-        this.scaffoldAttributes = scaffoldAttributes;
+    public void setScaffoldArgs(Set<ScaffoldArg> scaffoldArgs) {
+        this.scaffoldArgs = scaffoldArgs;
+    }
+    //---------------------------    Functions     -------------------------------
+    public boolean isScaffoldArgsEmpty() {
+        return scaffoldArgs.isEmpty();
     }
 
-    //---------------------------    ToString Func     -------------------------------
+    //---------------------------    Override Functions     -------------------------------
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Scaffold\n");
-        sb.append("Attributes:\n");
-        for (ScaffoldAttribute attribute : scaffoldAttributes) {
-            sb.append(attribute.toString()).append("\n");
+        sb.append("Scaffold(\n");
+
+        if (scaffoldArgs == null || scaffoldArgs.isEmpty()) {
+            sb.append("  No scaffold arguments.\n");
+        } else {
+            for (ScaffoldArg arg : scaffoldArgs) {
+                sb.append("  ").append(arg.toString()).append("\n");
+            }
         }
+
+        sb.append(")\n");
         return sb.toString();
     }
 }
