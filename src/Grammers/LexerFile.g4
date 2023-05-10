@@ -1,9 +1,28 @@
 lexer grammar LexerFile;
 
-
 //------------------- WIDGETS --------------------
 SCAFFOLD: 'Scaffold' ;
 CONTAINER: 'Container' ;
+ROW: 'Row';
+COLUMN: 'Column';
+LIST_VIEW : 'ListView' ;
+INKWELL:'InkWell';
+SIZED_BOX: 'SizedBox';
+EXPANDED: 'Expanded';
+CARD: 'Card';
+ICON_BUTTON: 'IconButton';
+PADDING:'Padding';
+ICON:'Icon';
+
+
+//Besher's..
+SLIDER: 'Slider'; //
+DRAWER: 'Drawer';
+WRAP: 'Wrap';
+TEXTFORMFIELD: 'TextFormField';
+FLEX: 'Flex';
+TEXT_BUTTON: 'TextButton' ;
+
 
 //-------------------- UTILS  ------------------
 DECORATION: 'Decoration' ;
@@ -16,23 +35,54 @@ BOTTOM_NAVIGATION_BAR_ATTR:'bottonNavigationBar';
 FLOATING_ACTION_BUTTON_ATTR:'floatinActionButton';
 BACKGROUNG_COLOR_ATTR:'backgroundColor';
 CHILD_ATTR: 'child' ;
+CHILDREN_ATTR: 'children' ;
 WIDTH_ATTR: 'width' ;
 HEIGHT_ATTR: 'height' ;
 COLOR_ATTR: 'color' ;
 DECORATION_ATTR: 'decoration' ;
 PADDING_ATTR: 'padding' ;
+VALUE_ATTR : 'value';
+ONCHANGED_ATTR: 'onChanged';
+MAX_ATTR: 'max';
+MIN_ATTR:'min';
+INACTIVE_COLOR_ATTR:'inactiveColor';
+LABEL_ATTR: 'label';
+ELEVATION_ATTR: 'elevation';
+SPACING_ATTR:'spacing';
+ALIGNMENT:'alignment';
+DIRECTION_ATTR : 'direction';
+LABEL_TEXT_ATTR: 'labelText';
+HINT_TEXT_ATTR: 'hintText';
+PREFIX_iCON_ATTR:'prefixIcon';
+SUFFIX_ICON_ATTR:   'suffixIcon';
+OBSCURE_TEXT_ATTR:   'obscureText';
+ON_TAP_ATTR: 'onTap';
+MAX_LENGTH_ATTR: 'maxLength';
+ENABLED_ATTR:'enabled';
+OPACITY_ATTR:'opacity';
+ICON_ATTR:'icon';
+ON_PRESSED_ATTR:'onPressed';
+ICON_SIZE_ATTR:'iconSize';
+CROSS_AXIS_ALIGNMENT_ATTR: 'crossAxisAlignment';
+MAIN_AXIS_ALIGNMENT_ATTR:'mainAxisAlignment';
+Main_Axis_Size_ATTR:'mainAxisSize';
+FLEX_ATTR: 'flex';
+CURRENT_INDEX_ATTR:'currentIndex';
+ITEMS_ATTR :'items';
+BOTTOM_NAVIGATION_BAR_ITEM:'BottomNavigationBarItem';
 
 //-----------------------  CLASS   -------------
 COLORS: 'Colors' ;
 EDGEINSETS: 'EdgeInsets' ;
-//----------------- BASE -------------------------
-INT :  '0'| [1-9][0-9]* ;
-DOUBLE : '-'? INT (DOT [0-9])*;
-LETTER
-    :    'a' .. 'z'
-    |    'A' .. 'Z'
-    ;
 
+//----------------- BASE -------------------------
+fragment LETTER: [a-zA-Z];
+fragment DIGIT: [0-9];
+INT: DIGIT+;
+DOUBLE : '-'? INT (DOT [0-9])*;
+ ID: LETTER (LETTER | DIGIT | '_')*;
+  FLOAT: DIGIT+ '.' DIGIT* | '.' DIGIT+;
+   STRING      : '"' (~["\\\r\n] | '\\' .)* '"';
     IDENTIFIER: [a-zA-Z_$][a-zA-Z0-9_$]*;
     ARROW: '=>';
     WS: [ \t\n\r]+ -> skip;
@@ -68,6 +118,9 @@ NOT: '!';
 QUOTES_SQ:'\'\'';
 QUOTES_DQ:'""';
 
+//-------------- DART ------------
+PRINT : 'print';
+
 //-------------- COLORS ------------
 RED:'red';
 BLUE:'blue';
@@ -84,17 +137,18 @@ PINK:'pink';
 ITALIC:'italic';
 NORMAL:'normal';
 
-
-
-//Besher's..
-SLIDER: 'Slider'; //
-
-
-
-
-
-
-// Besher's ..
+//------------  ALIGMENT -----------
+END: 'end';
+CENTER: 'center';
+SPACE_BETWEEN : 'spaceBetween';
+START: 'start';
+//--------------------AXIS ----------
+AXIS:'Axis';
+HORIZONTAL: 'horizontal';
+VERTICAL: 'vertical';
+//-------------- STATIC ----------
+TRUE:'true';
+FALSE:'false';
 VALUE : 'value';
 ONCHANGED: 'onChanged';
 MAX: 'max';
