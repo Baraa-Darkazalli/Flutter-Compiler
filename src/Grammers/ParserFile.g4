@@ -112,23 +112,3 @@ colors: RED
 
 axisValues:START|CENTER|END;
 
-
-
-//styleExpr -> "," styleProperty ("," styleProperty)*
-//styleProperty -> fontStyle | fontWeight | fontSize | color | letterSpacing | wordSpacing
-//fontStyle -> "fontStyle" ":" fontStyleValue
-//fontWeight -> "fontWeight" ":" fontWeightValue
-//fontSize -> "fontSize" ":" doubleValue
-//color -> "color" ":" colorValue
-//letterSpacing -> "letterSpacing" ":" doubleValue
-//wordSpacing -> "wordSpacing" ":" doubleValue
-//fontStyleValue -> "normal" | "italic"
-//fontWeightValue -> "normal" | "bold" | "w100" | "w200" | "w300" | "w400" | "w500" | "w600" | "w700" | "w800" | "w900"
-//colorValue -> "#"? hexColor | "black" | "white" | "red" | "green" | "blue" | "yellow" | "purple" | "pink" | "orange" | "gray" | "cyan" | "magenta"
-//hexColor -> hexDigit{6}
-//hexDigit -> "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "A" | "B" | "C" | "D" | "E" | "F"
-//number -> intValue | doubleValue
-//intValue -> digit+
-//doubleValue -> digit+ "." digit* ( "e" ( "+" | "-" )? digit+ )?
-//digit -> "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
-//
