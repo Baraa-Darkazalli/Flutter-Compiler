@@ -35,6 +35,12 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitText(ParserFile.TextContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link ParserFile#textStyle}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTextStyle(ParserFile.TextStyleContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link ParserFile#image}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -83,18 +89,6 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIconButton(ParserFile.IconButtonContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ParserFile#checkBox}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCheckBox(ParserFile.CheckBoxContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#radio}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitRadio(ParserFile.RadioContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link ParserFile#inkWell}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -125,11 +119,11 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitTabBar(ParserFile.TabBarContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ParserFile#tabView}.
+	 * Visit a parse tree produced by {@link ParserFile#tabBarView}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTabView(ParserFile.TabViewContext ctx);
+	T visitTabBarView(ParserFile.TabBarViewContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ParserFile#drawer}.
 	 * @param ctx the parse tree
@@ -179,293 +173,47 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSizedBox(ParserFile.SizedBoxContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ParserFile#decoration}.
+	 * Visit a parse tree produced by {@link ParserFile#scaffoldArgs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDecoration(ParserFile.DecorationContext ctx);
+	T visitScaffoldArgs(ParserFile.ScaffoldArgsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ParserFile#padding}.
+	 * Visit a parse tree produced by {@link ParserFile#containerArgs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPadding(ParserFile.PaddingContext ctx);
+	T visitContainerArgs(ParserFile.ContainerArgsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ParserFile#bottomNavigationBarArgs}.
+	 * Visit a parse tree produced by {@link ParserFile#textArgs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitBottomNavigationBarArgs(ParserFile.BottomNavigationBarArgsContext ctx);
+	T visitTextArgs(ParserFile.TextArgsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ParserFile#currentIndex}.
+	 * Visit a parse tree produced by {@link ParserFile#imageArgs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCurrentIndex(ParserFile.CurrentIndexContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#items}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitItems(ParserFile.ItemsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#bottomNavigationBarItem}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBottomNavigationBarItem(ParserFile.BottomNavigationBarItemContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#label}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLabel(ParserFile.LabelContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#scaffoldAttributes}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitScaffoldAttributes(ParserFile.ScaffoldAttributesContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#scaffoldAttrBody}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitScaffoldAttrBody(ParserFile.ScaffoldAttrBodyContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#scaffoldAttrDrawer}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitScaffoldAttrDrawer(ParserFile.ScaffoldAttrDrawerContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#scaffoldAttrAppBar}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitScaffoldAttrAppBar(ParserFile.ScaffoldAttrAppBarContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#scaffoldAttrBottomNavigationBar}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitScaffoldAttrBottomNavigationBar(ParserFile.ScaffoldAttrBottomNavigationBarContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#scaffoldAttrFloatingActionButton}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitScaffoldAttrFloatingActionButton(ParserFile.ScaffoldAttrFloatingActionButtonContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#containerAttributes}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitContainerAttributes(ParserFile.ContainerAttributesContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#decorationAttr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDecorationAttr(ParserFile.DecorationAttrContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#paddingAttr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPaddingAttr(ParserFile.PaddingAttrContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#sliderAttributes}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSliderAttributes(ParserFile.SliderAttributesContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#sharedBackGroundColorAttr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSharedBackGroundColorAttr(ParserFile.SharedBackGroundColorAttrContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#sharedChildAttr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSharedChildAttr(ParserFile.SharedChildAttrContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#sharedWidthAttr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSharedWidthAttr(ParserFile.SharedWidthAttrContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#sharedHeightAttr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSharedHeightAttr(ParserFile.SharedHeightAttrContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#sharedColorAttr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSharedColorAttr(ParserFile.SharedColorAttrContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#sharedDecorationAttr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSharedDecorationAttr(ParserFile.SharedDecorationAttrContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#sharedPaddingAttr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSharedPaddingAttr(ParserFile.SharedPaddingAttrContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#crossAxisAlignmentCrossAxisAlignmentContent}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCrossAxisAlignmentCrossAxisAlignmentContent(ParserFile.CrossAxisAlignmentCrossAxisAlignmentContentContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#mainAxisAlignmentMainAxisAlignmentContent}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMainAxisAlignmentMainAxisAlignmentContent(ParserFile.MainAxisAlignmentMainAxisAlignmentContentContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#children}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitChildren(ParserFile.ChildrenContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#child}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitChild(ParserFile.ChildContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#onTap}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOnTap(ParserFile.OnTapContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#onPressed}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOnPressed(ParserFile.OnPressedContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#width}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitWidth(ParserFile.WidthContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#height}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitHeight(ParserFile.HeightContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#color}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitColor(ParserFile.ColorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#colorValue}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitColorValue(ParserFile.ColorValueContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#colorClass}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitColorClass(ParserFile.ColorClassContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#colorStatic}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitColorStatic(ParserFile.ColorStaticContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#functionExpr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFunctionExpr(ParserFile.FunctionExprContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#parameterList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitParameterList(ParserFile.ParameterListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#functionBody}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFunctionBody(ParserFile.FunctionBodyContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExpression(ParserFile.ExpressionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#block}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBlock(ParserFile.BlockContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStatement(ParserFile.StatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#expr_Stmt}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExpr_Stmt(ParserFile.Expr_StmtContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#if_Stmt}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIf_Stmt(ParserFile.If_StmtContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#while_Stmt}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitWhile_Stmt(ParserFile.While_StmtContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#print_Stmt}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPrint_Stmt(ParserFile.Print_StmtContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link ParserFile#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExpr(ParserFile.ExprContext ctx);
+	T visitImageArgs(ParserFile.ImageArgsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ParserFile#listviewArgs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitListviewArgs(ParserFile.ListviewArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#appBarArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAppBarArgs(ParserFile.AppBarArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#textFieldArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTextFieldArgs(ParserFile.TextFieldArgsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ParserFile#columnArgs}.
 	 * @param ctx the parse tree
@@ -479,6 +227,18 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitRowArgs(ParserFile.RowArgsContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link ParserFile#cardArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCardArgs(ParserFile.CardArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#iconButtonArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIconButtonArgs(ParserFile.IconButtonArgsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link ParserFile#inkwellArgs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -491,23 +251,65 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpandedArgs(ParserFile.ExpandedArgsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ParserFile#expandedflex}.
+	 * Visit a parse tree produced by {@link ParserFile#bottomNavigationBarArgs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExpandedflex(ParserFile.ExpandedflexContext ctx);
+	T visitBottomNavigationBarArgs(ParserFile.BottomNavigationBarArgsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ParserFile#cardArgs}.
+	 * Visit a parse tree produced by {@link ParserFile#sliderArgs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCardArgs(ParserFile.CardArgsContext ctx);
+	T visitSliderArgs(ParserFile.SliderArgsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ParserFile#elevationArgs}.
+	 * Visit a parse tree produced by {@link ParserFile#tabBarArgs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitElevationArgs(ParserFile.ElevationArgsContext ctx);
+	T visitTabBarArgs(ParserFile.TabBarArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#tabBarViewArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTabBarViewArgs(ParserFile.TabBarViewArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#drawerArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDrawerArgs(ParserFile.DrawerArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#floatingActionButtonArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFloatingActionButtonArgs(ParserFile.FloatingActionButtonArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#wrapArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWrapArgs(ParserFile.WrapArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#flexArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFlexArgs(ParserFile.FlexArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#textFormFieldArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTextFormFieldArgs(ParserFile.TextFormFieldArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#textButtonArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTextButtonArgs(ParserFile.TextButtonArgsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ParserFile#iconArgs}.
 	 * @param ctx the parse tree
@@ -515,9 +317,201 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIconArgs(ParserFile.IconArgsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ParserFile#iconParam}.
+	 * Visit a parse tree produced by {@link ParserFile#sizedBoxArgs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitIconParam(ParserFile.IconParamContext ctx);
+	T visitSizedBoxArgs(ParserFile.SizedBoxArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#textStyleArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTextStyleArgs(ParserFile.TextStyleArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#body}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBody(ParserFile.BodyContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#drawerArg}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDrawerArg(ParserFile.DrawerArgContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#appBarArg}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAppBarArg(ParserFile.AppBarArgContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#bottomNavigationBarArg}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBottomNavigationBarArg(ParserFile.BottomNavigationBarArgContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#floatingActionButtonArg}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFloatingActionButtonArg(ParserFile.FloatingActionButtonArgContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#child}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitChild(ParserFile.ChildContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#children}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitChildren(ParserFile.ChildrenContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#height}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitHeight(ParserFile.HeightContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#width}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWidth(ParserFile.WidthContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#color}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitColor(ParserFile.ColorContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#margin}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMargin(ParserFile.MarginContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#padding}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPadding(ParserFile.PaddingContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#items}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitItems(ParserFile.ItemsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#currentIndex}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCurrentIndex(ParserFile.CurrentIndexContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#backGroundColor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBackGroundColor(ParserFile.BackGroundColorContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#crossAxis}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCrossAxis(ParserFile.CrossAxisContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#mainAxis}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMainAxis(ParserFile.MainAxisContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#style}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStyle(ParserFile.StyleContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#fontSize}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFontSize(ParserFile.FontSizeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#imageArg}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitImageArg(ParserFile.ImageArgContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#leading}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLeading(ParserFile.LeadingContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#title}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTitle(ParserFile.TitleContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#actions}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitActions(ParserFile.ActionsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#iconArg}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIconArg(ParserFile.IconArgContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#flexArg}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFlexArg(ParserFile.FlexArgContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#min}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMin(ParserFile.MinContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#max}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMax(ParserFile.MaxContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#tabs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTabs(ParserFile.TabsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#size}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSize(ParserFile.SizeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#colors}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitColors(ParserFile.ColorsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#axisValues}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAxisValues(ParserFile.AxisValuesContext ctx);
 }

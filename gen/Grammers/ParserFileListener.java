@@ -48,6 +48,16 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitText(ParserFile.TextContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ParserFile#textStyle}.
+	 * @param ctx the parse tree
+	 */
+	void enterTextStyle(ParserFile.TextStyleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#textStyle}.
+	 * @param ctx the parse tree
+	 */
+	void exitTextStyle(ParserFile.TextStyleContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ParserFile#image}.
 	 * @param ctx the parse tree
 	 */
@@ -128,26 +138,6 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitIconButton(ParserFile.IconButtonContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#checkBox}.
-	 * @param ctx the parse tree
-	 */
-	void enterCheckBox(ParserFile.CheckBoxContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#checkBox}.
-	 * @param ctx the parse tree
-	 */
-	void exitCheckBox(ParserFile.CheckBoxContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#radio}.
-	 * @param ctx the parse tree
-	 */
-	void enterRadio(ParserFile.RadioContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#radio}.
-	 * @param ctx the parse tree
-	 */
-	void exitRadio(ParserFile.RadioContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link ParserFile#inkWell}.
 	 * @param ctx the parse tree
 	 */
@@ -198,15 +188,15 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitTabBar(ParserFile.TabBarContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#tabView}.
+	 * Enter a parse tree produced by {@link ParserFile#tabBarView}.
 	 * @param ctx the parse tree
 	 */
-	void enterTabView(ParserFile.TabViewContext ctx);
+	void enterTabBarView(ParserFile.TabBarViewContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ParserFile#tabView}.
+	 * Exit a parse tree produced by {@link ParserFile#tabBarView}.
 	 * @param ctx the parse tree
 	 */
-	void exitTabView(ParserFile.TabViewContext ctx);
+	void exitTabBarView(ParserFile.TabBarViewContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ParserFile#drawer}.
 	 * @param ctx the parse tree
@@ -288,475 +278,45 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitSizedBox(ParserFile.SizedBoxContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#decoration}.
+	 * Enter a parse tree produced by {@link ParserFile#scaffoldArgs}.
 	 * @param ctx the parse tree
 	 */
-	void enterDecoration(ParserFile.DecorationContext ctx);
+	void enterScaffoldArgs(ParserFile.ScaffoldArgsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ParserFile#decoration}.
+	 * Exit a parse tree produced by {@link ParserFile#scaffoldArgs}.
 	 * @param ctx the parse tree
 	 */
-	void exitDecoration(ParserFile.DecorationContext ctx);
+	void exitScaffoldArgs(ParserFile.ScaffoldArgsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#padding}.
+	 * Enter a parse tree produced by {@link ParserFile#containerArgs}.
 	 * @param ctx the parse tree
 	 */
-	void enterPadding(ParserFile.PaddingContext ctx);
+	void enterContainerArgs(ParserFile.ContainerArgsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ParserFile#padding}.
+	 * Exit a parse tree produced by {@link ParserFile#containerArgs}.
 	 * @param ctx the parse tree
 	 */
-	void exitPadding(ParserFile.PaddingContext ctx);
+	void exitContainerArgs(ParserFile.ContainerArgsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#bottomNavigationBarArgs}.
+	 * Enter a parse tree produced by {@link ParserFile#textArgs}.
 	 * @param ctx the parse tree
 	 */
-	void enterBottomNavigationBarArgs(ParserFile.BottomNavigationBarArgsContext ctx);
+	void enterTextArgs(ParserFile.TextArgsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ParserFile#bottomNavigationBarArgs}.
+	 * Exit a parse tree produced by {@link ParserFile#textArgs}.
 	 * @param ctx the parse tree
 	 */
-	void exitBottomNavigationBarArgs(ParserFile.BottomNavigationBarArgsContext ctx);
+	void exitTextArgs(ParserFile.TextArgsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#currentIndex}.
+	 * Enter a parse tree produced by {@link ParserFile#imageArgs}.
 	 * @param ctx the parse tree
 	 */
-	void enterCurrentIndex(ParserFile.CurrentIndexContext ctx);
+	void enterImageArgs(ParserFile.ImageArgsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ParserFile#currentIndex}.
+	 * Exit a parse tree produced by {@link ParserFile#imageArgs}.
 	 * @param ctx the parse tree
 	 */
-	void exitCurrentIndex(ParserFile.CurrentIndexContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#items}.
-	 * @param ctx the parse tree
-	 */
-	void enterItems(ParserFile.ItemsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#items}.
-	 * @param ctx the parse tree
-	 */
-	void exitItems(ParserFile.ItemsContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#bottomNavigationBarItem}.
-	 * @param ctx the parse tree
-	 */
-	void enterBottomNavigationBarItem(ParserFile.BottomNavigationBarItemContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#bottomNavigationBarItem}.
-	 * @param ctx the parse tree
-	 */
-	void exitBottomNavigationBarItem(ParserFile.BottomNavigationBarItemContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#label}.
-	 * @param ctx the parse tree
-	 */
-	void enterLabel(ParserFile.LabelContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#label}.
-	 * @param ctx the parse tree
-	 */
-	void exitLabel(ParserFile.LabelContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#scaffoldAttributes}.
-	 * @param ctx the parse tree
-	 */
-	void enterScaffoldAttributes(ParserFile.ScaffoldAttributesContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#scaffoldAttributes}.
-	 * @param ctx the parse tree
-	 */
-	void exitScaffoldAttributes(ParserFile.ScaffoldAttributesContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#scaffoldAttrBody}.
-	 * @param ctx the parse tree
-	 */
-	void enterScaffoldAttrBody(ParserFile.ScaffoldAttrBodyContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#scaffoldAttrBody}.
-	 * @param ctx the parse tree
-	 */
-	void exitScaffoldAttrBody(ParserFile.ScaffoldAttrBodyContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#scaffoldAttrDrawer}.
-	 * @param ctx the parse tree
-	 */
-	void enterScaffoldAttrDrawer(ParserFile.ScaffoldAttrDrawerContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#scaffoldAttrDrawer}.
-	 * @param ctx the parse tree
-	 */
-	void exitScaffoldAttrDrawer(ParserFile.ScaffoldAttrDrawerContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#scaffoldAttrAppBar}.
-	 * @param ctx the parse tree
-	 */
-	void enterScaffoldAttrAppBar(ParserFile.ScaffoldAttrAppBarContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#scaffoldAttrAppBar}.
-	 * @param ctx the parse tree
-	 */
-	void exitScaffoldAttrAppBar(ParserFile.ScaffoldAttrAppBarContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#scaffoldAttrBottomNavigationBar}.
-	 * @param ctx the parse tree
-	 */
-	void enterScaffoldAttrBottomNavigationBar(ParserFile.ScaffoldAttrBottomNavigationBarContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#scaffoldAttrBottomNavigationBar}.
-	 * @param ctx the parse tree
-	 */
-	void exitScaffoldAttrBottomNavigationBar(ParserFile.ScaffoldAttrBottomNavigationBarContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#scaffoldAttrFloatingActionButton}.
-	 * @param ctx the parse tree
-	 */
-	void enterScaffoldAttrFloatingActionButton(ParserFile.ScaffoldAttrFloatingActionButtonContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#scaffoldAttrFloatingActionButton}.
-	 * @param ctx the parse tree
-	 */
-	void exitScaffoldAttrFloatingActionButton(ParserFile.ScaffoldAttrFloatingActionButtonContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#containerAttributes}.
-	 * @param ctx the parse tree
-	 */
-	void enterContainerAttributes(ParserFile.ContainerAttributesContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#containerAttributes}.
-	 * @param ctx the parse tree
-	 */
-	void exitContainerAttributes(ParserFile.ContainerAttributesContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#decorationAttr}.
-	 * @param ctx the parse tree
-	 */
-	void enterDecorationAttr(ParserFile.DecorationAttrContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#decorationAttr}.
-	 * @param ctx the parse tree
-	 */
-	void exitDecorationAttr(ParserFile.DecorationAttrContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#paddingAttr}.
-	 * @param ctx the parse tree
-	 */
-	void enterPaddingAttr(ParserFile.PaddingAttrContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#paddingAttr}.
-	 * @param ctx the parse tree
-	 */
-	void exitPaddingAttr(ParserFile.PaddingAttrContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#sliderAttributes}.
-	 * @param ctx the parse tree
-	 */
-	void enterSliderAttributes(ParserFile.SliderAttributesContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#sliderAttributes}.
-	 * @param ctx the parse tree
-	 */
-	void exitSliderAttributes(ParserFile.SliderAttributesContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#sharedBackGroundColorAttr}.
-	 * @param ctx the parse tree
-	 */
-	void enterSharedBackGroundColorAttr(ParserFile.SharedBackGroundColorAttrContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#sharedBackGroundColorAttr}.
-	 * @param ctx the parse tree
-	 */
-	void exitSharedBackGroundColorAttr(ParserFile.SharedBackGroundColorAttrContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#sharedChildAttr}.
-	 * @param ctx the parse tree
-	 */
-	void enterSharedChildAttr(ParserFile.SharedChildAttrContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#sharedChildAttr}.
-	 * @param ctx the parse tree
-	 */
-	void exitSharedChildAttr(ParserFile.SharedChildAttrContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#sharedWidthAttr}.
-	 * @param ctx the parse tree
-	 */
-	void enterSharedWidthAttr(ParserFile.SharedWidthAttrContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#sharedWidthAttr}.
-	 * @param ctx the parse tree
-	 */
-	void exitSharedWidthAttr(ParserFile.SharedWidthAttrContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#sharedHeightAttr}.
-	 * @param ctx the parse tree
-	 */
-	void enterSharedHeightAttr(ParserFile.SharedHeightAttrContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#sharedHeightAttr}.
-	 * @param ctx the parse tree
-	 */
-	void exitSharedHeightAttr(ParserFile.SharedHeightAttrContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#sharedColorAttr}.
-	 * @param ctx the parse tree
-	 */
-	void enterSharedColorAttr(ParserFile.SharedColorAttrContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#sharedColorAttr}.
-	 * @param ctx the parse tree
-	 */
-	void exitSharedColorAttr(ParserFile.SharedColorAttrContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#sharedDecorationAttr}.
-	 * @param ctx the parse tree
-	 */
-	void enterSharedDecorationAttr(ParserFile.SharedDecorationAttrContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#sharedDecorationAttr}.
-	 * @param ctx the parse tree
-	 */
-	void exitSharedDecorationAttr(ParserFile.SharedDecorationAttrContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#sharedPaddingAttr}.
-	 * @param ctx the parse tree
-	 */
-	void enterSharedPaddingAttr(ParserFile.SharedPaddingAttrContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#sharedPaddingAttr}.
-	 * @param ctx the parse tree
-	 */
-	void exitSharedPaddingAttr(ParserFile.SharedPaddingAttrContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#crossAxisAlignmentCrossAxisAlignmentContent}.
-	 * @param ctx the parse tree
-	 */
-	void enterCrossAxisAlignmentCrossAxisAlignmentContent(ParserFile.CrossAxisAlignmentCrossAxisAlignmentContentContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#crossAxisAlignmentCrossAxisAlignmentContent}.
-	 * @param ctx the parse tree
-	 */
-	void exitCrossAxisAlignmentCrossAxisAlignmentContent(ParserFile.CrossAxisAlignmentCrossAxisAlignmentContentContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#mainAxisAlignmentMainAxisAlignmentContent}.
-	 * @param ctx the parse tree
-	 */
-	void enterMainAxisAlignmentMainAxisAlignmentContent(ParserFile.MainAxisAlignmentMainAxisAlignmentContentContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#mainAxisAlignmentMainAxisAlignmentContent}.
-	 * @param ctx the parse tree
-	 */
-	void exitMainAxisAlignmentMainAxisAlignmentContent(ParserFile.MainAxisAlignmentMainAxisAlignmentContentContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#children}.
-	 * @param ctx the parse tree
-	 */
-	void enterChildren(ParserFile.ChildrenContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#children}.
-	 * @param ctx the parse tree
-	 */
-	void exitChildren(ParserFile.ChildrenContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#child}.
-	 * @param ctx the parse tree
-	 */
-	void enterChild(ParserFile.ChildContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#child}.
-	 * @param ctx the parse tree
-	 */
-	void exitChild(ParserFile.ChildContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#onTap}.
-	 * @param ctx the parse tree
-	 */
-	void enterOnTap(ParserFile.OnTapContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#onTap}.
-	 * @param ctx the parse tree
-	 */
-	void exitOnTap(ParserFile.OnTapContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#onPressed}.
-	 * @param ctx the parse tree
-	 */
-	void enterOnPressed(ParserFile.OnPressedContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#onPressed}.
-	 * @param ctx the parse tree
-	 */
-	void exitOnPressed(ParserFile.OnPressedContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#width}.
-	 * @param ctx the parse tree
-	 */
-	void enterWidth(ParserFile.WidthContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#width}.
-	 * @param ctx the parse tree
-	 */
-	void exitWidth(ParserFile.WidthContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#height}.
-	 * @param ctx the parse tree
-	 */
-	void enterHeight(ParserFile.HeightContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#height}.
-	 * @param ctx the parse tree
-	 */
-	void exitHeight(ParserFile.HeightContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#color}.
-	 * @param ctx the parse tree
-	 */
-	void enterColor(ParserFile.ColorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#color}.
-	 * @param ctx the parse tree
-	 */
-	void exitColor(ParserFile.ColorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#colorValue}.
-	 * @param ctx the parse tree
-	 */
-	void enterColorValue(ParserFile.ColorValueContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#colorValue}.
-	 * @param ctx the parse tree
-	 */
-	void exitColorValue(ParserFile.ColorValueContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#colorClass}.
-	 * @param ctx the parse tree
-	 */
-	void enterColorClass(ParserFile.ColorClassContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#colorClass}.
-	 * @param ctx the parse tree
-	 */
-	void exitColorClass(ParserFile.ColorClassContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#colorStatic}.
-	 * @param ctx the parse tree
-	 */
-	void enterColorStatic(ParserFile.ColorStaticContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#colorStatic}.
-	 * @param ctx the parse tree
-	 */
-	void exitColorStatic(ParserFile.ColorStaticContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#functionExpr}.
-	 * @param ctx the parse tree
-	 */
-	void enterFunctionExpr(ParserFile.FunctionExprContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#functionExpr}.
-	 * @param ctx the parse tree
-	 */
-	void exitFunctionExpr(ParserFile.FunctionExprContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#parameterList}.
-	 * @param ctx the parse tree
-	 */
-	void enterParameterList(ParserFile.ParameterListContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#parameterList}.
-	 * @param ctx the parse tree
-	 */
-	void exitParameterList(ParserFile.ParameterListContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#functionBody}.
-	 * @param ctx the parse tree
-	 */
-	void enterFunctionBody(ParserFile.FunctionBodyContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#functionBody}.
-	 * @param ctx the parse tree
-	 */
-	void exitFunctionBody(ParserFile.FunctionBodyContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpression(ParserFile.ExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpression(ParserFile.ExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#block}.
-	 * @param ctx the parse tree
-	 */
-	void enterBlock(ParserFile.BlockContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#block}.
-	 * @param ctx the parse tree
-	 */
-	void exitBlock(ParserFile.BlockContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#statement}.
-	 * @param ctx the parse tree
-	 */
-	void enterStatement(ParserFile.StatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#statement}.
-	 * @param ctx the parse tree
-	 */
-	void exitStatement(ParserFile.StatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#expr_Stmt}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpr_Stmt(ParserFile.Expr_StmtContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#expr_Stmt}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpr_Stmt(ParserFile.Expr_StmtContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#if_Stmt}.
-	 * @param ctx the parse tree
-	 */
-	void enterIf_Stmt(ParserFile.If_StmtContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#if_Stmt}.
-	 * @param ctx the parse tree
-	 */
-	void exitIf_Stmt(ParserFile.If_StmtContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#while_Stmt}.
-	 * @param ctx the parse tree
-	 */
-	void enterWhile_Stmt(ParserFile.While_StmtContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#while_Stmt}.
-	 * @param ctx the parse tree
-	 */
-	void exitWhile_Stmt(ParserFile.While_StmtContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#print_Stmt}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrint_Stmt(ParserFile.Print_StmtContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#print_Stmt}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrint_Stmt(ParserFile.Print_StmtContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link ParserFile#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpr(ParserFile.ExprContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link ParserFile#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpr(ParserFile.ExprContext ctx);
+	void exitImageArgs(ParserFile.ImageArgsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ParserFile#listviewArgs}.
 	 * @param ctx the parse tree
@@ -767,6 +327,26 @@ public interface ParserFileListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitListviewArgs(ParserFile.ListviewArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#appBarArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterAppBarArgs(ParserFile.AppBarArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#appBarArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitAppBarArgs(ParserFile.AppBarArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#textFieldArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterTextFieldArgs(ParserFile.TextFieldArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#textFieldArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitTextFieldArgs(ParserFile.TextFieldArgsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ParserFile#columnArgs}.
 	 * @param ctx the parse tree
@@ -788,6 +368,26 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitRowArgs(ParserFile.RowArgsContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ParserFile#cardArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterCardArgs(ParserFile.CardArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#cardArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitCardArgs(ParserFile.CardArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#iconButtonArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterIconButtonArgs(ParserFile.IconButtonArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#iconButtonArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitIconButtonArgs(ParserFile.IconButtonArgsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ParserFile#inkwellArgs}.
 	 * @param ctx the parse tree
 	 */
@@ -808,35 +408,105 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitExpandedArgs(ParserFile.ExpandedArgsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#expandedflex}.
+	 * Enter a parse tree produced by {@link ParserFile#bottomNavigationBarArgs}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpandedflex(ParserFile.ExpandedflexContext ctx);
+	void enterBottomNavigationBarArgs(ParserFile.BottomNavigationBarArgsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ParserFile#expandedflex}.
+	 * Exit a parse tree produced by {@link ParserFile#bottomNavigationBarArgs}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpandedflex(ParserFile.ExpandedflexContext ctx);
+	void exitBottomNavigationBarArgs(ParserFile.BottomNavigationBarArgsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#cardArgs}.
+	 * Enter a parse tree produced by {@link ParserFile#sliderArgs}.
 	 * @param ctx the parse tree
 	 */
-	void enterCardArgs(ParserFile.CardArgsContext ctx);
+	void enterSliderArgs(ParserFile.SliderArgsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ParserFile#cardArgs}.
+	 * Exit a parse tree produced by {@link ParserFile#sliderArgs}.
 	 * @param ctx the parse tree
 	 */
-	void exitCardArgs(ParserFile.CardArgsContext ctx);
+	void exitSliderArgs(ParserFile.SliderArgsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#elevationArgs}.
+	 * Enter a parse tree produced by {@link ParserFile#tabBarArgs}.
 	 * @param ctx the parse tree
 	 */
-	void enterElevationArgs(ParserFile.ElevationArgsContext ctx);
+	void enterTabBarArgs(ParserFile.TabBarArgsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ParserFile#elevationArgs}.
+	 * Exit a parse tree produced by {@link ParserFile#tabBarArgs}.
 	 * @param ctx the parse tree
 	 */
-	void exitElevationArgs(ParserFile.ElevationArgsContext ctx);
+	void exitTabBarArgs(ParserFile.TabBarArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#tabBarViewArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterTabBarViewArgs(ParserFile.TabBarViewArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#tabBarViewArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitTabBarViewArgs(ParserFile.TabBarViewArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#drawerArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterDrawerArgs(ParserFile.DrawerArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#drawerArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitDrawerArgs(ParserFile.DrawerArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#floatingActionButtonArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterFloatingActionButtonArgs(ParserFile.FloatingActionButtonArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#floatingActionButtonArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitFloatingActionButtonArgs(ParserFile.FloatingActionButtonArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#wrapArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterWrapArgs(ParserFile.WrapArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#wrapArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitWrapArgs(ParserFile.WrapArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#flexArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterFlexArgs(ParserFile.FlexArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#flexArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitFlexArgs(ParserFile.FlexArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#textFormFieldArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterTextFormFieldArgs(ParserFile.TextFormFieldArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#textFormFieldArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitTextFormFieldArgs(ParserFile.TextFormFieldArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#textButtonArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterTextButtonArgs(ParserFile.TextButtonArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#textButtonArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitTextButtonArgs(ParserFile.TextButtonArgsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ParserFile#iconArgs}.
 	 * @param ctx the parse tree
@@ -848,13 +518,333 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitIconArgs(ParserFile.IconArgsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#iconParam}.
+	 * Enter a parse tree produced by {@link ParserFile#sizedBoxArgs}.
 	 * @param ctx the parse tree
 	 */
-	void enterIconParam(ParserFile.IconParamContext ctx);
+	void enterSizedBoxArgs(ParserFile.SizedBoxArgsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ParserFile#iconParam}.
+	 * Exit a parse tree produced by {@link ParserFile#sizedBoxArgs}.
 	 * @param ctx the parse tree
 	 */
-	void exitIconParam(ParserFile.IconParamContext ctx);
+	void exitSizedBoxArgs(ParserFile.SizedBoxArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#textStyleArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterTextStyleArgs(ParserFile.TextStyleArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#textStyleArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitTextStyleArgs(ParserFile.TextStyleArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#body}.
+	 * @param ctx the parse tree
+	 */
+	void enterBody(ParserFile.BodyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#body}.
+	 * @param ctx the parse tree
+	 */
+	void exitBody(ParserFile.BodyContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#drawerArg}.
+	 * @param ctx the parse tree
+	 */
+	void enterDrawerArg(ParserFile.DrawerArgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#drawerArg}.
+	 * @param ctx the parse tree
+	 */
+	void exitDrawerArg(ParserFile.DrawerArgContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#appBarArg}.
+	 * @param ctx the parse tree
+	 */
+	void enterAppBarArg(ParserFile.AppBarArgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#appBarArg}.
+	 * @param ctx the parse tree
+	 */
+	void exitAppBarArg(ParserFile.AppBarArgContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#bottomNavigationBarArg}.
+	 * @param ctx the parse tree
+	 */
+	void enterBottomNavigationBarArg(ParserFile.BottomNavigationBarArgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#bottomNavigationBarArg}.
+	 * @param ctx the parse tree
+	 */
+	void exitBottomNavigationBarArg(ParserFile.BottomNavigationBarArgContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#floatingActionButtonArg}.
+	 * @param ctx the parse tree
+	 */
+	void enterFloatingActionButtonArg(ParserFile.FloatingActionButtonArgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#floatingActionButtonArg}.
+	 * @param ctx the parse tree
+	 */
+	void exitFloatingActionButtonArg(ParserFile.FloatingActionButtonArgContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#child}.
+	 * @param ctx the parse tree
+	 */
+	void enterChild(ParserFile.ChildContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#child}.
+	 * @param ctx the parse tree
+	 */
+	void exitChild(ParserFile.ChildContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#children}.
+	 * @param ctx the parse tree
+	 */
+	void enterChildren(ParserFile.ChildrenContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#children}.
+	 * @param ctx the parse tree
+	 */
+	void exitChildren(ParserFile.ChildrenContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#height}.
+	 * @param ctx the parse tree
+	 */
+	void enterHeight(ParserFile.HeightContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#height}.
+	 * @param ctx the parse tree
+	 */
+	void exitHeight(ParserFile.HeightContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#width}.
+	 * @param ctx the parse tree
+	 */
+	void enterWidth(ParserFile.WidthContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#width}.
+	 * @param ctx the parse tree
+	 */
+	void exitWidth(ParserFile.WidthContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#color}.
+	 * @param ctx the parse tree
+	 */
+	void enterColor(ParserFile.ColorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#color}.
+	 * @param ctx the parse tree
+	 */
+	void exitColor(ParserFile.ColorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#margin}.
+	 * @param ctx the parse tree
+	 */
+	void enterMargin(ParserFile.MarginContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#margin}.
+	 * @param ctx the parse tree
+	 */
+	void exitMargin(ParserFile.MarginContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#padding}.
+	 * @param ctx the parse tree
+	 */
+	void enterPadding(ParserFile.PaddingContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#padding}.
+	 * @param ctx the parse tree
+	 */
+	void exitPadding(ParserFile.PaddingContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#items}.
+	 * @param ctx the parse tree
+	 */
+	void enterItems(ParserFile.ItemsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#items}.
+	 * @param ctx the parse tree
+	 */
+	void exitItems(ParserFile.ItemsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#currentIndex}.
+	 * @param ctx the parse tree
+	 */
+	void enterCurrentIndex(ParserFile.CurrentIndexContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#currentIndex}.
+	 * @param ctx the parse tree
+	 */
+	void exitCurrentIndex(ParserFile.CurrentIndexContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#backGroundColor}.
+	 * @param ctx the parse tree
+	 */
+	void enterBackGroundColor(ParserFile.BackGroundColorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#backGroundColor}.
+	 * @param ctx the parse tree
+	 */
+	void exitBackGroundColor(ParserFile.BackGroundColorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#crossAxis}.
+	 * @param ctx the parse tree
+	 */
+	void enterCrossAxis(ParserFile.CrossAxisContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#crossAxis}.
+	 * @param ctx the parse tree
+	 */
+	void exitCrossAxis(ParserFile.CrossAxisContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#mainAxis}.
+	 * @param ctx the parse tree
+	 */
+	void enterMainAxis(ParserFile.MainAxisContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#mainAxis}.
+	 * @param ctx the parse tree
+	 */
+	void exitMainAxis(ParserFile.MainAxisContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#style}.
+	 * @param ctx the parse tree
+	 */
+	void enterStyle(ParserFile.StyleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#style}.
+	 * @param ctx the parse tree
+	 */
+	void exitStyle(ParserFile.StyleContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#fontSize}.
+	 * @param ctx the parse tree
+	 */
+	void enterFontSize(ParserFile.FontSizeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#fontSize}.
+	 * @param ctx the parse tree
+	 */
+	void exitFontSize(ParserFile.FontSizeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#imageArg}.
+	 * @param ctx the parse tree
+	 */
+	void enterImageArg(ParserFile.ImageArgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#imageArg}.
+	 * @param ctx the parse tree
+	 */
+	void exitImageArg(ParserFile.ImageArgContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#leading}.
+	 * @param ctx the parse tree
+	 */
+	void enterLeading(ParserFile.LeadingContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#leading}.
+	 * @param ctx the parse tree
+	 */
+	void exitLeading(ParserFile.LeadingContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#title}.
+	 * @param ctx the parse tree
+	 */
+	void enterTitle(ParserFile.TitleContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#title}.
+	 * @param ctx the parse tree
+	 */
+	void exitTitle(ParserFile.TitleContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#actions}.
+	 * @param ctx the parse tree
+	 */
+	void enterActions(ParserFile.ActionsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#actions}.
+	 * @param ctx the parse tree
+	 */
+	void exitActions(ParserFile.ActionsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#iconArg}.
+	 * @param ctx the parse tree
+	 */
+	void enterIconArg(ParserFile.IconArgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#iconArg}.
+	 * @param ctx the parse tree
+	 */
+	void exitIconArg(ParserFile.IconArgContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#flexArg}.
+	 * @param ctx the parse tree
+	 */
+	void enterFlexArg(ParserFile.FlexArgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#flexArg}.
+	 * @param ctx the parse tree
+	 */
+	void exitFlexArg(ParserFile.FlexArgContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#min}.
+	 * @param ctx the parse tree
+	 */
+	void enterMin(ParserFile.MinContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#min}.
+	 * @param ctx the parse tree
+	 */
+	void exitMin(ParserFile.MinContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#max}.
+	 * @param ctx the parse tree
+	 */
+	void enterMax(ParserFile.MaxContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#max}.
+	 * @param ctx the parse tree
+	 */
+	void exitMax(ParserFile.MaxContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#tabs}.
+	 * @param ctx the parse tree
+	 */
+	void enterTabs(ParserFile.TabsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#tabs}.
+	 * @param ctx the parse tree
+	 */
+	void exitTabs(ParserFile.TabsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#size}.
+	 * @param ctx the parse tree
+	 */
+	void enterSize(ParserFile.SizeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#size}.
+	 * @param ctx the parse tree
+	 */
+	void exitSize(ParserFile.SizeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#colors}.
+	 * @param ctx the parse tree
+	 */
+	void enterColors(ParserFile.ColorsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#colors}.
+	 * @param ctx the parse tree
+	 */
+	void exitColors(ParserFile.ColorsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#axisValues}.
+	 * @param ctx the parse tree
+	 */
+	void enterAxisValues(ParserFile.AxisValuesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#axisValues}.
+	 * @param ctx the parse tree
+	 */
+	void exitAxisValues(ParserFile.AxisValuesContext ctx);
 }
