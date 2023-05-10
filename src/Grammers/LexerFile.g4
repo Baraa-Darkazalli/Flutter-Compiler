@@ -1,9 +1,18 @@
 lexer grammar LexerFile;
 
-
 //------------------- WIDGETS --------------------
 SCAFFOLD: 'Scaffold' ;
 CONTAINER: 'Container' ;
+ROW: 'Row';
+COLUMN: 'Column';
+LIST_VIEW : 'ListView' ;
+INKWELL:'InkWell';
+SIZED_BOX: 'SizedBox';
+EXPANDED: 'Expanded';
+CARD: 'Card';
+ICON_BUTTON: 'IconButton';
+PADDING:'Padding';
+ICON:'Icon';
 
 
 //Besher's..
@@ -13,7 +22,6 @@ WRAP: 'Wrap';
 TEXTFORMFIELD: 'TextFormField';
 FLEX: 'Flex';
 TEXT_BUTTON: 'TextButton' ;
-ICON_BUTTON:'IconButton';
 
 
 //-------------------- UTILS  ------------------
@@ -33,8 +41,6 @@ HEIGHT_ATTR: 'height' ;
 COLOR_ATTR: 'color' ;
 DECORATION_ATTR: 'decoration' ;
 PADDING_ATTR: 'padding' ;
-
-// Besher's ..
 VALUE_ATTR : 'value';
 ONCHANGED_ATTR: 'onChanged';
 MAX_ATTR: 'max';
@@ -57,10 +63,18 @@ OPACITY_ATTR:'opacity';
 ICON_ATTR:'icon';
 ON_PRESSED_ATTR:'onPressed';
 ICON_SIZE_ATTR:'iconSize';
+CROSS_AXIS_ALIGNMENT_ATTR: 'crossAxisAlignment';
+MAIN_AXIS_ALIGNMENT_ATTR:'mainAxisAlignment';
+Main_Axis_Size_ATTR:'mainAxisSize';
+FLEX_ATTR: 'flex';
+CURRENT_INDEX_ATTR:'currentIndex';
+ITEMS_ATTR :'items';
+BOTTOM_NAVIGATION_BAR_ITEM:'BottomNavigationBarItem';
 
 //-----------------------  CLASS   -------------
 COLORS: 'Colors' ;
 EDGEINSETS: 'EdgeInsets' ;
+
 //----------------- BASE -------------------------
 fragment LETTER: [a-zA-Z];
 fragment DIGIT: [0-9];
@@ -104,6 +118,9 @@ NOT: '!';
 QUOTES_SQ:'\'\'';
 QUOTES_DQ:'""';
 
+//-------------- DART ------------
+PRINT : 'print';
+
 //-------------- COLORS ------------
 RED:'red';
 BLUE:'blue';
@@ -132,11 +149,9 @@ VERTICAL: 'vertical';
 //-------------- STATIC ----------
 TRUE:'true';
 FALSE:'false';
-
-
-
-
-
-
-
-
+VALUE : 'value';
+ONCHANGED: 'onChanged';
+MAX: 'max';
+MIN:'min';
+INACTIVE_COLOR:'inactiveColor';
+LABEL: 'label';
