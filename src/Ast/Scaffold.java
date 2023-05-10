@@ -1,10 +1,11 @@
 package Ast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Scaffold {
     //---------------------------    Attributes     -------------------------------
-    List<ScaffoldAttribute> scaffoldAttributes;
+    private List<ScaffoldAttribute> scaffoldAttributes;
 
     //---------------------------    Constructor     -------------------------------
     public Scaffold() {
