@@ -2,28 +2,28 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Container extends HtmlElement {
+public class Container {
     //---------------------------    Attributes     -------------------------------
-    private Set<ContainerArg> containerArgs;
+    private List<ContainerArg> containerArgs;
 
     //---------------------------    Constructor     -------------------------------
     public Container() {
-        this.containerArgs = new HashSet<>();
+        this.containerArgs = new ArrayList<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
-    public Set<ContainerArg> getContainerArgs() {
+    public List<ContainerArg> getContainerArgs() {
         return containerArgs;
     }
 
-    public void setContainerArgs(Set<ContainerArg> containerArgs) {
+    public void setContainerArgs(List<ContainerArg> containerArgs) {
         this.containerArgs = containerArgs;
     }
 
-    //---------------------------    ToString Func     -------------------------------
+    //---------------------------    Override Func     -------------------------------
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -31,45 +31,6 @@ public class Container extends HtmlElement {
         for (ContainerArg attribute : containerArgs) {
             sb.append(attribute.toString()).append("\n");
         }
-        return sb.toString();
-    }
-    //---------------------------    HtmlElement Functions     -------------------------------
-    @Override
-    public String getBootstrapClass() {
-        return "";
-    }
-
-    @Override
-    public String generateHtmlAttribute() {
-        return "";
-    }
-
-    @Override
-    public String generateHtmlCode() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("<div class=\"container\"");
-
-        // add Html attributes if exists
-        if (containerArgs != null && !containerArgs.isEmpty())
-        {
-            for (ContainerArg attribute : containerArgs)
-            {
-                sb.append(" ").append(attribute.generateHtmlAttribute());
-            }
-        }
-        sb.append(">\n");
-
-        // add Tag Body
-        if (containerArgs != null && !containerArgs.isEmpty())
-        {
-            for (ContainerArg attribute : containerArgs)
-            {
-                sb.append(attribute.generateHtmlCode());
-            }
-        }
-
-        sb.append("</div>");
-
         return sb.toString();
     }
 }

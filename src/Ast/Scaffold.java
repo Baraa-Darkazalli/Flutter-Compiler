@@ -2,24 +2,24 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Scaffold extends HtmlElement {
+public class Scaffold {
     //---------------------------    Attributes     -------------------------------
-    private Set<ScaffoldArg> scaffoldArgs;
+    private List<ScaffoldArgs> scaffoldArgs;
 
     //---------------------------    Constructor     -------------------------------
     public Scaffold() {
-        this.scaffoldArgs = new HashSet<>();
+        this.scaffoldArgs = new ArrayList<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
-    public Set<ScaffoldArg> getScaffoldArgs() {
+    public List<ScaffoldArgs> getScaffoldArgs() {
         return scaffoldArgs;
     }
 
-    public void setScaffoldArgs(Set<ScaffoldArg> scaffoldArgs) {
+    public void setScaffoldArgs(List<ScaffoldArgs> scaffoldArgs) {
         this.scaffoldArgs = scaffoldArgs;
     }
     //---------------------------    Functions     -------------------------------
@@ -32,15 +32,13 @@ public class Scaffold extends HtmlElement {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Scaffold(\n");
-
         if (scaffoldArgs == null || scaffoldArgs.isEmpty()) {
             sb.append("  No scaffold arguments.\n");
         } else {
-            for (ScaffoldArg arg : scaffoldArgs) {
+            for (ScaffoldArgs arg : scaffoldArgs) {
                 sb.append("  ").append(arg.toString()).append("\n");
             }
         }
-
         sb.append(")\n");
         return sb.toString();
     }

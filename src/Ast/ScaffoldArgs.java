@@ -1,13 +1,13 @@
 package Ast;
 
-public class ScaffoldArg {
+public class ScaffoldArgs {
     //---------------------------    Attributes     -------------------------------
     private Body body;
     private DrawerArg drawerArg;
     private AppBarArg appBarArg;
     private BottomNavigationBarArg bottomNavigationBarArg;
     private FloatingActionButtonArg floatingActionButtonArg;
-    private BackGroundColorArg backGroundColorArg;
+    private BackGroundColor backGroundColor;
 
     //---------------------------    Setters & Getters     -------------------------------
 
@@ -51,12 +51,12 @@ public class ScaffoldArg {
         this.floatingActionButtonArg = floatingActionButtonArg;
     }
 
-    public BackGroundColorArg getBackGroundColorArg() {
-        return backGroundColorArg;
+    public BackGroundColor getBackGroundColor() {
+        return backGroundColor;
     }
 
-    public void setBackGroundColorArg(BackGroundColorArg backGroundColorArg) {
-        this.backGroundColorArg = backGroundColorArg;
+    public void setBackGroundColor(BackGroundColor backGroundColor) {
+        this.backGroundColor = backGroundColor;
     }
 
     //---------------------------    ToString Func     -------------------------------
@@ -69,7 +69,7 @@ public class ScaffoldArg {
         sb.append("AppBarArg: ").append(appBarArg != null ? appBarArg.toString() : "null").append("\n");
         sb.append("BottomNavigationBarArg: ").append(bottomNavigationBarArg != null ? bottomNavigationBarArg.toString() : "null").append("\n");
         sb.append("FloatingActionButtonArg: ").append(floatingActionButtonArg != null ? floatingActionButtonArg.toString() : "null").append("\n");
-        sb.append("BackGroundColorArg: ").append(backGroundColorArg != null ? backGroundColorArg.toString() : "null").append("\n");
+        sb.append("BackGroundColor: ").append(backGroundColor != null ? backGroundColor.toString() : "null").append("\n");
 
         return sb.toString();
     }

@@ -1,0 +1,31 @@
+package Ast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Column {
+    //---------------------------    Attributes     -------------------------------
+    private List<ColumnArgs> columnArgs;
+
+    //---------------------------    Constructor     -------------------------------
+    public Column() {
+        this.columnArgs = new ArrayList<>();
+    }
+
+    //---------------------------    Setters & Getters     -------------------------------
+    public List<ColumnArgs> getColumnArgs() {
+        return columnArgs;
+    }
+
+    public void setColumnArgs(List<ColumnArgs> columnArgs) {
+        this.columnArgs = columnArgs;
+    }
+
+    //---------------------------    Override Func     -------------------------------
+    @Override
+    public String toString() {
+        return "Column{" +
+                "columnArgs=" + columnArgs +
+                '}';
+    }
+}
