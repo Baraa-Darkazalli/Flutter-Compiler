@@ -8,6 +8,86 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface ParserFileListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by {@link ParserFile#root}.
+	 * @param ctx the parse tree
+	 */
+	void enterRoot(ParserFile.RootContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#root}.
+	 * @param ctx the parse tree
+	 */
+	void exitRoot(ParserFile.RootContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#main}.
+	 * @param ctx the parse tree
+	 */
+	void enterMain(ParserFile.MainContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#main}.
+	 * @param ctx the parse tree
+	 */
+	void exitMain(ParserFile.MainContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#class}.
+	 * @param ctx the parse tree
+	 */
+	void enterClass(ParserFile.ClassContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#class}.
+	 * @param ctx the parse tree
+	 */
+	void exitClass(ParserFile.ClassContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#classArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterClassArgs(ParserFile.ClassArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#classArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitClassArgs(ParserFile.ClassArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#buildConst}.
+	 * @param ctx the parse tree
+	 */
+	void enterBuildConst(ParserFile.BuildConstContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#buildConst}.
+	 * @param ctx the parse tree
+	 */
+	void exitBuildConst(ParserFile.BuildConstContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#implementVariables}.
+	 * @param ctx the parse tree
+	 */
+	void enterImplementVariables(ParserFile.ImplementVariablesContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#implementVariables}.
+	 * @param ctx the parse tree
+	 */
+	void exitImplementVariables(ParserFile.ImplementVariablesContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#requiredArg}.
+	 * @param ctx the parse tree
+	 */
+	void enterRequiredArg(ParserFile.RequiredArgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#requiredArg}.
+	 * @param ctx the parse tree
+	 */
+	void exitRequiredArg(ParserFile.RequiredArgContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#build}.
+	 * @param ctx the parse tree
+	 */
+	void enterBuild(ParserFile.BuildContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#build}.
+	 * @param ctx the parse tree
+	 */
+	void exitBuild(ParserFile.BuildContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ParserFile#widget}.
 	 * @param ctx the parse tree
 	 */
@@ -278,6 +358,16 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitSizedBox(ParserFile.SizedBoxContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ParserFile#center}.
+	 * @param ctx the parse tree
+	 */
+	void enterCenter(ParserFile.CenterContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#center}.
+	 * @param ctx the parse tree
+	 */
+	void exitCenter(ParserFile.CenterContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ParserFile#scaffoldArgs}.
 	 * @param ctx the parse tree
 	 */
@@ -537,6 +627,16 @@ public interface ParserFileListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTextStyleArgs(ParserFile.TextStyleArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#centerArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterCenterArgs(ParserFile.CenterArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#centerArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitCenterArgs(ParserFile.CenterArgsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ParserFile#body}.
 	 * @param ctx the parse tree
@@ -828,23 +928,103 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitSize(ParserFile.SizeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#colors}.
+	 * Enter a parse tree produced by {@link ParserFile#onTap}.
 	 * @param ctx the parse tree
 	 */
-	void enterColors(ParserFile.ColorsContext ctx);
+	void enterOnTap(ParserFile.OnTapContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ParserFile#colors}.
+	 * Exit a parse tree produced by {@link ParserFile#onTap}.
 	 * @param ctx the parse tree
 	 */
-	void exitColors(ParserFile.ColorsContext ctx);
+	void exitOnTap(ParserFile.OnTapContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#axisValues}.
+	 * Enter a parse tree produced by {@link ParserFile#expression}.
 	 * @param ctx the parse tree
 	 */
-	void enterAxisValues(ParserFile.AxisValuesContext ctx);
+	void enterExpression(ParserFile.ExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ParserFile#axisValues}.
+	 * Exit a parse tree produced by {@link ParserFile#expression}.
 	 * @param ctx the parse tree
 	 */
-	void exitAxisValues(ParserFile.AxisValuesContext ctx);
+	void exitExpression(ParserFile.ExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#allowExp}.
+	 * @param ctx the parse tree
+	 */
+	void enterAllowExp(ParserFile.AllowExpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#allowExp}.
+	 * @param ctx the parse tree
+	 */
+	void exitAllowExp(ParserFile.AllowExpContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#runAppExp}.
+	 * @param ctx the parse tree
+	 */
+	void enterRunAppExp(ParserFile.RunAppExpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#runAppExp}.
+	 * @param ctx the parse tree
+	 */
+	void exitRunAppExp(ParserFile.RunAppExpContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#navigateExp}.
+	 * @param ctx the parse tree
+	 */
+	void enterNavigateExp(ParserFile.NavigateExpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#navigateExp}.
+	 * @param ctx the parse tree
+	 */
+	void exitNavigateExp(ParserFile.NavigateExpContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#transtion}.
+	 * @param ctx the parse tree
+	 */
+	void enterTranstion(ParserFile.TranstionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#transtion}.
+	 * @param ctx the parse tree
+	 */
+	void exitTranstion(ParserFile.TranstionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#push}.
+	 * @param ctx the parse tree
+	 */
+	void enterPush(ParserFile.PushContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#push}.
+	 * @param ctx the parse tree
+	 */
+	void exitPush(ParserFile.PushContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#pop}.
+	 * @param ctx the parse tree
+	 */
+	void enterPop(ParserFile.PopContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#pop}.
+	 * @param ctx the parse tree
+	 */
+	void exitPop(ParserFile.PopContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#constructor}.
+	 * @param ctx the parse tree
+	 */
+	void enterConstructor(ParserFile.ConstructorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#constructor}.
+	 * @param ctx the parse tree
+	 */
+	void exitConstructor(ParserFile.ConstructorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#constructorArg}.
+	 * @param ctx the parse tree
+	 */
+	void enterConstructorArg(ParserFile.ConstructorArgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#constructorArg}.
+	 * @param ctx the parse tree
+	 */
+	void exitConstructorArg(ParserFile.ConstructorArgContext ctx);
 }

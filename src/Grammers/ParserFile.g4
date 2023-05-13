@@ -5,9 +5,27 @@ options {
 }
 
 // The entry point for the parser.
+root:main|class;
+
+main:VOID MAIN OPEN_PAREN CLOSE_PAREN OPEN_BRACE expression* CLOSE_BRACE;
+
+classArgs:build|implementVariables|buildConst;
+
+implementVariables:DATA_TYPE ID SEMICOLON;
+
+class:CLASS ID EXTENDS STATELESS_WIDGET OPEN_BRACE classArgs* CLOSE_BRACE;
+
+
+buildConst:ID OPEN_PAREN arg* CLOSE_PAREN SEMICOLON;
+
+
+arg: ID;
+
+build:OVERRIDE WIDGET BUILD OPEN_PAREN BUILD_CONTEXT ID CLOSE_PAREN OPEN_BRACE RETURN widget SEMICOLON CLOSE_BRACE ;
+
 widget: scaffold | container | text | image | listView | appBar | textField | column | row | card | iconButton
         |   inkWell | expanded | bottomNavigationBar | slider | tabBar | tabBarView | drawer
-        | floatingActionButton | wrap | flex | textFormField | textButton | icon | sizedBox;
+        | floatingActionButton | wrap | flex | textFormField | textButton | icon | sizedBox|center;
 
 //---------------------------    WIDGETS     -------------------------------
 scaffold: SCAFFOLD OPEN_PAREN scaffoldArgs*  CLOSE_PAREN;
@@ -36,11 +54,12 @@ textFormField: TEXT_FORM_FIELD OPEN_PAREN  textFormFieldArgs* CLOSE_PAREN;
 textButton: TEXT_BUTTON OPEN_PAREN  textButtonArgs* CLOSE_PAREN;
 icon: ICON OPEN_PAREN  iconArgs* CLOSE_PAREN;
 sizedBox: SIZED_BOX OPEN_PAREN sizedBoxArgs* CLOSE_PAREN ;
+center: CENTER OPEN_PAREN centerArgs CLOSE_PAREN ;
 
 //------------------------- WIDGETS ARGS ---------------------
 scaffoldArgs:body|drawerArg|appBarArg|bottomNavigationBarArg|floatingActionButtonArg|backGroundColor;
 containerArgs:child|width|height|color|margin|padding;
-textArgs:STRING style;
+textArgs:STRING|style;
 imageArgs: imageArg|color|height|width;
 listviewArgs:children|padding;
 appBarArgs:title|leading|actions|backGroundColor;
@@ -49,7 +68,7 @@ columnArgs:children|mainAxis|crossAxis;
 rowArgs:children|mainAxis|crossAxis;
 cardArgs:color|margin|child;
 iconButtonArgs:iconArg|color|padding;
-inkwellArgs:child;
+inkwellArgs:child|onTap;
 expandedArgs:child|flexArg;
 bottomNavigationBarArgs:items|backGroundColor|currentIndex;
 sliderArgs:min|max;
@@ -58,12 +77,13 @@ tabBarViewArgs:children;
 drawerArgs:backGroundColor|child|width;
 floatingActionButtonArgs:child|backGroundColor;
 wrapArgs:children|crossAxis;
-flexArgs:child|flex;
+flexArgs:child|flexArg;
 textFormFieldArgs:style;
 textButtonArgs:child|style;
-iconArgs:size|color;
+iconArgs:size|color|ICONS;
 sizedBoxArgs:child|height|width;
 textStyleArgs: backGroundColor|color|fontSize;
+centerArgs: child;
 
 
 //---------------------------- ARGS --------------------------
@@ -75,40 +95,46 @@ bottomNavigationBarArg:BOTTOM_NAVIGATION_BAR_ARG COLON bottomNavigationBar;
 floatingActionButtonArg:FLOATING_ACTION_BUTTON_ARG COLON floatingActionButton;
 child:CHILD COLON widget;
 children: CHILDREN COLON OPEN_SQUARE widget* CLOSE_SQUARE;
-height:HEIGHT COLON (DOUBLE|INT);
-width:WIDTH COLON (DOUBLE|INT);
-color:COLOR COLON colors;
-margin:MARGIN COLON (DOUBLE|INT);
-padding:PADDING COLON (DOUBLE|INT);
+height:HEIGHT COLON DOUBLE;
+width:WIDTH COLON DOUBLE;
+color:COLOR COLON COLORS;
+margin:MARGIN COLON DOUBLE;
+padding:PADDING COLON DOUBLE;
 items:ITEMS COLON OPEN_SQUARE widget* CLOSE_SQUARE;
 currentIndex: CURRENT_INDEX COLON INT;
-backGroundColor:BACKGROUND_COLOR COLON colors;
-crossAxis:CROSS_AXIS_ALIGNMENT COLON axisValues;
-mainAxis:MAIN_AXIS_ALIGNMENT COLON axisValues;
+backGroundColor:BACKGROUND_COLOR COLON COLORS;
+crossAxis:CROSS_AXIS_ALIGNMENT COLON AXIS;
+mainAxis:MAIN_AXIS_ALIGNMENT COLON AXIS;
 style:STYLE COLON textStyle;
-fontSize:FONT_SIZE COLON (DOUBLE|INT);
+fontSize:FONT_SIZE COLON DOUBLE;
 imageArg:IMAGE_ARG COLON STRING;
 leading:LEADING COLON widget;
 title:TITLE COLON widget;
 actions:ACTIONS COLON OPEN_SQUARE widget* CLOSE_SQUARE;
 iconArg:ICON_ARG COLON widget;
 flexArg:FLEX_ARG COLON INT;
-min:MIN COLON (DOUBLE|INT);
-max:MAX COLON (DOUBLE|INT);
+min:MIN COLON DOUBLE;
+max:MAX COLON DOUBLE;
 tabs:TABS COLON OPEN_SQUARE widget* CLOSE_SQUARE;
-size:SIZE COLON (DOUBLE|INT);
+size:SIZE COLON DOUBLE;
+onTap:ON_TAP COLON OPEN_PAREN CLOSE_PAREN OPEN_BRACE expression* CLOSE_BRACE;
 
-//---------------------------- CONST ---------------------
-colors: RED
-          | BLUE
-          | YELLOW
-          | BLACK
-          | WHITE
-          | GREY
-          | GREEN
-          | GOLD
-          | PURBLE
-          | PINK ;
 
-axisValues:START|CENTER|END;
+//------------------------ NAVIGATION  ------------------
+expression:allowExp SEMICOLON;
 
+allowExp:navigateExp|runAppExp;
+
+runAppExp:RUN_APP OPEN_PAREN constructor CLOSE_PAREN;
+
+navigateExp:NAVIGATOR DOT transtion;
+
+transtion:push|pop;
+
+push:PUSH OPEN_PAREN constructor CLOSE_PAREN;
+
+pop:POP OPEN_PAREN CLOSE_PAREN;
+
+constructor:ID OPEN_PAREN constructorArg* CLOSE_PAREN;
+
+constructorArg:imageArg|TEXT_Arg COLON STRING;
