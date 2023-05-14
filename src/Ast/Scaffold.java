@@ -7,24 +7,24 @@ import java.util.List;
 
 public class Scaffold {
     //---------------------------    Attributes     -------------------------------
-    private List<ScaffoldArgs> scaffoldArgs;
+    private List<ScaffoldArgs> scaffoldArgsList;
 
     //---------------------------    Constructor     -------------------------------
     public Scaffold() {
-        this.scaffoldArgs = new ArrayList<>();
+        this.scaffoldArgsList = new ArrayList<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
     public List<ScaffoldArgs> getScaffoldArgs() {
-        return scaffoldArgs;
+        return scaffoldArgsList;
     }
 
-    public void setScaffoldArgs(List<ScaffoldArgs> scaffoldArgs) {
-        this.scaffoldArgs = scaffoldArgs;
+    public void setScaffoldArgs(List<ScaffoldArgs> scaffoldArgsList) {
+        this.scaffoldArgsList = scaffoldArgsList;
     }
     //---------------------------    Functions     -------------------------------
     public boolean isScaffoldArgsEmpty() {
-        return scaffoldArgs.isEmpty();
+        return scaffoldArgsList.isEmpty();
     }
 
     //---------------------------    Override Functions     -------------------------------
@@ -32,10 +32,10 @@ public class Scaffold {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Scaffold(\n");
-        if (scaffoldArgs == null || scaffoldArgs.isEmpty()) {
-            sb.append("  No scaffold arguments.\n");
+        if (scaffoldArgsList == null || scaffoldArgsList.isEmpty()) {
+            sb.append("No scaffold arguments.\n");
         } else {
-            for (ScaffoldArgs arg : scaffoldArgs) {
+            for (ScaffoldArgs arg : scaffoldArgsList) {
                 sb.append("  ").append(arg.toString()).append("\n");
             }
         }

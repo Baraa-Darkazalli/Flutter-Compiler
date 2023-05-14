@@ -5,27 +5,27 @@ import java.util.List;
 
 public class Drawer {
     //---------------------------    Attributes     -------------------------------
-    private List<DrawerArgs> drawerArgs;
+    private List<DrawerArgs> drawerArgsList;
 
     //---------------------------    Constructor     -------------------------------
     public Drawer() {
-        this.drawerArgs = new ArrayList<>();
+        this.drawerArgsList = new ArrayList<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
     public List<DrawerArgs> getDrawerArgs() {
-        return drawerArgs;
+        return drawerArgsList;
     }
 
-    public void setDrawerArgs(List<DrawerArgs> drawerArgs) {
-        this.drawerArgs = drawerArgs;
+    public void setDrawerArgs(List<DrawerArgs> drawerArgsList) {
+        this.drawerArgsList = drawerArgsList;
     }
 
     //---------------------------    Override Func     -------------------------------
     @Override
     public String toString() {
         return "Drawer{" +
-                "drawerArgs=" + drawerArgs +
+                "drawerArgsList=" + drawerArgsList +
                 '}';
     }
 }

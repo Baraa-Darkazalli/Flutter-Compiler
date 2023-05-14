@@ -7,20 +7,20 @@ import java.util.List;
 
 public class Container {
     //---------------------------    Attributes     -------------------------------
-    private List<ContainerArg> containerArgs;
+    private List<ContainerArg> containerArgsList;
 
     //---------------------------    Constructor     -------------------------------
     public Container() {
-        this.containerArgs = new ArrayList<>();
+        this.containerArgsList = new ArrayList<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
     public List<ContainerArg> getContainerArgs() {
-        return containerArgs;
+        return containerArgsList;
     }
 
-    public void setContainerArgs(List<ContainerArg> containerArgs) {
-        this.containerArgs = containerArgs;
+    public void setContainerArgs(List<ContainerArg> containerArgsList) {
+        this.containerArgsList = containerArgsList;
     }
 
     //---------------------------    Override Func     -------------------------------
@@ -28,7 +28,7 @@ public class Container {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Container\n");
-        for (ContainerArg attribute : containerArgs) {
+        for (ContainerArg attribute : containerArgsList) {
             sb.append(attribute.toString()).append("\n");
         }
         return sb.toString();
