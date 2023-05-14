@@ -1,0 +1,15 @@
+class Page2 extends StatelessWidget{
+
+Page2(x y);
+@override
+widget build(BuildContext context){
+return Scaffold(
+    appBar:AppBar()
+    body: Column(
+    children:[
+    Text('x')
+    Image(image:'y')
+    ]
+    ));
+}
+}

@@ -1,7 +1,20 @@
 lexer grammar LexerFile;
 
 
-
+//------------------- BEGGINING ----------------
+VOID:'void';
+MAIN:'main';
+RUN_APP:'runApp';
+CLASS:'class';
+EXTENDS:'extends';
+STATELESS_WIDGET:'StatelessWidget';
+OVERRIDE:'@override';
+WIDGET:'widget';
+BUILD:'build';
+BUILD_CONTEXT:'BuildContext';
+RETURN:'return';
+REQUIRED:'required';
+THIS:'this';
 //------------------- WIDGETS --------------------
 SCAFFOLD: 'Scaffold' ;
 CONTAINER: 'Container' ;
@@ -13,7 +26,7 @@ EXPANDED: 'Expanded';
 CARD: 'Card';
 ICON_BUTTON: 'IconButton';
 ICON:'Icon';
-SLIDER: 'Slider'; //
+SLIDER: 'Slider';
 DRAWER: 'Drawer';
 WRAP: 'Wrap';
 FLEX: 'Flex';
@@ -31,23 +44,32 @@ TAB_BAR_VIEW:'TabBarView';
 FLOATING_ACTION_BUTTON:'FloatingActionButton';
 TEXT_FORM_FIELD:'TextFormField';
 TEXT_STYLE:'TextStyle';
-
+CENTER:'Center';
 //-------------- COLORS ------------
-RED:'red';
-BLUE:'blue';
-YELLOW:'yellow';
-BLACK:'black';
-WHITE:'white';
-GREY:'grey';
-GREEN:'green';
-GOLD:'gold';
-PURBLE:'purble';
-PINK:'pink';
+
+COLORS:
+'red'|
+'blue'|
+'yellow'|
+'black'|
+'white'|
+'grey'|
+'green'|
+'gold'|
+'purble'|
+'pink';
+
+
+//-------------------- ICONS -----------
+ICONS:
+'back';
+
 
 //--------------------AXIS ----------
-START:'start';
-END:'end';
-CENTER:'center';
+AXIS:
+'start'|
+'end'|
+'center';
 
 //------------------ WIDGET ARGS  --------------
 BODY: 'body' ;
@@ -80,15 +102,23 @@ TITLE:'title';
 LEADING:'leading';
 ACTIONS:'actions';
 TABS:'tabs';
+TEXT_Arg:'text';
+
+//--------------------- FUNCTIONS --------------------
+ON_TAP:'onTap';
+//---------------------- NAVIGATION -------------------
+NAVIGATOR:'Navigator';
+PUSH:'push';
+POP:'pop';
 //----------------- BASE -------------------------
 fragment LETTER: [a-zA-Z];
 fragment DIGIT: [0-9];
+DOUBLE :  INT (DOT [0-9]*)?;
 INT: DIGIT+;
-DOUBLE : '-'? INT (DOT [0-9])*;
  ID: LETTER (LETTER | DIGIT | '_')*;
   FLOAT: DIGIT+ '.' DIGIT* | '.' DIGIT+;
-  STRING:('\''|'"') (LETTER|DIGIT|WS)* ('\''|'"')*;
-    IDENTIFIER: [a-zA-Z_$][a-zA-Z0-9_$]*;
+  STRING:('\''|'"') (LETTER|DIGIT|WS|DOT)* ('\''|'"')*;
+    IDENTIFIER: [a-zA-Z][a-zA-Z0-9_$]*;
     WS: [ \t\n\r]+ -> skip;
 //---------------  SYMBOLS  ------------
 
@@ -124,7 +154,5 @@ UNDER_SCORE:'_';
 QUOTES_SQ:'\'\'';
 QUOTES_DQ:'""';
 
-
-//-------------- DART ------------
-PRINT : 'print';
-
+//----------------------- DATA TYPE --------------------
+DATA_TYPE:'String'|'int';
