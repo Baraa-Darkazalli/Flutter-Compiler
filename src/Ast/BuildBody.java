@@ -2,28 +2,24 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
-import java.util.List;
-
-public class DartClass extends HtmlElement {
+public class BuildBody extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private String ClassName;
-
-    private List<ClassBody> classBody;
+    private Widget widget;
 
     //---------------------------    Setters & Getters     -------------------------------
-    public List<ClassBody> getClassBody() {
-        return classBody;
+    public Widget getWidget() {
+        return widget;
     }
 
-    public void setClassBody(List<ClassBody> classBody) {
-        this.classBody = classBody;
+    public void setWidget(Widget widget) {
+        this.widget = widget;
     }
 
     //---------------------------    Override Func     -------------------------------
     @Override
     public String toString() {
-        return "DartClass{" +
-                "classBody=" + classBody +
+        return "BuildBody{" +
+                "widget=" + widget +
                 '}';
     }
 

@@ -2,7 +2,7 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
-public class ConstructorArg extends HtmlElement {
+public class ClassArg extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private String DataType;
     private String AttributeName;
@@ -27,7 +27,7 @@ public class ConstructorArg extends HtmlElement {
     //---------------------------    Override Func     -------------------------------
     @Override
     public String toString() {
-        return "ConstructorArg{" +
+        return "ClassArg{" +
                 "DataType='" + DataType + '\'' +
                 ", AttributeName='" + AttributeName + '\'' +
                 '}';

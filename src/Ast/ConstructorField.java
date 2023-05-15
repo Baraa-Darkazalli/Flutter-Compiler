@@ -2,34 +2,34 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
-public class ConstructorArg extends HtmlElement {
+public class ConstructorField extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private String DataType;
-    private String AttributeName;
+    private String string;
+    private double value;
 
     //---------------------------    Setters & Getters     -------------------------------
     public String getDataType() {
-        return DataType;
+        return string;
     }
 
-    public void setDataType(String dataType) {
-        DataType = dataType;
+    public void setDataType(String string) {
+        this.string = string;
     }
 
-    public String getAttributeName() {
-        return AttributeName;
+    public double getAttributeName() {
+        return value;
     }
 
-    public void setAttributeName(String attributeName) {
-        AttributeName = attributeName;
+    public void setAttributeName(double value) {
+        this.value = value;
     }
 
     //---------------------------    Override Func     -------------------------------
     @Override
     public String toString() {
-        return "ConstructorArg{" +
-                "DataType='" + DataType + '\'' +
-                ", AttributeName='" + AttributeName + '\'' +
+        return "ConstructorField{" +
+                "string=" + string +
+                ", value=" + value +
                 '}';
     }
 

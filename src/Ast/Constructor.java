@@ -6,23 +6,32 @@ import java.util.List;
 
 public class Constructor extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private
-    private List<ConstructorArg> constructorArgs;
+    private String identifier;
+    private List<ConstructorField> constructorFields;
 
     //---------------------------    Setters & Getters     -------------------------------
-    public List<ConstructorArg> getConstructorArgs() {
-        return constructorArgs;
+
+    public String getIdentifier() {
+        return identifier;
     }
 
-    public void setConstructorArgs(List<ConstructorArg> constructorArgs) {
-        this.constructorArgs = constructorArgs;
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 
-    //---------------------------    Override Func     -------------------------------
+    public List<ConstructorField> getConstructorFields() {
+        return constructorFields;
+    }
+
+    public void setConstructorFields(List<ConstructorField> constructorFields) {
+        this.constructorFields = constructorFields;
+    }
+
     @Override
     public String toString() {
         return "Constructor{" +
-                "constructorArgs=" + constructorArgs +
+                "identifier=" + identifier +
+                ", constructorFields=" + constructorFields +
                 '}';
     }
 

@@ -29,7 +29,7 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitClass(ParserFile.ClassContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ParserFile#classArgs}.
+	 * Visit a parse tree produced by {@link ParserFile#classArgsprivate}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
