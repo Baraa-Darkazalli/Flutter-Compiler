@@ -9,19 +9,27 @@ root:main|class;
 
 main:VOID MAIN OPEN_PAREN CLOSE_PAREN OPEN_BRACE expression* CLOSE_BRACE;
 
-classArgs:build|implementVariables|buildConst;
+class:CLASS className (EXTENDS STATELESS_WIDGET)? OPEN_BRACE classBody CLOSE_BRACE;
 
-implementVariables:DATA_TYPE ID SEMICOLON;
+classBody: (classAttribute | constructorDeclaration | buildFunctionDeclaration)*;
 
-class:CLASS ID EXTENDS STATELESS_WIDGET OPEN_BRACE classArgs* CLOSE_BRACE;
+classAttribute: dataType attributeName SEMICOLON;
 
+constructorDeclaration: className OPEN_PAREN constructorArguments? CLOSE_PAREN SEMICOLON;
 
-buildConst:ID OPEN_PAREN arg* CLOSE_PAREN SEMICOLON;
+buildFunctionDeclaration: WIDGET BUILD OPEN_PAREN buildArguments? CLOSE_PAREN OPEN_BRACE buildBody CLOSE_BRACE;
 
+constructorArguments: dataType attributeName (COMMA dataType attributeName)*;
 
-arg: ID;
+buildArguments: dataType attributeName (COMMA dataType attributeName)*;
 
-build:OVERRIDE WIDGET BUILD OPEN_PAREN BUILD_CONTEXT ID CLOSE_PAREN OPEN_BRACE RETURN widget SEMICOLON CLOSE_BRACE ;
+buildBody:RETURN widget SEMICOLON; // Build function body grammar rules...
+
+dataType:DATA_TYPE; // Define your data types here...
+
+attributeName: IDENTIFIER;
+
+className: IDENTIFIER;
 
 widget: scaffold | container | text | image | listView | appBar | textField | column | row | card | iconButton
         |   inkWell | expanded | bottomNavigationBar | slider | tabBar | tabBarView | drawer
@@ -137,4 +145,10 @@ pop:POP OPEN_PAREN CLOSE_PAREN;
 
 constructor:ID OPEN_PAREN constructorArg* CLOSE_PAREN;
 
-constructorArg:imageArg|TEXT_Arg COLON STRING;
+constructorArg:imageArg|(TEXT_Arg COLON STRING);
+
+
+
+
+
+

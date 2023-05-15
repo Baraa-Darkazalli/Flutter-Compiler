@@ -1,0 +1,37 @@
+class Page1 extends StatelessWidget{
+
+@override
+widget build(BuildContext context){
+return Scaffold(
+    appBar:AppBar()
+    body:Column(
+        children:[
+            InkWell(
+            onTap:(){
+                Navigator.push(Page1(image:'image1.png' text:'name1'));
+                }
+            child:
+                Column(
+                    children:[
+                        Text('name1')
+                        Image(image:'image1.png')
+                        ]
+                    )
+            )
+            InkWell(
+            onTap:(){
+                Navigator.push(Page2(image:'image2.png' text:'name2'));
+                }
+            child:
+                Column(
+                    children:[
+                        Text('name2')
+                        Image(image:'image2.png')
+                        ]
+                    )
+            )
+            ]
+        )
+    );
+}
+}
