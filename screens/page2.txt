@@ -1,8 +1,8 @@
 class Page2 extends StatelessWidget{
 
-Page2(x y);
-@override
-widget build(BuildContext context){
+Page2(String photo String name);
+
+widget build(){
 return Scaffold(
     appBar:AppBar()
     body: Column(
