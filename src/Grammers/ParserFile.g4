@@ -11,17 +11,17 @@ main:VOID MAIN OPEN_PAREN CLOSE_PAREN OPEN_BRACE expression* CLOSE_BRACE;
 
 class:CLASS className (EXTENDS STATELESS_WIDGET)? OPEN_BRACE classBody CLOSE_BRACE;
 
-classBody: (classAttribute | constructorDeclaration | buildFunctionDeclaration)*;
+classBody: (classArg | constructorDeclaration | buildFunctionDeclaration)*;
 
-classAttribute: dataType attributeName SEMICOLON;
+classArg: dataType attributeName SEMICOLON;
 
-constructorDeclaration: className OPEN_PAREN constructorArguments? CLOSE_PAREN SEMICOLON;
+constructorDeclaration: className OPEN_PAREN constructorArg* CLOSE_PAREN SEMICOLON;
 
-buildFunctionDeclaration: WIDGET BUILD OPEN_PAREN buildArguments? CLOSE_PAREN OPEN_BRACE buildBody CLOSE_BRACE;
+buildFunctionDeclaration: WIDGET BUILD OPEN_PAREN buildArg? CLOSE_PAREN OPEN_BRACE buildBody CLOSE_BRACE;
 
-constructorArguments: (dataType attributeName COMMA?)* ;
+constructorArg: dataType attributeName ;
 
-buildArguments: dataType attributeName (COMMA dataType attributeName)*;
+buildArg: dataType attributeName (COMMA dataType attributeName)*;
 
 buildBody:RETURN widget SEMICOLON; // Build function body grammar rules...
 
@@ -143,7 +143,9 @@ push:PUSH OPEN_PAREN constructor CLOSE_PAREN;
 
 pop:POP OPEN_PAREN CLOSE_PAREN;
 
-constructor:IDENTIFIER OPEN_PAREN constructorArguments? CLOSE_PAREN;
+constructor:IDENTIFIER OPEN_PAREN constructoFilled* CLOSE_PAREN;
+
+constructoFilled:STRING|DOUBLE;
 
 
 
