@@ -19,7 +19,7 @@ constructorDeclaration: className OPEN_PAREN constructorArguments? CLOSE_PAREN S
 
 buildFunctionDeclaration: WIDGET BUILD OPEN_PAREN buildArguments? CLOSE_PAREN OPEN_BRACE buildBody CLOSE_BRACE;
 
-constructorArguments: dataType attributeName (COMMA dataType attributeName)*;
+constructorArguments: (dataType attributeName COMMA?)* ;
 
 buildArguments: dataType attributeName (COMMA dataType attributeName)*;
 
@@ -32,7 +32,7 @@ attributeName: IDENTIFIER;
 className: IDENTIFIER;
 
 widget: scaffold | container | text | image | listView | appBar | textField | column | row | card | iconButton
-        |   inkWell | expanded | bottomNavigationBar | slider | tabBar | tabBarView | drawer
+        |  inkWell  | expanded | bottomNavigationBar | slider | tabBar | tabBarView | drawer
         | floatingActionButton | wrap | flex | textFormField | textButton | icon | sizedBox|center;
 
 //---------------------------    WIDGETS     -------------------------------
@@ -143,9 +143,8 @@ push:PUSH OPEN_PAREN constructor CLOSE_PAREN;
 
 pop:POP OPEN_PAREN CLOSE_PAREN;
 
-constructor:ID OPEN_PAREN constructorArg* CLOSE_PAREN;
+constructor:IDENTIFIER OPEN_PAREN constructorArguments? CLOSE_PAREN;
 
-constructorArg:imageArg|(TEXT_Arg COLON STRING);
 
 
 
