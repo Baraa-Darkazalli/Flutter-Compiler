@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Constructor extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
+    private
     private List<ConstructorArg> constructorArgs;
 
     //---------------------------    Setters & Getters     -------------------------------
