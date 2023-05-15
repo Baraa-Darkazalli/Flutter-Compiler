@@ -1,9 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextStyle {
+public class TextStyle extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<TextStyleArgs> textStyleArgs;
 
@@ -27,5 +29,15 @@ public class TextStyle {
         return "TextStyle{" +
                 "textStyleArgs=" + textStyleArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

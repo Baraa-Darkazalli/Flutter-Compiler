@@ -5,7 +5,7 @@ import Ast.Classes.HtmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Container {
+public class Container extends HtmlElement{
     //---------------------------    Attributes     -------------------------------
     private List<ContainerArg> containerArgsList;
 
@@ -32,5 +32,15 @@ public class Container {
             sb.append(attribute.toString()).append("\n");
         }
         return sb.toString();
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

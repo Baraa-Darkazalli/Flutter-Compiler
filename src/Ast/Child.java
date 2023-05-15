@@ -1,6 +1,8 @@
 package Ast;
 
-public class Child {
+import Ast.Classes.HtmlElement;
+
+public class Child extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Widget widget;
 
@@ -19,5 +21,15 @@ public class Child {
         return "Child{" +
                 "widget=" + widget +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

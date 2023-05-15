@@ -1,6 +1,8 @@
 package Ast;
 
-public class DrawerArgs {
+import Ast.Classes.HtmlElement;
+
+public class DrawerArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private BackGroundColor backGroundColor;
     private Child child;
@@ -39,5 +41,15 @@ public class DrawerArgs {
                 ", child=" + child +
                 ", width=" + width +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

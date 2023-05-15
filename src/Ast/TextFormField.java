@@ -1,9 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextFormField {
+public class TextFormField extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<TextFormFieldArgs> textFormFieldArgs;
 
@@ -27,5 +29,15 @@ public class TextFormField {
         return "TextFormField{" +
                 "textFormFieldArgs=" + textFormFieldArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

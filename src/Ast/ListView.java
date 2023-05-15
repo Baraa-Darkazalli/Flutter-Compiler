@@ -1,9 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListView {
+public class ListView extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<ListviewArgs> listviewArgs;
 
@@ -27,5 +29,15 @@ public class ListView {
         return "ListView{" +
                 "listviewArgs=" + listviewArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

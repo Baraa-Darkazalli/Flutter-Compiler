@@ -1,6 +1,8 @@
 package Ast;
 
-public class BackGroundColor {
+import Ast.Classes.HtmlElement;
+
+public class BackGroundColor extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Colors colors;
 
@@ -19,5 +21,15 @@ public class BackGroundColor {
         return "BackGroundColor{" +
                 "colors=" + colors +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

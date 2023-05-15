@@ -1,6 +1,8 @@
 package Ast;
 
-public class BottomNavigationBarArgs {
+import Ast.Classes.HtmlElement;
+
+public class BottomNavigationBarArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Items items;
     private BackGroundColor backGroundColor;
@@ -39,5 +41,15 @@ public class BottomNavigationBarArgs {
                 ", backGroundColor=" + backGroundColor +
                 ", currentIndex=" + currentIndex +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

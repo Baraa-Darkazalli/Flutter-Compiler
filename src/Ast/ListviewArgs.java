@@ -1,6 +1,8 @@
 package Ast;
 
-public class ListviewArgs {
+import Ast.Classes.HtmlElement;
+
+public class ListviewArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Children children;
     private Padding padding;
@@ -29,5 +31,15 @@ public class ListviewArgs {
                 "children=" + children +
                 ", padding=" + padding +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

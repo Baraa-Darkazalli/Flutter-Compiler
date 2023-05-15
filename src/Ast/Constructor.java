@@ -1,8 +1,10 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.List;
 
-public class Constructor {
+public class Constructor extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<ConstructorArg> constructorArgs;
 
@@ -21,5 +23,15 @@ public class Constructor {
         return "Constructor{" +
                 "constructorArgs=" + constructorArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

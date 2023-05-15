@@ -1,6 +1,8 @@
 package Ast;
 
-public class TabBarViewArgs {
+import Ast.Classes.HtmlElement;
+
+public class TabBarViewArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Children children;
 
@@ -19,5 +21,15 @@ public class TabBarViewArgs {
         return "TabBarViewArgs{" +
                 "children=" + children +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

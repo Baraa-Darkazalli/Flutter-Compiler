@@ -1,6 +1,8 @@
 package Ast;
 
-public class NavigateExp {
+import Ast.Classes.HtmlElement;
+
+public class NavigateExp extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Transtion transtion;
 
@@ -19,5 +21,15 @@ public class NavigateExp {
         return "NavigateExp{" +
                 "transtion=" + transtion +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

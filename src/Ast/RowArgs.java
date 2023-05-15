@@ -1,6 +1,8 @@
 package Ast;
 
-public class RowArgs {
+import Ast.Classes.HtmlElement;
+
+public class RowArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Children children;
     private MainAxis mainAxis;
@@ -39,5 +41,15 @@ public class RowArgs {
                 ", mainAxis=" + mainAxis +
                 ", crossAxis=" + crossAxis +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

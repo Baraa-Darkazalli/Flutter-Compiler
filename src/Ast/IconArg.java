@@ -1,6 +1,8 @@
 package Ast;
 
-public class IconArg {
+import Ast.Classes.HtmlElement;
+
+public class IconArg extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Widget widget;
 
@@ -19,5 +21,15 @@ public class IconArg {
         return "IconArg{" +
                 "widget=" + widget +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

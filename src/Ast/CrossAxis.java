@@ -1,6 +1,8 @@
 package Ast;
 
-public class CrossAxis {
+import Ast.Classes.HtmlElement;
+
+public class CrossAxis extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Axisvalues axisvalues;
 
@@ -19,5 +21,15 @@ public class CrossAxis {
         return "CrossAxis{" +
                 "axisvalues=" + axisvalues +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

@@ -1,6 +1,8 @@
 package Ast;
 
-public class SizedBoxArgs {
+import Ast.Classes.HtmlElement;
+
+public class SizedBoxArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Child child;
     private Height height;
@@ -39,5 +41,15 @@ public class SizedBoxArgs {
                 ", height=" + height +
                 ", width=" + width +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

@@ -1,9 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextButton {
+public class TextButton extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<TextButtonArgs> textButtonArgs;
 
@@ -27,5 +29,15 @@ public class TextButton {
         return "TextButton{" +
                 "textButtonArgs=" + textButtonArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

@@ -1,6 +1,8 @@
 package Ast;
 
-public class TextStyleArgs {
+import Ast.Classes.HtmlElement;
+
+public class TextStyleArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private BackGroundColor backGroundColor;
     private Color color;
@@ -39,5 +41,15 @@ public class TextStyleArgs {
                 ", color=" + color +
                 ", fontSize=" + fontSize +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

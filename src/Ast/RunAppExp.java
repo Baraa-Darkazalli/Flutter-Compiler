@@ -1,6 +1,8 @@
 package Ast;
 
-public class RunAppExp {
+import Ast.Classes.HtmlElement;
+
+public class RunAppExp extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Constructor constructor;
 
@@ -19,5 +21,15 @@ public class RunAppExp {
         return "RunAppExp{" +
                 "constructor=" + constructor +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

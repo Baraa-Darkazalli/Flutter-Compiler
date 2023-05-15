@@ -1,9 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Image {
+public class Image extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<ImageArgs> imageArgs;
 
@@ -27,5 +29,15 @@ public class Image {
         return "Image{" +
                 "imageArgs=" + imageArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

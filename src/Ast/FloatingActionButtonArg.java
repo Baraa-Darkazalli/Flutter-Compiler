@@ -1,6 +1,8 @@
 package Ast;
 
-public class FloatingActionButtonArg {
+import Ast.Classes.HtmlElement;
+
+public class FloatingActionButtonArg extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private FloatingActionButton floatingActionButton;
 
@@ -19,5 +21,15 @@ public class FloatingActionButtonArg {
         return "FloatingActionButtonArg{" +
                 "floatingActionButton=" + floatingActionButton +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

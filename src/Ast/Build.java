@@ -1,6 +1,8 @@
 package Ast;
 
-public class Build {
+import Ast.Classes.HtmlElement;
+
+public class Build extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Widget widget;
 
@@ -19,5 +21,15 @@ public class Build {
         return "Build{" +
                 "widget=" + widget +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

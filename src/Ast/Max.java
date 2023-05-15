@@ -1,6 +1,8 @@
 package Ast;
 
-public class Max {
+import Ast.Classes.HtmlElement;
+
+public class Max extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private double value;
 
@@ -19,5 +21,15 @@ public class Max {
         return "Max{" +
                 "value=" + value +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

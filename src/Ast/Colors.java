@@ -1,6 +1,8 @@
 package Ast;
 
-public class Colors {
+import Ast.Classes.HtmlElement;
+
+public class Colors extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private String color;
 
@@ -19,5 +21,15 @@ public class Colors {
         return "Colors{" +
                 "color='" + color + '\'' +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

@@ -1,6 +1,8 @@
 package Ast;
 
-public class Expression {
+import Ast.Classes.HtmlElement;
+
+public class Expression extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private AllowExp allowExp;
 
@@ -19,5 +21,15 @@ public class Expression {
         return "Expression{" +
                 "allowExp=" + allowExp +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

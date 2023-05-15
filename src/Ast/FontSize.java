@@ -1,6 +1,8 @@
 package Ast;
 
-public class FontSize {
+import Ast.Classes.HtmlElement;
+
+public class FontSize extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private double value;
 
@@ -19,5 +21,15 @@ public class FontSize {
         return "FontSize{" +
                 "value=" + value +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

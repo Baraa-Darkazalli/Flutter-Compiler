@@ -1,6 +1,8 @@
 package Ast;
 
-public class Padding {
+import Ast.Classes.HtmlElement;
+
+public class Padding extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private double value;
 
@@ -19,5 +21,15 @@ public class Padding {
         return "Padding{" +
                 "value=" + value +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

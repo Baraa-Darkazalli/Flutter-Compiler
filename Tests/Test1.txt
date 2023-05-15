@@ -8,7 +8,7 @@ return Scaffold(
         children:[
             InkWell(
             onTap:(){
-                Navigator.push(Page1(image:'image1.png' text:'name1'));
+                Navigator.push(Page2(image:'image1.png' text:'name1'));
                 }
             child:
                 Column(

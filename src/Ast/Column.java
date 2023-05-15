@@ -1,9 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Column {
+public class Column extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<ColumnArgs> columnArgs;
 
@@ -27,5 +29,15 @@ public class Column {
         return "Column{" +
                 "columnArgs=" + columnArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

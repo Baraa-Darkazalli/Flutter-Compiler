@@ -1,6 +1,8 @@
 package Ast;
 
-public class ImageArg {
+import Ast.Classes.HtmlElement;
+
+public class ImageArg extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private String value;
 
@@ -19,5 +21,15 @@ public class ImageArg {
         return "ImageArg{" +
                 "value='" + value + '\'' +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

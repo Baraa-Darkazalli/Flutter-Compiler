@@ -1,6 +1,8 @@
 package Ast;
 
-public class Root {
+import Ast.Classes.HtmlElement;
+
+public class Root extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private DartMain dartMain;
     private DartClass dartClass;
@@ -29,5 +31,15 @@ public class Root {
                 "dartMain=" + dartMain +
                 ", dartClass=" + dartClass +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

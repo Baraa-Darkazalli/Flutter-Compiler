@@ -1,6 +1,8 @@
 package Ast;
 
-public class ClassArgs {
+import Ast.Classes.HtmlElement;
+
+public class ClassArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Build build;
     private ImplementVariables implementVariables;
@@ -39,5 +41,15 @@ public class ClassArgs {
                 ", implementVariables=" + implementVariables +
                 ", buildConst=" + buildConst +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

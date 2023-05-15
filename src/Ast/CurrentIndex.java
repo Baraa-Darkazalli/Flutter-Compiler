@@ -1,6 +1,8 @@
 package Ast;
 
-public class CurrentIndex {
+import Ast.Classes.HtmlElement;
+
+public class CurrentIndex extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private int value;
 
@@ -19,5 +21,15 @@ public class CurrentIndex {
         return "CurrentIndex{" +
                 "value=" + value +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

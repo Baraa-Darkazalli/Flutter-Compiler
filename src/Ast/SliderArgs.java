@@ -1,6 +1,8 @@
 package Ast;
 
-public class SliderArgs {
+import Ast.Classes.HtmlElement;
+
+public class SliderArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Min min;
     private Max max;
@@ -29,5 +31,15 @@ public class SliderArgs {
                 "min=" + min +
                 ", max=" + max +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

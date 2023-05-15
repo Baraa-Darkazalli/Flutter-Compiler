@@ -1,9 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class SizedBox {
+public class SizedBox extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<SizedBoxArgs> sizedBoxArgs;
 
@@ -27,5 +29,15 @@ public class SizedBox {
         return "SizedBox{" +
                 "sizedBoxArgs=" + sizedBoxArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

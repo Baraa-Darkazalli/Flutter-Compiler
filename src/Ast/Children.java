@@ -1,9 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Children {
+public class Children extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<Widget> widgets;
 
@@ -27,5 +29,15 @@ public class Children {
         return "Children{" +
                 "widgets=" + widgets +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

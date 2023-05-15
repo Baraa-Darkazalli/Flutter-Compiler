@@ -1,6 +1,8 @@
 package Ast;
 
-public class Width {
+import Ast.Classes.HtmlElement;
+
+public class Width extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private double value;
 
@@ -19,5 +21,15 @@ public class Width {
         return "Width{" +
                 "value=" + value +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

@@ -1,6 +1,8 @@
 package Ast;
 
-public class InkWellArgs {
+import Ast.Classes.HtmlElement;
+
+public class InkWellArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Child child;
 
@@ -20,5 +22,15 @@ public class InkWellArgs {
         return "InkWellArgs{" +
                 "child=" + child +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

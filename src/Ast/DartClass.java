@@ -1,8 +1,10 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.List;
 
-public class DartClass {
+public class DartClass extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<ClassArgs> classArgs;
 
@@ -21,5 +23,15 @@ public class DartClass {
         return "DartClass{" +
                 "classArgs=" + classArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

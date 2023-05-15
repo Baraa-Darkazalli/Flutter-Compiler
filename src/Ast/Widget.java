@@ -1,6 +1,8 @@
 package Ast;
 
-public class Widget {
+import Ast.Classes.HtmlElement;
+
+public class Widget extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Scaffold scaffold;
     private Container container;
@@ -264,4 +266,13 @@ public class Widget {
         return sb.toString();
     }
 
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
+    }
 }

@@ -1,6 +1,8 @@
 package Ast;
 
-public class AllowExp {
+import Ast.Classes.HtmlElement;
+
+public class AllowExp extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private NavigateExp navigateExp;
     private RunAppExp runAppExp;
@@ -29,5 +31,15 @@ public class AllowExp {
                 "navigateExp=" + navigateExp +
                 ", runAppExp=" + runAppExp +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

@@ -1,6 +1,8 @@
 package Ast;
 
-public class Margin {
+import Ast.Classes.HtmlElement;
+
+public class Margin extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private double value;
 
@@ -19,5 +21,15 @@ public class Margin {
         return "Margin{" +
                 "value=" + value +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

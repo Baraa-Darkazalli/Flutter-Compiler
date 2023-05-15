@@ -1,8 +1,10 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.List;
 
-public class DartMain {
+public class DartMain extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<Expression> expressions;
 
@@ -21,5 +23,15 @@ public class DartMain {
         return "DartMain{" +
                 "expressions=" + expressions +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

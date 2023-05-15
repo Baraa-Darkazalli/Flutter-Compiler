@@ -1,6 +1,8 @@
 package Ast;
 
-public class MainAxis {
+import Ast.Classes.HtmlElement;
+
+public class MainAxis extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Axisvalues axisvalues;
 
@@ -19,5 +21,15 @@ public class MainAxis {
         return "MainAxis{" +
                 "axisvalues=" + axisvalues +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

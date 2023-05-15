@@ -1,6 +1,8 @@
 package Ast;
 
-public class TabBarArgs {
+import Ast.Classes.HtmlElement;
+
+public class TabBarArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Tabs tabs;
     private Padding padding;
@@ -29,5 +31,15 @@ public class TabBarArgs {
                 "tabs=" + tabs +
                 ", padding=" + padding +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

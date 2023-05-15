@@ -1,9 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Wrap {
+public class Wrap extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<WrapArgs> wrapArgs;
 
@@ -27,5 +29,15 @@ public class Wrap {
         return "Wrap{" +
                 "wrapArgs=" + wrapArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

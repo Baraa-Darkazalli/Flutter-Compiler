@@ -1,6 +1,8 @@
 package Ast;
 
-public class TextButtonArgs {
+import Ast.Classes.HtmlElement;
+
+public class TextButtonArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Child child;
     private Style style;
@@ -30,5 +32,15 @@ public class TextButtonArgs {
                 "child=" + child +
                 ", style=" + style +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

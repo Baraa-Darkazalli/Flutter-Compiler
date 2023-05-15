@@ -1,6 +1,8 @@
 package Ast;
 
-public class Transtion {
+import Ast.Classes.HtmlElement;
+
+public class Transtion extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Push push;
     private Pop pop;
@@ -29,5 +31,15 @@ public class Transtion {
                 "push=" + push +
                 ", pop=" + pop +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

@@ -1,6 +1,8 @@
 package Ast;
 
-public class ExpandedArgs {
+import Ast.Classes.HtmlElement;
+
+public class ExpandedArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Child child;
     private FlexArg flexArg;
@@ -29,5 +31,15 @@ public class ExpandedArgs {
                 "child=" + child +
                 ", flexArg=" + flexArg +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

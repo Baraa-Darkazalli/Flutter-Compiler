@@ -1,9 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Flex {
+public class Flex extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<FlexArgs> flexArgs;
 
@@ -27,5 +29,15 @@ public class Flex {
         return "Flex{" +
                 "flexArgs=" + flexArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

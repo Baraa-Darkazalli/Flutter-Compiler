@@ -1,6 +1,8 @@
 package Ast;
 
-public class Push {
+import Ast.Classes.HtmlElement;
+
+public class Push extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Constructor constructor;
 
@@ -19,5 +21,15 @@ public class Push {
         return "Push{" +
                 "constructor=" + constructor +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

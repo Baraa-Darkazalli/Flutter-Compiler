@@ -1,6 +1,8 @@
 package Ast;
 
-public class AppBarArgs {
+import Ast.Classes.HtmlElement;
+
+public class AppBarArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Title title;
     private Leading leading;
@@ -49,5 +51,15 @@ public class AppBarArgs {
                 ", actions=" + actions +
                 ", backGroundColor=" + backGroundColor +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

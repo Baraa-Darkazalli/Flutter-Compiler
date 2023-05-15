@@ -1,9 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabView {
+public class TabView extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<TabBarViewArgs> tabBarViewArgs;
 
@@ -27,5 +29,15 @@ public class TabView {
         return "TabView{" +
                 "tabBarViewArgs=" + tabBarViewArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

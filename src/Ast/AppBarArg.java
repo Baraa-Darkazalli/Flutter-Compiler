@@ -1,9 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppBarArg {
+public class AppBarArg extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<AppBarArgs> appBarArgs;
 
@@ -27,5 +29,15 @@ public class AppBarArg {
         return "AppBarArg{" +
                 "appBarArgs=" + appBarArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

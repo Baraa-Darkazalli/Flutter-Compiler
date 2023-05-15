@@ -1,6 +1,8 @@
 package Ast;
 
-public class BottomNavigationBarArg {
+import Ast.Classes.HtmlElement;
+
+public class BottomNavigationBarArg extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private BottomNavigationBar bottomNavigationBar;
 
@@ -19,5 +21,15 @@ public class BottomNavigationBarArg {
         return "BottomNavigationBarArg{" +
                 "bottomNavigationBar=" + bottomNavigationBar +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

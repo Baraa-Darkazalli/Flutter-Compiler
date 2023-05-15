@@ -1,6 +1,8 @@
 package Ast;
 
-public class ScaffoldArgs {
+import Ast.Classes.HtmlElement;
+
+public class ScaffoldArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Body body;
     private DrawerArg drawerArg;
@@ -72,5 +74,15 @@ public class ScaffoldArgs {
         sb.append("BackGroundColor: ").append(backGroundColor != null ? backGroundColor.toString() : "null").append("\n");
 
         return sb.toString();
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

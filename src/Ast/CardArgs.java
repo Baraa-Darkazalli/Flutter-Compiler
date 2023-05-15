@@ -1,6 +1,8 @@
 package Ast;
 
-public class CardArgs {
+import Ast.Classes.HtmlElement;
+
+public class CardArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Color color;
     private Margin margin;
@@ -39,5 +41,15 @@ public class CardArgs {
                 ", margin=" + margin +
                 ", child=" + child +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

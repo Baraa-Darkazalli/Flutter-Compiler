@@ -1,8 +1,11 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+import com.sun.org.apache.xpath.internal.Arg;
+
 import java.util.List;
 
-public class BuildConst {
+public class BuildConst extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<Arg> args;
 
@@ -21,5 +24,15 @@ public class BuildConst {
         return "BuildConst{" +
                 "args=" + args +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

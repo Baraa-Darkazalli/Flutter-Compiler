@@ -1,13 +1,14 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class FlexArgs {
+public class FlexArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Child child;
-
-    //Should Add Flex
+    private FlexArg flexArg;
 
     //---------------------------    Setters & Getters     -------------------------------
     public Child getChild() {
@@ -18,11 +19,29 @@ public class FlexArgs {
         this.child = child;
     }
 
-    //---------------------------    Override Func     -------------------------------
+    public FlexArg getFlexArg() {
+        return flexArg;
+    }
+
+    public void setFlexArg(FlexArg flexArg) {
+        this.flexArg = flexArg;
+    }
+
     @Override
     public String toString() {
         return "FlexArgs{" +
                 "child=" + child +
+                ", flexArg=" + flexArg +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

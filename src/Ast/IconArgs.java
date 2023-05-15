@@ -1,6 +1,8 @@
 package Ast;
 
-public class IconArgs {
+import Ast.Classes.HtmlElement;
+
+public class IconArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Size size;
     private Color child;
@@ -29,5 +31,15 @@ public class IconArgs {
                 "size=" + size +
                 ", child=" + child +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

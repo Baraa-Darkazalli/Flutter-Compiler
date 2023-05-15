@@ -1,6 +1,8 @@
 package Ast;
 
-public class Min {
+import Ast.Classes.HtmlElement;
+
+public class Min extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private double value;
 
@@ -19,5 +21,15 @@ public class Min {
         return "Min{" +
                 "value=" + value +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

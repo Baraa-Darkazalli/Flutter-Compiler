@@ -5,7 +5,7 @@ import Ast.Classes.HtmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Scaffold {
+public class Scaffold extends HtmlElement{
     //---------------------------    Attributes     -------------------------------
     private List<ScaffoldArgs> scaffoldArgsList;
 
@@ -41,5 +41,15 @@ public class Scaffold {
         }
         sb.append(")\n");
         return sb.toString();
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

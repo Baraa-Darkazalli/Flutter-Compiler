@@ -1,8 +1,10 @@
 package Ast;
 
+import Ast.Classes.HtmlElement;
+
 import java.util.List;
 
-public class FloatingActionButton {
+public class FloatingActionButton extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<FloatingActionButtonArgs> floatingActionButtonArgs;
 
@@ -21,5 +23,15 @@ public class FloatingActionButton {
         return "FloatingActionButton{" +
                 "floatingActionButtonArgs=" + floatingActionButtonArgs +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

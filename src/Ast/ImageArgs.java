@@ -1,6 +1,8 @@
 package Ast;
 
-public class ImageArgs {
+import Ast.Classes.HtmlElement;
+
+public class ImageArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private ImageArg imageArg;
     private Color color;
@@ -49,5 +51,15 @@ public class ImageArgs {
                 ", height=" + height +
                 ", width=" + width +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

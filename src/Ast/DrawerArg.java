@@ -1,6 +1,8 @@
 package Ast;
 
-public class DrawerArg {
+import Ast.Classes.HtmlElement;
+
+public class DrawerArg extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Drawer drawer;
 
@@ -19,5 +21,15 @@ public class DrawerArg {
         return "DrawerArg{" +
                 "drawer=" + drawer +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

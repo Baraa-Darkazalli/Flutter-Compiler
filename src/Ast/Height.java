@@ -1,6 +1,8 @@
 package Ast;
 
-public class Height {
+import Ast.Classes.HtmlElement;
+
+public class Height extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private double value;
 
@@ -19,5 +21,15 @@ public class Height {
         return "Height{" +
                 "value=" + value +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

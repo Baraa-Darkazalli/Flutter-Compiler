@@ -1,6 +1,8 @@
 package Ast;
 
-public class ContainerArg {
+import Ast.Classes.HtmlElement;
+
+public class ContainerArg extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Child child;
     private Width width;
@@ -69,5 +71,15 @@ public class ContainerArg {
                 ", margin=" + margin +
                 ", padding=" + padding +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

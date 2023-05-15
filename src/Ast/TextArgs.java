@@ -1,6 +1,8 @@
 package Ast;
 
-public class TextArgs {
+import Ast.Classes.HtmlElement;
+
+public class TextArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Style style;
 
@@ -19,5 +21,15 @@ public class TextArgs {
         return "TextArgs{" +
                 "style=" + style +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }

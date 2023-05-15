@@ -1,6 +1,8 @@
 package Ast;
 
-public class WrapArgs {
+import Ast.Classes.HtmlElement;
+
+public class WrapArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Children children;
     private CrossAxis crossAxis;
@@ -30,5 +32,15 @@ public class WrapArgs {
                 "children=" + children +
                 ", crossAxis=" + crossAxis +
                 '}';
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return null;
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        return null;
     }
 }
