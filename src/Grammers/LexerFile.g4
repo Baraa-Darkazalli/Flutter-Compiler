@@ -2,19 +2,22 @@ lexer grammar LexerFile;
 
 
 //------------------- BEGGINING ----------------
+CLASS:'class';
+EXTENDS:'extends';
 VOID:'void';
 MAIN:'main';
 RUN_APP:'runApp';
-CLASS:'class';
-EXTENDS:'extends';
 STATELESS_WIDGET:'StatelessWidget';
-OVERRIDE:'@override';
 WIDGET:'widget';
 BUILD:'build';
-BUILD_CONTEXT:'BuildContext';
 RETURN:'return';
 REQUIRED:'required';
 THIS:'this';
+DATA_TYPE:'String'|'int'|'double';
+
+
+
+
 //------------------- WIDGETS --------------------
 SCAFFOLD: 'Scaffold' ;
 CONTAINER: 'Container' ;
@@ -45,6 +48,9 @@ FLOATING_ACTION_BUTTON:'FloatingActionButton';
 TEXT_FORM_FIELD:'TextFormField';
 TEXT_STYLE:'TextStyle';
 CENTER:'Center';
+IDENTIFIER: [a-zA-Z][a-zA-Z0-9_$]*;
+
+
 //-------------- COLORS ------------
 
 COLORS:
@@ -118,7 +124,6 @@ INT: DIGIT+;
  ID: LETTER (LETTER | DIGIT | '_')*;
   FLOAT: DIGIT+ '.' DIGIT* | '.' DIGIT+;
   STRING:('\''|'"') (LETTER|DIGIT|WS|DOT)* ('\''|'"')*;
-    IDENTIFIER: [a-zA-Z][a-zA-Z0-9_$]*;
     WS: [ \t\n\r]+ -> skip;
 //---------------  SYMBOLS  ------------
 
@@ -154,5 +159,4 @@ UNDER_SCORE:'_';
 QUOTES_SQ:'\'\'';
 QUOTES_DQ:'""';
 
-//----------------------- DATA TYPE --------------------
-DATA_TYPE:'String'|'int';
+
