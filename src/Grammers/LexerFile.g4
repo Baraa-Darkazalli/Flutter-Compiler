@@ -48,7 +48,6 @@ FLOATING_ACTION_BUTTON:'FloatingActionButton';
 TEXT_FORM_FIELD:'TextFormField';
 TEXT_STYLE:'TextStyle';
 CENTER:'Center';
-IDENTIFIER: [a-zA-Z][a-zA-Z0-9_$]*;
 
 
 //-------------- COLORS ------------
@@ -112,11 +111,15 @@ TEXT_Arg:'text';
 
 //--------------------- FUNCTIONS --------------------
 ON_TAP:'onTap';
+
 //---------------------- NAVIGATION -------------------
 NAVIGATOR:'Navigator';
 PUSH:'push';
 POP:'pop';
 //----------------- BASE -------------------------
+
+IDENTIFIER: [a-zA-Z][a-zA-Z0-9_$]*;
+
 fragment LETTER: [a-zA-Z];
 fragment DIGIT: [0-9];
 DOUBLE :  INT (DOT [0-9]*)?;
