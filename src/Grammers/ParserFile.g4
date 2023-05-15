@@ -143,7 +143,9 @@ push:PUSH OPEN_PAREN constructor CLOSE_PAREN;
 
 pop:POP OPEN_PAREN CLOSE_PAREN;
 
-constructor:IDENTIFIER OPEN_PAREN constructorArg* CLOSE_PAREN;
+constructor:IDENTIFIER OPEN_PAREN constructoFilled* CLOSE_PAREN;
+
+constructoFilled:STRING|DOUBLE;
 
 
 
