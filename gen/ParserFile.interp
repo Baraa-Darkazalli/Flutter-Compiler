@@ -233,7 +233,7 @@ SIZE
 rule names:
 root
 main
-class
+dartClass
 classBody
 classArg
 constructorDeclaration

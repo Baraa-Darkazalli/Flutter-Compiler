@@ -34,18 +34,18 @@ public class ParserFile extends Parser {
 		LARGER_OR_EQUAL=104, SMALLER_OR_EQUAL=105, NOT_EQUAL=106, AND=107, OR=108, 
 		NOT=109, UNDER_SCORE=110, QUOTES_SQ=111, QUOTES_DQ=112, SIZE=113;
 	public static final int
-		RULE_root = 0, RULE_main = 1, RULE_class = 2, RULE_classBody = 3, RULE_classArg = 4, 
-		RULE_constructorDeclaration = 5, RULE_buildFunctionDeclaration = 6, RULE_constructorArg = 7, 
-		RULE_buildBody = 8, RULE_dataType = 9, RULE_attributeName = 10, RULE_className = 11, 
-		RULE_widget = 12, RULE_scaffold = 13, RULE_container = 14, RULE_text = 15, 
-		RULE_textStyle = 16, RULE_image = 17, RULE_listView = 18, RULE_appBar = 19, 
-		RULE_textField = 20, RULE_column = 21, RULE_row = 22, RULE_card = 23, 
-		RULE_iconButton = 24, RULE_inkWell = 25, RULE_expanded = 26, RULE_bottomNavigationBar = 27, 
-		RULE_slider = 28, RULE_tabBar = 29, RULE_tabBarView = 30, RULE_drawer = 31, 
-		RULE_floatingActionButton = 32, RULE_wrap = 33, RULE_flex = 34, RULE_textFormField = 35, 
-		RULE_textButton = 36, RULE_icon = 37, RULE_sizedBox = 38, RULE_center = 39, 
-		RULE_scaffoldArgs = 40, RULE_containerArgs = 41, RULE_textArgs = 42, RULE_imageArgs = 43, 
-		RULE_listviewArgs = 44, RULE_appBarArgs = 45, RULE_textFieldArgs = 46, 
+		RULE_root = 0, RULE_main = 1, RULE_dartClass = 2, RULE_classBody = 3, 
+		RULE_classArg = 4, RULE_constructorDeclaration = 5, RULE_buildFunctionDeclaration = 6, 
+		RULE_constructorArg = 7, RULE_buildBody = 8, RULE_dataType = 9, RULE_attributeName = 10, 
+		RULE_className = 11, RULE_widget = 12, RULE_scaffold = 13, RULE_container = 14, 
+		RULE_text = 15, RULE_textStyle = 16, RULE_image = 17, RULE_listView = 18, 
+		RULE_appBar = 19, RULE_textField = 20, RULE_column = 21, RULE_row = 22, 
+		RULE_card = 23, RULE_iconButton = 24, RULE_inkWell = 25, RULE_expanded = 26, 
+		RULE_bottomNavigationBar = 27, RULE_slider = 28, RULE_tabBar = 29, RULE_tabBarView = 30, 
+		RULE_drawer = 31, RULE_floatingActionButton = 32, RULE_wrap = 33, RULE_flex = 34, 
+		RULE_textFormField = 35, RULE_textButton = 36, RULE_icon = 37, RULE_sizedBox = 38, 
+		RULE_center = 39, RULE_scaffoldArgs = 40, RULE_containerArgs = 41, RULE_textArgs = 42, 
+		RULE_imageArgs = 43, RULE_listviewArgs = 44, RULE_appBarArgs = 45, RULE_textFieldArgs = 46, 
 		RULE_columnArgs = 47, RULE_rowArgs = 48, RULE_cardArgs = 49, RULE_iconButtonArgs = 50, 
 		RULE_inkwellArgs = 51, RULE_expandedArgs = 52, RULE_bottomNavigationBarArgs = 53, 
 		RULE_sliderArgs = 54, RULE_tabBarArgs = 55, RULE_tabBarViewArgs = 56, 
@@ -64,7 +64,7 @@ public class ParserFile extends Parser {
 		RULE_pop = 103, RULE_constructor = 104, RULE_constructoFilled = 105;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"root", "main", "class", "classBody", "classArg", "constructorDeclaration", 
+			"root", "main", "dartClass", "classBody", "classArg", "constructorDeclaration", 
 			"buildFunctionDeclaration", "constructorArg", "buildBody", "dataType", 
 			"attributeName", "className", "widget", "scaffold", "container", "text", 
 			"textStyle", "image", "listView", "appBar", "textField", "column", "row", 
@@ -186,11 +186,11 @@ public class ParserFile extends Parser {
 		public MainContext main() {
 			return getRuleContext(MainContext.class,0);
 		}
-		public List<ClassContext> class_() {
-			return getRuleContexts(ClassContext.class);
+		public List<DartClassContext> dartClass() {
+			return getRuleContexts(DartClassContext.class);
 		}
-		public ClassContext class_(int i) {
-			return getRuleContext(ClassContext.class,i);
+		public DartClassContext dartClass(int i) {
+			return getRuleContext(DartClassContext.class,i);
 		}
 		public RootContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -227,7 +227,7 @@ public class ParserFile extends Parser {
 				{
 				{
 				setState(213);
-				class_();
+				dartClass();
 				}
 				}
 				setState(218);
@@ -325,7 +325,7 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	public static class ClassContext extends ParserRuleContext {
+	public static class DartClassContext extends ParserRuleContext {
 		public TerminalNode CLASS() { return getToken(ParserFile.CLASS, 0); }
 		public ClassNameContext className() {
 			return getRuleContext(ClassNameContext.class,0);
@@ -340,28 +340,28 @@ public class ParserFile extends Parser {
 		public ClassBodyContext classBody(int i) {
 			return getRuleContext(ClassBodyContext.class,i);
 		}
-		public ClassContext(ParserRuleContext parent, int invokingState) {
+		public DartClassContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_class; }
+		@Override public int getRuleIndex() { return RULE_dartClass; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ParserFileListener ) ((ParserFileListener)listener).enterClass(this);
+			if ( listener instanceof ParserFileListener ) ((ParserFileListener)listener).enterDartClass(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ParserFileListener ) ((ParserFileListener)listener).exitClass(this);
+			if ( listener instanceof ParserFileListener ) ((ParserFileListener)listener).exitDartClass(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ParserFileVisitor ) return ((ParserFileVisitor<? extends T>)visitor).visitClass(this);
+			if ( visitor instanceof ParserFileVisitor ) return ((ParserFileVisitor<? extends T>)visitor).visitDartClass(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final ClassContext class_() throws RecognitionException {
-		ClassContext _localctx = new ClassContext(_ctx, getState());
-		enterRule(_localctx, 4, RULE_class);
+	public final DartClassContext dartClass() throws RecognitionException {
+		DartClassContext _localctx = new DartClassContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_dartClass);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);

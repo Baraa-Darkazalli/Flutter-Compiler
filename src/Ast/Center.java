@@ -2,29 +2,21 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
-public class TextArgs extends HtmlElement {
-    //---------------------------    Attributes     -------------------------------
-    private Style style;
+import java.util.ArrayList;
+import java.util.List;
 
-    private String string;
+public class Center extends HtmlElement {
+    //---------------------------    Attributes     -------------------------------
+    private CenterArgs centerArgs;
+
 
     //---------------------------    Setters & Getters     -------------------------------
-
-
-    public Style getStyle() {
-        return style;
+    public CenterArgs getCenterArgs() {
+        return centerArgs;
     }
 
-    public void setStyle(Style style) {
-        this.style = style;
-    }
-
-    public String getString() {
-        return string;
-    }
-
-    public void setString(String string) {
-        this.string = string;
+    public void setCenterArgs(CenterArgs centerArgs) {
+        this.centerArgs = centerArgs;
     }
 
     //---------------------------    Override Func     -------------------------------
@@ -32,9 +24,8 @@ public class TextArgs extends HtmlElement {
 
     @Override
     public String toString() {
-        return "TextArgs{" +
-                "style=" + style +
-                ", string='" + string + '\'' +
+        return "Center{" +
+                "centerArgs=" + centerArgs +
                 '}';
     }
 

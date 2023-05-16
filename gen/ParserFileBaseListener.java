@@ -40,13 +40,13 @@ public class ParserFileBaseListener implements ParserFileListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterClass(ParserFile.ClassContext ctx) { }
+	@Override public void enterDartClass(ParserFile.DartClassContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitClass(ParserFile.ClassContext ctx) { }
+	@Override public void exitDartClass(ParserFile.DartClassContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
