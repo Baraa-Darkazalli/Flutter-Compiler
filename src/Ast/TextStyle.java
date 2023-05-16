@@ -40,4 +40,19 @@ public class TextStyle extends HtmlElement {
     public String generateHtmlCode() {
         return "";
     }
+
+    @Override
+    public String generateStyleCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(textStyleArgs != null && !textStyleArgs.isEmpty())
+        {
+            for(TextStyleArgs textStyleArg:textStyleArgs)
+            {
+                sb.append(textStyleArg.generateStyleCode());
+            }
+        }
+
+        return sb.toString();
+    }
 }

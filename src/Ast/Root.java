@@ -43,6 +43,14 @@ public class Root extends HtmlElement {
         sb.append("<title>").append("Convert To HTML").append("</title>\n");
         sb.append("<!-- Bootstrap CSS -->\n");
         sb.append("<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\n");
+        sb.append("<style>\n");
+        sb.append("  *{\n");
+        sb.append("    margin: 0; padding: 0; border 0; box-sizing: border-box; \n");
+        sb.append("  }\n");
+        sb.append("  body{\n");
+        sb.append("    display: grid;\n");
+        sb.append("    grid-template-areas:\"header header\"\n \"nav nav\"\n \"aside main\"\n \"footer\" \"footer\";\n");
+        sb.append("  }\n");
         sb.append("</head>\n");
         sb.append("<body>\n");
 

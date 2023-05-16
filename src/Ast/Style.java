@@ -32,4 +32,16 @@ public class Style extends HtmlElement {
     public String generateHtmlCode() {
         return "";
     }
+
+    @Override
+    public String generateStyleCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(textStyle != null)
+        {
+            sb.append(textStyle.generateStyleCode());
+        }
+
+        return sb.toString();
+    }
 }

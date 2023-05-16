@@ -60,6 +60,33 @@ public class ImageArgs extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(imageArg != null)
+        {
+            sb.append(imageArg.generateHtmlCode());
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(color != null)
+        {
+            sb.append("    background-color= ").append(color.generateStyleCode()).append(";\n");
+        }
+        else if(height != null)
+        {
+            sb.append("    height= ").append(height.generateStyleCode()).append("px;\n");
+        }
+        else if(width != null)
+        {
+            sb.append("    width= ").append(width.generateStyleCode()).append("px;\n");
+        }
+
+        return sb.toString();
     }
 }

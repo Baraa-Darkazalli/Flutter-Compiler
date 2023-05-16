@@ -9,8 +9,6 @@ public class TextArgs extends HtmlElement {
     private String string;
 
     //---------------------------    Setters & Getters     -------------------------------
-
-
     public Style getStyle() {
         return style;
     }
@@ -27,9 +25,8 @@ public class TextArgs extends HtmlElement {
         this.string = string;
     }
 
+
     //---------------------------    Override Func     -------------------------------
-
-
     @Override
     public String toString() {
         return "TextArgs{" +
@@ -45,6 +42,25 @@ public class TextArgs extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(string != null)
+        {
+            sb.append(string);
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(style != null)
+        {
+            sb.append(style.generateStyleCode());
+        }
+
+        return sb.toString();
     }
 }

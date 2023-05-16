@@ -32,4 +32,9 @@ public class ImageArg extends HtmlElement {
     public String generateHtmlCode() {
         return "";
     }
+
+    @Override
+    public String generateStyleCode() {
+        return value;
+    }
 }

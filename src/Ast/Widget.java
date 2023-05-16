@@ -8,7 +8,7 @@ public class Widget extends HtmlElement {
     private Container container;
     private Text text;
     private Image image;
-    private ListView listView;
+    private ListView listView; //here
     private AppBar appBar;
     private TextField textField;
     private Column column;
