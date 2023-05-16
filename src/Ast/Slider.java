@@ -5,33 +5,30 @@ import Ast.Classes.HtmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Container extends HtmlElement{
+public class Slider extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private List<ContainerArg> containerArgsList;
+    private List<SliderArgs> sliderArgs;
 
     //---------------------------    Constructor     -------------------------------
-    public Container() {
-        this.containerArgsList = new ArrayList<>();
+    public Slider() {
+        this.sliderArgs = new ArrayList<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
-    public List<ContainerArg> getContainerArgs() {
-        return containerArgsList;
+    public List<SliderArgs> getSliderArgs() {
+        return sliderArgs;
     }
 
-    public void setContainerArgs(List<ContainerArg> containerArgsList) {
-        this.containerArgsList = containerArgsList;
+    public void setSliderArgs(List<SliderArgs> sliderArgs) {
+        this.sliderArgs = sliderArgs;
     }
 
     //---------------------------    Override Func     -------------------------------
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Container\n");
-        for (ContainerArg attribute : containerArgsList) {
-            sb.append(attribute.toString()).append("\n");
-        }
-        return sb.toString();
+        return "Slider{" +
+                "sliderArgs=" + sliderArgs +
+                '}';
     }
 
     @Override

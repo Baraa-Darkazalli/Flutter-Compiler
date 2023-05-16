@@ -5,33 +5,30 @@ import Ast.Classes.HtmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Container extends HtmlElement{
+public class Flex extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private List<ContainerArg> containerArgsList;
+    private List<FlexArgs> flexArgs;
 
     //---------------------------    Constructor     -------------------------------
-    public Container() {
-        this.containerArgsList = new ArrayList<>();
+    public Flex() {
+        this.flexArgs = new ArrayList<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
-    public List<ContainerArg> getContainerArgs() {
-        return containerArgsList;
+    public List<FlexArgs> getFlexArgs() {
+        return flexArgs;
     }
 
-    public void setContainerArgs(List<ContainerArg> containerArgsList) {
-        this.containerArgsList = containerArgsList;
+    public void setFlexArgs(List<FlexArgs> flexArgs) {
+        this.flexArgs = flexArgs;
     }
 
     //---------------------------    Override Func     -------------------------------
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Container\n");
-        for (ContainerArg attribute : containerArgsList) {
-            sb.append(attribute.toString()).append("\n");
-        }
-        return sb.toString();
+        return "Flex{" +
+                "flexArgs=" + flexArgs +
+                '}';
     }
 
     @Override

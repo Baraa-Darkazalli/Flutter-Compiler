@@ -5,33 +5,30 @@ import Ast.Classes.HtmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Container extends HtmlElement{
+public class IconButton extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private List<ContainerArg> containerArgsList;
+    private List<IconButtonArgs> iconButtonArgs;
 
     //---------------------------    Constructor     -------------------------------
-    public Container() {
-        this.containerArgsList = new ArrayList<>();
+    public IconButton() {
+        this.iconButtonArgs = new ArrayList<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
-    public List<ContainerArg> getContainerArgs() {
-        return containerArgsList;
+    public List<IconButtonArgs> getIconButtonArgs() {
+        return iconButtonArgs;
     }
 
-    public void setContainerArgs(List<ContainerArg> containerArgsList) {
-        this.containerArgsList = containerArgsList;
+    public void setIconButtonArgs(List<IconButtonArgs> iconButtonArgs) {
+        this.iconButtonArgs = iconButtonArgs;
     }
 
     //---------------------------    Override Func     -------------------------------
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Container\n");
-        for (ContainerArg attribute : containerArgsList) {
-            sb.append(attribute.toString()).append("\n");
-        }
-        return sb.toString();
+        return "IconButton{" +
+                "iconButtonArgs=" + iconButtonArgs +
+                '}';
     }
 
     @Override

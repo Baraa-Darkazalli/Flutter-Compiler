@@ -5,33 +5,30 @@ import Ast.Classes.HtmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Container extends HtmlElement{
+public class Text extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private List<ContainerArg> containerArgsList;
+    List<TextArgs> textArgsList;
 
     //---------------------------    Constructor     -------------------------------
-    public Container() {
-        this.containerArgsList = new ArrayList<>();
+    public Text() {
+        this.textArgsList = new ArrayList<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
-    public List<ContainerArg> getContainerArgs() {
-        return containerArgsList;
+    public List<TextArgs> getTextArgs() {
+        return textArgsList;
     }
 
-    public void setContainerArgs(List<ContainerArg> containerArgsList) {
-        this.containerArgsList = containerArgsList;
+    public void setTextArgs(List<TextArgs> textArgsList) {
+        this.textArgsList = textArgsList;
     }
 
     //---------------------------    Override Func     -------------------------------
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Container\n");
-        for (ContainerArg attribute : containerArgsList) {
-            sb.append(attribute.toString()).append("\n");
-        }
-        return sb.toString();
+        return "Text{" +
+                "textArgsList=" + textArgsList +
+                '}';
     }
 
     @Override

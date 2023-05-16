@@ -17,7 +17,8 @@ classArg: dataType attributeName SEMICOLON;
 
 constructorDeclaration: className OPEN_PAREN constructorArg* CLOSE_PAREN SEMICOLON;
 
-buildFunctionDeclaration: WIDGET BUILD OPEN_PAREN  CLOSE_PAREN OPEN_BRACE buildBody CLOSE_BRACE;
+
+buildFunctionDeclaration: WIDGET BUILD OPEN_PAREN CLOSE_PAREN OPEN_BRACE buildBody CLOSE_BRACE;
 
 constructorArg: dataType attributeName ;
 
