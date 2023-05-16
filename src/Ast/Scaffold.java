@@ -1,34 +1,67 @@
 package Ast;
 
-import java.util.ArrayList;
+import Ast.Classes.HtmlElement;
 
-public class Scaffold {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Scaffold extends HtmlElement{
     //---------------------------    Attributes     -------------------------------
-    List<ScaffoldAttribute> scaffoldAttributes;
+    private List<ScaffoldArgs> scaffoldArgsList;
 
     //---------------------------    Constructor     -------------------------------
     public Scaffold() {
-        this.scaffoldAttributes = new ArrayList<ScaffoldAttribute>();
+        this.scaffoldArgsList = new ArrayList<>();
     }
 
     //---------------------------    Setters & Getters     -------------------------------
-    public List<ScaffoldAttribute> getScaffoldAttributes() {
-        return scaffoldAttributes;
+    public List<ScaffoldArgs> getScaffoldArgs() {
+        return scaffoldArgsList;
     }
 
-    public void setScaffoldAttributes(List<ScaffoldAttribute> scaffoldAttributes) {
-        this.scaffoldAttributes = scaffoldAttributes;
+    public void setScaffoldArgs(List<ScaffoldArgs> scaffoldArgsList) {
+        this.scaffoldArgsList = scaffoldArgsList;
+    }
+    //---------------------------    Functions     -------------------------------
+    public boolean isScaffoldArgsEmpty() {
+        return scaffoldArgsList.isEmpty();
     }
 
-    //---------------------------    ToString Func     -------------------------------
+    //---------------------------    Override Functions     -------------------------------
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Scaffold\n");
-        sb.append("Attributes:\n");
-        for (ScaffoldAttribute attribute : scaffoldAttributes) {
-            sb.append(attribute.toString()).append("\n");
+        sb.append("Scaffold(\n");
+        if (scaffoldArgsList == null || scaffoldArgsList.isEmpty()) {
+            sb.append("No scaffold arguments.\n");
+        } else {
+            for (ScaffoldArgs arg : scaffoldArgsList) {
+                sb.append("  ").append(arg.toString()).append("\n");
+            }
         }
+        sb.append(")\n");
+        return sb.toString();
+    }
+
+    @Override
+    public String generateHtmlAttribute() {
+        return "";
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("");
+
+        if(scaffoldArgsList != null && !scaffoldArgsList.isEmpty())
+        {
+            for (ScaffoldArgs scaffoldArg : scaffoldArgsList)
+            {
+                sb.append(scaffoldArg.generateHtmlCode());
+            }
+        }
+
         return sb.toString();
     }
 }

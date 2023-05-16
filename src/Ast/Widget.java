@@ -1,6 +1,8 @@
 package Ast;
 
-public class Widget {
+import Ast.Classes.HtmlElement;
+
+public class Widget extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Scaffold scaffold;
     private Container container;
@@ -13,8 +15,6 @@ public class Widget {
     private Row row;
     private Card card;
     private IconButton iconButton;
-    private CheckBox checkBox;
-    private Radio radio;
     private InkWell inkWell;
     private Expanded expanded;
     private BottomNavigationBar bottomNavigationBar;
@@ -28,6 +28,7 @@ public class Widget {
     private TextFormField textFormField;
     private TextButton textButton;
     private Icon icon;
+    private SizedBox sizedBox;
 
     //---------------------------    Setters & Getters     -------------------------------
     public Scaffold getScaffold() {
@@ -116,22 +117,6 @@ public class Widget {
 
     public void setIconButton(IconButton iconButton) {
         this.iconButton = iconButton;
-    }
-
-    public CheckBox getCheckBox() {
-        return checkBox;
-    }
-
-    public void setCheckBox(CheckBox checkBox) {
-        this.checkBox = checkBox;
-    }
-
-    public Radio getRadio() {
-        return radio;
-    }
-
-    public void setRadio(Radio radio) {
-        this.radio = radio;
     }
 
     public InkWell getInkWell() {
@@ -238,6 +223,14 @@ public class Widget {
         this.icon = icon;
     }
 
+    public SizedBox getSizedBox() {
+        return sizedBox;
+    }
+
+    public void setSizedBox(SizedBox sizedBox) {
+        this.sizedBox = sizedBox;
+    }
+
     //---------------------------    ToString Func     -------------------------------
     @Override
     public String toString() {
@@ -255,8 +248,6 @@ public class Widget {
         sb.append("Row: ").append(row != null ? row.toString() : "null").append("\n");
         sb.append("Card: ").append(card != null ? card.toString() : "null").append("\n");
         sb.append("IconButton: ").append(iconButton != null ? iconButton.toString() : "null").append("\n");
-        sb.append("CheckBox: ").append(checkBox != null ? checkBox.toString() : "null").append("\n");
-        sb.append("Radio: ").append(radio != null ? radio.toString() : "null").append("\n");
         sb.append("InkWell: ").append(inkWell != null ? inkWell.toString() : "null").append("\n");
         sb.append("Expanded: ").append(expanded != null ? expanded.toString() : "null").append("\n");
         sb.append("BottomNavigationBar: ").append(bottomNavigationBar != null ? bottomNavigationBar.toString() : "null").append("\n");
@@ -270,8 +261,74 @@ public class Widget {
         sb.append("TextFormField: ").append(textFormField != null ? textFormField.toString() : "null").append("\n");
         sb.append("TextButton: ").append(textButton != null ? textButton.toString() : "null").append("\n");
         sb.append("Icon: ").append(icon != null ? icon.toString() : "null").append("\n");
+        sb.append("SizedBox: ").append(icon != null ? sizedBox.toString() : "null").append("\n");
 
         return sb.toString();
     }
 
+    @Override
+    public String generateHtmlAttribute() {
+        return "";
+    }
+
+    @Override
+    public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("");
+
+        if (scaffold != null) {
+            sb.append(scaffold.generateHtmlCode());
+        } else if (container != null) {
+            sb.append(container.generateHtmlCode());
+        } else if (text != null) {
+            sb.append(text.generateHtmlCode());
+        } else if (image != null) {
+            sb.append(image.generateHtmlCode());
+        } else if (listView != null) {
+            sb.append(listView.generateHtmlCode());
+        } else if (appBar != null) {
+            sb.append(appBar.generateHtmlCode());
+        } else if (textField != null) {
+            sb.append(textField.generateHtmlCode());
+        } else if (column != null) {
+            sb.append(column.generateHtmlCode());
+        } else if (row != null) {
+            sb.append(row.generateHtmlCode());
+        } else if (card != null) {
+            sb.append(card.generateHtmlCode());
+        } else if (iconButton != null) {
+            sb.append(iconButton.generateHtmlCode());
+        } else if (inkWell != null) {
+            sb.append(inkWell.generateHtmlCode());
+        } else if (expanded != null) {
+            sb.append(expanded.generateHtmlCode());
+        } else if (bottomNavigationBar != null) {
+            sb.append(bottomNavigationBar.generateHtmlCode());
+        } else if (slider != null) {
+            sb.append(slider.generateHtmlCode());
+        } else if (tabBar != null) {
+            sb.append(tabBar.generateHtmlCode());
+        } else if (tabView != null) {
+            sb.append(tabView.generateHtmlCode());
+        } else if (drawer != null) {
+            sb.append(drawer.generateHtmlCode());
+        } else if (floatingActionButton != null) {
+            sb.append(floatingActionButton.generateHtmlCode());
+        } else if (wrap != null) {
+            sb.append(wrap.generateHtmlCode());
+        } else if (flex != null) {
+            sb.append(flex.generateHtmlCode());
+        } else if (textFormField != null) {
+            sb.append(textFormField.generateHtmlCode());
+        } else if (textButton != null) {
+            sb.append(textButton.generateHtmlCode());
+        } else if (icon != null) {
+            sb.append(icon.generateHtmlCode());
+        } else if (sizedBox != null) {
+            sb.append(sizedBox.generateHtmlCode());
+        }
+
+        return sb.toString();
+    }
 }
