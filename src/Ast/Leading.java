@@ -30,6 +30,15 @@ public class Leading extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(widget.generateHtmlCode());
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

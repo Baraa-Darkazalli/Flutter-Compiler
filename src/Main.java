@@ -1,6 +1,8 @@
 
 import Ast.Root;
 import Visitor.BaseVisitor;
+import gen.LexerFile;
+import gen.ParserFile;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;

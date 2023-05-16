@@ -64,6 +64,7 @@ sizedBox: SIZED_BOX OPEN_PAREN sizedBoxArgs* CLOSE_PAREN ;
 center: CENTER OPEN_PAREN centerArgs CLOSE_PAREN ;
 
 //------------------------- WIDGETS ARGS ---------------------
+
 scaffoldArgs:body|drawerArg|appBarArg|bottomNavigationBarArg|floatingActionButtonArg|backGroundColor;
 containerArgs:child|width|height|color|margin|padding;
 textArgs:STRING|style;

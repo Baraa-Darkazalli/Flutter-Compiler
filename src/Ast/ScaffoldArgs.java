@@ -78,7 +78,7 @@ public class ScaffoldArgs extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+       return "";
     }
 
     @Override
@@ -90,27 +90,53 @@ public class ScaffoldArgs extends HtmlElement {
             sb.append(body.generateHtmlCode());
             sb.append("</div>\n");
         }
-
-        if (drawerArg != null) {
+        else if (drawerArg != null) {
             sb.append(drawerArg.generateHtmlCode());
         }
-
-        if (appBarArg != null) {
+        else if (appBarArg != null) {
+            sb.append("<style>\n");
+            sb.append("  header {\n");
+            sb.append("    padding: 10px;\n");
+            sb.append("    background-color: blue;\n");
+            sb.append("    display: flex;\n");
+            sb.append("    justify-content: space-between;\n");
+            sb.append("  }\n");
+            sb.append("</style>\n");
+            sb.append("<header>\n");
             sb.append(appBarArg.generateHtmlCode());
+            sb.append("</header>\n");
         }
-
-        if (bottomNavigationBarArg != null) {
+        else if (bottomNavigationBarArg != null) {
+            sb.append("<style>\n");
+            sb.append("nav {\n");
+            sb.append("  background-color: #f1f1f1;\n");
+            sb.append("  padding: 10px;\n");
+            sb.append("  margin-bottom: 20px;\n");
+            sb.append("  display: flex;\n");
+            sb.append("  flex-direction: row;\n");
+            sb.append("  justify-content: space-around;\n");
+            sb.append("}\n");
+            sb.append("</style>\n");
+            sb.append("<nav>\n");
             sb.append(bottomNavigationBarArg.generateHtmlCode());
+            sb.append("</nav>\n");
         }
-
-        if (floatingActionButtonArg != null) {
+        else if (floatingActionButtonArg != null) {
             sb.append(floatingActionButtonArg.generateHtmlCode());
         }
-
-        if (backGroundColor != null) {
-            sb.append(backGroundColor.generateHtmlCode());
+        else if (backGroundColor != null) {
+            sb.append("<style>\n");
+            sb.append("  html {\n");
+            sb.append("    background-color: ").append(backGroundColor.generateStyleCode()).append(";\n");
+            sb.append("  }\n");
+            sb.append("</style>\n");
         }
 
         return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return "";
     }
 }

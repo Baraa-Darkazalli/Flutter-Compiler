@@ -4,22 +4,22 @@ import Ast.Classes.HtmlElement;
 
 public class BackGroundColor extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private Colors colors;
+    private String color;
 
     //---------------------------    Setters & Getters     -------------------------------
-    public Colors getColors() {
-        return colors;
+    public String getColor() {
+        return color;
     }
 
-    public void setColors(Colors colors) {
-        this.colors = colors;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     //---------------------------    Override Func     -------------------------------
     @Override
     public String toString() {
-        return "BackGroundColor{" +
-                "colors=" + colors +
+        return "Colors{" +
+                "color='" + color + '\'' +
                 '}';
     }
 
@@ -31,5 +31,10 @@ public class BackGroundColor extends HtmlElement {
     @Override
     public String generateHtmlCode() {
         return "";
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return color;
     }
 }

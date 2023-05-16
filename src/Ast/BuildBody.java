@@ -32,13 +32,13 @@ public class BuildBody extends HtmlElement {
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("");
-
-        if (widget != null)
-        {
-            sb.append(widget.generateHtmlCode());
-        }
+        sb.append(widget.generateHtmlCode());
 
         return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return  "";
     }
 }

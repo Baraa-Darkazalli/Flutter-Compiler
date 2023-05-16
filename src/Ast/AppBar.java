@@ -38,6 +38,21 @@ public class AppBar extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(appBarArgs != null && !appBarArgs.isEmpty())
+        {
+            for (AppBarArgs appBarArg:appBarArgs)
+            {
+                sb.append(appBarArg.generateHtmlAttribute());
+            }
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

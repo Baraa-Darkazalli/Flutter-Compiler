@@ -40,6 +40,26 @@ public class FloatingActionButtonArgs extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(child != null)
+        {
+            sb.append(child.generateHtmlCode());
+        }
+        else if(backGroundColor != null)
+        {
+            sb.append("<style>\n");
+            sb.append("  .floating-action-button {\n");
+            sb.append("    background-color: ").append(backGroundColor.generateStyleCode()).append(";\n");
+            sb.append("  }\n");
+            sb.append("</style>\n");
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

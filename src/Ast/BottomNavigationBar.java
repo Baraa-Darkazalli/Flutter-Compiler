@@ -38,6 +38,21 @@ public class BottomNavigationBar extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(bottomNavigationBarArgs != null && !bottomNavigationBarArgs.isEmpty())
+        {
+            for(BottomNavigationBarArgs bottomNavigationBarArg:bottomNavigationBarArgs)
+            {
+                sb.append(bottomNavigationBarArg.generateHtmlCode());
+            }
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

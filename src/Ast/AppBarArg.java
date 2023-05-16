@@ -2,32 +2,24 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class AppBarArg extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private List<AppBarArgs> appBarArgs;
-
-    //---------------------------    Constructor     -------------------------------
-    public AppBarArg() {
-        this.appBarArgs = new ArrayList<>();
-    }
+    private AppBar appBar;
 
     //---------------------------    Setters & Getters     -------------------------------
-    public List<AppBarArgs> getAppBarArgs() {
-        return appBarArgs;
+    public AppBar getAppBar() {
+        return appBar;
     }
 
-    public void setAppBarArgs(List<AppBarArgs> appBarArgs) {
-        this.appBarArgs = appBarArgs;
+    public void setAppBar(AppBar appBar) {
+        this.appBar = appBar;
     }
 
-    //---------------------------    Override Func     -------------------------------
+    //---------------------------    ToString Func     -------------------------------
     @Override
     public String toString() {
         return "AppBarArg{" +
-                "appBarArgs=" + appBarArgs +
+                "appBar=" + appBar +
                 '}';
     }
 
@@ -38,6 +30,15 @@ public class AppBarArg extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(appBar.generateHtmlCode());
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return  "";
     }
 }

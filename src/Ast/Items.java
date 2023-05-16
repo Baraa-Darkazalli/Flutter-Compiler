@@ -38,6 +38,23 @@ public class Items extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(widgets!=null && !widgets.isEmpty())
+        {
+            for(Widget widget:widgets)
+            {
+                sb.append("<div>\n");
+                sb.append(widget.generateHtmlCode());
+                sb.append("</div>\n");
+            }
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

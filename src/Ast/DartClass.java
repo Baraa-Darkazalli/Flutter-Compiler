@@ -48,8 +48,6 @@ public class DartClass extends HtmlElement {
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("");
-
         if (classBody != null && !classBody.isEmpty())
         {
             for (ClassBody classBody : classBody)
@@ -59,5 +57,10 @@ public class DartClass extends HtmlElement {
         }
 
         return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return "";
     }
 }

@@ -52,8 +52,6 @@ public class Scaffold extends HtmlElement{
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("");
-
         if(scaffoldArgsList != null && !scaffoldArgsList.isEmpty())
         {
             for (ScaffoldArgs scaffoldArg : scaffoldArgsList)
@@ -63,5 +61,10 @@ public class Scaffold extends HtmlElement{
         }
 
         return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return "";
     }
 }

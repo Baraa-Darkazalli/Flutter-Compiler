@@ -275,8 +275,6 @@ public class Widget extends HtmlElement {
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("");
-
         if (scaffold != null) {
             sb.append(scaffold.generateHtmlCode());
         } else if (container != null) {
@@ -330,5 +328,10 @@ public class Widget extends HtmlElement {
         }
 
         return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return  "";
     }
 }
