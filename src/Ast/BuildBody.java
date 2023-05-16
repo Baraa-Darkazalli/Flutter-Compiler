@@ -25,11 +25,20 @@ public class BuildBody extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return null;
+        return "";
     }
 
     @Override
     public String generateHtmlCode() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("");
+
+        if (widget != null)
+        {
+            sb.append(widget.generateHtmlCode());
+        }
+
+        return sb.toString();
     }
 }

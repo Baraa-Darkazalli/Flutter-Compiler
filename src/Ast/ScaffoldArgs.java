@@ -78,11 +78,39 @@ public class ScaffoldArgs extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return null;
+        return "";
     }
 
     @Override
     public String generateHtmlCode() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+
+        if (body != null) {
+            sb.append("<div class=\"container\">\n");
+            sb.append(body.generateHtmlCode());
+            sb.append("</div>\n");
+        }
+
+        if (drawerArg != null) {
+            sb.append(drawerArg.generateHtmlCode());
+        }
+
+        if (appBarArg != null) {
+            sb.append(appBarArg.generateHtmlCode());
+        }
+
+        if (bottomNavigationBarArg != null) {
+            sb.append(bottomNavigationBarArg.generateHtmlCode());
+        }
+
+        if (floatingActionButtonArg != null) {
+            sb.append(floatingActionButtonArg.generateHtmlCode());
+        }
+
+        if (backGroundColor != null) {
+            sb.append(backGroundColor.generateHtmlCode());
+        }
+
+        return sb.toString();
     }
 }

@@ -45,11 +45,23 @@ public class Scaffold extends HtmlElement{
 
     @Override
     public String generateHtmlAttribute() {
-        return null;
+        return "";
     }
 
     @Override
     public String generateHtmlCode() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("");
+
+        if(scaffoldArgsList != null && !scaffoldArgsList.isEmpty())
+        {
+            for (ScaffoldArgs scaffoldArg : scaffoldArgsList)
+            {
+                sb.append(scaffoldArg.generateHtmlCode());
+            }
+        }
+
+        return sb.toString();
     }
 }

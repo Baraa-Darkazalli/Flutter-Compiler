@@ -268,11 +268,67 @@ public class Widget extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return null;
+        return "";
     }
 
     @Override
     public String generateHtmlCode() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("");
+
+        if (scaffold != null) {
+            sb.append(scaffold.generateHtmlCode());
+        } else if (container != null) {
+            sb.append(container.generateHtmlCode());
+        } else if (text != null) {
+            sb.append(text.generateHtmlCode());
+        } else if (image != null) {
+            sb.append(image.generateHtmlCode());
+        } else if (listView != null) {
+            sb.append(listView.generateHtmlCode());
+        } else if (appBar != null) {
+            sb.append(appBar.generateHtmlCode());
+        } else if (textField != null) {
+            sb.append(textField.generateHtmlCode());
+        } else if (column != null) {
+            sb.append(column.generateHtmlCode());
+        } else if (row != null) {
+            sb.append(row.generateHtmlCode());
+        } else if (card != null) {
+            sb.append(card.generateHtmlCode());
+        } else if (iconButton != null) {
+            sb.append(iconButton.generateHtmlCode());
+        } else if (inkWell != null) {
+            sb.append(inkWell.generateHtmlCode());
+        } else if (expanded != null) {
+            sb.append(expanded.generateHtmlCode());
+        } else if (bottomNavigationBar != null) {
+            sb.append(bottomNavigationBar.generateHtmlCode());
+        } else if (slider != null) {
+            sb.append(slider.generateHtmlCode());
+        } else if (tabBar != null) {
+            sb.append(tabBar.generateHtmlCode());
+        } else if (tabView != null) {
+            sb.append(tabView.generateHtmlCode());
+        } else if (drawer != null) {
+            sb.append(drawer.generateHtmlCode());
+        } else if (floatingActionButton != null) {
+            sb.append(floatingActionButton.generateHtmlCode());
+        } else if (wrap != null) {
+            sb.append(wrap.generateHtmlCode());
+        } else if (flex != null) {
+            sb.append(flex.generateHtmlCode());
+        } else if (textFormField != null) {
+            sb.append(textFormField.generateHtmlCode());
+        } else if (textButton != null) {
+            sb.append(textButton.generateHtmlCode());
+        } else if (icon != null) {
+            sb.append(icon.generateHtmlCode());
+        } else if (sizedBox != null) {
+            sb.append(sizedBox.generateHtmlCode());
+        }
+
+        return sb.toString();
     }
 }

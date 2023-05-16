@@ -45,11 +45,20 @@ public class ClassBody extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return null;
+        return "";
     }
 
     @Override
     public String generateHtmlCode() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("");
+
+        if (buildFunctionDeclaration != null)
+        {
+            sb.append(buildFunctionDeclaration.generateHtmlCode());
+        }
+
+        return sb.toString();
     }
 }

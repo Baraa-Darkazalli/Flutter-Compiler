@@ -5,7 +5,7 @@ options {
 }
 
 // The entry point for the parser.
-root:main|class;
+root:main class*;
 
 main:VOID MAIN OPEN_PAREN CLOSE_PAREN OPEN_BRACE expression* CLOSE_BRACE;
 

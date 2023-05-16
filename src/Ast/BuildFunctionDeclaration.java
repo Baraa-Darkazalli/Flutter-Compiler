@@ -25,11 +25,20 @@ public class BuildFunctionDeclaration extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return null;
+        return "";
     }
 
     @Override
     public String generateHtmlCode() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("");
+
+        if (buildBody != null)
+        {
+            sb.append(buildBody.generateHtmlCode());
+        }
+
+        return sb.toString();
     }
 }

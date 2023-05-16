@@ -29,11 +29,27 @@ public class DartClass extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(" id=\"").append(ClassName).append("\" ");
+
+        return sb.toString();
     }
 
     @Override
     public String generateHtmlCode() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("");
+
+        if (classBody != null && !classBody.isEmpty())
+        {
+            for (ClassBody classBody : classBody)
+            {
+                sb.append(classBody.generateHtmlCode());
+            }
+        }
+
+        return sb.toString();
     }
 }

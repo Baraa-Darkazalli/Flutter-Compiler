@@ -33,11 +33,11 @@ public class InkWell extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return null;
+        return "";
     }
 
     @Override
     public String generateHtmlCode() {
-        return null;
+        return "";
     }
 }
