@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DartClass extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private String ClassName;
+    private String className;
 
     private List<ClassBody> classBody;
 
@@ -19,11 +19,19 @@ public class DartClass extends HtmlElement {
         this.classBody = classBody;
     }
 
-    //---------------------------    Override Func     -------------------------------
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
     @Override
     public String toString() {
         return "DartClass{" +
-                "classBody=" + classBody +
+                "className='" + className + '\'' +
+                ", classBody=" + classBody +
                 '}';
     }
 
@@ -31,7 +39,7 @@ public class DartClass extends HtmlElement {
     public String generateHtmlAttribute() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append(" id=\"").append(ClassName).append("\" ");
+        sb.append(" id=\"").append(className).append("\" ");
 
         return sb.toString();
     }

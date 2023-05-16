@@ -29,7 +29,7 @@
           <option name="outputDir" value="" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
-          <option name="pkg" value="gen" />
+          <option name="pkg" value="" />
           <option name="language" value="" />
           <option name="generateVisitor" value="true" />
         </PerGrammarGenerationSettings>
@@ -39,7 +39,7 @@
           <option name="outputDir" value="" />
           <option name="libDir" value="" />
           <option name="encoding" value="" />
-          <option name="pkg" value="gen" />
+          <option name="pkg" value="" />
           <option name="language" value="" />
           <option name="generateVisitor" value="true" />
         </PerGrammarGenerationSettings>

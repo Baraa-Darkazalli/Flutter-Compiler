@@ -28,15 +28,15 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitMain(ParserFile.MainContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link ParserFile#class}.
+	 * Enter a parse tree produced by {@link ParserFile#dartClass}.
 	 * @param ctx the parse tree
 	 */
-	void enterClass(ParserFile.ClassContext ctx);
+	void enterDartClass(ParserFile.DartClassContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link ParserFile#class}.
+	 * Exit a parse tree produced by {@link ParserFile#dartClass}.
 	 * @param ctx the parse tree
 	 */
-	void exitClass(ParserFile.ClassContext ctx);
+	void exitDartClass(ParserFile.DartClassContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ParserFile#classBody}.
 	 * @param ctx the parse tree

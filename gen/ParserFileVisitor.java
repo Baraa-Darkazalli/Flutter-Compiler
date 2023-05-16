@@ -23,11 +23,11 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMain(ParserFile.MainContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link ParserFile#class}.
+	 * Visit a parse tree produced by {@link ParserFile#dartClass}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitClass(ParserFile.ClassContext ctx);
+	T visitDartClass(ParserFile.DartClassContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ParserFile#classBody}.
 	 * @param ctx the parse tree

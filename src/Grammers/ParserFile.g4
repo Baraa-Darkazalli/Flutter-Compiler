@@ -5,11 +5,11 @@ options {
 }
 
 // The entry point for the parser.
-root:main class*;
+root:main dartClass*;
 
 main:VOID MAIN OPEN_PAREN CLOSE_PAREN OPEN_BRACE expression* CLOSE_BRACE;
 
-class:CLASS className (EXTENDS STATELESS_WIDGET)? OPEN_BRACE classBody* CLOSE_BRACE;
+dartClass:CLASS className (EXTENDS STATELESS_WIDGET)? OPEN_BRACE classBody* CLOSE_BRACE;
 
 classBody: classArg | constructorDeclaration | buildFunctionDeclaration;
 
