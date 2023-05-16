@@ -64,4 +64,9 @@ public class Root extends HtmlElement {
 
         return sb.toString();
     }
+
+    @Override
+    public String generateStyleCode() {
+        return "";
+    }
 }

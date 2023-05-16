@@ -52,13 +52,16 @@ public class ClassBody extends HtmlElement {
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("");
-
         if (buildFunctionDeclaration != null)
         {
             sb.append(buildFunctionDeclaration.generateHtmlCode());
         }
 
         return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return "";
     }
 }

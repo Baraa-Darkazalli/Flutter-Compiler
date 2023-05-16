@@ -41,6 +41,21 @@ public class Container extends HtmlElement{
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(containerArgsList!=null && !containerArgsList.isEmpty())
+        {
+            for(ContainerArg containerArg:containerArgsList)
+            {
+                sb.append(containerArg.generateHtmlCode());
+            }
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

@@ -60,6 +60,38 @@ public class AppBarArgs extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(title != null)
+        {
+            sb.append("<h1>\n");
+            sb.append(title.generateHtmlCode());
+            sb.append("</h1>\n");
+        }
+        else if(leading != null)
+        {
+            sb.append("<span>\n");
+            sb.append(leading.generateHtmlCode());
+            sb.append("</span>\n");
+        }
+        else if(actions != null)
+        {
+            sb.append(actions.generateHtmlCode());
+        }
+        else if(backGroundColor != null)
+        {
+            sb.append("<style>\n");
+            sb.append("  header {\n");
+            sb.append("    background-color: ").append(backGroundColor.generateStyleCode()).append(";\n");
+            sb.append("  }\n");
+            sb.append("</style>\n");
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

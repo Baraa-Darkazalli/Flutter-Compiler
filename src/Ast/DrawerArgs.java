@@ -50,6 +50,31 @@ public class DrawerArgs extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("");
+
+        if(child != null)
+        {
+            sb.append(child.generateHtmlCode());
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(backGroundColor != null)
+        {
+            sb.append("    background-color: ").append(backGroundColor.generateStyleCode()).append(" ;\n");
+        }
+        else if(width != null)
+        {
+            sb.append("    width: ").append(width.generateStyleCode()).append("px;\n");
+        }
+
+        return sb.toString();
     }
 }

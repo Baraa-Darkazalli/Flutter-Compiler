@@ -80,6 +80,49 @@ public class ContainerArg extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(child != null)
+        {
+            sb.append("<div class=\"container-child\">");
+            sb.append(child.generateHtmlCode());
+            sb.append("</div>");
+        }
+        else
+        {
+            sb.append("<style>\n");
+            sb.append(".container-child{\n");
+
+            if(width != null)
+            {
+                sb.append("   width: ").append(width).append("px;\n");
+            }
+            else if(height != null)
+            {
+                sb.append("   height: ").append(height).append("px;\n");
+            }
+            else if(color != null)
+            {
+                sb.append("   background-color: ").append(color).append(";\n");
+            }
+            else if(padding != null)
+            {
+                sb.append("   padding: ").append(padding).append("px;\n");
+            }
+            else if(margin != null)
+            {
+                sb.append("   margin: ").append(margin).append("px;\n");
+            }
+
+            sb.append("}\n");
+            sb.append("</style>\n");
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }
