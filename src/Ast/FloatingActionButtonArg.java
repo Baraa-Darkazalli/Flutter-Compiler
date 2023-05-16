@@ -30,6 +30,15 @@ public class FloatingActionButtonArg extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(floatingActionButton.generateHtmlCode());
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

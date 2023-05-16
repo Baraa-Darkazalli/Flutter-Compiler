@@ -50,6 +50,26 @@ public class BottomNavigationBarArgs extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(items != null)
+        {
+            sb.append(items.generateHtmlCode());
+        }
+        else if (backGroundColor != null)
+        {
+            sb.append("<style>\n");
+            sb.append("nav {\n");
+            sb.append("  background-color: ").append(backGroundColor.generateStyleCode()).append(" ;\n");
+            sb.append("}\n");
+            sb.append("</style>\n");
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

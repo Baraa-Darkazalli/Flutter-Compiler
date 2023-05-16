@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DartClass extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private String ClassName;
+    private String className;
 
     private List<ClassBody> classBody;
 
@@ -31,7 +31,7 @@ public class DartClass extends HtmlElement {
     public String generateHtmlAttribute() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append(" id=\"").append(ClassName).append("\" ");
+        sb.append(" id=\"").append(className).append("\" ");
 
         return sb.toString();
     }
@@ -39,8 +39,6 @@ public class DartClass extends HtmlElement {
     @Override
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
-
-        sb.append("");
 
         if (classBody != null && !classBody.isEmpty())
         {
@@ -51,5 +49,10 @@ public class DartClass extends HtmlElement {
         }
 
         return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return "";
     }
 }

@@ -30,6 +30,15 @@ public class BottomNavigationBarArg extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(bottomNavigationBar.generateHtmlCode());
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

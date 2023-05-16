@@ -32,13 +32,13 @@ public class BuildFunctionDeclaration extends HtmlElement {
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("");
-
-        if (buildBody != null)
-        {
-            sb.append(buildBody.generateHtmlCode());
-        }
+        sb.append(buildBody.generateHtmlCode());
 
         return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return "";
     }
 }

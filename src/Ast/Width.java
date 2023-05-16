@@ -25,11 +25,18 @@ public class Width extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+       return "";
     }
 
     @Override
     public String generateHtmlCode() {
         return "";
+    }
+
+    @Override
+    public String generateStyleCode() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(value);
+        return sb.toString();
     }
 }
