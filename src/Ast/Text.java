@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Text extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    List<TextArgs> textArgsList;
+    private List<TextArgs> textArgsList;
 
     //---------------------------    Constructor     -------------------------------
     public Text() {
@@ -38,6 +38,28 @@ public class Text extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(textArgsList != null && !textArgsList.isEmpty())
+        {
+            for(TextArgs textArg:textArgsList)
+            {
+                sb.append("<style>\n");
+                sb.append("  .p{\n");
+                sb.append(textArg.generateStyleCode());
+                sb.append("  }");
+                sb.append("</style>\n");
+                sb.append("<p>\n");
+                sb.append(textArg.generateHtmlCode());
+                sb.append("</p>\n");
+            }
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }
