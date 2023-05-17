@@ -38,6 +38,27 @@ public class Image extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(imageArgs != null && !imageArgs.isEmpty())
+        {
+            for(ImageArgs imageArg:imageArgs)
+            {
+                sb.append("<img src=\"").append(imageArg.generateHtmlCode()).append("\" alt=\"image\">\n");
+                sb.append(imageArg.generateHtmlCode());
+                sb.append("<style>\n");
+                sb.append("  img{\n");
+                sb.append(imageArg.generateStyleCode());
+                sb.append("  }\n");
+                sb.append("</style>\n");
+            }
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

@@ -35,6 +35,8 @@ public class Height extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+        StringBuilder sb = new StringBuilder();
+        sb.append(value);
+        return sb.toString();
     }
 }

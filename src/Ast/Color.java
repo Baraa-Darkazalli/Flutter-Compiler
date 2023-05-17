@@ -35,6 +35,7 @@ public class Color extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+
+        return color;
     }
 }

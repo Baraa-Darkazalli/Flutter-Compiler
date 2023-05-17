@@ -2,20 +2,31 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Actions extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private Widget widget;
+    private List<Widget> widget;
 
     //---------------------------    Setters & Getters     -------------------------------
-    public Widget getWidget() {
+
+    public List<Widget> getWidget() {
         return widget;
     }
 
-    public void setWidget(Widget widget) {
+    public void setWidget(List<Widget> widget) {
         this.widget = widget;
     }
 
+
     //---------------------------    Override Func     -------------------------------
+
+
+    public Actions() {
+        this.widget = new ArrayList<>();
+    }
+
     @Override
     public String toString() {
         return "Actions{" +

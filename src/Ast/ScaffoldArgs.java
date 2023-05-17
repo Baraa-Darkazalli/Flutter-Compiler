@@ -86,9 +86,15 @@ public class ScaffoldArgs extends HtmlElement {
         StringBuilder sb = new StringBuilder();
 
         if (body != null) {
-            sb.append("<div class=\"container\">\n");
+            sb.append("<style>\n");
+            sb.append("  main{\n");
+            sb.append("    grid-area: main;\n");
+            sb.append("    padding: 20px;\n");
+            sb.append("  }\n");
+            sb.append("</style>\n");
+            sb.append("<main>\n");
             sb.append(body.generateHtmlCode());
-            sb.append("</div>\n");
+            sb.append("</main>\n");
         }
         else if (drawerArg != null) {
             sb.append(drawerArg.generateHtmlCode());
@@ -96,8 +102,10 @@ public class ScaffoldArgs extends HtmlElement {
         else if (appBarArg != null) {
             sb.append("<style>\n");
             sb.append("  header {\n");
+            sb.append("    grid-area: header;\n");
             sb.append("    padding: 10px;\n");
             sb.append("    background-color: blue;\n");
+            sb.append("    align-items: center;\n");
             sb.append("    display: flex;\n");
             sb.append("    justify-content: space-between;\n");
             sb.append("  }\n");
@@ -109,9 +117,9 @@ public class ScaffoldArgs extends HtmlElement {
         else if (bottomNavigationBarArg != null) {
             sb.append("<style>\n");
             sb.append("nav {\n");
+            sb.append("  grid-area: nav;\n");
             sb.append("  background-color: #f1f1f1;\n");
             sb.append("  padding: 10px;\n");
-            sb.append("  margin-bottom: 20px;\n");
             sb.append("  display: flex;\n");
             sb.append("  flex-direction: row;\n");
             sb.append("  justify-content: space-around;\n");

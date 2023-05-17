@@ -52,4 +52,24 @@ public class TextStyleArgs extends HtmlElement {
     public String generateHtmlCode() {
         return "";
     }
+
+    @Override
+    public String generateStyleCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(backGroundColor != null)
+        {
+            sb.append("    background-color: ").append(backGroundColor.generateStyleCode()).append(";\n");
+        }
+        else if(color != null)
+        {
+            sb.append("    color: ").append(color.generateStyleCode()).append(";\n");
+        }
+        else if(fontSize != null)
+        {
+            sb.append("    font-size: ").append(fontSize.generateStyleCode()).append("px;\n");
+        }
+
+        return sb.toString();
+    }
 }
