@@ -32,4 +32,11 @@ public class Padding extends HtmlElement {
     public String generateHtmlCode() {
         return "";
     }
+
+    @Override
+    public String generateStyleCode() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(value);
+        return sb.toString();
+    }
 }

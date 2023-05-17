@@ -40,11 +40,28 @@ public class ListviewArgs extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(children != null)
+        {
+            sb.append("<div class=\"listView-children\">\n");
+            sb.append(children.generateHtmlCode());
+            sb.append("</div>");
+        }
+        else if(padding != null)
+        {
+            sb.append("<style>\n");
+            sb.append("  .listView-children{\n");
+            sb.append(padding.generateStyleCode());
+            sb.append("  }\n");
+            sb.append("</style>\n");
+        }
+
+        return sb.toString();
     }
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }

@@ -35,6 +35,6 @@ public class TabBarViewArgs extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }

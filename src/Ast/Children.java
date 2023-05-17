@@ -38,11 +38,21 @@ public class Children extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(widgets != null && !widgets.isEmpty())
+        {
+            for(Widget widget:widgets)
+            {
+                sb.append(widget.generateHtmlCode());
+            }
+        }
+
+        return sb.toString();
     }
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }

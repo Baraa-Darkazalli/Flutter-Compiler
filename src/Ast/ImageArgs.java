@@ -89,9 +89,4 @@ public class ImageArgs extends HtmlElement {
 
         return sb.toString();
     }
-
-    @Override
-    public String generateStyleCode() {
-        return null;
-    }
 }

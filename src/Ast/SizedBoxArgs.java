@@ -55,6 +55,6 @@ public class SizedBoxArgs extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }
