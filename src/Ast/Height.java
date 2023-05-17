@@ -32,4 +32,9 @@ public class Height extends HtmlElement {
     public String generateHtmlCode() {
         return "";
     }
+
+    @Override
+    public String generateStyleCode() {
+        return null;
+    }
 }

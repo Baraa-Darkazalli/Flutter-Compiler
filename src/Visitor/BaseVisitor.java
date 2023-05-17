@@ -42,11 +42,11 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public ClassBody visitClassBody(ParserFile.ClassBodyContext ctx) {
         ClassBody classBody = new ClassBody();
-        if (ctx.classArg()!=null) {
+        if (ctx.classArg() != null) {
             classBody.setClassArg((ClassArg) visitClassArg(ctx.classArg()));
-        } else if (ctx.constructorDeclaration()!=null) {
+        } else if (ctx.constructorDeclaration() != null) {
             classBody.setConstructorDeclaration((ConstructorDeclaration) visitConstructorDeclaration(ctx.constructorDeclaration()));
-        } else if (ctx.buildFunctionDeclaration()!=null) {
+        } else if (ctx.buildFunctionDeclaration() != null) {
             classBody.setBuildFunctionDeclaration((BuildFunctionDeclaration) visitBuildFunctionDeclaration(ctx.buildFunctionDeclaration()));
         }
         return classBody;
@@ -116,55 +116,55 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public Widget visitWidget(ParserFile.WidgetContext ctx) {
         Widget widget = new Widget();
-        if (ctx.scaffold()!=null) {
+        if (ctx.scaffold() != null) {
             widget.setScaffold((Scaffold) visitScaffold(ctx.scaffold()));
-        } else if (ctx.container()!=null) {
+        } else if (ctx.container() != null) {
             widget.setContainer((Container) visitContainer(ctx.container()));
-        } else if (ctx.text()!=null) {
+        } else if (ctx.text() != null) {
             widget.setText((Text) visitText(ctx.text()));
-        } else if (ctx.image()!=null) {
+        } else if (ctx.image() != null) {
             widget.setImage((Image) visitImage(ctx.image()));
-        } else if (ctx.listView()!=null) {
+        } else if (ctx.listView() != null) {
             widget.setListView((ListView) visitListView(ctx.listView()));
-        } else if (ctx.appBar()!=null) {
+        } else if (ctx.appBar() != null) {
             widget.setAppBar((AppBar) visitAppBar(ctx.appBar()));
-        } else if (ctx.textField()!=null) {
+        } else if (ctx.textField() != null) {
             widget.setTextField((TextField) visitTextField(ctx.textField()));
-        } else if (ctx.column()!=null) {
+        } else if (ctx.column() != null) {
             widget.setColumn((Column) visitColumn(ctx.column()));
-        } else if (ctx.row()!=null) {
+        } else if (ctx.row() != null) {
             widget.setRow((Row) visitRow(ctx.row()));
-        } else if (ctx.card()!=null) {
+        } else if (ctx.card() != null) {
             widget.setCard((Card) visitCard(ctx.card()));
-        } else if (ctx.iconButton()!=null) {
+        } else if (ctx.iconButton() != null) {
             widget.setIconButton((IconButton) visitIconButton(ctx.iconButton()));
-        } else if (ctx.inkWell()!=null) {
+        } else if (ctx.inkWell() != null) {
             widget.setInkWell((InkWell) visitInkWell(ctx.inkWell()));
-        } else if (ctx.expanded()!=null) {
+        } else if (ctx.expanded() != null) {
             widget.setExpanded((Expanded) visitExpanded(ctx.expanded()));
-        } else if (ctx.bottomNavigationBar()!=null) {
+        } else if (ctx.bottomNavigationBar() != null) {
             widget.setBottomNavigationBar((BottomNavigationBar) visitBottomNavigationBar(ctx.bottomNavigationBar()));
-        } else if (ctx.slider()!=null) {
+        } else if (ctx.slider() != null) {
             widget.setSlider((Slider) visitSlider(ctx.slider()));
-        } else if (ctx.tabBar()!=null) {
+        } else if (ctx.tabBar() != null) {
             widget.setTabBar((TabBar) visitTabBar(ctx.tabBar()));
-        } else if (ctx.tabBarView()!=null) {
+        } else if (ctx.tabBarView() != null) {
             widget.setTabView((TabView) visitTabBarView(ctx.tabBarView()));
-        } else if (ctx.drawer()!=null) {
+        } else if (ctx.drawer() != null) {
             widget.setDrawer((Drawer) visitDrawer(ctx.drawer()));
-        } else if (ctx.floatingActionButton()!=null) {
+        } else if (ctx.floatingActionButton() != null) {
             widget.setFloatingActionButton((FloatingActionButton) visitFloatingActionButton(ctx.floatingActionButton()));
-        } else if (ctx.wrap()!=null) {
+        } else if (ctx.wrap() != null) {
             widget.setWrap((Wrap) visitWrap(ctx.wrap()));
-        } else if (ctx.flex()!=null) {
+        } else if (ctx.flex() != null) {
             widget.setFlex((Flex) visitFlex(ctx.flex()));
-        } else if (ctx.textFormField()!=null) {
+        } else if (ctx.textFormField() != null) {
             widget.setTextFormField((TextFormField) visitTextFormField(ctx.textFormField()));
-        } else if (ctx.textButton()!=null) {
+        } else if (ctx.textButton() != null) {
             widget.setTextButton((TextButton) visitTextButton(ctx.textButton()));
-        } else if (ctx.icon()!=null) {
+        } else if (ctx.icon() != null) {
             widget.setIcon((Icon) visitIcon(ctx.icon()));
-        } else if (ctx.sizedBox()!=null) {
+        } else if (ctx.sizedBox() != null) {
             widget.setSizedBox((SizedBox) visitSizedBox(ctx.sizedBox()));
         }
         return widget;
@@ -546,17 +546,17 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public ScaffoldArgs visitScaffoldArgs(ParserFile.ScaffoldArgsContext ctx) {
         ScaffoldArgs scaffoldArgs = new ScaffoldArgs();
-        if (ctx.body()!=null) {
+        if (ctx.body() != null) {
             scaffoldArgs.setBody((Body) visitBody(ctx.body()));
-        } else if (ctx.drawerArg()!=null) {
+        } else if (ctx.drawerArg() != null) {
             scaffoldArgs.setDrawerArg((DrawerArg) visitDrawerArg(ctx.drawerArg()));
-        } else if (ctx.appBarArg()!=null) {
+        } else if (ctx.appBarArg() != null) {
             scaffoldArgs.setAppBarArg((AppBarArg) visitAppBarArg(ctx.appBarArg()));
-        } else if (ctx.bottomNavigationBarArg()!=null) {
+        } else if (ctx.bottomNavigationBarArg() != null) {
             scaffoldArgs.setBottomNavigationBarArg((BottomNavigationBarArg) visitBottomNavigationBarArg(ctx.bottomNavigationBarArg()));
-        } else if (ctx.floatingActionButtonArg()!=null) {
+        } else if (ctx.floatingActionButtonArg() != null) {
             scaffoldArgs.setFloatingActionButtonArg((FloatingActionButtonArg) visitFloatingActionButtonArg(ctx.floatingActionButtonArg()));
-        } else if(ctx.backGroundColor()!=null){
+        } else if (ctx.backGroundColor() != null) {
             scaffoldArgs.setBackGroundColor((BackGroundColor) visitBackGroundColor(ctx.backGroundColor()));
         }
         return scaffoldArgs;
@@ -564,18 +564,18 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public ContainerArg visitContainerArgs(ParserFile.ContainerArgsContext ctx) {
-        ContainerArg containerArg=new ContainerArg();
-        if(ctx.child()!=null){
+        ContainerArg containerArg = new ContainerArg();
+        if (ctx.child() != null) {
             containerArg.setChild((Child) visitChild(ctx.child()));
-        }else if(ctx.width()!=null){
+        } else if (ctx.width() != null) {
             containerArg.setWidth((Width) visitWidth(ctx.width()));
-        }else if(ctx.height()!=null){
+        } else if (ctx.height() != null) {
             containerArg.setHeight((Height) visitHeight(ctx.height()));
-        }else if(ctx.color()!=null){
+        } else if (ctx.color() != null) {
             containerArg.setColor((Color) visitColor(ctx.color()));
-        }else if(ctx.margin()!=null){
+        } else if (ctx.margin() != null) {
             containerArg.setMargin((Margin) visitMargin(ctx.margin()));
-        }else if(ctx.padding()!=null){
+        } else if (ctx.padding() != null) {
             containerArg.setPadding((Padding) visitPadding(ctx.padding()));
         }
         return containerArg;
@@ -583,243 +583,521 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public TextArgs visitTextArgs(ParserFile.TextArgsContext ctx) {
-        TextArgs textArgs=new TextArgs();
-        if(ctx.STRING()!=null){
+        TextArgs textArgs = new TextArgs();
+        if (ctx.STRING() != null) {
             textArgs.setString(ctx.STRING().getText());
-        }else if(ctx.style()!=null){
+        } else if (ctx.style() != null) {
             textArgs.setStyle((Style) visitStyle(ctx.style()));
         }
         return textArgs;
     }
 
     @Override
-    public Object visitImageArgs(ParserFile.ImageArgsContext ctx) {
-        return super.visitImageArgs(ctx);
+    public ImageArgs visitImageArgs(ParserFile.ImageArgsContext ctx) {
+        ImageArgs imageArgs = new ImageArgs();
+        if (ctx.imageArg() != null) {
+            imageArgs.setImageArg((ImageArg) visitImageArg(ctx.imageArg()));
+        } else if (ctx.color() != null) {
+            imageArgs.setColor((Color) visitColor(ctx.color()));
+        } else if (ctx.height() != null) {
+            imageArgs.setHeight((Height) visitHeight(ctx.height()));
+        } else if (ctx.width() != null) {
+            imageArgs.setWidth((Width) visitWidth(ctx.width()));
+        }
+        return imageArgs;
     }
 
     @Override
-    public Object visitListviewArgs(ParserFile.ListviewArgsContext ctx) {
-        return super.visitListviewArgs(ctx);
+    public ListviewArgs visitListviewArgs(ParserFile.ListviewArgsContext ctx) {
+        ListviewArgs listviewArgs = new ListviewArgs();
+        if (ctx.children != null) {
+            listviewArgs.setChildren((Children) visitChildren(ctx.children()));
+        } else if (ctx.padding() != null) {
+            listviewArgs.setPadding((Padding) visitPadding(ctx.padding()));
+        }
+        return listviewArgs;
     }
 
     @Override
-    public Object visitAppBarArgs(ParserFile.AppBarArgsContext ctx) {
-        return super.visitAppBarArgs(ctx);
+    public AppBarArgs visitAppBarArgs(ParserFile.AppBarArgsContext ctx) {
+        AppBarArgs appBarArgs = new AppBarArgs();
+        if (ctx.title() != null) {
+            appBarArgs.setTitle((Title) visitTitle(ctx.title()));
+        } else if (ctx.leading() != null) {
+            appBarArgs.setLeading((Leading) visitLeading(ctx.leading()));
+        } else if (ctx.actions() != null) {
+            appBarArgs.setActions((Actions) visitActions(ctx.actions()));
+        } else if (ctx.backGroundColor() != null) {
+            appBarArgs.setBackGroundColor((BackGroundColor) visitBackGroundColor(ctx.backGroundColor()));
+        }
+
+        return appBarArgs;
     }
 
     @Override
-    public Object visitTextFieldArgs(ParserFile.TextFieldArgsContext ctx) {
-        return super.visitTextFieldArgs(ctx);
+    public TextFieldArgs visitTextFieldArgs(ParserFile.TextFieldArgsContext ctx) {
+        TextFieldArgs textFieldArgs = new TextFieldArgs();
+        if (ctx.style() != null) {
+            textFieldArgs.setStyle((Style) visitStyle(ctx.style()));
+        }
+        return textFieldArgs;
     }
 
     @Override
-    public Object visitColumnArgs(ParserFile.ColumnArgsContext ctx) {
-        return super.visitColumnArgs(ctx);
+    public ColumnArgs visitColumnArgs(ParserFile.ColumnArgsContext ctx) {
+        ColumnArgs columnArgs = new ColumnArgs();
+
+        if (ctx.children != null) {
+            columnArgs.setChildren((Children) visitChildren(ctx.children()));
+        } else if (ctx.mainAxis() != null) {
+            columnArgs.setMainAxis((MainAxis) visitMainAxis(ctx.mainAxis()));
+        } else if (ctx.crossAxis() != null) {
+            columnArgs.setCrossAxis((CrossAxis) visitCrossAxis(ctx.crossAxis()));
+        }
+        return columnArgs;
     }
 
     @Override
-    public Object visitRowArgs(ParserFile.RowArgsContext ctx) {
-        return super.visitRowArgs(ctx);
+    public RowArgs visitRowArgs(ParserFile.RowArgsContext ctx) {
+        RowArgs rowArgs = new RowArgs();
+        if (ctx.children != null) {
+            rowArgs.setChildren((Children) visitChildren(ctx.children()));
+        } else if (ctx.mainAxis() != null) {
+            rowArgs.setMainAxis((MainAxis) visitMainAxis(ctx.mainAxis()));
+        } else if (ctx.crossAxis() != null) {
+            rowArgs.setCrossAxis((CrossAxis) visitCrossAxis(ctx.crossAxis()));
+        }
+        return rowArgs;
     }
 
     @Override
-    public Object visitCardArgs(ParserFile.CardArgsContext ctx) {
-        return super.visitCardArgs(ctx);
+    public CardArgs visitCardArgs(ParserFile.CardArgsContext ctx) {
+        CardArgs cardArgs = new CardArgs();
+
+        if (ctx.color() != null) {
+            cardArgs.setColor((Color) visitColor(ctx.color()));
+        } else if (ctx.margin() != null) {
+            cardArgs.setMargin((Margin) visitMargin(ctx.margin()));
+        } else if (ctx.child() != null) {
+            cardArgs.setChild((Child) visitChild(ctx.child()));
+        }
+        return cardArgs;
     }
 
     @Override
-    public Object visitIconButtonArgs(ParserFile.IconButtonArgsContext ctx) {
-        return super.visitIconButtonArgs(ctx);
+    public IconButtonArgs visitIconButtonArgs(ParserFile.IconButtonArgsContext ctx) {
+        IconButtonArgs iconButtonArgs = new IconButtonArgs();
+        if (ctx.iconArg() != null) {
+            iconButtonArgs.setIconArg((IconArg) visitIconArg(ctx.iconArg()));
+        } else if (ctx.color() != null) {
+            iconButtonArgs.setColor((Color) visitColor(ctx.color()));
+        } else if (ctx.padding() != null) {
+            iconButtonArgs.setPadding((Padding) visitPadding(ctx.padding()));
+        }
+
+        return iconButtonArgs;
     }
 
     @Override
-    public Object visitInkwellArgs(ParserFile.InkwellArgsContext ctx) {
-        return super.visitInkwellArgs(ctx);
+    public InkWellArgs visitInkwellArgs(ParserFile.InkwellArgsContext ctx) {
+        InkWellArgs inkWellArgs = new InkWellArgs();
+
+        if (ctx.child() != null) {
+            inkWellArgs.setChild((Child) visitChild(ctx.child()));
+        } else if (ctx.onTap() != null) {
+            inkWellArgs.setOnTap((OnTap) visitOnTap(ctx.onTap()));
+        }
+        return inkWellArgs;
     }
 
     @Override
-    public Object visitExpandedArgs(ParserFile.ExpandedArgsContext ctx) {
-        return super.visitExpandedArgs(ctx);
+    public ExpandedArgs visitExpandedArgs(ParserFile.ExpandedArgsContext ctx) {
+        ExpandedArgs expandedArgs = new ExpandedArgs();
+
+        if (ctx.child() != null) {
+            expandedArgs.setChild((Child) visitChild(ctx.child()));
+        } else if (ctx.flexArg() != null) {
+            expandedArgs.setFlexArg((FlexArg) visitFlexArg(ctx.flexArg()));
+        }
+
+        return expandedArgs;
     }
 
     @Override
-    public Object visitBottomNavigationBarArgs(ParserFile.BottomNavigationBarArgsContext ctx) {
-        return super.visitBottomNavigationBarArgs(ctx);
+    public BottomNavigationBarArgs visitBottomNavigationBarArgs(ParserFile.BottomNavigationBarArgsContext ctx) {
+        BottomNavigationBarArgs bottomNavigationBarArgs = new BottomNavigationBarArgs();
+
+        if (ctx.items() != null) {
+            bottomNavigationBarArgs.setItems((Items) visitItems(ctx.items()));
+        } else if (ctx.backGroundColor() != null) {
+            bottomNavigationBarArgs.setBackGroundColor((BackGroundColor) visitBackGroundColor(ctx.backGroundColor()));
+        } else if (ctx.currentIndex() != null) {
+            bottomNavigationBarArgs.setCurrentIndex((CurrentIndex) visitCurrentIndex(ctx.currentIndex()));
+        }
+        return bottomNavigationBarArgs;
     }
 
     @Override
-    public Object visitSliderArgs(ParserFile.SliderArgsContext ctx) {
-        return super.visitSliderArgs(ctx);
+    public SliderArgs visitSliderArgs(ParserFile.SliderArgsContext ctx) {
+        SliderArgs sliderArgs = new SliderArgs();
+
+        if (ctx.min() != null) {
+            sliderArgs.setMin((Min) visitMin(ctx.min()));
+        } else if (ctx.max() != null) {
+            sliderArgs.setMax((Max) visitMax(ctx.max()));
+        }
+
+        return sliderArgs;
     }
 
     @Override
-    public Object visitTabBarArgs(ParserFile.TabBarArgsContext ctx) {
-        return super.visitTabBarArgs(ctx);
+    public TabBarArgs visitTabBarArgs(ParserFile.TabBarArgsContext ctx) {
+        TabBarArgs tabBarArgs = new TabBarArgs();
+
+        if (ctx.tabs() != null) {
+            tabBarArgs.setTabs((Tabs) visitTabs(ctx.tabs()));
+        } else if (ctx.padding() != null) {
+            tabBarArgs.setPadding((Padding) visitPadding(ctx.padding()));
+        }
+
+        return tabBarArgs;
     }
 
     @Override
-    public Object visitTabBarViewArgs(ParserFile.TabBarViewArgsContext ctx) {
-        return super.visitTabBarViewArgs(ctx);
+    public TabBarViewArgs visitTabBarViewArgs(ParserFile.TabBarViewArgsContext ctx) {
+        TabBarViewArgs tabBarViewArgs = new TabBarViewArgs();
+        if (ctx.children() != null) {
+            tabBarViewArgs.setChildren((Children) visitChildren(ctx.children()));
+        }
+        return tabBarViewArgs;
     }
 
     @Override
-    public Object visitDrawerArgs(ParserFile.DrawerArgsContext ctx) {
-        return super.visitDrawerArgs(ctx);
+    public DrawerArgs visitDrawerArgs(ParserFile.DrawerArgsContext ctx) {
+        DrawerArgs drawerArgs = new DrawerArgs();
+        if (ctx.backGroundColor() != null) {
+            drawerArgs.setBackGroundColor((BackGroundColor) visitBackGroundColor(ctx.backGroundColor()));
+        } else if (ctx.child() != null) {
+            drawerArgs.setChild((Child) visitChild(ctx.child()));
+        } else if (ctx.width() != null) {
+            drawerArgs.setWidth((Width) visitWidth(ctx.width()));
+        }
+        return drawerArgs;
     }
 
     @Override
-    public Object visitFloatingActionButtonArgs(ParserFile.FloatingActionButtonArgsContext ctx) {
-        return super.visitFloatingActionButtonArgs(ctx);
+    public FloatingActionButtonArgs visitFloatingActionButtonArgs(ParserFile.FloatingActionButtonArgsContext ctx) {
+        FloatingActionButtonArgs floatingActionButtonArgs = new FloatingActionButtonArgs();
+        if (ctx.child() != null) {
+            floatingActionButtonArgs.setChild((Child) visitChild(ctx.child()));
+        } else if (ctx.backGroundColor() != null) {
+            floatingActionButtonArgs.setBackGroundColor((BackGroundColor) visitBackGroundColor(ctx.backGroundColor()));
+        }
+
+        return floatingActionButtonArgs;
     }
 
     @Override
-    public Object visitWrapArgs(ParserFile.WrapArgsContext ctx) {
-        return super.visitWrapArgs(ctx);
+    public WrapArgs visitWrapArgs(ParserFile.WrapArgsContext ctx) {
+        WrapArgs wrapArgs = new WrapArgs();
+
+        if (ctx.children() != null) {
+            wrapArgs.setChildren((Children) visitChildren(ctx.children()));
+        } else if (ctx.crossAxis() != null) {
+            wrapArgs.setCrossAxis((CrossAxis) visitCrossAxis(ctx.crossAxis()));
+        }
+        return wrapArgs;
     }
 
     @Override
-    public Object visitFlexArgs(ParserFile.FlexArgsContext ctx) {
-        return super.visitFlexArgs(ctx);
+    public FlexArgs visitFlexArgs(ParserFile.FlexArgsContext ctx) {
+        FlexArgs flexArgs = new FlexArgs();
+
+        if (ctx.child() != null) {
+            flexArgs.setChild((Child) visitChild(ctx.child()));
+        } else if (ctx.flexArg() != null) {
+            flexArgs.setFlexArg((FlexArg) visitFlexArg(ctx.flexArg()));
+        }
+        return flexArgs;
     }
 
     @Override
-    public Object visitTextFormFieldArgs(ParserFile.TextFormFieldArgsContext ctx) {
-        return super.visitTextFormFieldArgs(ctx);
+    public TextFormFieldArgs visitTextFormFieldArgs(ParserFile.TextFormFieldArgsContext ctx) {
+        TextFormFieldArgs textFormFieldArgs = new TextFormFieldArgs();
+
+        if (ctx.style() != null) {
+            textFormFieldArgs.setStyle((Style) visitStyle(ctx.style()));
+        }
+        return textFormFieldArgs;
     }
 
     @Override
-    public Object visitTextButtonArgs(ParserFile.TextButtonArgsContext ctx) {
-        return super.visitTextButtonArgs(ctx);
+    public TextButtonArgs visitTextButtonArgs(ParserFile.TextButtonArgsContext ctx) {
+        TextButtonArgs textButtonArgs = new TextButtonArgs();
+        if (ctx.child() != null) {
+            textButtonArgs.setChild((Child) visitChild(ctx.child()));
+        } else if (ctx.style() != null) {
+            textButtonArgs.setStyle((Style) visitStyle(ctx.style()));
+        }
+        return textButtonArgs;
     }
 
     @Override
-    public Object visitIconArgs(ParserFile.IconArgsContext ctx) {
-        return super.visitIconArgs(ctx);
+    public IconArgs visitIconArgs(ParserFile.IconArgsContext ctx) {
+        IconArgs iconArgs = new IconArgs();
+
+        if (ctx.size() != null) {
+            iconArgs.setSize((Size) visitSize(ctx.size()));
+        } else if (ctx.color() != null) {
+            iconArgs.setColor((Color) visitColor(ctx.color()));
+        } else if (ctx.ICONS() != null) {
+            iconArgs.setIcon(ctx.ICONS().getText());
+        }
+        return iconArgs;
     }
 
     @Override
-    public Object visitSizedBoxArgs(ParserFile.SizedBoxArgsContext ctx) {
-        return super.visitSizedBoxArgs(ctx);
+    public SizedBoxArgs visitSizedBoxArgs(ParserFile.SizedBoxArgsContext ctx) {
+        SizedBoxArgs sizedBoxArgs = new SizedBoxArgs();
+
+        if (ctx.child() != null) {
+            sizedBoxArgs.setChild((Child) visitChild(ctx.child()));
+        } else if (ctx.height() != null) {
+            sizedBoxArgs.setHeight((Height) visitHeight(ctx.height()));
+        } else if (ctx.width() != null) {
+            sizedBoxArgs.setWidth((Width) visitWidth(ctx.width()));
+        }
+        return sizedBoxArgs;
     }
 
     @Override
-    public Object visitTextStyleArgs(ParserFile.TextStyleArgsContext ctx) {
-        return super.visitTextStyleArgs(ctx);
+    public TextStyleArgs visitTextStyleArgs(ParserFile.TextStyleArgsContext ctx) {
+        TextStyleArgs textStyleArgs = new TextStyleArgs();
+
+        if (ctx.backGroundColor() != null) {
+            textStyleArgs.setBackGroundColor((BackGroundColor) visitBackGroundColor(ctx.backGroundColor()));
+        } else if (ctx.color() != null) {
+            textStyleArgs.setColor((Color) visitColor(ctx.color()));
+        } else if (ctx.fontSize() != null) {
+            textStyleArgs.setFontSize((FontSize) visitFontSize(ctx.fontSize()));
+        }
+
+        return textStyleArgs;
     }
 
     @Override
-    public Object visitCenterArgs(ParserFile.CenterArgsContext ctx) {
-        return super.visitCenterArgs(ctx);
+    public CenterArgs visitCenterArgs(ParserFile.CenterArgsContext ctx) {
+        CenterArgs centerArgs = new CenterArgs();
+        if (ctx.child() != null) {
+            centerArgs.setChild((Child) visitChild(ctx.child()));
+        }
+        return centerArgs;
     }
 
     @Override
-    public Object visitBody(ParserFile.BodyContext ctx) {
-        return super.visitBody(ctx);
+    public Body visitBody(ParserFile.BodyContext ctx) {
+        Body body = new Body();
+        if (ctx.widget() != null) {
+            body.setWidget((Widget) visitWidget(ctx.widget()));
+        }
+        return body;
     }
 
     @Override
-    public Object visitDrawerArg(ParserFile.DrawerArgContext ctx) {
-        return super.visitDrawerArg(ctx);
+    public DrawerArg visitDrawerArg(ParserFile.DrawerArgContext ctx) {
+        DrawerArg drawerArg = new DrawerArg();
+        if (ctx.drawer() != null) {
+            drawerArg.setDrawer((Drawer) visitDrawer(ctx.drawer()));
+        }
+        return drawerArg;
     }
 
     @Override
-    public Object visitAppBarArg(ParserFile.AppBarArgContext ctx) {
-        return super.visitAppBarArg(ctx);
+    public AppBarArg visitAppBarArg(ParserFile.AppBarArgContext ctx) {
+        AppBarArg appBarArg = new AppBarArg();
+        if (ctx.appBar() != null) {
+            appBarArg.setAppBar((AppBar) visitAppBar(ctx.appBar()));
+        }
+        return appBarArg;
     }
 
     @Override
-    public Object visitBottomNavigationBarArg(ParserFile.BottomNavigationBarArgContext ctx) {
-        return super.visitBottomNavigationBarArg(ctx);
+    public BottomNavigationBarArg visitBottomNavigationBarArg(ParserFile.BottomNavigationBarArgContext ctx) {
+        BottomNavigationBarArg bottomNavigationBarArg = new BottomNavigationBarArg();
+        if (ctx.bottomNavigationBar() != null) {
+            bottomNavigationBarArg.setBottomNavigationBar((BottomNavigationBar) visitBottomNavigationBar(ctx.bottomNavigationBar()));
+        }
+        return bottomNavigationBarArg;
     }
 
     @Override
-    public Object visitFloatingActionButtonArg(ParserFile.FloatingActionButtonArgContext ctx) {
-        return super.visitFloatingActionButtonArg(ctx);
+    public FloatingActionButtonArg visitFloatingActionButtonArg(ParserFile.FloatingActionButtonArgContext ctx) {
+        FloatingActionButtonArg floatingActionButtonArg = new FloatingActionButtonArg();
+        if (ctx.floatingActionButton() != null) {
+            floatingActionButtonArg.setFloatingActionButton((FloatingActionButton) visitFloatingActionButton(ctx.floatingActionButton()));
+        }
+        return floatingActionButtonArg;
     }
 
     @Override
-    public Object visitChild(ParserFile.ChildContext ctx) {
-        return super.visitChild(ctx);
+    public Child visitChild(ParserFile.ChildContext ctx) {
+        Child child = new Child();
+        if (ctx.widget() != null) {
+            child.setWidget((Widget) visitWidget(ctx.widget()));
+        }
+        return child;
     }
 
     @Override
-    public Object visitChildren(ParserFile.ChildrenContext ctx) {
-        return super.visitChildren(ctx);
+    public Children visitChildren(ParserFile.ChildrenContext ctx) {
+        Children children = new Children();
+        if (!ctx.widget().isEmpty()) {
+            for (int i = 0; i < ctx.widget().size(); i++) {
+                if (ctx.widget(i) != null) {
+                    children.getWidgets().add((Widget) visitWidget(ctx.widget(i)));
+                }
+            }
+        }
+        return children;
     }
 
     @Override
-    public Object visitHeight(ParserFile.HeightContext ctx) {
-        return super.visitHeight(ctx);
+    public Height visitHeight(ParserFile.HeightContext ctx) {
+        Height height = new Height();
+        if (ctx.DOUBLE() != null) {
+            height.setValue(Double.valueOf(ctx.DOUBLE().getText()));
+        }
+        return height;
     }
 
     @Override
-    public Object visitWidth(ParserFile.WidthContext ctx) {
-        return super.visitWidth(ctx);
+    public Width visitWidth(ParserFile.WidthContext ctx) {
+        Width width = new Width();
+        if (ctx.DOUBLE() != null) {
+            width.setValue(Double.valueOf(ctx.DOUBLE().getText()));
+        }
+        return width;
     }
 
     @Override
-    public Object visitColor(ParserFile.ColorContext ctx) {
-        return super.visitColor(ctx);
+    public Color visitColor(ParserFile.ColorContext ctx) {
+        Color color = new Color();
+        if (ctx.COLORS() != null) {
+            color.setColor(ctx.COLORS().getText());
+        }
+        return color;
     }
 
     @Override
-    public Object visitMargin(ParserFile.MarginContext ctx) {
-        return super.visitMargin(ctx);
+    public Margin visitMargin(ParserFile.MarginContext ctx) {
+        Margin margin = new Margin();
+        if (ctx.DOUBLE() != null) {
+            margin.setValue(Double.valueOf(ctx.DOUBLE().getText()));
+        }
+        return margin;
     }
 
     @Override
-    public Object visitPadding(ParserFile.PaddingContext ctx) {
-        return super.visitPadding(ctx);
+    public Padding visitPadding(ParserFile.PaddingContext ctx) {
+        Padding padding = new Padding();
+        if (ctx.DOUBLE() != null) {
+            padding.setValue(Double.valueOf(ctx.DOUBLE().getText()));
+        }
+        return padding;
     }
 
     @Override
-    public Object visitItems(ParserFile.ItemsContext ctx) {
-        return super.visitItems(ctx);
+    public Items visitItems(ParserFile.ItemsContext ctx) {
+        Items items = new Items();
+        if (!ctx.widget().isEmpty()) {
+            for (int i = 0; i < ctx.widget().size(); i++) {
+                if (ctx.widget(i) != null) {
+                    items.getWidgets().add((Widget) visitWidget(ctx.widget(i)));
+                }
+            }
+        }
+        return items;
     }
 
     @Override
-    public Object visitCurrentIndex(ParserFile.CurrentIndexContext ctx) {
-        return super.visitCurrentIndex(ctx);
+    public CurrentIndex visitCurrentIndex(ParserFile.CurrentIndexContext ctx) {
+        CurrentIndex currentIndex = new CurrentIndex();
+        if (ctx.INT() != null) {
+            currentIndex.setValue(Integer.valueOf(ctx.INT().getText()));
+        }
+        return currentIndex;
     }
 
     @Override
-    public Object visitBackGroundColor(ParserFile.BackGroundColorContext ctx) {
-        return super.visitBackGroundColor(ctx);
+    public BackGroundColor visitBackGroundColor(ParserFile.BackGroundColorContext ctx) {
+        BackGroundColor backGroundColor = new BackGroundColor();
+        if (ctx.COLORS() != null) {
+            backGroundColor.setColor(ctx.COLORS().getText());
+        }
+        return backGroundColor;
     }
 
     @Override
-    public Object visitCrossAxis(ParserFile.CrossAxisContext ctx) {
-        return super.visitCrossAxis(ctx);
+    public CrossAxis visitCrossAxis(ParserFile.CrossAxisContext ctx) {
+        CrossAxis crossAxis = new CrossAxis();
+        if (ctx.AXIS() != null) {
+            crossAxis.setAxis(ctx.AXIS().getText());
+        }
+        return crossAxis;
     }
 
     @Override
-    public Object visitMainAxis(ParserFile.MainAxisContext ctx) {
-        return super.visitMainAxis(ctx);
+    public MainAxis visitMainAxis(ParserFile.MainAxisContext ctx) {
+        MainAxis mainAxis = new MainAxis();
+        if (ctx.AXIS() != null) {
+            mainAxis.setAxis(ctx.AXIS().getText());
+        }
+        return mainAxis;
     }
 
     @Override
-    public Object visitStyle(ParserFile.StyleContext ctx) {
-        return super.visitStyle(ctx);
+    public Style visitStyle(ParserFile.StyleContext ctx) {
+        Style style = new Style();
+        if (ctx.textStyle() != null) {
+            style.setTextStyle((TextStyle) visitTextStyle(ctx.textStyle()));
+        }
+        return style;
     }
 
     @Override
-    public Object visitFontSize(ParserFile.FontSizeContext ctx) {
-        return super.visitFontSize(ctx);
+    public FontSize visitFontSize(ParserFile.FontSizeContext ctx) {
+        FontSize fontSize = new FontSize();
+        if (ctx.DOUBLE() != null) {
+            fontSize.setValue(Double.valueOf(ctx.DOUBLE().getText()));
+        }
+        return fontSize;
     }
 
     @Override
-    public Object visitImageArg(ParserFile.ImageArgContext ctx) {
-        return super.visitImageArg(ctx);
+    public ImageArg visitImageArg(ParserFile.ImageArgContext ctx) {
+        ImageArg imageArg = new ImageArg();
+        if (ctx.STRING() != null) {
+            imageArg.setValue(ctx.STRING().getText());
+        }
+        return imageArg;
     }
 
     @Override
-    public Object visitLeading(ParserFile.LeadingContext ctx) {
-        return super.visitLeading(ctx);
+    public Leading visitLeading(ParserFile.LeadingContext ctx) {
+        Leading leading = new Leading();
+        if (ctx.widget() != null) {
+            leading.setWidget((Widget) visitWidget(ctx.widget()));
+        }
+        return leading;
     }
 
     @Override
-    public Object visitTitle(ParserFile.TitleContext ctx) {
-        return super.visitTitle(ctx);
+    public Title visitTitle(ParserFile.TitleContext ctx) {
+        Title title = new Title();
+        if (ctx.widget() != null) {
+            title.setWidget((Widget) visitWidget(ctx.widget()));
+        }
+        return title;
     }
 
     @Override

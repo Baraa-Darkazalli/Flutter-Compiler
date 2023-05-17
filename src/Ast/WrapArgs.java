@@ -43,4 +43,9 @@ public class WrapArgs extends HtmlElement {
     public String generateHtmlCode() {
         return "";
     }
+
+    @Override
+    public String generateStyleCode() {
+        return null;
+    }
 }
