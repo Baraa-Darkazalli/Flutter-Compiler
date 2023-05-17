@@ -5,7 +5,7 @@ import Ast.Classes.HtmlElement;
 public class Transtion extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Push push;
-    private Pop pop;
+    private boolean pop;
 
     //---------------------------    Setters & Getters     -------------------------------
     public Push getPush() {
@@ -16,15 +16,18 @@ public class Transtion extends HtmlElement {
         this.push = push;
     }
 
-    public Pop getPop() {
+    public boolean getPop() {
         return pop;
     }
 
-    public void setPop(Pop pop) {
+    public void setPop(boolean pop) {
         this.pop = pop;
     }
 
+
     //---------------------------    Override Func     -------------------------------
+
+
     @Override
     public String toString() {
         return "Transtion{" +
@@ -41,5 +44,10 @@ public class Transtion extends HtmlElement {
     @Override
     public String generateHtmlCode() {
         return "";
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return null;
     }
 }
