@@ -44,4 +44,9 @@ public class Constructor extends HtmlElement {
     public String generateHtmlCode() {
         return "";
     }
+
+    @Override
+    public String generateStyleCode() {
+        return null;
+    }
 }

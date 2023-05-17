@@ -8,19 +8,21 @@ public class ConstructorField extends HtmlElement {
     private double value;
 
     //---------------------------    Setters & Getters     -------------------------------
-    public String getDataType() {
+
+
+    public String getString() {
         return string;
     }
 
-    public void setDataType(String string) {
+    public void setString(String string) {
         this.string = string;
     }
 
-    public double getAttributeName() {
+    public double getValue() {
         return value;
     }
 
-    public void setAttributeName(double value) {
+    public void setValue(double value) {
         this.value = value;
     }
 
@@ -41,5 +43,10 @@ public class ConstructorField extends HtmlElement {
     @Override
     public String generateHtmlCode() {
         return "";
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return null;
     }
 }
