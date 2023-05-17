@@ -5,8 +5,10 @@ import Ast.Classes.HtmlElement;
 public class InkWellArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Child child;
+    private OnTap onTap;
 
     //---------------------------    Setters & Getters     -------------------------------
+
     public Child getChild() {
         return child;
     }
@@ -15,14 +17,22 @@ public class InkWellArgs extends HtmlElement {
         this.child = child;
     }
 
+    public OnTap getOnTap() {
+        return onTap;
+    }
 
-    //---------------------------    Override Func     -------------------------------
+    public void setOnTap(OnTap onTap) {
+        this.onTap = onTap;
+    }
+
+
     @Override
     public String toString() {
-        return "InkWellArgs{" +
-                "child=" + child +
-                '}';
+        return "InkWellArgs{" + "child=" + child + ", onTap=" + onTap + '}';
     }
+
+    //---------------------------    Override Func     -------------------------------
+
 
     @Override
     public String generateHtmlAttribute() {
@@ -32,5 +42,10 @@ public class InkWellArgs extends HtmlElement {
     @Override
     public String generateHtmlCode() {
         return "";
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return null;
     }
 }

@@ -5,9 +5,11 @@ import Ast.Classes.HtmlElement;
 public class IconArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Size size;
-    private Color child;
+    private Color color;
+    private String icon;
 
     //---------------------------    Setters & Getters     -------------------------------
+
     public Size getSize() {
         return size;
     }
@@ -16,20 +18,32 @@ public class IconArgs extends HtmlElement {
         this.size = size;
     }
 
-    public Color getChild() {
-        return child;
+    public Color getColor() {
+        return color;
     }
 
-    public void setChild(Color child) {
-        this.child = child;
+    public void setColor(Color color) {
+        this.color = color;
     }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
 
     //---------------------------    Override Func     -------------------------------
+
+
     @Override
     public String toString() {
         return "IconArgs{" +
                 "size=" + size +
-                ", child=" + child +
+                ", color=" + color +
+                ", icon='" + icon + '\'' +
                 '}';
     }
 
@@ -41,5 +55,10 @@ public class IconArgs extends HtmlElement {
     @Override
     public String generateHtmlCode() {
         return "";
+    }
+
+    @Override
+    public String generateStyleCode() {
+        return null;
     }
 }
