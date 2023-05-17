@@ -44,6 +44,6 @@ public class CenterArgs extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }

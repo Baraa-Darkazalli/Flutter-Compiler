@@ -7,16 +7,16 @@ import java.util.List;
 
 public class Actions extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private List<Widget> widget;
+    private List<Widget> widgets;
 
     //---------------------------    Setters & Getters     -------------------------------
 
-    public List<Widget> getWidget() {
-        return widget;
+    public List<Widget> getWidgets() {
+        return widgets;
     }
 
-    public void setWidget(List<Widget> widget) {
-        this.widget = widget;
+    public void setWidgets(List<Widget> widgets) {
+        this.widgets = widgets;
     }
 
 
@@ -24,13 +24,13 @@ public class Actions extends HtmlElement {
 
 
     public Actions() {
-        this.widget = new ArrayList<>();
+        this.widgets = new ArrayList<>();
     }
 
     @Override
     public String toString() {
         return "Actions{" +
-                "widget=" + widget +
+                "widgets=" + widgets +
                 '}';
     }
 
@@ -43,7 +43,13 @@ public class Actions extends HtmlElement {
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append(widget.generateHtmlCode());
+        if(widgets != null && !widgets.isEmpty())
+        {
+            for(Widget widget : widgets)
+            {
+                sb.append(widget.generateHtmlCode());
+            }
+        }
 
         return sb.toString();
     }
