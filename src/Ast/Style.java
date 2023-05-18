@@ -38,10 +38,7 @@ public class Style extends HtmlElement {
 
         StringBuilder sb = new StringBuilder();
 
-        if(textStyle != null)
-        {
-            sb.append(textStyle.generateStyleCode());
-        }
+        sb.append(textStyle.generateStyleCode());
 
         return sb.toString();
     }

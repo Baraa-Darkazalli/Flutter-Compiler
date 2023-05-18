@@ -24,7 +24,17 @@ public class OnTap extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(expressions != null && !expressions.isEmpty())
+        {
+            for (Expression expression:expressions)
+            {
+                sb.append(expression.generateHtmlAttribute());
+            }
+        }
+        
+        return sb.toString();
     }
 
     @Override

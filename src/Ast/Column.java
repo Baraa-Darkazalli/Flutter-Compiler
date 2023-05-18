@@ -38,6 +38,28 @@ public class Column extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(columnArgs != null && !columnArgs.isEmpty())
+        {
+            sb.append("<style>\n");
+            sb.append("  .column{\n");
+            sb.append("    display: flex; flex-direction: row; justify-content: space-between; align-items: center;\"\n");
+            sb.append("  }\n");
+            sb.append("</style>\n");
+            sb.append("<div class=\"column\" >\n");
+            for(ColumnArgs columnArg:columnArgs)
+            {
+                sb.append(columnArg.generateHtmlCode());
+            }
+            sb.append("</div>\n");
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

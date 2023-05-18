@@ -25,7 +25,11 @@ public class Expression extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(allowExp.generateHtmlAttribute());
+
+        return sb.toString();
     }
 
     @Override
@@ -35,6 +39,6 @@ public class Expression extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }

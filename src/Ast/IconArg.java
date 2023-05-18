@@ -30,11 +30,13 @@ public class IconArg extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+        sb.append(widget.generateHtmlCode());
+        return sb.toString();
     }
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }

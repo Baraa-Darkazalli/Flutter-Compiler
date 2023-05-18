@@ -37,7 +37,19 @@ public class Constructor extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("\'").append(identifier).append("\' "); // no "\n"
+        if(constructorFields != null && !constructorFields.isEmpty())
+        {
+            for (ConstructorField constructorField:constructorFields)
+            {
+                sb.append(constructorField.generateHtmlAttribute());
+            }
+        }
+
+
+        return sb.toString();
     }
 
     @Override
@@ -47,6 +59,6 @@ public class Constructor extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }

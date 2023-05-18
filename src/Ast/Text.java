@@ -44,14 +44,7 @@ public class Text extends HtmlElement {
         {
             for(TextArgs textArg:textArgsList)
             {
-                sb.append("<style>\n");
-                sb.append("  .p{\n");
-                sb.append(textArg.generateStyleCode());
-                sb.append("  }");
-                sb.append("</style>\n");
-                sb.append("<p>\n");
                 sb.append(textArg.generateHtmlCode());
-                sb.append("</p>\n");
             }
         }
 

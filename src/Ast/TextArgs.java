@@ -46,7 +46,17 @@ public class TextArgs extends HtmlElement {
 
         if(string != null)
         {
+            sb.append("<p>\n");
             sb.append(string);
+            sb.append("</p>\n");
+        }
+        else if(style != null)
+        {
+            sb.append("<style>\n");
+            sb.append("  .p{\n");
+            sb.append(style.generateStyleCode());
+            sb.append("  }\n");
+            sb.append("</style>\n");
         }
 
         return sb.toString();
@@ -54,13 +64,6 @@ public class TextArgs extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        StringBuilder sb = new StringBuilder();
-
-        if(style != null)
-        {
-            sb.append(style.generateStyleCode());
-        }
-
-        return sb.toString();
+        return "";
     }
 }

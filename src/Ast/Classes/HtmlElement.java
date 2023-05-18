@@ -1,9 +1,20 @@
 package Ast.Classes;
 
-public abstract class HtmlElement {
-    public abstract String generateHtmlAttribute();
+public class HtmlElement {
+    public String generateHtmlAttribute()
+    {
+        return "";
+    }
 
-    public abstract String generateHtmlCode();
+    public String generateHtmlCode(){
+        return "";
+    }
 
-    public abstract String generateStyleCode();
+    public String generateStyleCode(){
+        return "";
+    }
+
+    public String generateScriptCode(){
+        return "";
+    }
 }

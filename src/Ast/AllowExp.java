@@ -5,7 +5,7 @@ import Ast.Classes.HtmlElement;
 public class AllowExp extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private NavigateExp navigateExp;
-    private RunAppExp runAppExp;
+    private RunAppExp runAppExp;        //#ignore from Code Generation
 
     //---------------------------    Setters & Getters     -------------------------------
     public NavigateExp getNavigateExp() {
@@ -35,11 +35,23 @@ public class AllowExp extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(navigateExp != null)
+        {
+            sb.append("navigate(").append(navigateExp.generateHtmlAttribute()).append(")"); // no "\n"
+        }
+
+        return  sb.toString();
     }
 
     @Override
     public String generateHtmlCode() {
+        return "";
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

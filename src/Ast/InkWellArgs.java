@@ -36,12 +36,26 @@ public class InkWellArgs extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(onTap != null)
+        {
+            sb.append(" onclick=\"").append(onTap.generateHtmlAttribute()).append(" \""); // no "\n"
+        }
+
+        return sb.toString();
     }
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(child != null)
+        {
+            sb.append(child.generateHtmlCode());
+        }
+
+        return sb.toString();
     }
 
     @Override

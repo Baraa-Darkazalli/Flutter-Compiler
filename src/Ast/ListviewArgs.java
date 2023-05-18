@@ -51,7 +51,7 @@ public class ListviewArgs extends HtmlElement {
         else if(padding != null)
         {
             sb.append("<style>\n");
-            sb.append("  .listView-children{\n");
+            sb.append("  .listView-children > *{\n");
             sb.append(padding.generateStyleCode());
             sb.append("  }\n");
             sb.append("</style>\n");
