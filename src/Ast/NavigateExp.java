@@ -25,7 +25,11 @@ public class NavigateExp extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(transtion.generateHtmlAttribute());
+
+        return sb.toString();
     }
 
     @Override

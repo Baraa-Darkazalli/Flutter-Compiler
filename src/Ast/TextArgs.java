@@ -47,7 +47,7 @@ public class TextArgs extends HtmlElement {
         if(string != null)
         {
             sb.append("<p>\n");
-            sb.append(string);
+            sb.append(string.replaceAll("\'|\"",""));
             sb.append("</p>\n");
         }
         else if(style != null)

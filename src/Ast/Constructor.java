@@ -2,6 +2,7 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Constructor extends HtmlElement {
@@ -9,7 +10,12 @@ public class Constructor extends HtmlElement {
     private String identifier;
     private List<ConstructorField> constructorFields;
 
-    //---------------------------    Setters & Getters     -------------------------------
+    //---------------------------    Constructor     -------------------------------
+    public Constructor ()
+    {
+        constructorFields = new ArrayList<>();
+    }
+    // ---------------------------    Setters & Getters     -------------------------------
 
     public String getIdentifier() {
         return identifier;
@@ -39,12 +45,12 @@ public class Constructor extends HtmlElement {
     public String generateHtmlAttribute() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("\'").append(identifier).append("\' "); // no "\n"
+        sb.append("\'").append(identifier).append(".html\' "); // no "\n"
         if(constructorFields != null && !constructorFields.isEmpty())
         {
             for (ConstructorField constructorField:constructorFields)
             {
-                sb.append(constructorField.generateHtmlAttribute());
+                sb.append(",").append(constructorField.generateHtmlAttribute()); // no "\n"
             }
         }
 

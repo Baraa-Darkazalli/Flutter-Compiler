@@ -59,7 +59,7 @@ public class RowArgs extends HtmlElement {
         else
         {
             sb.append("<style>\n");
-            sb.append("  .column{\n");
+            sb.append("  .row{\n");
             if(mainAxis != null)
             {
                 sb.append(mainAxis.generateStyleCode());

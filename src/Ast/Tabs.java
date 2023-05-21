@@ -33,7 +33,17 @@ public class Tabs extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(widgets != null && !widgets.isEmpty())
+        {
+            for(Widget widget:widgets)
+            {
+                sb.append(widget.generateHtmlCode());
+            }
+        }
+
+        return sb.toString();
     }
 
     @Override

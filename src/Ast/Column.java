@@ -44,7 +44,7 @@ public class Column extends HtmlElement {
         {
             sb.append("<style>\n");
             sb.append("  .column{\n");
-            sb.append("    display: flex; flex-direction: row; justify-content: space-between; align-items: center;\"\n");
+            sb.append("    display: flex; flex-direction: column; justify-content: space-between; align-items: center;\"\n");
             sb.append("  }\n");
             sb.append("</style>\n");
             sb.append("<div class=\"column\" >\n");

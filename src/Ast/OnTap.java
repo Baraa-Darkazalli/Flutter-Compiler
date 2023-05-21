@@ -2,11 +2,19 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OnTap extends HtmlElement {
+    //---------------------------    Attributes     -------------------------------
     private List<Expression> expressions;
 
+    //---------------------------    Constructor     -------------------------------
+    public OnTap() {
+        expressions = new ArrayList<>();
+    }
+
+    //---------------------------    Setters & Getters     -------------------------------
     public List<Expression> getExpressions() {
         return expressions;
     }
@@ -15,6 +23,7 @@ public class OnTap extends HtmlElement {
         this.expressions = expressions;
     }
 
+    //---------------------------    Override Func     -------------------------------
     @Override
     public String toString() {
         return "OnTap{" +
@@ -30,20 +39,11 @@ public class OnTap extends HtmlElement {
         {
             for (Expression expression:expressions)
             {
-                sb.append(expression.generateHtmlAttribute());
+                sb.append(expression.generateHtmlAttribute()).append("; ");
             }
         }
         
         return sb.toString();
     }
 
-    @Override
-    public String generateHtmlCode() {
-        return "";
-    }
-
-    @Override
-    public String generateStyleCode() {
-        return "";
-    }
 }

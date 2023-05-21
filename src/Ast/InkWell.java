@@ -53,7 +53,6 @@ public class InkWell extends HtmlElement {
                 sb.append(inkWellArg.generateHtmlCode());
             }
             sb.append("</div>\n");
-
         }
 
         return sb.toString();

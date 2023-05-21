@@ -43,7 +43,7 @@ public class Row extends HtmlElement {
         if(rowArgs != null && !rowArgs.isEmpty())
         {
             sb.append("<style>\n");
-            sb.append("  .column{\n");
+            sb.append("  .row{\n");
             sb.append("    display: flex; flex-direction: row; justify-content: space-between; align-items: center;\"\n");
             sb.append("  }\n");
             sb.append("</style>\n");

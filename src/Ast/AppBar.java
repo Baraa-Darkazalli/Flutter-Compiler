@@ -44,7 +44,7 @@ public class AppBar extends HtmlElement {
         {
             for (AppBarArgs appBarArg:appBarArgs)
             {
-                sb.append(appBarArg.generateHtmlAttribute());
+                sb.append(appBarArg.generateHtmlCode());
             }
         }
 

@@ -13,8 +13,4 @@ public class HtmlElement {
     public String generateStyleCode(){
         return "";
     }
-
-    public String generateScriptCode(){
-        return "";
-    }
 }

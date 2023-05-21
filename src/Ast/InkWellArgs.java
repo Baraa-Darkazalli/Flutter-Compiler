@@ -57,9 +57,4 @@ public class InkWellArgs extends HtmlElement {
 
         return sb.toString();
     }
-
-    @Override
-    public String generateStyleCode() {
-        return "";
-    }
 }

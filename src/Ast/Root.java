@@ -2,11 +2,18 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Root extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<DartClass> dartClasses;
+
+    //---------------------------    Constructor     -------------------------------
+    public Root ()
+    {
+        dartClasses = new ArrayList<>();
+    }
 
     //---------------------------    Setters & Getters     -------------------------------
 
@@ -40,7 +47,7 @@ public class Root extends HtmlElement {
         sb.append("<head>\n");
         sb.append("<meta charset=\"UTF-8\">\n");
         sb.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1و shrink-to-fit=no\">\n");
-        sb.append("<title>").append("Convert To HTML").append("</title>\n");
+        sb.append("<title>").append("Code Generation To HTML").append("</title>\n");
         sb.append("<!-- Bootstrap CSS -->\n");
         sb.append("<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\n");
         sb.append(this.getDefaultStyleCode());
@@ -56,6 +63,8 @@ public class Root extends HtmlElement {
                 sb.append("</div>\n");
             }
         }
+
+        sb.append(this.getDefaultScriptCode());
         sb.append("<!-- jQuery first, then Popper.js, then Bootstrap JS -->\n");
         sb.append("<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\n");
         sb.append("<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\n");
@@ -94,7 +103,7 @@ public class Root extends HtmlElement {
         sb.append("    background-color: blue;\n");
         sb.append("    align-items: center;\n");
         sb.append("    display: flex;\n");
-        sb.append("    justify-content: space-between;\n");
+        sb.append("    justify-content: space-around;\n");
         sb.append("  }\n");
         sb.append("  nav{\n");
         sb.append("    grid-area: nav;\n");
@@ -145,7 +154,40 @@ public class Root extends HtmlElement {
         sb.append("    height: 100px;\n");
         sb.append("    margin-bottom: 10px\n");
         sb.append("  }\n");
+        sb.append("  .floating-action-button {\n");
+        sb.append("    position: fixed;\n");
+        sb.append("    bottom: 20px;\n");
+        sb.append("    right: 20px;\n");
+        sb.append("    background-color: blue;\n");
+        sb.append("    color: #FFFFFF;\n");
+        sb.append("    border-radius: 50%;\n");
+        sb.append("    width: 56px;\n");
+        sb.append("    height: 56px;\n");
+        sb.append("    text-align: center;\n");
+        sb.append("    line-height: 56px;\n");
+        sb.append("    font-size: 24px;\n");
+        sb.append("  }\n");
         sb.append("</style>\n");
+
+        return sb.toString();
+    }
+
+    public String getDefaultScriptCode()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("<script>\n");
+        sb.append("function navigate(params) {\n");
+        sb.append("\tvar url = params[0] + \"?\";\n");
+        sb.append("\tparams.forEach(function(value, index) {\n");
+        sb.append("\t\tif (index !== 0) {\n");
+        sb.append("\t\t\turl += \"&\";\n");
+        sb.append("\t\t}\n");
+        sb.append("\t\turl += \"param\" + index + \"=\" + value;\n");
+        sb.append("\t});\n");
+        sb.append("\twindow.location.href = url;\n");
+        sb.append("}\n");
+        sb.append("</script>");
 
         return sb.toString();
     }

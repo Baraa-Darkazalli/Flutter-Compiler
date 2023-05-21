@@ -39,7 +39,7 @@ public class AllowExp extends HtmlElement {
 
         if(navigateExp != null)
         {
-            sb.append("navigate(").append(navigateExp.generateHtmlAttribute()).append(")"); // no "\n"
+            sb.append("navigate([").append(navigateExp.generateHtmlAttribute()).append("])"); // no "\n"
         }
 
         return  sb.toString();

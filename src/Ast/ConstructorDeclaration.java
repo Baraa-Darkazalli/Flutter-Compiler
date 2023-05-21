@@ -2,12 +2,19 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ConstructorDeclaration extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private String ClassName;
     private List<ConstructorArg> constructorArgs;
+
+    //---------------------------    Constructor     -------------------------------
+    public ConstructorDeclaration()
+    {
+        this.constructorArgs=new ArrayList<>();
+    }
 
     //---------------------------    Setters & Getters     -------------------------------
     public String getClassName() {

@@ -41,11 +41,11 @@ public class ConstructorField extends HtmlElement {
 
         if(string != null)
         {
-            sb.append(", \'").append(string).append("\'"); // no "\n"
+            sb.append(string); // no "\n"
         }
         else
         {
-            sb.append(", ").append(value); // no "\n"
+            sb.append(value); // no "\n"
         }
         return sb.toString();
     }
