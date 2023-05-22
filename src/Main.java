@@ -26,6 +26,7 @@ public class Main {
         //Code Generation to Html
         createHtmlFile("D:\\Compiler2\\compiler\\pages\\page1.html",root1);
         createHtmlFile("D:\\Compiler2\\compiler\\pages\\page2.html",root2);
+
     }
 
 

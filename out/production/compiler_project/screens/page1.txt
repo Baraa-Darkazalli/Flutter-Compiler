@@ -13,25 +13,25 @@ return Scaffold(
         children:[
             InkWell(
             onTap:(){
-                Navigator.push(Page2('image1.png' 'name1'));
+                Navigator.push(Page2('../images/image1.png' 'name1'));
                 }
             child:
                 Column(
                     children:[
                         Text('name1')
-                        Image(image:'image1.png')
+                        Image(image:'../images/image1.png' height:200 width:200)
                         ]
                     )
             )
             InkWell(
             onTap:(){
-                Navigator.push(Page2('image2.png' 'name2'));
+                Navigator.push(Page2('../images/image2.png' 'name2'));
                 }
             child:
                 Column(
                     children:[
                         Text('name2')
-                        Image(image:'image2.png')
+                        Image(image:'../images/image2.png')
                         ]
                     )
             )

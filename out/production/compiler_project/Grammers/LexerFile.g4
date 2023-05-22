@@ -122,11 +122,13 @@ IDENTIFIER: [a-zA-Z][a-zA-Z0-9_$]*;
 
 fragment LETTER: [a-zA-Z];
 fragment DIGIT: [0-9];
+SLASH: '/';
+BACKSLASH: '\\';
 DOUBLE :  INT (DOT [0-9]*)?;
 INT: DIGIT+;
  ID: LETTER (LETTER | DIGIT | '_')*;
   FLOAT: DIGIT+ '.' DIGIT* | '.' DIGIT+;
-  STRING:('\''|'"') (LETTER|DIGIT|WS|DOT)* ('\''|'"')*;
+  STRING:('\''|'"') (LETTER|DIGIT|WS|DOT|SLASH|BACKSLASH)* ('\''|'"')*;
     WS: [ \t\n\r]+ -> skip;
 //---------------  SYMBOLS  ------------
 

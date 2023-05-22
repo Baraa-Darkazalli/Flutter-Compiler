@@ -4,8 +4,6 @@ import Ast.*;
 import gen.ParserFile;
 import gen.ParserFileBaseVisitor;
 
-import java.util.List;
-
 public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public Root visitRoot(ParserFile.RootContext ctx) {

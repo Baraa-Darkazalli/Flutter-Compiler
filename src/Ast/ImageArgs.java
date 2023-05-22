@@ -64,7 +64,7 @@ public class ImageArgs extends HtmlElement {
 
         if(imageArg != null)
         {
-            sb.append("<img src=\"").append(imageArg.generateHtmlAttribute()).append("\" alt=\"image\">\n");
+            sb.append("<img src=").append(imageArg.generateHtmlAttribute()).append(" alt=\"image\">\n");
         }
         else
         {
@@ -76,11 +76,11 @@ public class ImageArgs extends HtmlElement {
             }
             else if(height != null)
             {
-                sb.append("    height= ").append(height.generateStyleCode()).append("px;\n");
+                sb.append("    height: ").append(height.generateStyleCode()).append("px\n");
             }
             else if(width != null)
             {
-                sb.append("    width= ").append(width.generateStyleCode()).append("px;\n");
+                sb.append("    width: ").append(width.generateStyleCode()).append("px\n");
             }
             sb.append("  }\n");
             sb.append("</style>\n");

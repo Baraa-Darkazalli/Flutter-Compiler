@@ -149,11 +149,6 @@ public class Root extends HtmlElement {
         sb.append("  .inkWell:hover{\n");
         sb.append("    background-color: lightgray;\n");
         sb.append("  }\n");
-        sb.append("  .inkWell img{\n");
-        sb.append("    width: 100px;\n");
-        sb.append("    height: 100px;\n");
-        sb.append("    margin-bottom: 10px\n");
-        sb.append("  }\n");
         sb.append("  .floating-action-button {\n");
         sb.append("    position: fixed;\n");
         sb.append("    bottom: 20px;\n");

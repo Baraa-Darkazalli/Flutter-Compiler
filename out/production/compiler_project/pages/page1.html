@@ -98,7 +98,7 @@
 <header>
 <h1>
 <p>
-Convert To HTML</p>
+Page1</p>
 </h1>
 </header>
 <main>
@@ -108,7 +108,7 @@ Convert To HTML</p>
   }
 </style>
 <div class="column" >
-<div class="inkWell"  onclick="navigate(['Page2.html' ,'image1.png','name1']);  " >
+<div class="inkWell"  onclick="navigate(['Page2.html' ,'../images/image1.png','name1']);  " >
 <style>
   .column{
     display: flex; flex-direction: column; justify-content: space-between; align-items: center;"
@@ -117,10 +117,20 @@ Convert To HTML</p>
 <div class="column" >
 <p>
 name1</p>
-<img src="'image1.png'" alt="image">
+<img src='../images/image1.png' alt="image">
+<style>
+  img{
+    height: 200.0px
+  }
+</style>
+<style>
+  img{
+    width: 200.0px
+  }
+</style>
 </div>
 </div>
-<div class="inkWell"  onclick="navigate(['Page2.html' ,'image2.png','name2']);  " >
+<div class="inkWell"  onclick="navigate(['Page2.html' ,'../images/image2.png','name2']);  " >
 <style>
   .column{
     display: flex; flex-direction: column; justify-content: space-between; align-items: center;"
@@ -129,7 +139,7 @@ name1</p>
 <div class="column" >
 <p>
 name2</p>
-<img src="'image2.png'" alt="image">
+<img src='../images/image2.png' alt="image">
 </div>
 </div>
 </div>
