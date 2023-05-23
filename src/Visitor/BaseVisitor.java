@@ -8,6 +8,7 @@ import gen.ParserFileBaseVisitor;
 public class BaseVisitor extends ParserFileBaseVisitor {
 
     SymbolTable symbolTable=new SymbolTable();
+
     @Override
     public Root visitRoot(ParserFile.RootContext ctx) {
         Root root = new Root();
@@ -587,12 +588,23 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public TextArgs visitTextArgs(ParserFile.TextArgsContext ctx) {
         TextArgs textArgs = new TextArgs();
-        if (ctx.STRING() != null) {
-            textArgs.setString(ctx.STRING().getText());
+        if (ctx.textArg() != null) {
+            textArgs.setTextArg((TextArg) visitTextArg(ctx.textArg()));
         } else if (ctx.style() != null) {
             textArgs.setStyle((Style) visitStyle(ctx.style()));
         }
         return textArgs;
+    }
+
+    @Override
+    public TextArg visitTextArg(ParserFile.TextArgContext ctx) {
+        TextArg textArg=new TextArg();
+        if(ctx.STRING()!=null){
+            textArg.setString(ctx.STRING().getText());
+        }else if(ctx.IDENTIFIER()!=null){
+            textArg.setVariableName(ctx.IDENTIFIER().getText());
+        }
+        return textArg;
     }
 
     @Override
@@ -1081,6 +1093,9 @@ public class BaseVisitor extends ParserFileBaseVisitor {
         ImageArg imageArg = new ImageArg();
         if (ctx.STRING() != null) {
             imageArg.setValue(ctx.STRING().getText());
+        }
+        else if(ctx.IDENTIFIER() != null){
+            imageArg.setVariableName(ctx.IDENTIFIER().getText());
         }
         return imageArg;
     }

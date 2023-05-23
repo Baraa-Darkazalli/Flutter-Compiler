@@ -11,10 +11,10 @@ return Scaffold(
     appBar:AppBar(
         title:Text("Page2")
     )
-    body: Column(
+    body: Row(
     children:[
-    Text('x')
-    Image(image:'y')
+    Image(image:photo height:400 width:400)
+    Text(name style: TextStyle(fontSize: 40))
     ]
     ));
 }
