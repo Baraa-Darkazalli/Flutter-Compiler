@@ -38,6 +38,6 @@ public class MainAxis extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }

@@ -43,6 +43,6 @@ public class InkWell extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }

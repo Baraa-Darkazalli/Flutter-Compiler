@@ -38,7 +38,17 @@ public class ListView extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(listviewArgs != null && !listviewArgs.isEmpty())
+        {
+            for(ListviewArgs listViewArg:listviewArgs)
+            {
+                sb.append(listViewArg.generateHtmlCode());
+            }
+        }
+
+        return sb.toString();
     }
 
     @Override

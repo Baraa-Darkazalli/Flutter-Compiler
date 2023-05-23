@@ -35,6 +35,6 @@ public class TextFormFieldArgs extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }

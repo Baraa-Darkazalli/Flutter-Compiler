@@ -45,6 +45,6 @@ public class ExpandedArgs extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }
