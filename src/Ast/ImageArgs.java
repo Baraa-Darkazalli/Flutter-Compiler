@@ -64,7 +64,26 @@ public class ImageArgs extends HtmlElement {
 
         if(imageArg != null)
         {
-            sb.append(imageArg.generateHtmlCode());
+            sb.append("<img src=").append(imageArg.generateHtmlAttribute()).append(" alt=\"image\">\n");
+        }
+        else
+        {
+            sb.append("<style>\n");
+            sb.append("  img{\n");
+            if(color != null)
+            {
+                sb.append("    background-color= ").append(color.generateStyleCode()).append(";\n");
+            }
+            else if(height != null)
+            {
+                sb.append("    height: ").append(height.generateStyleCode()).append("px\n");
+            }
+            else if(width != null)
+            {
+                sb.append("    width: ").append(width.generateStyleCode()).append("px\n");
+            }
+            sb.append("  }\n");
+            sb.append("</style>\n");
         }
 
         return sb.toString();
@@ -74,18 +93,7 @@ public class ImageArgs extends HtmlElement {
     public String generateStyleCode() {
         StringBuilder sb = new StringBuilder();
 
-        if(color != null)
-        {
-            sb.append("    background-color= ").append(color.generateStyleCode()).append(";\n");
-        }
-        else if(height != null)
-        {
-            sb.append("    height= ").append(height.generateStyleCode()).append("px;\n");
-        }
-        else if(width != null)
-        {
-            sb.append("    width= ").append(width.generateStyleCode()).append("px;\n");
-        }
+
 
         return sb.toString();
     }

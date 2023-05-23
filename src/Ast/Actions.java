@@ -9,6 +9,11 @@ public class Actions extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<Widget> widgets;
 
+    //---------------------------    Constructor     -------------------------------
+    public Actions() {
+        this.widgets = new ArrayList<>();
+    }
+
     //---------------------------    Setters & Getters     -------------------------------
 
     public List<Widget> getWidgets() {
@@ -21,11 +26,6 @@ public class Actions extends HtmlElement {
 
 
     //---------------------------    Override Func     -------------------------------
-
-
-    public Actions() {
-        this.widgets = new ArrayList<>();
-    }
 
     @Override
     public String toString() {

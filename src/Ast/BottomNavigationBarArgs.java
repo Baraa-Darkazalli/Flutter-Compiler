@@ -6,7 +6,7 @@ public class BottomNavigationBarArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Items items;
     private BackGroundColor backGroundColor;
-    private CurrentIndex currentIndex;
+    private CurrentIndex currentIndex;              // ignore for code generation
 
     //---------------------------    Setters & Getters     -------------------------------
     public Items getItems() {

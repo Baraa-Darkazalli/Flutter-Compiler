@@ -38,6 +38,18 @@ public class TabBar extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(tabBarArgs != null && !tabBarArgs.isEmpty())
+        {
+            sb.append("<div class=\"tabBar\">\n");
+            for(TabBarArgs tabBarArg:tabBarArgs)
+            {
+                sb.append(tabBarArg.generateHtmlCode());
+            }
+            sb.append("</div>\n");
+        }
+
+        return sb.toString();
     }
 }

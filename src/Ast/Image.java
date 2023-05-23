@@ -44,13 +44,7 @@ public class Image extends HtmlElement {
         {
             for(ImageArgs imageArg:imageArgs)
             {
-                sb.append("<img src=\"").append(imageArg.generateHtmlCode()).append("\" alt=\"image\">\n");
                 sb.append(imageArg.generateHtmlCode());
-                sb.append("<style>\n");
-                sb.append("  img{\n");
-                sb.append(imageArg.generateStyleCode());
-                sb.append("  }\n");
-                sb.append("</style>\n");
             }
         }
 

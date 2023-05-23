@@ -38,6 +38,21 @@ public class IconButton extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(iconButtonArgs != null && !iconButtonArgs.isEmpty())
+        {
+            for(IconButtonArgs iconButtonArg:iconButtonArgs)
+            {
+                sb.append(iconButtonArg.generateHtmlCode());
+            }
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

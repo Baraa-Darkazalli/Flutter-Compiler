@@ -50,6 +50,32 @@ public class ColumnArgs extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(children != null)
+        {
+            sb.append(children.generateHtmlCode());
+        }
+        else
+        {
+            sb.append("<style>\n");
+            sb.append("  .column{\n");
+            if(mainAxis != null)
+            {
+                sb.append(mainAxis.generateStyleCode());
+            }
+            else if(crossAxis != null)
+            {
+                sb.append(crossAxis.generateStyleCode());
+            }
+            sb.append("  }\n");
+            sb.append("</style>\n");
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

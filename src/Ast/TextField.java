@@ -42,9 +42,7 @@ public class TextField extends HtmlElement {
 
         if(textFieldArgs != null && !textFieldArgs.isEmpty())
         {
-            sb.append("<div class=\"form-group\">\n");
-            sb.append("<input type=\"text\">\n");
-            sb.append("</div>\n");
+            sb.append("<input type=\"text\" >\n");
                 for(TextFieldArgs textFieldArg:textFieldArgs)
                 {
                     sb.append("<style>\n");
@@ -60,6 +58,6 @@ public class TextField extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }

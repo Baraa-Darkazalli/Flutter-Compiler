@@ -40,7 +40,22 @@ public class TabBarArgs extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(tabs != null)
+        {
+            sb.append(tabs.generateHtmlCode());
+        }
+        else if (padding != null)
+        {
+            sb.append("<style>\n");
+            sb.append(".tabBar {\n");
+            sb.append("  padding: ").append(padding.generateStyleCode()).append("px;\n");
+            sb.append("}\n");
+            sb.append("</style>\n");
+        }
+
+        return sb.toString();
     }
 
     @Override

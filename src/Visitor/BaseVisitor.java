@@ -81,8 +81,8 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public BuildFunctionDeclaration visitBuildFunctionDeclaration(ParserFile.BuildFunctionDeclarationContext ctx) {
         BuildFunctionDeclaration buildFunctionDeclaration = new BuildFunctionDeclaration();
-        buildFunctionDeclaration.setBuildBody((BuildBody) visitBuildBody(ctx.buildBody()));
 
+            buildFunctionDeclaration.setBuildBody((BuildBody) visitBuildBody(ctx.buildBody()));
         return buildFunctionDeclaration;
     }
 
@@ -1252,8 +1252,9 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public Constructor visitConstructor(ParserFile.ConstructorContext ctx) {
-        Constructor constructor = new Constructor();
-        if (!ctx.constructoFilled().isEmpty()) {
+        Constructor constructor=new Constructor();
+        constructor.setIdentifier(ctx.IDENTIFIER().getText());
+        if(!ctx.constructoFilled().isEmpty()){
             for (int i = 0; i < ctx.constructoFilled().size(); i++) {
                 if (ctx.constructoFilled(i) != null) {
                     constructor.getConstructorFields().add((ConstructorField) visitConstructoFilled(ctx.constructoFilled(i)));

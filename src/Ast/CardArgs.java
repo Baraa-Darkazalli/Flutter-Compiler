@@ -50,6 +50,36 @@ public class CardArgs extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(child != null)
+        {
+            sb.append("<div class=\"card-child\">\n");
+            sb.append(child.generateHtmlCode());
+            sb.append("</div>");
+        }
+        else if(margin != null)
+        {
+            sb.append("<style>\n");
+            sb.append("  .card-child > *{\n");
+            sb.append("    margin: ").append(margin.generateStyleCode()).append("px\n");
+            sb.append("  }\n");
+            sb.append("</style>\n");
+        }
+        else if(color != null)
+        {
+            sb.append("<style>\n");
+            sb.append("  .card-child > *{\n");
+            sb.append("    background-color: ").append(color.generateStyleCode()).append("\n");
+            sb.append("  }\n");
+            sb.append("</style>\n");
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

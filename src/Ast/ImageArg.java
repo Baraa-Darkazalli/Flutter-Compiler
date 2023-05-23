@@ -25,7 +25,7 @@ public class ImageArg extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+        return value;
     }
 
     @Override
@@ -35,6 +35,6 @@ public class ImageArg extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return value;
+        return "";
     }
 }

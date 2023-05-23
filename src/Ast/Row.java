@@ -38,7 +38,24 @@ public class Row extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(rowArgs != null && !rowArgs.isEmpty())
+        {
+            sb.append("<style>\n");
+            sb.append("  .row{\n");
+            sb.append("    display: flex; flex-direction: row; justify-content: space-between; align-items: center;\"\n");
+            sb.append("  }\n");
+            sb.append("</style>\n");
+            sb.append("<div class=\"column\" >\n");
+            for(RowArgs rowArg:rowArgs)
+            {
+                sb.append(rowArg.generateHtmlCode());
+            }
+            sb.append("</div>\n");
+        }
+
+        return sb.toString();
     }
 
     @Override

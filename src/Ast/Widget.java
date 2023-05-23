@@ -16,11 +16,11 @@ public class Widget extends HtmlElement {
     private Card card;
     private IconButton iconButton;
     private InkWell inkWell;
-    private Expanded expanded;
+    private Expanded expanded;              //TODO
     private BottomNavigationBar bottomNavigationBar;
-    private Slider slider;
+    private Slider slider;                  //TODO
     private TabBar tabBar;
-    private TabView tabView;
+    private TabView tabView;            //here
     private Drawer drawer;
     private FloatingActionButton floatingActionButton;
     private Wrap wrap;
