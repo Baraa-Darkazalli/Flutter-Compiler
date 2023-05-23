@@ -38,6 +38,21 @@ public class Card extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(cardArgs != null && !cardArgs.isEmpty())
+        {
+            for(CardArgs cardArg:cardArgs)
+            {
+                sb.append(cardArg.generateHtmlCode());
+            }
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

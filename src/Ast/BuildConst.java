@@ -3,11 +3,17 @@ package Ast;
 import Ast.Classes.HtmlElement;
 import com.sun.org.apache.xpath.internal.Arg;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BuildConst extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<Arg> args;
+
+    //---------------------------    Constructor     -------------------------------
+    public BuildConst() {
+        this.args = new ArrayList<>();
+    }
 
     //---------------------------    Setters & Getters     -------------------------------
     public List<Arg> getArgs() {

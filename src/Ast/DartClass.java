@@ -2,6 +2,7 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DartClass extends HtmlElement {
@@ -9,6 +10,12 @@ public class DartClass extends HtmlElement {
     private String className;
 
     private List<ClassBody> classBody;
+
+    //---------------------------    Constructor     -------------------------------
+    public DartClass ()
+    {
+        classBody = new ArrayList<>();
+    }
 
     //---------------------------    Setters & Getters     -------------------------------
     public List<ClassBody> getClassBody() {

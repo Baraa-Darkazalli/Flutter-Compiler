@@ -4,8 +4,8 @@ import Ast.Classes.HtmlElement;
 
 public class ClassBody extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
-    private ClassArg classArg;
-    private ConstructorDeclaration constructorDeclaration;
+    private ClassArg classArg; //#ignore from Code Generation
+    private ConstructorDeclaration constructorDeclaration; //#ignore from Code Generation
     private BuildFunctionDeclaration buildFunctionDeclaration;
 
     //---------------------------    Setters & Getters     -------------------------------

@@ -38,6 +38,15 @@ public class MainAxis extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
+        switch (axis)
+        {
+            case "start":
+                return "flex-start";
+            case "center":
+                return "center";
+            case "end":
+                return "flex-end";
+        }
         return "";
     }
 }

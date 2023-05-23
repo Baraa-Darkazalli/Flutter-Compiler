@@ -50,6 +50,35 @@ public class IconButtonArgs extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(iconArg != null)
+        {
+            sb.append("<button type=\"button\" class=\"btn btn-primary\">");
+            sb.append(iconArg.generateHtmlCode());
+            sb.append("</button>");
+        }
+        else
+        {
+            sb.append("<style>\n");
+            sb.append("  .btn{\n");
+            if(padding != null)
+            {
+                sb.append("    padding: ").append(padding.generateStyleCode()).append("px\n");
+            }
+            else if(color != null)
+            {
+                sb.append("    background-color: ").append(color.generateStyleCode()).append("\n");
+            }
+            sb.append("  }\n");
+            sb.append("</style>\n");
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String generateStyleCode() {
         return "";
     }
 }

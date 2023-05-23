@@ -2,11 +2,17 @@ package Ast;
 
 import Ast.Classes.HtmlElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DartMain extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private List<Expression> expressions;
+
+    //---------------------------    Constructor     -------------------------------
+    public DartMain() {
+        this.expressions = new ArrayList<>();
+    }
 
     //---------------------------    Setters & Getters     -------------------------------
     public List<Expression> getExpressions() {

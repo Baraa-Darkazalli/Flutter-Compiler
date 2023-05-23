@@ -37,7 +37,17 @@ public class ConstructorField extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(string != null)
+        {
+            sb.append(string); // no "\n"
+        }
+        else
+        {
+            sb.append(value); // no "\n"
+        }
+        return sb.toString();
     }
 
     @Override
@@ -47,6 +57,6 @@ public class ConstructorField extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return null;
+        return "";
     }
 }

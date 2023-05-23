@@ -16,5 +16,5 @@ public class SymbolTable {
         this.page = page;
     }
 
-    void print(){}
+    public void print(){}
 }

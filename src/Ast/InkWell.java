@@ -38,7 +38,24 @@ public class InkWell extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(inkWellArgs != null && !inkWellArgs.isEmpty())
+        {
+            sb.append("<div class=\"inkWell\" "); // no "\n"
+            for (InkWellArgs inkWellArg:inkWellArgs)
+            {
+                sb.append(inkWellArg.generateHtmlAttribute());
+            }
+            sb.append(" >\n");
+            for (InkWellArgs inkWellArg:inkWellArgs)
+            {
+                sb.append(inkWellArg.generateHtmlCode());
+            }
+            sb.append("</div>\n");
+        }
+
+        return sb.toString();
     }
 
     @Override
