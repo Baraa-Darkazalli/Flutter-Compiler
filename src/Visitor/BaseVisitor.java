@@ -1,12 +1,13 @@
 package Visitor;
 
 import Ast.*;
+import Symbol_Table.SymbolTable;
 import gen.ParserFile;
 import gen.ParserFileBaseVisitor;
 
-import java.util.List;
-
 public class BaseVisitor extends ParserFileBaseVisitor {
+
+    SymbolTable symbolTable=new SymbolTable();
     @Override
     public Root visitRoot(ParserFile.RootContext ctx) {
         Root root = new Root();
@@ -17,6 +18,7 @@ public class BaseVisitor extends ParserFileBaseVisitor {
                 }
             }
         }
+        symbolTable.print();
         return root;
     }
 
@@ -36,6 +38,7 @@ public class BaseVisitor extends ParserFileBaseVisitor {
                 }
             }
         }
+
         return dartClass;
     }
 
@@ -1102,11 +1105,11 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public Actions visitActions(ParserFile.ActionsContext ctx) {
-        Actions actions=new Actions();
-        if(!ctx.widget().isEmpty()){
+        Actions actions = new Actions();
+        if (!ctx.widget().isEmpty()) {
             for (int i = 0; i < ctx.widget().size(); i++) {
-                if(ctx.widget(i)!=null){
-                    actions.getWidget().add((Widget) visitWidget(ctx.widget(i)));
+                if (ctx.widget(i) != null) {
+                    actions.getWidgets().add((Widget) visitWidget(ctx.widget(i)));
                 }
             }
         }
@@ -1115,8 +1118,8 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public IconArg visitIconArg(ParserFile.IconArgContext ctx) {
-        IconArg iconArg=new IconArg();
-        if(ctx.widget()!=null){
+        IconArg iconArg = new IconArg();
+        if (ctx.widget() != null) {
             iconArg.setWidget((Widget) visitWidget(ctx.widget()));
         }
         return iconArg;
@@ -1124,8 +1127,8 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public FlexArg visitFlexArg(ParserFile.FlexArgContext ctx) {
-        FlexArg flexArg=new FlexArg();
-        if(ctx.INT()!=null){
+        FlexArg flexArg = new FlexArg();
+        if (ctx.INT() != null) {
             flexArg.setValue(Integer.valueOf(ctx.INT().getText()));
         }
         return flexArg;
@@ -1133,8 +1136,8 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public Min visitMin(ParserFile.MinContext ctx) {
-        Min min=new Min();
-        if(ctx.DOUBLE()!=null){
+        Min min = new Min();
+        if (ctx.DOUBLE() != null) {
             min.setValue(Double.valueOf(ctx.DOUBLE().getText()));
         }
         return min;
@@ -1142,8 +1145,8 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public Max visitMax(ParserFile.MaxContext ctx) {
-        Max max=new Max();
-        if(ctx.DOUBLE()!=null){
+        Max max = new Max();
+        if (ctx.DOUBLE() != null) {
             max.setValue(Double.valueOf(ctx.DOUBLE().getText()));
         }
         return max;
@@ -1151,10 +1154,10 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public Tabs visitTabs(ParserFile.TabsContext ctx) {
-        Tabs tabs=new  Tabs();
-        if(!ctx.widget().isEmpty()){
+        Tabs tabs = new Tabs();
+        if (!ctx.widget().isEmpty()) {
             for (int i = 0; i < ctx.widget().size(); i++) {
-                if(ctx.widget(i)!=null){
+                if (ctx.widget(i) != null) {
                     tabs.getWidget().add((Widget) visitWidget(ctx.widget(i)));
                 }
             }
@@ -1164,8 +1167,8 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public Size visitSize(ParserFile.SizeContext ctx) {
-        Size size=new Size();
-        if(ctx.DOUBLE()!=null){
+        Size size = new Size();
+        if (ctx.DOUBLE() != null) {
             size.setValue(Double.valueOf(ctx.DOUBLE().getText()));
         }
         return size;
@@ -1173,10 +1176,10 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public OnTap visitOnTap(ParserFile.OnTapContext ctx) {
-        OnTap onTap=new OnTap();
-        if(!ctx.expression().isEmpty()){
+        OnTap onTap = new OnTap();
+        if (!ctx.expression().isEmpty()) {
             for (int i = 0; i < ctx.expression().size(); i++) {
-                if(ctx.expression()!=null){
+                if (ctx.expression() != null) {
                     onTap.getExpressions().add((Expression) visitExpression(ctx.expression(i)));
                 }
             }
@@ -1186,8 +1189,8 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public Expression visitExpression(ParserFile.ExpressionContext ctx) {
-        Expression expression=new Expression();
-        if(ctx.allowExp()!=null){
+        Expression expression = new Expression();
+        if (ctx.allowExp() != null) {
             expression.setAllowExp((AllowExp) visitAllowExp(ctx.allowExp()));
         }
         return expression;
@@ -1195,10 +1198,10 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public AllowExp visitAllowExp(ParserFile.AllowExpContext ctx) {
-        AllowExp allowExp=new AllowExp();
-        if(ctx.navigateExp()!=null){
+        AllowExp allowExp = new AllowExp();
+        if (ctx.navigateExp() != null) {
             allowExp.setNavigateExp((NavigateExp) visitNavigateExp(ctx.navigateExp()));
-        }else if(ctx.runAppExp()!=null){
+        } else if (ctx.runAppExp() != null) {
             allowExp.setRunAppExp((RunAppExp) visitRunAppExp(ctx.runAppExp()));
         }
         return allowExp;
@@ -1206,8 +1209,8 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public RunAppExp visitRunAppExp(ParserFile.RunAppExpContext ctx) {
-        RunAppExp runAppExp=new RunAppExp();
-        if(ctx.constructor()!=null){
+        RunAppExp runAppExp = new RunAppExp();
+        if (ctx.constructor() != null) {
             runAppExp.setConstructor((Constructor) visitConstructor(ctx.constructor()));
         }
         return runAppExp;
@@ -1215,8 +1218,8 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public NavigateExp visitNavigateExp(ParserFile.NavigateExpContext ctx) {
-        NavigateExp navigateExp=new NavigateExp();
-        if(ctx.transtion()!=null){
+        NavigateExp navigateExp = new NavigateExp();
+        if (ctx.transtion() != null) {
             navigateExp.setTranstion((Transtion) visitTranstion(ctx.transtion()));
         }
         return navigateExp;
@@ -1224,10 +1227,10 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public Transtion visitTranstion(ParserFile.TranstionContext ctx) {
-        Transtion transtion=new Transtion();
-        if(ctx.push()!=null){
+        Transtion transtion = new Transtion();
+        if (ctx.push() != null) {
             transtion.setPush((Push) visitPush(ctx.push()));
-        }else if(ctx.pop()!=null){
+        } else if (ctx.pop() != null) {
             transtion.setPop(true);
         }
         return transtion;
@@ -1235,8 +1238,8 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public Push visitPush(ParserFile.PushContext ctx) {
-        Push push=new Push();
-        if(ctx.constructor()!=null){
+        Push push = new Push();
+        if (ctx.constructor() != null) {
             push.setConstructor((Constructor) visitConstructor(ctx.constructor()));
         }
         return push;
@@ -1249,10 +1252,10 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public Constructor visitConstructor(ParserFile.ConstructorContext ctx) {
-        Constructor constructor=new Constructor();
-        if(!ctx.constructoFilled().isEmpty()){
+        Constructor constructor = new Constructor();
+        if (!ctx.constructoFilled().isEmpty()) {
             for (int i = 0; i < ctx.constructoFilled().size(); i++) {
-                if(ctx.constructoFilled(i)!=null){
+                if (ctx.constructoFilled(i) != null) {
                     constructor.getConstructorFields().add((ConstructorField) visitConstructoFilled(ctx.constructoFilled(i)));
                 }
             }
@@ -1262,10 +1265,10 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public ConstructorField visitConstructoFilled(ParserFile.ConstructoFilledContext ctx) {
-        ConstructorField constructorField=new ConstructorField();
-        if(ctx.STRING()!=null){
+        ConstructorField constructorField = new ConstructorField();
+        if (ctx.STRING() != null) {
             constructorField.setString(ctx.STRING().getText());
-        }else if(ctx.DOUBLE()!=null){
+        } else if (ctx.DOUBLE() != null) {
             constructorField.setValue(Double.valueOf(ctx.DOUBLE().getText()));
         }
         return constructorField;
