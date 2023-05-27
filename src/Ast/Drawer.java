@@ -40,7 +40,6 @@ public class Drawer extends HtmlElement {
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
 
-        //Sidebar Style
         sb.append("<style>\n");
         sb.append("  aside {\n");
         if(drawerArgsList!=null && !drawerArgsList.isEmpty())

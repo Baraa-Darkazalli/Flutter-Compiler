@@ -25,11 +25,10 @@ public class Size extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
-    }
+        StringBuilder sb = new StringBuilder();
 
-    @Override
-    public String generateHtmlCode() {
-        return "";
+        sb.append(value);
+
+        return sb.toString();
     }
 }

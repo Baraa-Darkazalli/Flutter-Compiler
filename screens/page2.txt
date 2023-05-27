@@ -10,11 +10,17 @@ widget build(){
 return Scaffold(
     appBar:AppBar(
         title:Text("Page2")
+        leading: InkWell(
+                    onTap: (){
+                        Navigator.pop();
+                        }
+                    child: Icon(back size: 30 color:black)
+                    )
     )
     body: Row(
     children:[
     Image(image:photo height:400 width:400)
-    Text(name style: TextStyle(fontSize: 40 ))
+    Text(name style: TextStyle(fontSize: 40))
     ]
     ));
 }

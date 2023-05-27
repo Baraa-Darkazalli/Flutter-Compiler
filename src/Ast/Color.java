@@ -25,12 +25,7 @@ public class Color extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
-    }
-
-    @Override
-    public String generateHtmlCode() {
-        return "";
+        return color;
     }
 
     @Override

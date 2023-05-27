@@ -33,12 +33,12 @@ public class NavigateExp extends HtmlElement {
     }
 
     @Override
-    public String generateHtmlCode() {
-        return "";
+    public String generateHtmlAttribute(String param) {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(transtion.generateHtmlAttribute(param));
+
+        return sb.toString();
     }
 
-    @Override
-    public String generateStyleCode() {
-        return "";
-    }
 }

@@ -52,8 +52,6 @@ public class DrawerArgs extends HtmlElement {
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("");
-
         if(child != null)
         {
             sb.append(child.generateHtmlCode());

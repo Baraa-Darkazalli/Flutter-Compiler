@@ -38,6 +38,23 @@ public class Icon extends HtmlElement {
 
     @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(iconArgs != null && !iconArgs.isEmpty())
+        {
+            sb.append("<svg xmlns=\"http://www.w3.org/2000/svg\"" ); // no "\n"
+            for (IconArgs iconArg:iconArgs)
+            {
+                sb.append(iconArg.generateHtmlAttribute());
+            }
+            sb.append(" class=\"bi bi-arrow-left\" viewBox=\"0 0 16 16\">\n");
+            for (IconArgs iconArg:iconArgs)
+            {
+                sb.append(iconArg.generateHtmlCode());
+            }
+            sb.append("</svg>"); // no "\n"
+        }
+
+        return  sb.toString();
     }
 }

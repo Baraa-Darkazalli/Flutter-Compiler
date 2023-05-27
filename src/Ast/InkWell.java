@@ -47,7 +47,7 @@ public class InkWell extends HtmlElement {
             {
                 sb.append(inkWellArg.generateHtmlAttribute());
             }
-            sb.append(" >\n");
+            sb.append(">\n");
             for (InkWellArgs inkWellArg:inkWellArgs)
             {
                 sb.append(inkWellArg.generateHtmlCode());
