@@ -16,7 +16,6 @@ public class Root extends HtmlElement {
     }
 
     //---------------------------    Setters & Getters     -------------------------------
-
     public List<DartClass> getDartClass() {
         return dartClasses;
     }
@@ -51,6 +50,7 @@ public class Root extends HtmlElement {
         sb.append("<!-- Bootstrap CSS -->\n");
         sb.append("<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\n");
         sb.append(this.getDefaultStyleCode());
+        sb.append(this.getDefaultScriptCode());
         sb.append("</head>\n");
         sb.append("<body>\n");
 
@@ -64,7 +64,6 @@ public class Root extends HtmlElement {
             }
         }
 
-        sb.append(this.getDefaultScriptCode());
         sb.append("<!-- jQuery first, then Popper.js, then Bootstrap JS -->\n");
         sb.append("<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\n");
         sb.append("<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\n");
@@ -162,6 +161,19 @@ public class Root extends HtmlElement {
         sb.append("    line-height: 56px;\n");
         sb.append("    font-size: 24px;\n");
         sb.append("  }\n");
+        sb.append("  .floating-action-button:hover{\n");
+        sb.append("    background-color: lightgray;\n");
+        sb.append("  }\n");
+        sb.append("  .row{\n");
+        sb.append("    display: flex; flex-direction: row; justify-content: center; align-items: center;\"\n");
+        sb.append("  }\n");
+        sb.append("  .column{\n");
+        sb.append("    display: flex; flex-direction: column; justify-content: space-around; align-items: center;\"\n");
+        sb.append("  }\n");
+        sb.append("  img{\n");
+        sb.append("    height: 100px;\n");
+        sb.append("    width: 100px;\n");
+        sb.append("  }\n");
         sb.append("</style>\n");
 
         return sb.toString();
@@ -171,6 +183,7 @@ public class Root extends HtmlElement {
     {
         StringBuilder sb = new StringBuilder();
 
+        // Navigate data
         sb.append("<script>\n");
         sb.append("function navigate(params) {\n");
         sb.append("\tvar url = params[0] + \"?\";\n");
@@ -183,6 +196,17 @@ public class Root extends HtmlElement {
         sb.append("\twindow.location.href = url;\n");
         sb.append("}\n");
         sb.append("</script>");
+
+        // Receive data
+        sb.append("<script>\n");
+        sb.append("  var queryString = window.location.search;\n");
+        sb.append("  var cleanedQueryString = decodeURIComponent(queryString.replace(/\\+/g, ' '));\n");
+        sb.append("  var params = new URLSearchParams(cleanedQueryString);\n");
+        sb.append("  var values = [];\n");
+        sb.append("  params.forEach(function(value) {\n");
+        sb.append("    values.push(value);\n");
+        sb.append("  });\n");
+        sb.append("</script>\n");
 
         return sb.toString();
     }

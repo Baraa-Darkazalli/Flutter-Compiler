@@ -35,6 +35,8 @@ public class FontSize extends HtmlElement {
 
     @Override
     public String generateStyleCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+        sb.append(value);
+        return sb.toString();
     }
 }

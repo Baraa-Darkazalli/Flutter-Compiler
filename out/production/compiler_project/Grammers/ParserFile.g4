@@ -67,7 +67,7 @@ center: CENTER OPEN_PAREN centerArgs CLOSE_PAREN ;
 
 scaffoldArgs:body|drawerArg|appBarArg|bottomNavigationBarArg|floatingActionButtonArg|backGroundColor;
 containerArgs:child|width|height|color|margin|padding;
-textArgs:(STRING|IDENTIFIER)|style;
+textArgs:textArg|style;
 imageArgs: imageArg|color|height|width;
 listviewArgs:children|padding;
 appBarArgs:title|leading|actions|backGroundColor;
@@ -115,6 +115,7 @@ crossAxis:CROSS_AXIS_ALIGNMENT COLON AXIS;
 mainAxis:MAIN_AXIS_ALIGNMENT COLON AXIS;
 style:STYLE COLON textStyle;
 fontSize:FONT_SIZE COLON DOUBLE;
+textArg:STRING|IDENTIFIER;
 imageArg:IMAGE_ARG COLON (STRING|IDENTIFIER);
 leading:LEADING COLON widget;
 title:TITLE COLON widget;

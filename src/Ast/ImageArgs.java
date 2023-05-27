@@ -64,7 +64,8 @@ public class ImageArgs extends HtmlElement {
 
         if(imageArg != null)
         {
-            sb.append("<img src=").append(imageArg.generateHtmlAttribute()).append(" alt=\"image\">\n");
+            sb.append("<img ").append(imageArg.generateHtmlAttribute()).append(" alt=\"image\">\n");
+            sb.append(imageArg.generateScriptCode());
         }
         else
         {

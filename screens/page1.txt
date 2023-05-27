@@ -10,7 +10,7 @@ return Scaffold(
     appBar:AppBar(
         title:Text('Page1')
     )
-    body:Column(
+    body:Column (
         children:[
             InkWell(
             onTap:(){

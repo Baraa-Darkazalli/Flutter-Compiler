@@ -34,12 +34,12 @@ public class ConstructorArg extends HtmlElement {
     }
 
     @Override
-    public String generateHtmlAttribute() {
-        return "";
+    public String generateHtmlCode() {
+        if(AttributeName != null)
+        {
+            this.queryStringArgs.add(AttributeName);
+        }
+        return super.generateHtmlCode();
     }
 
-    @Override
-    public String generateHtmlCode() {
-        return "";
-    }
 }
