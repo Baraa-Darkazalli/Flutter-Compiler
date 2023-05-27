@@ -40,7 +40,7 @@ public class InkWellArgs extends HtmlElement {
 
         if(onTap != null)
         {
-            sb.append(" onclick=\"").append(onTap.generateHtmlAttribute()).append(" \""); // no "\n"
+            sb.append(" onclick=\"").append(onTap.generateHtmlAttribute()).append("\""); // no "\n"
         }
 
         return sb.toString();

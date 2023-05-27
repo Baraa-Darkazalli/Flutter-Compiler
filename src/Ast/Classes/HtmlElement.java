@@ -14,11 +14,13 @@ public class HtmlElement {
     {
         return "";
     }
-
+    public String generateHtmlAttribute(String param)
+    {
+        return "";
+    }
     public String generateHtmlCode(){
         return "";
     }
-
     public String generateStyleCode(){
         return "";
     }

@@ -5,7 +5,7 @@ import Ast.Classes.HtmlElement;
 public class Transtion extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Push push;
-    private boolean pop; //#ignore from Code Genration
+    private boolean pop; //#ignore from Code Generation
 
     //---------------------------    Setters & Getters     -------------------------------
     public Push getPush() {
@@ -49,12 +49,14 @@ public class Transtion extends HtmlElement {
     }
 
     @Override
-    public String generateHtmlCode() {
-        return "";
-    }
+    public String generateHtmlAttribute(String param) {
+        StringBuilder sb = new StringBuilder();
 
-    @Override
-    public String generateStyleCode() {
-        return "";
+        if(param == "is_pop" && pop)
+        {
+            sb.append(" goBack()");
+        }
+
+        return sb.toString();
     }
 }

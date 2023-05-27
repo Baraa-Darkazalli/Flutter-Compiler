@@ -102,14 +102,14 @@
 </style>
 <script>
 function navigate(params) {
-	var url = params[0] + "?";
-	params.forEach(function(value, index) {
-		if (index !== 0) {
-			url += "&";
-		}
-		url += "param" + index + "=" + value;
-	});
-	window.location.href = url;
+  var url = params[0] + "?";
+  params.forEach(function(value, index) {
+    if (index !== 0) {
+      url += "&";
+    }
+    url += "param" + index + "=" + value;
+  });
+  window.location.href = url;
 }
 </script><script>
   var queryString = window.location.search;
@@ -120,14 +120,25 @@ function navigate(params) {
     values.push(value);
   });
 </script>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
 </head>
 <body>
 <div  id="Page2"  >
 <header>
-<h1>
+<h1 class="title">
 <p>
 Page2</p>
 </h1>
+<span class="leading" style="order: -1;">
+<div class="inkWell"  onclick="navigate([]);  goBack(); ">
+<svg xmlns="http://www.w3.org/2000/svg"width="30.0" height="30.0"fill="black" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg></div>
+</span>
 </header>
 <main>
 <div class="row" >

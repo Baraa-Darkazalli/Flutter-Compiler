@@ -64,19 +64,21 @@ public class AppBarArgs extends HtmlElement {
 
         if(title != null)
         {
-            sb.append("<h1>\n");
+            sb.append("<h1 class=\"title\">\n");
             sb.append(title.generateHtmlCode());
             sb.append("</h1>\n");
         }
         else if(leading != null)
         {
-            sb.append("<span>\n");
+            sb.append("<span class=\"leading\" style=\"order: -1;\">\n");
             sb.append(leading.generateHtmlCode());
             sb.append("</span>\n");
         }
         else if(actions != null)
         {
+            sb.append("<div class=\"actions\" style=\"order: 2;\">\n");
             sb.append(actions.generateHtmlCode());
+            sb.append("</div>\n");
         }
         else if(backGroundColor != null)
         {

@@ -31,14 +31,13 @@ public class Expression extends HtmlElement {
 
         return sb.toString();
     }
-
     @Override
-    public String generateHtmlCode() {
-        return "";
+    public String generateHtmlAttribute(String param) {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(allowExp.generateHtmlAttribute(param));
+
+        return sb.toString();
     }
 
-    @Override
-    public String generateStyleCode() {
-        return "";
-    }
 }
