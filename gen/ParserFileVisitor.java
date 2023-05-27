@@ -527,6 +527,12 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFontSize(ParserFile.FontSizeContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link ParserFile#textArg}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTextArg(ParserFile.TextArgContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link ParserFile#imageArg}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

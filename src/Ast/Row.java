@@ -42,12 +42,7 @@ public class Row extends HtmlElement {
 
         if(rowArgs != null && !rowArgs.isEmpty())
         {
-            sb.append("<style>\n");
-            sb.append("  .row{\n");
-            sb.append("    display: flex; flex-direction: row; justify-content: space-between; align-items: center;\"\n");
-            sb.append("  }\n");
-            sb.append("</style>\n");
-            sb.append("<div class=\"column\" >\n");
+            sb.append("<div class=\"row\" >\n");
             for(RowArgs rowArg:rowArgs)
             {
                 sb.append(rowArg.generateHtmlCode());

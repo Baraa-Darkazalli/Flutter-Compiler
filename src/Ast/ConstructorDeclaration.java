@@ -43,12 +43,17 @@ public class ConstructorDeclaration extends HtmlElement {
     }
 
     @Override
-    public String generateHtmlAttribute() {
-        return "";
-    }
-
-    @Override
     public String generateHtmlCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(constructorArgs != null && !constructorArgs.isEmpty())
+        {
+            for (ConstructorArg constructorArg:constructorArgs)
+            {
+                sb.append(constructorArg.generateHtmlCode());
+            }
+        }
+
+        return sb.toString();
     }
 }

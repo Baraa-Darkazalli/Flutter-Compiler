@@ -9,11 +9,7 @@ public class CenterArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Child child;
 
-
-
     //---------------------------    Setters & Getters     -------------------------------
-
-
     public Child getChild() {
         return child;
     }

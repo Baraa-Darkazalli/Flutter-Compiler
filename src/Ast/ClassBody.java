@@ -5,7 +5,7 @@ import Ast.Classes.HtmlElement;
 public class ClassBody extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private ClassArg classArg; //#ignore from Code Generation
-    private ConstructorDeclaration constructorDeclaration; //#ignore from Code Generation
+    private ConstructorDeclaration constructorDeclaration;
     private BuildFunctionDeclaration buildFunctionDeclaration;
 
     //---------------------------    Setters & Getters     -------------------------------
@@ -55,6 +55,10 @@ public class ClassBody extends HtmlElement {
         if (buildFunctionDeclaration != null)
         {
             sb.append(buildFunctionDeclaration.generateHtmlCode());
+        }
+        else if(constructorDeclaration != null)
+        {
+            sb.append(constructorDeclaration.generateHtmlCode());
         }
 
         return sb.toString();

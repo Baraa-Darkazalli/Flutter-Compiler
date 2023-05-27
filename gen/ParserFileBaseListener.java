@@ -1049,6 +1049,18 @@ public class ParserFileBaseListener implements ParserFileListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterTextArg(ParserFile.TextArgContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTextArg(ParserFile.TextArgContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterImageArg(ParserFile.ImageArgContext ctx) { }
 	/**
 	 * {@inheritDoc}

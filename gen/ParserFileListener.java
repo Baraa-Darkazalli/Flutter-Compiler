@@ -868,6 +868,16 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitFontSize(ParserFile.FontSizeContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ParserFile#textArg}.
+	 * @param ctx the parse tree
+	 */
+	void enterTextArg(ParserFile.TextArgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#textArg}.
+	 * @param ctx the parse tree
+	 */
+	void exitTextArg(ParserFile.TextArgContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ParserFile#imageArg}.
 	 * @param ctx the parse tree
 	 */

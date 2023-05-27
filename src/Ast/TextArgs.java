@@ -6,7 +6,7 @@ public class TextArgs extends HtmlElement {
     //---------------------------    Attributes     -------------------------------
     private Style style;
 
-    private String string;
+    private TextArg textArg;
 
     //---------------------------    Setters & Getters     -------------------------------
     public Style getStyle() {
@@ -17,21 +17,20 @@ public class TextArgs extends HtmlElement {
         this.style = style;
     }
 
-    public String getString() {
-        return string;
+    public TextArg getTextArg() {
+        return textArg;
     }
 
-    public void setString(String string) {
-        this.string = string;
+    public void setTextArg(TextArg textArg) {
+        this.textArg = textArg;
     }
-
 
     //---------------------------    Override Func     -------------------------------
     @Override
     public String toString() {
         return "TextArgs{" +
                 "style=" + style +
-                ", string='" + string + '\'' +
+                ", textArg=" + textArg +
                 '}';
     }
 
@@ -44,16 +43,19 @@ public class TextArgs extends HtmlElement {
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
 
-        if(string != null)
+        if(textArg != null)
         {
-            sb.append("<p>\n");
-            sb.append(string.replaceAll("\'|\"",""));
+            sb.append("<p");// no "\n"
+            sb.append(textArg.generateHtmlAttribute());
+            sb.append(">\n");
+            sb.append(textArg.generateHtmlCode());
             sb.append("</p>\n");
+            sb.append(textArg.generateScriptCode());
         }
         else if(style != null)
         {
             sb.append("<style>\n");
-            sb.append("  .p{\n");
+            sb.append("  p{\n");
             sb.append(style.generateStyleCode());
             sb.append("  }\n");
             sb.append("</style>\n");
