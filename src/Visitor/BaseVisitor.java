@@ -1,13 +1,20 @@
 package Visitor;
 
 import Ast.*;
+import Symbol_Table.RowTable;
+import Symbol_Table.Scope;
 import Symbol_Table.SymbolTable;
 import gen.ParserFile;
 import gen.ParserFileBaseVisitor;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class BaseVisitor extends ParserFileBaseVisitor {
 
-    SymbolTable symbolTable=new SymbolTable();
+    SymbolTable symbolTable = new SymbolTable();
+
     @Override
     public Root visitRoot(ParserFile.RootContext ctx) {
         Root root = new Root();
@@ -30,15 +37,71 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public DartClass visitDartClass(ParserFile.DartClassContext ctx) {
         DartClass dartClass = new DartClass();
+
+        //--------------- FOR SYMBOL TABLE --------------
+        RowTable rowTable;
+        String className, constName;
+        Scope constScope = new Scope();
+        Scope classScope = new Scope();
+        ArrayList<RowTable> classRows = new ArrayList<RowTable>();
+        ArrayList<RowTable> constRows = new ArrayList<RowTable>();
+        //-----------------------------------------------------
+
         dartClass.setClassName((String) visitClassName(ctx.className()));
+
+        className = dartClass.getClassName();
+
         if (!ctx.classBody().isEmpty()) {
             for (int i = 0; i < ctx.classBody().size(); i++) {
                 if (ctx.classBody(i) != null) {
                     dartClass.getClassBody().add((ClassBody) visitClassBody(ctx.classBody(i)));
+
+                    //------------  FOR SYMBOL TABLE -------------
+                    ClassArg classArg = visitClassBody(ctx.classBody(i)).getClassArg();
+                    if (classArg != null) {
+                        rowTable = new RowTable();
+                        rowTable.setDataType(classArg.getDataType());
+                        rowTable.setName(classArg.getAttributeName());
+                        rowTable.setValue("null");
+                        classRows.add(rowTable);
+                        classArg = null;
+                    }
+
+                    ConstructorDeclaration constructorDeclaration = visitClassBody(ctx.classBody(i)).getConstructorDeclaration();
+                    if (constructorDeclaration != null) {
+                        constName = constructorDeclaration.getClassName();
+                        List<ConstructorArg> constructorArgs = constructorDeclaration.getConstructorArgs();
+                        ConstructorArg constructorArg;
+                        for (int j = 0; j < constructorArgs.size(); j++) {
+                            rowTable = new RowTable();
+                            constructorArg = constructorArgs.get(j);
+                            rowTable.setDataType(constructorArg.getDataType());
+                            rowTable.setName(constructorArg.getAttributeName());
+                            rowTable.setValue("null");
+                            constRows.add(rowTable);
+                        }
+                        constScope.setName(constName);
+                        constScope.setRowTableList(constRows);
+                        classScope.setScopeList(constScope);
+                        constructorDeclaration = null;
+                    }
+
+                    BuildFunctionDeclaration buildFunctionDeclaration = visitClassBody(ctx.classBody(i)).getBuildFunctionDeclaration();
+                    if (buildFunctionDeclaration != null) {
+                        rowTable = new RowTable();
+                        rowTable.setDataType("Widget");
+                        rowTable.setName("build");
+                        rowTable.setValue("null");
+                        classRows.add(rowTable);
+                        buildFunctionDeclaration = null;
+                    }
+
                 }
             }
         }
-
+        classScope.setName(className);
+        classScope.setRowTableList(classRows);
+        symbolTable.setScopeList(classScope);
         return dartClass;
     }
 
@@ -47,6 +110,7 @@ public class BaseVisitor extends ParserFileBaseVisitor {
         ClassBody classBody = new ClassBody();
         if (ctx.classArg() != null) {
             classBody.setClassArg((ClassArg) visitClassArg(ctx.classArg()));
+
         } else if (ctx.constructorDeclaration() != null) {
             classBody.setConstructorDeclaration((ConstructorDeclaration) visitConstructorDeclaration(ctx.constructorDeclaration()));
         } else if (ctx.buildFunctionDeclaration() != null) {
@@ -82,7 +146,7 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     public BuildFunctionDeclaration visitBuildFunctionDeclaration(ParserFile.BuildFunctionDeclarationContext ctx) {
         BuildFunctionDeclaration buildFunctionDeclaration = new BuildFunctionDeclaration();
 
-            buildFunctionDeclaration.setBuildBody((BuildBody) visitBuildBody(ctx.buildBody()));
+        buildFunctionDeclaration.setBuildBody((BuildBody) visitBuildBody(ctx.buildBody()));
         return buildFunctionDeclaration;
     }
 
@@ -1252,9 +1316,9 @@ public class BaseVisitor extends ParserFileBaseVisitor {
 
     @Override
     public Constructor visitConstructor(ParserFile.ConstructorContext ctx) {
-        Constructor constructor=new Constructor();
+        Constructor constructor = new Constructor();
         constructor.setIdentifier(ctx.IDENTIFIER().getText());
-        if(!ctx.constructoFilled().isEmpty()){
+        if (!ctx.constructoFilled().isEmpty()) {
             for (int i = 0; i < ctx.constructoFilled().size(); i++) {
                 if (ctx.constructoFilled(i) != null) {
                     constructor.getConstructorFields().add((ConstructorField) visitConstructoFilled(ctx.constructoFilled(i)));

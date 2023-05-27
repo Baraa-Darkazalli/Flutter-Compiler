@@ -5,7 +5,7 @@ void main(){
 class Page2 extends StatelessWidget{
 
 Page2(String photo String name);
-
+String baraa;
 widget build(){
 return Scaffold(
     appBar:AppBar(
