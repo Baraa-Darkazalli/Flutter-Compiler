@@ -4,6 +4,7 @@ void main(){
 
 class Page1 extends StatelessWidget{
 
+int ahmad;
 widget build(){
 return Scaffold(
     appBar:AppBar(
@@ -42,3 +43,11 @@ return Scaffold(
 }
 }
 
+class TestPage extends StatelessWidget{
+
+String x1;
+String x2;
+int y1;
+int y2;
+
+}

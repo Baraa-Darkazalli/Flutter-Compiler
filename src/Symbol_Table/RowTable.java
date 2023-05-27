@@ -1,6 +1,6 @@
 package Symbol_Table;
 
-public class Row {
+public class RowTable {
     public String dataType;
     public String name;
     public String value;
