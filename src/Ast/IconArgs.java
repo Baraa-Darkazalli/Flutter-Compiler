@@ -49,16 +49,29 @@ public class IconArgs extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(size != null)
+        {
+            sb.append("width=\"").append(size.generateHtmlAttribute()).append("\" height=\"").append(size.generateHtmlAttribute()).append("\"");
+        }
+        else if(color != null)
+        {
+            sb.append("fill=\"").append(color.generateHtmlAttribute()).append("\"");
+        }
+
+        return sb.toString();
     }
 
     @Override
     public String generateHtmlCode() {
-        return "";
-    }
+        StringBuilder sb = new StringBuilder();
 
-    @Override
-    public String generateStyleCode() {
-        return "";
+        if(icon != null && icon.equals("back"))
+        {
+            sb.append("  <path fill-rule=\"evenodd\" d=\"M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z\"/>\n");
+        }
+
+        return sb.toString();
     }
 }

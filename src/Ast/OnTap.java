@@ -40,6 +40,7 @@ public class OnTap extends HtmlElement {
             for (Expression expression:expressions)
             {
                 sb.append(expression.generateHtmlAttribute()).append("; ");
+                sb.append(expression.generateHtmlAttribute("is_pop")).append("; ");
             }
         }
         

@@ -88,6 +88,7 @@ CHILDREN: 'children' ;
 WIDTH: 'width' ;
 HEIGHT: 'height' ;
 COLOR: 'color' ;
+SIZE: 'size' ;
 VALUE: 'value';
 MAX: 'max';
 MIN:'min';

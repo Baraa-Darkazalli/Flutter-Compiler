@@ -46,12 +46,14 @@ public class AllowExp extends HtmlElement {
     }
 
     @Override
-    public String generateHtmlCode() {
-        return "";
-    }
+    public String generateHtmlAttribute(String param) {
+        StringBuilder sb = new StringBuilder();
 
-    @Override
-    public String generateStyleCode() {
-        return "";
+        if(navigateExp != null)
+        {
+            sb.append(navigateExp.generateHtmlAttribute(param)); // no "\n"
+        }
+
+        return  sb.toString();
     }
 }

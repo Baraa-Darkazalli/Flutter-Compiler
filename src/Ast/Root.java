@@ -10,8 +10,7 @@ public class Root extends HtmlElement {
     private List<DartClass> dartClasses;
 
     //---------------------------    Constructor     -------------------------------
-    public Root ()
-    {
+    public Root () {
         dartClasses = new ArrayList<>();
     }
 
@@ -30,11 +29,6 @@ public class Root extends HtmlElement {
         return "Root{" +
                 "dartClasses=" + dartClasses +
                 '}';
-    }
-
-    @Override
-    public String generateHtmlAttribute() {
-        return "";
     }
 
     @Override
@@ -74,14 +68,8 @@ public class Root extends HtmlElement {
         return sb.toString();
     }
 
-    @Override
-    public String generateStyleCode() {
-        return "";
-    }
-
     //---------------------------    Functions     -------------------------------
-    public String getDefaultStyleCode()
-    {
+    public String getDefaultStyleCode() {
         StringBuilder sb = new StringBuilder();
 
         sb.append("<style>\n");
@@ -179,21 +167,20 @@ public class Root extends HtmlElement {
         return sb.toString();
     }
 
-    public String getDefaultScriptCode()
-    {
+    public String getDefaultScriptCode() {
         StringBuilder sb = new StringBuilder();
 
         // Navigate data
         sb.append("<script>\n");
         sb.append("function navigate(params) {\n");
-        sb.append("\tvar url = params[0] + \"?\";\n");
-        sb.append("\tparams.forEach(function(value, index) {\n");
-        sb.append("\t\tif (index !== 0) {\n");
-        sb.append("\t\t\turl += \"&\";\n");
-        sb.append("\t\t}\n");
-        sb.append("\t\turl += \"param\" + index + \"=\" + value;\n");
-        sb.append("\t});\n");
-        sb.append("\twindow.location.href = url;\n");
+        sb.append("  var url = params[0] + \"?\";\n");
+        sb.append("  params.forEach(function(value, index) {\n");
+        sb.append("    if (index !== 0) {\n");
+        sb.append("      url += \"&\";\n");
+        sb.append("    }\n");
+        sb.append("    url += \"param\" + index + \"=\" + value;\n");
+        sb.append("  });\n");
+        sb.append("  window.location.href = url;\n");
         sb.append("}\n");
         sb.append("</script>");
 
@@ -206,6 +193,13 @@ public class Root extends HtmlElement {
         sb.append("  params.forEach(function(value) {\n");
         sb.append("    values.push(value);\n");
         sb.append("  });\n");
+        sb.append("</script>\n");
+
+        // Go Back
+        sb.append("<script>\n");
+        sb.append("function goBack() {\n");
+        sb.append("  window.history.back();\n");
+        sb.append("}\n");
         sb.append("</script>\n");
 
         return sb.toString();
