@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Scope {
     public String name;
+    public int tokenLine;
     public List<RowTable> rowTableList=new ArrayList<>();
     public List<Scope> scopeList=new ArrayList<>();
 
@@ -22,6 +23,7 @@ public class Scope {
     public Scope() {
 
     }
+
 
     public List<RowTable> getRowTableList() {
         return rowTableList;
@@ -45,6 +47,18 @@ public class Scope {
 
     public void setScopeList(Scope scopeList) {
         this.scopeList.add(scopeList);
+    }
+
+    public int getTokenLine() {
+        return tokenLine;
+    }
+
+    public void setTokenLine(int tokenLine) {
+        this.tokenLine = tokenLine;
+    }
+
+    public void setScopeList(List<Scope> scopeList) {
+        this.scopeList = scopeList;
     }
 
     public void print() {
