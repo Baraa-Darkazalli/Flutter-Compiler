@@ -1,5 +1,6 @@
 
 import Ast.Root;
+import Symbol_Table.SymbolTable;
 import Visitor.BaseVisitor;
 import gen.LexerFile;
 import gen.ParserFile;
@@ -34,6 +35,7 @@ public class Main {
 
     //---------------------------    Static Functions     -------------------------------
     public static Root visitTreeFromFile(String file) throws IOException {
+
         CharStream cs = fromFileName(file);
         LexerFile lexer = new LexerFile(cs);
         CommonTokenStream token = new CommonTokenStream(lexer);

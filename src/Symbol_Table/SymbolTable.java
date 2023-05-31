@@ -24,15 +24,3 @@ public class SymbolTable {
 
 
 }
-/*               ERROR STATE
- * 1- class name should be unique
- * 2- construct name should be like class name
- * 3- variables used in page should declare before
- * 4- variables name is unique in the scope
- * 5- functions name is unique in the scope
- * 6- the assignment value to a variable should be the same data type of variable
- * 7- the return value of function should be the same data type of function
- *
- *
- *
- */
