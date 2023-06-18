@@ -57,6 +57,7 @@ public class SemanticCheck {
             if(this.symbolTable.scopeList.get(i).scopeList!=null) {
                 if (!Objects.equals(this.symbolTable.scopeList.get(i).name, this.symbolTable.scopeList.get(i).scopeList.get(0).name)) {
                     this.constName = this.symbolTable.scopeList.get(i).scopeList.get(0).name;
+                    return false;
                 }
             }
         }
@@ -70,11 +71,11 @@ public class SemanticCheck {
                 Utils.print(Colors.red, BgColors.black, classNameNotUnique);
             }
         }
-//        if(!constMatchWithClassName()){
-//
-//            Utils.print(Colors.red, BgColors.black, constMatchWithClassNameMsg());
-//
-//        }
+        if(!constMatchWithClassName()){
+
+            Utils.print(Colors.red, BgColors.black, constMatchWithClassNameMsg());
+
+        }
         return true;
     }
 }

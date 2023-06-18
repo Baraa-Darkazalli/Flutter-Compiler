@@ -127,30 +127,51 @@ function goBack() {
 </script>
 </head>
 <body>
-<div  id="Login"  >
-<main>
-<div class="column" >
-<style>
-  .column{
-    justify-content: center  }
-</style>
-<style>
-  .column{
-    align-items: center  }
-</style>
+<div  id="Page2"  >
+<header>
+<h1 class="title">
 <p>
-Welcome</p>
-<div class="card-child card card-body ">
-<div class="column" >
-<style>
-  .column{
-    align-items: flex-start  }
-</style>
-<p>
-Username</p>
+Page2</p>
+</h1>
+<span class="leading" style="order: -1;">
+<div class="inkWell"  onclick="navigate([]);  goBack(); ">
+<svg xmlns="http://www.w3.org/2000/svg"width="30.0" height="30.0"fill="black" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg></div>
+</span>
+<div class="actions" style="order: 2;">
 </div>
-</div></div>
+</header>
+<main>
+<div class="row" >
+<img  id="param1" alt="image">
+<script>
+document.getElementById("param1").src = values[1];
+</script>
+<style>
+  img{
+    height: 400.0px
+  }
+</style>
+<style>
+  img{
+    width: 400.0px
+  }
+</style>
+<p id="param2">
+</p>
+<script>
+document.getElementById("param2").textContent = values[2];
+</script>
+<style>
+  p{
+    font-size: 40.0px;
+  }
+</style>
+</div>
 </main>
+</div>
+<div  id="Stuff"  >
 </div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -20,6 +20,14 @@ public class Main {
         Root loginRoot = visitTreeFromFile(loginScreen);
         createHtmlFile("D:\\Compiler2\\compiler\\pages\\login.html",loginRoot);
 
+        String p1 = "D:\\Compiler2\\compiler\\screens\\page1.txt";
+        Root r1 = visitTreeFromFile(p1);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page1.html",r1);
+
+        String p2 = "D:\\Compiler2\\compiler\\screens\\page2.txt";
+        Root r2 = visitTreeFromFile(p2);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\login.html",r2);
+
 
     }
 

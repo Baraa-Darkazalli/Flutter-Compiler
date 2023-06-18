@@ -10,35 +10,32 @@ public class HtmlElement {
     public static List<String> queryStringArgs = new ArrayList<>();
 
     //---------------------------    Html Functions     -------------------------------
-    public String generateHtmlAttribute()
-    {
+    public String generateHtmlAttribute() {
         return "";
     }
-    public String generateHtmlAttribute(String param)
-    {
+
+    public String generateHtmlAttribute(String param) {
         return "";
     }
-    public String generateHtmlCode(){
+
+    public String generateHtmlCode() {
         return "";
     }
-    public String generateStyleCode(){
+
+    public String generateStyleCode() {
         return "";
     }
-    public String generateScriptCode(){
+
+    public String generateScriptCode() {
         return "";
     }
 
     //---------------------------    Services Functions     -------------------------------
-    public int getIndexForParam(String variableName)
-    {
-        if(queryStringArgs != null && ! queryStringArgs.isEmpty())
+    public int getIndexForParam(String variableName) {
+        if (queryStringArgs != null && !queryStringArgs.isEmpty())
             return queryStringArgs.indexOf(variableName);
         else return -1;
     }
-
-
-
-
 
 
 }
