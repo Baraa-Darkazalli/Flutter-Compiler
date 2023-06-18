@@ -27,7 +27,7 @@ public class BaseVisitor extends ParserFileBaseVisitor {
                 }
             }
         }
-        symbolTable.print();
+//        symbolTable.print();
         SemanticCheck semanticCheck=new SemanticCheck();
         semanticCheck.setSymbolTable(symbolTable);
         semanticCheck.check();
@@ -726,8 +726,7 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public ColumnArgs visitColumnArgs(ParserFile.ColumnArgsContext ctx) {
         ColumnArgs columnArgs = new ColumnArgs();
-
-        if (ctx.children != null) {
+        if (ctx.children() != null) {
             columnArgs.setChildren((Children) visitChildren(ctx.children()));
         } else if (ctx.mainAxis() != null) {
             columnArgs.setMainAxis((MainAxis) visitMainAxis(ctx.mainAxis()));
@@ -740,7 +739,7 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public RowArgs visitRowArgs(ParserFile.RowArgsContext ctx) {
         RowArgs rowArgs = new RowArgs();
-        if (ctx.children != null) {
+        if (ctx.children() != null) {
             rowArgs.setChildren((Children) visitChildren(ctx.children()));
         } else if (ctx.mainAxis() != null) {
             rowArgs.setMainAxis((MainAxis) visitMainAxis(ctx.mainAxis()));
@@ -1031,10 +1030,12 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public Children visitChildren(ParserFile.ChildrenContext ctx) {
         Children children = new Children();
-        if (!ctx.widget().isEmpty()) {
-            for (int i = 0; i < ctx.widget().size(); i++) {
-                if (ctx.widget(i) != null) {
-                    children.getWidgets().add((Widget) visitWidget(ctx.widget(i)));
+        if(ctx!=null){
+            if (!ctx.widget().isEmpty()) {
+                for (int i = 0; i < ctx.widget().size(); i++) {
+                    if (ctx.widget(i) != null) {
+                        children.getWidgets().add((Widget) visitWidget(ctx.widget(i)));
+                    }
                 }
             }
         }

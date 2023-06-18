@@ -1,0 +1,32 @@
+void main(){
+    runApp(Page3());
+}
+
+class Page3 extends StatelessWidget{
+
+widget build(){
+return Scaffold(
+  appBar:AppBar()
+  body:Column(
+  mainAxisAlignment:end
+   children:[
+   Card(
+   color:red
+    child:Row(
+    children:[
+    Image(image:'../images/ahmad.jpg' height:50 width:50)
+    Column(
+    children:[
+    Text('Name Ahmad Al Baghdadi')
+    Text('Birth date 11/6/2001')
+    Text('Job position Flutter developer')
+    ]
+    )
+    ]
+    )
+   )
+  ]
+ )
+);
+}
+}

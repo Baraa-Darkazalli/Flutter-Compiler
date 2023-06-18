@@ -127,43 +127,44 @@ function goBack() {
 </script>
 </head>
 <body>
-<div  id="Page1"  >
+<div  id="Page3"  >
 <header>
-<h1 class="title">
-<p>
-Page1</p>
-</h1>
 </header>
 <main>
 <div class="column" >
-<div class="inkWell"  onclick="navigate(['Page2.html' ,'../images/image1.png','name1']); ; ">
-<div class="column" >
-<p>
-name1</p>
-<img  src='../images/image1.png' alt="image">
+<style>
+  .column{
+    justify-content: flex-end  }
+</style>
+<style>
+  .card-child > *{
+    background-color: red
+  }
+</style>
+<div class="card-child">
+<div class="row" >
+<img  src='../images/ahmad.jpg' alt="image">
 <style>
   img{
-    height: 200.0px
+    height: 50.0px
   }
 </style>
 <style>
   img{
-    width: 200.0px
+    width: 50.0px
   }
 </style>
-</div>
-</div>
-<div class="inkWell"  onclick="navigate(['Page2.html' ,'../images/image2.png','name2']); ; ">
 <div class="column" >
 <p>
-name2</p>
-<img  src='../images/image2.png' alt="image">
+Name Ahmad Al Baghdadi</p>
+<p>
+Birth date 11/6/2001</p>
+<p>
+Job position Flutter developer</p>
 </div>
 </div>
-</div>
+</div></div>
 </main>
-<div class="floating-action-button">
-+</div>
 </div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
