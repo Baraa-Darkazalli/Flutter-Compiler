@@ -16,6 +16,7 @@ return Scaffold(
                         }
                     child: Icon(back size: 30 color:black)
                     )
+        actions: [Container()]
     )
     body: Row(
     children:[
