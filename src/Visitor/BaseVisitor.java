@@ -1,6 +1,7 @@
 package Visitor;
 
 import Ast.*;
+import Error_Handling.SemanticCheck;
 import Symbol_Table.RowTable;
 import Symbol_Table.Scope;
 import Symbol_Table.SymbolTable;
@@ -27,6 +28,9 @@ public class BaseVisitor extends ParserFileBaseVisitor {
             }
         }
         symbolTable.print();
+        SemanticCheck semanticCheck=new SemanticCheck();
+        semanticCheck.setSymbolTable(symbolTable);
+        semanticCheck.check();
         return root;
     }
 
@@ -49,7 +53,7 @@ public class BaseVisitor extends ParserFileBaseVisitor {
         //-----------------------------------------------------
 
         dartClass.setClassName((String) visitClassName(ctx.className()));
-
+        classScope.setTokenLine(ctx.CLASS().getSymbol().getLine());
         className = dartClass.getClassName();
 
         if (!ctx.classBody().isEmpty()) {
@@ -63,7 +67,6 @@ public class BaseVisitor extends ParserFileBaseVisitor {
                         rowTable = new RowTable();
                         rowTable.setDataType(classArg.getDataType());
                         rowTable.setName(classArg.getAttributeName());
-                        rowTable.setValue("null");
                         classRows.add(rowTable);
                         classArg = null;
                     }
@@ -78,7 +81,6 @@ public class BaseVisitor extends ParserFileBaseVisitor {
                             constructorArg = constructorArgs.get(j);
                             rowTable.setDataType(constructorArg.getDataType());
                             rowTable.setName(constructorArg.getAttributeName());
-                            rowTable.setValue("null");
                             constRows.add(rowTable);
                         }
                         constScope.setName(constName);
@@ -92,7 +94,6 @@ public class BaseVisitor extends ParserFileBaseVisitor {
                         rowTable = new RowTable();
                         rowTable.setDataType("Widget");
                         rowTable.setName("build");
-                        rowTable.setValue("null");
                         classRows.add(rowTable);
                         buildFunctionDeclaration = null;
                     }
