@@ -17,14 +17,13 @@ classArg: dataType attributeName SEMICOLON;
 
 constructorDeclaration: className OPEN_PAREN constructorArg* CLOSE_PAREN SEMICOLON;
 
-
 buildFunctionDeclaration: WIDGET BUILD OPEN_PAREN CLOSE_PAREN OPEN_BRACE buildBody CLOSE_BRACE;
 
 constructorArg: dataType attributeName ;
 
-buildBody:RETURN widget SEMICOLON; // Build function body grammar rules...
+buildBody:RETURN widget SEMICOLON;
 
-dataType:DATA_TYPE; // Define your data types here...
+dataType:DATA_TYPE;
 
 attributeName: IDENTIFIER;
 

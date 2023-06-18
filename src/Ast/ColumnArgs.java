@@ -56,26 +56,24 @@ public class ColumnArgs extends HtmlElement {
         {
             sb.append(children.generateHtmlCode());
         }
-        else
-        {
-            sb.append("<style>\n");
-            sb.append("  .column{\n");
-            if(mainAxis != null)
-            {
-                sb.append("    justify-content: ").append(mainAxis.generateStyleCode());
-            }
-            else if(crossAxis != null)
-            {
-                sb.append("    align-items: ").append(crossAxis.generateStyleCode());
-            }
-            sb.append("  }\n");
-            sb.append("</style>\n");
-        }
+
         return sb.toString();
     }
 
     @Override
     public String generateStyleCode() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(mainAxis != null)
+        {
+            sb.append(" justify-content: ").append(mainAxis.generateStyleCode()).append(";"); //no "\n"
+            sb.append("  height: 100vh;"); //no "\n"
+        }
+        else if(crossAxis != null)
+        {
+            sb.append(" align-items: ").append(crossAxis.generateStyleCode()).append(";"); //no "\n"
+        }
+
+        return sb.toString();
     }
 }

@@ -15,10 +15,32 @@ import static org.antlr.v4.runtime.CharStreams.fromFileName;
 //just to know ahmad is the best
 public class Main {
     public static void main(String[] args) throws IOException {
-        //login.txt screen
+        //login screen
         String loginScreen = "D:\\Compiler2\\compiler\\screens\\login.txt";
         Root loginRoot = visitTreeFromFile(loginScreen);
         createHtmlFile("D:\\Compiler2\\compiler\\pages\\login.html",loginRoot);
+
+        //Home screen
+        String homeScreen = "D:\\Compiler2\\compiler\\screens\\home.txt";
+        Root homeRoot = visitTreeFromFile(homeScreen);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\home.html",homeRoot);
+
+        //Product screen
+        String productScreen = "D:\\Compiler2\\compiler\\screens\\product.txt";
+        Root productRoot = visitTreeFromFile(productScreen);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\product.html",productRoot);
+
+
+
+
+        //test
+        String page1 = "D:\\Compiler2\\compiler\\screens\\page1.txt";
+        Root page1root = visitTreeFromFile(page1);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page1.html",page1root);
+
+        String page2 = "D:\\Compiler2\\compiler\\screens\\page2.txt";
+        Root page2root = visitTreeFromFile(page2);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page2.html",page2root);
 
 
     }

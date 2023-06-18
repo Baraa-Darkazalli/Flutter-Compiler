@@ -1,0 +1,29 @@
+void main(){
+    runApp(Product());
+}
+
+class Product extends StatelessWidget{
+
+Product(String photo String name);
+String baraa;
+widget build(){
+return Scaffold(
+    appBar:AppBar(
+        backgroundColor: orange
+        title:Text("Product Page")
+        leading: InkWell(
+                    onTap: (){
+                        Navigator.pop();
+                        }
+                    child: Icon(back size: 30 color:black)
+                    )
+        actions: [Container()]
+    )
+    body: Row(
+    children:[
+    Image(image:photo height:400 width:400)
+    Text(name style: TextStyle(fontSize: 40))
+    ]
+    ));
+}
+}

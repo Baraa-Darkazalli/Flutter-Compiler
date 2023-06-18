@@ -42,7 +42,13 @@ public class Column extends HtmlElement {
 
         if(columnArgs != null && !columnArgs.isEmpty())
         {
-            sb.append("<div class=\"column\" >\n");
+            sb.append("<div class=\"column\" style=\" ");// no "\n"
+            for(ColumnArgs columnArg:columnArgs)
+            {
+                sb.append(columnArg.generateStyleCode());
+            }
+            sb.append(" \" >\n");
+
             for(ColumnArgs columnArg:columnArgs)
             {
                 sb.append(columnArg.generateHtmlCode());
