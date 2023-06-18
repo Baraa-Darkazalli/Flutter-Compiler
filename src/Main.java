@@ -11,28 +11,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import static org.antlr.v4.runtime.CharStreams.fromFileName;
+
 //just to know ahmad is the best
 public class Main {
     public static void main(String[] args) throws IOException {
-        //first screen
-//        String screen1 = "D:\\Compiler2\\compiler\\screens\\page1.txt";
-//        Root root1 = visitTreeFromFile(screen1);
-//
-//        //second screen
-//        String screen2="D:\\Compiler2\\compiler\\screens\\page2.txt";
-//        Root root2 = visitTreeFromFile(screen2);
-//
-//
-        String screen3="D:\\Compiler2\\compiler\\screens\\page3.txt";
-        Root root3 = visitTreeFromFile(screen3);
-
-//        String screen4="D:\\Compiler2\\compiler\\screens\\page4.txt";
-//        Root root4 = visitTreeFromFile(screen4);
-        //Code Generation to Html
-//        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page1.html",root1);
-//        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page2.html",root2);
-        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page3.html",root3);
-//        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page4.html",root4);
+        //login.txt screen
+        String loginScreen = "D:\\Compiler2\\compiler\\screens\\login.txt";
+        Root loginRoot = visitTreeFromFile(loginScreen);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\login.html",loginRoot);
 
 
     }
@@ -49,14 +35,12 @@ public class Main {
         Root doc = (Root) new BaseVisitor().visit(tree);
         return doc;
     }
-    public static void createHtmlFile(String fileName,Root root)  {
+
+    public static void createHtmlFile(String fileName, Root root) {
         PrintWriter writer;
-        try
-        {
+        try {
             writer = new PrintWriter(fileName);
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 

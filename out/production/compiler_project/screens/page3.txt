@@ -1,0 +1,98 @@
+void main(){
+    runApp(Page3());
+}
+
+class Page3 extends StatelessWidget{
+
+  widget build(){
+    return Scaffold(
+      appBar:AppBar()
+      body:Column(
+        crossAxisAlignment:start
+        children:[
+          Card(
+            color:red
+            child:Row(
+              children:[
+                Image(image:'../images/ahmad.jpg' height:100 width:100)
+                Column(
+                  crossAxisAlignment:start
+                  children:[
+                    Text('Ahmad Al Baghdadi')
+                    Text('11/6/2001')
+                    Text('Flutter developer')
+                  ]
+                )
+              ]
+            )
+          )
+          Card(
+                      color:yellow
+                      child:Row(
+                        children:[
+                          Image(image:'../images/baraa.jpg' height:100 width:100)
+                          Column(
+                            crossAxisAlignment:start
+                            children:[
+                              Text('Baraa Darkazli')
+                              Text('13/10/2001')
+                              Text('Laravel developer')
+                            ]
+                          )
+                        ]
+                      )
+                    )
+
+           Card(
+                                color:green
+                                child:Row(
+                                  children:[
+                                    Image(image:'../images/besher.jpg' height:100 width:100)
+                                    Column(
+                                      crossAxisAlignment:start
+                                      children:[
+                                        Text('Besher Jumaa')
+                                        Text('10/5/2000')
+                                        Text('Flutter developer')
+                                      ]
+                                    )
+                                  ]
+                                )
+                              )
+                               Card(
+                                                              color:green
+                                                              child:Row(
+                                                                children:[
+                                                                  Image(image:'../images/muhammad.jpg' height:100 width:100)
+                                                                  Column(
+                                                                    crossAxisAlignment:start
+                                                                    children:[
+                                                                      Text('Muhammad Al Hallak')
+                                                                      Text('17/8/2000')
+                                                                      Text('Flutter developer')
+                                                                    ]
+                                                                  )
+                                                                ]
+                                                              )
+                                                            )
+                                 Card(
+                                                                                             color:green
+                                                                                             child:Row(
+                                                                                               children:[
+                                                                                                 Image(image:'../images/omar.jpg' height:100 width:100)
+                                                                                                 Column(
+                                                                                                   crossAxisAlignment:start
+                                                                                                   children:[
+                                                                                                     Text('Omar Al Hakeem')
+                                                                                                     Text('19/7/2000')
+                                                                                                     Text('Flutter developer')
+                                                                                                   ]
+                                                                 )
+                                                ]
+                                           )
+                                     )
+        ]
+      )
+    );
+  }
+}

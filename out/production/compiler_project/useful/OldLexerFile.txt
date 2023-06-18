@@ -1,0 +1,589 @@
+lexer grammar OldLexerFile;
+// ---------------------------------------- Lexer rules.
+
+INT :  '0'| [1-9][0-9]* ;
+DOUBLE : '-'? INT (DOT [0-9])*;
+
+LETTER
+    :    'a' .. 'z'
+    |    'A' .. 'Z'
+    ;
+
+DIGIT
+    :   ' '* ('0' .. '9') ' '*
+    ;
+
+
+EXPONENT
+    :    ('e' | 'E') ('+' | '-')? DIGIT+
+    ;
+
+HEX_DIGIT
+    :    ('a' | 'b' | 'c' | 'd' | 'e' | 'f')
+    |    ('A' | 'B' | 'C' | 'D' | 'E' | 'F')
+    |    DIGIT
+    ;
+
+ESC : '\\' (["\\/bfnrt]|UNICODE);
+
+UNICODE : 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT;
+
+SCAFFOLD: 'Scaffold';
+
+
+STRING_SINGLE_QU : '\'' (ESC|.)*? '\'';
+STRING_SINGLE_DOUBLE_QU : '"' (ESC|.)*? '"';
+
+// سنعود بعد قليل
+KEYWORD
+        : 'function'
+        | 'library'
+        | 'import'
+        | 'as'
+        | 'part'
+        | 'typedef'
+        | 'class'
+        | 'extends'
+        | 'final'
+        | 'const'
+        | 'if'
+        | 'else'
+        | 'for';
+
+//SYMBOLS
+COMMA: ',';
+SEMICOLON: ' '* ';';
+COLON: ':';
+DOT: '.';
+
+//OPERATORS
+PLUS: '+';
+MINUS: '-';
+MULTIPLY: '*';
+DIVISION: '/';
+EQUAL: '=';
+LARGER: '>';
+SMALLER: '<';
+LARGER_OR_EQUAL: '>=';
+SMALLER_OR_EQUAL: '<=';
+NOT_EQUAL: '!=';
+AND: '&&';
+OR: '||';
+NOT: '!';
+
+//BRAKCKETS
+PARENTHESES_OPEN: ' '* '(' ' '*;
+PARENTHESES_CLOSE: ' '* ')';
+SQUARE_OPEN: '[';
+SQUARE_CLOSE: ']';
+CURLY_OPEN: '{';
+CURLY_CLOSE: '}';
+
+// Reserved words.
+APPBAR: 'appBar';
+DRAWER: 'drawer';
+BODY: 'body';
+COLOR: 'color';
+SIZE:'size';
+FONTSIZE: 'fontSize';
+FONTFAMILY:'fontFamily';
+FONTSTYLE:'fontStyle';
+STYLE: 'style';
+HEIGHT: 'height';
+WIDTH: 'width';
+STACK: 'stack';
+POSITIONED: 'positioned';
+TOP:'top';
+BOTTOM:'bottom';
+RIGHT:'right';
+LEFT:'left';
+CHILD: 'child';
+CHILDREN: 'children';
+ALL:'all';
+BUILDER : 'builder' ;
+IMAGE: 'image';
+ASSET: 'asset';
+CONTAINER: 'container';
+PADDING: 'padding';
+ONPRESSED : 'onPressed';
+PRINT: 'print';
+CROSSAXISALIGNMENT: 'crossAxisAlignment';
+MAINAXISALIGNMENT:'mainAxisAlignment';
+MainAxisSize:'mainAxisSize';
+
+//appbar attributes
+LEADING:'leading';
+TITLE:'title';
+ACTIONS:'actions';
+
+//drawer attributes
+BACKGROUND_COLOR:'backgroundColor';
+
+//Constructor
+APPBAR_CONS:'AppBar';
+DRAWER_CONS: 'Drawer';
+CONTAINER_CONS:'Container';
+IMAGE_CONS: 'Image';
+STACK_CONS: 'Stack';
+POSITIONED_CONS: 'Positioned';
+TEXT_CONS: 'Text';
+SIZEDBOX_CONS: 'SizedBox';
+ROW_CONS: 'Row';
+COLUMN_CONS: 'Column';
+LISTVIEW_CONS : 'ListView' ;
+MATERIAL_BUTTON_CONS:'MaterialButton';
+TEXT_BUTTON_CONS:'TextButton';
+PADDING_CONS:'Padding';
+TEXTSTYLE_CONS:'TextStyle';
+//CLASS
+CROSSAXISALIGNMENT_CLASS:'CrossAxisAlignment';
+MAINAXISALIGNMENT_CLASS:'MainAxisAlignment';
+EDGEINSETS_CLASS: 'EdgeInsets';
+COLORS_CLASS:'Colors';
+FONTSTYLE_CLASS:'FontStyle';
+
+//COLORS
+RED:'red';
+BLUE:'blue';
+YELLOW:'yellow';
+BLACK:'black';
+WHITE:'white';
+GREY:'grey';
+GREEN:'green';
+GOLD:'gold';
+PURBLE:'purble';
+PINK:'pink';
+
+//style
+ITALIC:'italic';
+NORMAL:'normal';
+
+ASSERT
+    :    'assert'
+    ;
+BREAK
+    :    'break'
+    ;
+CASE
+    :    'case'
+    ;
+CATCH
+    :    'catch'
+    ;
+CLASS
+    :    'class'
+    ;
+CONST
+    :    'const'
+    ;
+CONTINUE
+    :    'continue'
+    ;
+DEFAULT
+    :    'default'
+    ;
+DO
+    :    'do'
+    ;
+ELSE
+    :    'else'
+    ;
+ENUM
+    :    'enum'
+    ;
+EXTENDS
+    :    'extends'
+    ;
+FALSE
+    :    'false'
+    ;
+FINAL
+    :    'final'
+    ;
+FINALLY
+    :    'finally'
+    ;
+FOR
+    :    'for'
+    ;
+IF
+    :    'if'
+    ;
+IN
+    :    'in'
+    ;
+IS
+    :    'is'
+    ;
+NEW
+    :    'new'
+    ;
+NULL
+    :    'null'
+    ;
+RETHROW
+    :    'rethrow'
+    ;
+RETURN
+    :    'return'
+    ;
+SUPER
+    :    'super'
+    ;
+SWITCH
+    :    'switch'
+    ;
+THIS
+    :    'this'
+    ;
+THROW
+    :    'throw'
+    ;
+TRUE
+    :    'true'
+    ;
+TRY
+    :    'try'
+    ;
+VAR
+    :    'var'
+    ;
+VOID
+    :    'void'
+    ;
+WHILE
+    :    'while'
+    ;
+WITH
+    :    'with'
+    ;
+
+// Built-in identifiers.
+ABSTRACT
+    :    'abstract'
+    ;
+AS
+    :    'as'
+    ;
+COVARIANT
+    :    'covariant'
+    ;
+DEFERRED
+    :    'deferred'
+    ;
+DYNAMIC
+    :    'dynamic'
+    ;
+EXPORT
+    :    'export'
+    ;
+EXTENSION
+    :    'extension'
+    ;
+EXTERNAL
+    :    'external'
+    ;
+FACTORY
+    :    'factory'
+    ;
+FUNCTION
+    :    'Function'
+    ;
+GET
+    :    'get'
+    ;
+IMPLEMENTS
+    :    'implements'
+    ;
+IMPORT
+    :    'import'
+    ;
+INTERFACE
+    :    'interface'
+    ;
+LATE
+    :    'late'
+    ;
+LIBRARY
+    :    'library'
+    ;
+OPERATOR
+    :    'operator'
+    ;
+MIXIN
+    :    'mixin'
+    ;
+PART
+    :    'part'
+    ;
+REQUIRED
+    :    'required'
+    ;
+SET
+    :    'set'
+    ;
+STATIC
+    :    'static'
+    ;
+TYPEDEF
+    :    'typedef'
+    ;
+
+// "Contextual keywords".
+AWAIT
+    :    'await'
+    ;
+YIELD
+    :    'yield'
+    ;
+
+// Other words used in the grammar.
+ASYNC
+    :    'async'
+    ;
+HIDE
+    :    'hide'
+    ;
+OF
+    :    'of'
+    ;
+ON
+    :    'on'
+    ;
+SHOW
+    :    'show'
+    ;
+SYNC
+    :    'sync'
+    ;
+WHEN
+    :    'when'
+    ;
+// Lexical tokens that are not words.
+NUMBER
+    :    DIGIT+ '.' DIGIT+ EXPONENT?
+    |    DIGIT+ EXPONENT?
+    |    '.' DIGIT+ EXPONENT?
+    ;
+HEX_NUMBER
+    :    '0x' HEX_DIGIT+
+    |    '0X' HEX_DIGIT+
+    ;
+RAW_SINGLE_LINE_STRING
+    :    'r' '\'' (~('\'' | '\r' | '\n'))* '\''
+    |    'r' '"' (~('"' | '\r' | '\n'))* '"'
+    ;
+RAW_MULTI_LINE_STRING
+    :    'r' '"""' (.)*? '"""'
+    |    'r' '\'\'\'' (.)*? '\'\'\''
+    ;
+
+SIMPLE_STRING_INTERPOLATION
+    :    '$' IDENTIFIER_NO_DOLLAR
+    ;
+
+fragment
+ESCAPE_SEQUENCE
+    :    '\\n'
+    |    '\\r'
+    |    '\\b'
+    |    '\\t'
+    |    '\\v'
+    |    '\\x' HEX_DIGIT HEX_DIGIT
+    |    '\\u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+    |    '\\u{' HEX_DIGIT_SEQUENCE '}'
+    ;
+
+HEX_DIGIT_SEQUENCE
+    :    HEX_DIGIT HEX_DIGIT? HEX_DIGIT?
+         HEX_DIGIT? HEX_DIGIT? HEX_DIGIT?
+    ;
+
+STRING_CONTENT_COMMON
+    :    ~('\\' | '\'' | '"' | '$' | '\r' | '\n')
+    |    ESCAPE_SEQUENCE
+    |    '\\' ~('n' | 'r' | 'b' | 't' | 'v' | 'x' | 'u' | '\r' | '\n')
+    |    SIMPLE_STRING_INTERPOLATION
+    ;
+
+
+STRING_CONTENT_SQ
+    :    STRING_CONTENT_COMMON
+    |    '"'
+    ;
+
+SINGLE_LINE_STRING_SQ_BEGIN_END
+    :    '\'' STRING_CONTENT_SQ* '\''
+    ;
+
+SINGLE_LINE_STRING_SQ_BEGIN_MID
+    :    '\'' STRING_CONTENT_SQ* '${' { enterBraceSingleQuote(); }
+    ;
+
+SINGLE_LINE_STRING_SQ_MID_MID
+    :    { currentBraceLevel(BRACE_SINGLE) }?
+         { exitBrace(); } '}' STRING_CONTENT_SQ* '${'
+         { enterBraceSingleQuote(); }
+    ;
+
+SINGLE_LINE_STRING_SQ_MID_END
+    :    { currentBraceLevel(BRACE_SINGLE) }?
+         { exitBrace(); } '}' STRING_CONTENT_SQ* '\''
+    ;
+
+
+STRING_CONTENT_DQ
+    :    STRING_CONTENT_COMMON
+    |    '\''
+    ;
+
+SINGLE_LINE_STRING_DQ_BEGIN_END
+    :    '"' STRING_CONTENT_DQ* '"'
+    ;
+
+SINGLE_LINE_STRING_DQ_BEGIN_MID
+    :    '"' STRING_CONTENT_DQ* '${' { enterBraceDoubleQuote(); }
+    ;
+
+SINGLE_LINE_STRING_DQ_MID_MID
+    :    { currentBraceLevel(BRACE_DOUBLE) }?
+         { exitBrace(); } '}' STRING_CONTENT_DQ* '${'
+         { enterBraceDoubleQuote(); }
+    ;
+
+SINGLE_LINE_STRING_DQ_MID_END
+    :    { currentBraceLevel(BRACE_DOUBLE) }?
+         { exitBrace(); } '}' STRING_CONTENT_DQ* '"'
+    ;
+
+QUOTES_SQ
+    :
+    |    '\''
+    |    '\'\''
+    ;
+
+// Read string contents, which may be almost anything, but stop when seeing
+// '\'\'\'' and when seeing '${'. We do this by allowing all other
+// possibilities including escapes, simple interpolation, and fewer than
+// three '\''.
+
+STRING_CONTENT_TSQ
+    :    QUOTES_SQ
+         (STRING_CONTENT_COMMON | '"' | '\r' | '\n' | '\\\r' | '\\\n')
+    ;
+
+MULTI_LINE_STRING_SQ_BEGIN_END
+    :    '\'\'\'' STRING_CONTENT_TSQ* '\'\'\''
+    ;
+
+MULTI_LINE_STRING_SQ_BEGIN_MID
+    :    '\'\'\'' STRING_CONTENT_TSQ* QUOTES_SQ '${'
+         { enterBraceThreeSingleQuotes(); }
+    ;
+
+MULTI_LINE_STRING_SQ_MID_MID
+    :    { currentBraceLevel(BRACE_THREE_SINGLE) }?
+         { exitBrace(); } '}' STRING_CONTENT_TSQ* QUOTES_SQ '${'
+         { enterBraceThreeSingleQuotes(); }
+    ;
+
+MULTI_LINE_STRING_SQ_MID_END
+    :    { currentBraceLevel(BRACE_THREE_SINGLE) }?
+         { exitBrace(); } '}' STRING_CONTENT_TSQ* '\'\'\''
+    ;
+
+QUOTES_DQ
+    :
+    |    '"'
+    |    '""'
+    ;
+
+// Read string contents, which may be almost anything, but stop when seeing
+// '"""' and when seeing '${'. We do this by allowing all other possibilities
+// including escapes, simple interpolation, and fewer-than-three '"'.
+
+STRING_CONTENT_TDQ
+    :    QUOTES_DQ
+         (STRING_CONTENT_COMMON | '\'' | '\r' | '\n' | '\\\r' | '\\\n')
+    ;
+
+MULTI_LINE_STRING_DQ_BEGIN_END
+    :    '"""' STRING_CONTENT_TDQ* '"""'
+    ;
+
+MULTI_LINE_STRING_DQ_BEGIN_MID
+    :    '"""' STRING_CONTENT_TDQ* QUOTES_DQ '${'
+         { enterBraceThreeDoubleQuotes(); }
+    ;
+
+MULTI_LINE_STRING_DQ_MID_MID
+    :    { currentBraceLevel(BRACE_THREE_DOUBLE) }?
+         { exitBrace(); } '}' STRING_CONTENT_TDQ* QUOTES_DQ '${'
+         { enterBraceThreeDoubleQuotes(); }
+    ;
+
+MULTI_LINE_STRING_DQ_MID_END
+    :    { currentBraceLevel(BRACE_THREE_DOUBLE) }?
+         { exitBrace(); } '}' STRING_CONTENT_TDQ* '"""'
+    ;
+
+LBRACE
+    :    '{' { enterBrace(); }
+    ;
+
+RBRACE
+    :    { currentBraceLevel(BRACE_NORMAL) }? { exitBrace(); } '}'
+    ;
+
+IDENTIFIER_START_NO_DOLLAR
+    :    LETTER
+    |    '_'
+    ;
+
+IDENTIFIER_PART_NO_DOLLAR
+    :    IDENTIFIER_START_NO_DOLLAR
+    |    DIGIT
+    ;
+
+IDENTIFIER_NO_DOLLAR
+    :    IDENTIFIER_START_NO_DOLLAR IDENTIFIER_PART_NO_DOLLAR*
+    ;
+
+IDENTIFIER_START
+    :    IDENTIFIER_START_NO_DOLLAR
+    |    '$'
+    ;
+
+IDENTIFIER_PART
+    :    IDENTIFIER_START
+    |    DIGIT
+    ;
+
+SCRIPT_TAG
+    :    '#!' (~('\r' | '\n'))* NEWLINE
+    ;
+
+IDENTIFIER
+    :    IDENTIFIER_START IDENTIFIER_PART*
+    ;
+
+SINGLE_LINE_COMMENT
+    :    '//' (~('\r' | '\n'))* NEWLINE?
+         { skip(); }
+    ;
+
+MULTI_LINE_COMMENT
+    :    '/*' (MULTI_LINE_COMMENT | .)*? '*/'
+         { skip(); }
+    ;
+
+FEFF
+    :    '\uFEFF'
+    ;
+
+    ID : [a-zA-Z][a-zA-Z0-9]*;
+
+    INTEGER : [0-9]+;
+WS: [ \t]+ -> skip;
+NEWLINE: [\n\r]+ -> skip;
+SEA_WS: (' '|'\t'|'\r'?'\n')+;
