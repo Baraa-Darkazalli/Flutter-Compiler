@@ -42,15 +42,3 @@ return Scaffold(
     );
 }
 }
-class Page1{
-
-}
-
-class Page2{
-Page2();
-}
-class Page1{}
-class Page3{
-Page23();
-}
-class Page1{}

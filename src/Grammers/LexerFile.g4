@@ -129,7 +129,7 @@ DOUBLE :  INT (DOT [0-9]*)?;
 INT: DIGIT+;
  ID: LETTER (LETTER | DIGIT | '_')*;
   FLOAT: DIGIT+ '.' DIGIT* | '.' DIGIT+;
-  STRING:('\''|'"') (LETTER|DIGIT|WS|DOT|SLASH|BACKSLASH)* ('\''|'"')*;
+  STRING:('\''|'"') (LETTER|DIGIT|WS|DOT|SLASH|BACKSLASH|COLON)* ('\''|'"')*;
     WS: [ \t\n\r]+ -> skip;
 //---------------  SYMBOLS  ------------
 

@@ -1031,10 +1031,12 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public Children visitChildren(ParserFile.ChildrenContext ctx) {
         Children children = new Children();
-        if (!ctx.widget().isEmpty()) {
-            for (int i = 0; i < ctx.widget().size(); i++) {
-                if (ctx.widget(i) != null) {
-                    children.getWidgets().add((Widget) visitWidget(ctx.widget(i)));
+        if(ctx!=null){
+            if (!ctx.widget().isEmpty()) {
+                for (int i = 0; i < ctx.widget().size(); i++) {
+                    if (ctx.widget(i) != null) {
+                        children.getWidgets().add((Widget) visitWidget(ctx.widget(i)));
+                    }
                 }
             }
         }

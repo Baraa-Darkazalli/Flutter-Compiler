@@ -25,9 +25,13 @@ public class Main {
         String screen2="D:\\Compiler2\\compiler\\screens\\page2.txt";
         Root root2 = visitTreeFromFile(screen2);
 
+
+        String screen3="D:\\Compiler2\\compiler\\screens\\page3.txt";
+        Root root3 = visitTreeFromFile(screen3);
         //Code Generation to Html
         createHtmlFile("D:\\Compiler2\\compiler\\pages\\page1.html",root1);
         createHtmlFile("D:\\Compiler2\\compiler\\pages\\page2.html",root2);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page3.html",root3);
 
 
     }
