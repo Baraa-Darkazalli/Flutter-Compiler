@@ -62,11 +62,11 @@ public class ColumnArgs extends HtmlElement {
             sb.append("  .column{\n");
             if(mainAxis != null)
             {
-                sb.append(mainAxis.generateStyleCode());
+                sb.append("    justify-content: ").append(mainAxis.generateStyleCode());
             }
             else if(crossAxis != null)
             {
-                sb.append(crossAxis.generateStyleCode());
+                sb.append("    align-items: ").append(crossAxis.generateStyleCode());
             }
             sb.append("  }\n");
             sb.append("</style>\n");

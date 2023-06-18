@@ -66,7 +66,7 @@ public class RowArgs extends HtmlElement {
             }
             else if(crossAxis != null)
             {
-                sb.append(crossAxis.generateStyleCode());
+                sb.append("     align-items: ").append(crossAxis.generateStyleCode());
             }
             sb.append("  }\n");
             sb.append("</style>\n");

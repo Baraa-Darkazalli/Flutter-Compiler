@@ -726,7 +726,6 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public ColumnArgs visitColumnArgs(ParserFile.ColumnArgsContext ctx) {
         ColumnArgs columnArgs = new ColumnArgs();
-
         if (ctx.children() != null) {
             columnArgs.setChildren((Children) visitChildren(ctx.children()));
         }
@@ -742,15 +741,13 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public RowArgs visitRowArgs(ParserFile.RowArgsContext ctx) {
         RowArgs rowArgs = new RowArgs();
-        if (ctx.children != null) {
+        if (ctx.children() != null) {
             rowArgs.setChildren((Children) visitChildren(ctx.children()));
         }
         else if (ctx.mainAxis() != null) {
-            System.out.println("main row");
             rowArgs.setMainAxis((MainAxis) visitMainAxis(ctx.mainAxis()));
         }
         else if (ctx.crossAxis() != null) {
-            System.out.println("cross row");
             rowArgs.setCrossAxis((CrossAxis) visitCrossAxis(ctx.crossAxis()));
         }
         return rowArgs;
