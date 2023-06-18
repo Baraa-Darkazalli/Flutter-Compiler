@@ -62,6 +62,7 @@ COLORS:
 'green'|
 'gold'|
 'purble'|
+'orange'|
 'pink';
 
 

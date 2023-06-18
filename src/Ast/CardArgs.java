@@ -54,7 +54,7 @@ public class CardArgs extends HtmlElement {
 
         if(child != null)
         {
-            sb.append("<div class=\"card-child card card-body \">\n");
+            sb.append("<div class=\"card-child card shadow p-3 mb-5 bg-white rounded\">\n");
             sb.append(child.generateHtmlCode());
             sb.append("</div>");
         }

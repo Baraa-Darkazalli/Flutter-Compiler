@@ -37,7 +37,7 @@ public class TextFieldArgs extends HtmlElement {
     public String generateStyleCode() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append(style.generateStyleCode());
+        sb.append(style.generateStyleCode()).append("; ");
 
         return sb.toString();
     }

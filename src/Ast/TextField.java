@@ -40,18 +40,18 @@ public class TextField extends HtmlElement {
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
 
+
+        sb.append("<input type=\"text\" class=\"form-control\" ");//no "\n"
+
         if(textFieldArgs != null && !textFieldArgs.isEmpty())
         {
-            sb.append("<input type=\"text\" >\n");
                 for(TextFieldArgs textFieldArg:textFieldArgs)
                 {
-                    sb.append("<style>\n");
-                    sb.append("  input{\n");
                     sb.append(textFieldArg.generateStyleCode());
-                    sb.append("  }\n");
-                    sb.append("</style>\n");
                 }
         }
+
+        sb.append(" >\n");
 
         return sb.toString();
     }

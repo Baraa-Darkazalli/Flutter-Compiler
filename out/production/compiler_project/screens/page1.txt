@@ -3,7 +3,7 @@ void main(){
 }
 
 class Page1 extends StatelessWidget{
-Pag1e1();
+Page1();
 int ahmad;
 widget build(){
 return Scaffold(

@@ -11,27 +11,36 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import static org.antlr.v4.runtime.CharStreams.fromFileName;
+
 //just to know ahmad is the best
 public class Main {
     public static void main(String[] args) throws IOException {
-        //first screen
-        String screen1 = "D:\\Compiler2\\compiler\\screens\\page1.txt";
-        Root root1 = visitTreeFromFile(screen1);
+        //login screen
+        String loginScreen = "D:\\Compiler2\\compiler\\screens\\login.txt";
+        Root loginRoot = visitTreeFromFile(loginScreen);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\login.html",loginRoot);
 
-        //second screen
-        String screen2="D:\\Compiler2\\compiler\\screens\\page2.txt";
-        Root root2 = visitTreeFromFile(screen2);
+        //Home screen
+        String homeScreen = "D:\\Compiler2\\compiler\\screens\\home.txt";
+        Root homeRoot = visitTreeFromFile(homeScreen);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\home.html",homeRoot);
 
-        String screen3="D:\\Compiler2\\compiler\\screens\\page3.txt";
-        Root root3 = visitTreeFromFile(screen3);
+        //Product screen
+        String productScreen = "D:\\Compiler2\\compiler\\screens\\product.txt";
+        Root productRoot = visitTreeFromFile(productScreen);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\product.html",productRoot);
 
-//        String screen4="D:\\Compiler2\\compiler\\screens\\page4.txt";
-//        Root root4 = visitTreeFromFile(screen4);
-        //Code Generation to Html
-        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page1.html",root1);
-        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page2.html",root2);
-        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page3.html",root3);
-//        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page4.html",root4);
+
+
+
+        //test
+        String page1 = "D:\\Compiler2\\compiler\\screens\\page1.txt";
+        Root page1root = visitTreeFromFile(page1);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page1.html",page1root);
+
+        String page2 = "D:\\Compiler2\\compiler\\screens\\page2.txt";
+        Root page2root = visitTreeFromFile(page2);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page2.html",page2root);
 
 
     }
@@ -48,14 +57,12 @@ public class Main {
         Root doc = (Root) new BaseVisitor().visit(tree);
         return doc;
     }
-    public static void createHtmlFile(String fileName,Root root)  {
+
+    public static void createHtmlFile(String fileName, Root root) {
         PrintWriter writer;
-        try
-        {
+        try {
             writer = new PrintWriter(fileName);
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
