@@ -10,14 +10,25 @@ Login();
       mainAxisAlignment:center
       crossAxisAlignment:center
       children:[
-       Text('Welcome')
+       Text('Welcome' style:TextStyle(fontSize:40))
        Card(
        child:Column(
         crossAxisAlignment:start
+        mainAxisAlignment:center
         children:[
         Text('Username')
         TextField()
+        Text('Password')
+        TextField()
+       IconButton(icon:InkWell(
+        onTap:(){
+               Navigator.push(Home());
+               }
+         child:Text('Log in')
+       ))
+
         ]
+
         )
        )
       ]

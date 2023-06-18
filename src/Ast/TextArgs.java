@@ -36,7 +36,18 @@ public class TextArgs extends HtmlElement {
 
     @Override
     public String generateHtmlAttribute() {
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        if(textArg != null)
+        {
+            sb.append(textArg.generateHtmlAttribute());
+        }
+        else if(style != null)
+        {
+            sb.append(" style=\"").append(style.generateStyleCode()).append("; \"");// no "\n"
+        }
+
+        return sb.toString();
     }
 
     @Override
@@ -45,27 +56,38 @@ public class TextArgs extends HtmlElement {
 
         if(textArg != null)
         {
-            sb.append("<p");// no "\n"
-            sb.append(textArg.generateHtmlAttribute());
-            sb.append(">\n");
             sb.append(textArg.generateHtmlCode());
-            sb.append("</p>\n");
-            sb.append(textArg.generateScriptCode());
         }
-        else if(style != null)
-        {
-            sb.append("<style>\n");
-            sb.append("  p{\n");
-            sb.append(style.generateStyleCode());
-            sb.append("  }\n");
-            sb.append("</style>\n");
-        }
+//  if(textArg != null)
+//        {
+//            sb.append("<p");// no "\n"
+//            sb.append(textArg.generateHtmlAttribute());
+//            sb.append(">\n");
+//            sb.append(textArg.generateHtmlCode());
+//            sb.append("</p>\n");
+//            sb.append(textArg.generateScriptCode());
+//        }
+//        else if(style != null)
+//        {
+//            sb.append("<style>\n");
+//            sb.append("  p{\n");
+//            sb.append(style.generateStyleCode());
+//            sb.append("  }\n");
+//            sb.append("</style>\n");
+//        }
 
         return sb.toString();
     }
 
     @Override
-    public String generateStyleCode() {
-        return "";
+    public String generateScriptCode() {
+        StringBuilder sb = new StringBuilder();
+
+        if(textArg != null)
+        {
+            sb.append(textArg.generateScriptCode());
+        }
+
+        return sb.toString();
     }
 }

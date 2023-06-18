@@ -52,9 +52,9 @@ public class Root extends HtmlElement {
         {
             for (DartClass dartClass : dartClasses)
             {
-                sb.append("<div ").append(dartClass.generateHtmlAttribute()).append(" >\n");
+//                sb.append("<div ").append(dartClass.generateHtmlAttribute()).append(" >\n");
                 sb.append(dartClass.generateHtmlCode());
-                sb.append("</div>\n");
+//                sb.append("</div>\n");
             }
         }
 
@@ -78,7 +78,8 @@ public class Root extends HtmlElement {
         sb.append("  }\n");
         sb.append("  body{\n");
         sb.append("    display: grid;\n");
-        sb.append("    grid-template-areas:\"header header\"\n \"nav nav\"\n \"aside main\"\n \"footer\" \"footer\";\n");
+        sb.append("    grid-template-columns: auto 1fr;\n");
+        sb.append("    grid-template-areas:\"header header\"\n \"nav nav\"\n \"aside main\"\n \"footer footer\";\n");
         sb.append("  }\n");
         sb.append("  main{\n");
         sb.append("    grid-area: main;\n");
@@ -109,23 +110,26 @@ public class Root extends HtmlElement {
         sb.append("    height: 100vh;\n");
         sb.append("    overflow: auto;\n");
         sb.append("  }\n");
-        sb.append("  /* Sidebar Args */\n");
-        sb.append("  aside div {\n");
-        sb.append("    display: block;\n");
-        sb.append("    color: black;\n");
-        sb.append("    padding: 16px;\n");
-        sb.append("    text-decoration: none;\n");
+        sb.append("  aside .column * {\n");
+        sb.append("    width: 100%;\n"); //default
         sb.append("  }\n");
-        sb.append("  /* Active/current Arg */\n");
-        sb.append("  aside div.active {\n");
-        sb.append("    background-color: #04AA6D;\n");
-        sb.append("    color: white;\n");
-        sb.append("  }\n");
-        sb.append("  /* Arg on mouse-over */\n");
-        sb.append("  aside div:hover:not(.active) {\n");
-        sb.append("    background-color: #555;\n");
-        sb.append("    color: white;\n");
-        sb.append("  }\n");
+//        sb.append("  /* Sidebar Args */\n");
+//        sb.append("  aside div {\n");
+//        sb.append("    display: block;\n");
+//        sb.append("    color: black;\n");
+//        sb.append("    padding: 16px;\n");
+//        sb.append("    text-decoration: none;\n");
+//        sb.append("  }\n");
+//        sb.append("  /* Active/current Arg */\n");
+//        sb.append("  aside div.active {\n");
+//        sb.append("    background-color: #04AA6D;\n");
+//        sb.append("    color: white;\n");
+//        sb.append("  }\n");
+//        sb.append("  /* Arg on mouse-over */\n");
+//        sb.append("  aside div:hover:not(.active) {\n");
+//        sb.append("    background-color: #555;\n");
+//        sb.append("    color: white;\n");
+//        sb.append("  }\n");
         sb.append("  .inkWell{\n");
         sb.append("    display: flex;\n");
         sb.append("    flex-direction: column;\n");
@@ -153,14 +157,33 @@ public class Root extends HtmlElement {
         sb.append("    background-color: lightgray;\n");
         sb.append("  }\n");
         sb.append("  .row{\n");
-        sb.append("    display: flex; flex-direction: row; justify-content: center; align-items: center;\"\n");
+        sb.append("    display: flex; flex-direction: row; justify-content: center; align-items: center;\n");
         sb.append("  }\n");
         sb.append("  .column{\n");
-        sb.append("    display: flex; flex-direction: column; justify-content: space-around; align-items: center;\"\n");
+        sb.append("    display: flex; flex-direction: column; justify-content: space-around; align-items: center;\n");
         sb.append("  }\n");
         sb.append("  img{\n");
         sb.append("    height: 100px;\n");
         sb.append("    width: 100px;\n");
+        sb.append("  }\n");
+        sb.append("  .card-child{\n");
+        sb.append("    height: 300px;\n");
+        sb.append("    width: 300px;\n");
+        sb.append("  }\n");
+        sb.append("  .btn{\n");
+        sb.append("    width: 100%;\n");
+        sb.append("    margin-top: 10px;\n");
+        sb.append("  }\n");
+        sb.append("  .btn p{\n");
+        sb.append("    margin: 0;\n");
+        sb.append("  }\n");
+        sb.append("  .btn .inkWell{\n");
+        sb.append("    display: block;\n");
+        sb.append("    cursor: pointer;\n");
+        sb.append("    padding: 0px;\n");
+        sb.append("  }\n");
+        sb.append("  .btn .inkWell:hover{\n");
+        sb.append("    background-color: transparent;\n");
         sb.append("  }\n");
         sb.append("</style>\n");
 

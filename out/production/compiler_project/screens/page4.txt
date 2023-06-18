@@ -1,5 +1,4 @@
 void main(){
-<<<<<<< HEAD
     runApp(Page0());
 }
 
@@ -8,16 +7,6 @@ class Page0 extends StatelessWidget{
   widget build(){
     return Scaffold(
 
-=======
-    runApp(Page3());
-}
-
-class Page3 extends StatelessWidget{
-
-  widget build(){
-    return Card(
-    color:red
->>>>>>> a04dafe22b8823dbebcf77f97a314906554b355a
     );
   }
 }

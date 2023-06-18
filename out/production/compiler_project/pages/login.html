@@ -12,10 +12,11 @@
   }
   body{
     display: grid;
+    grid-template-columns: auto 1fr;
     grid-template-areas:"header header"
  "nav nav"
  "aside main"
- "footer" "footer";
+ "footer footer";
   }
   main{
     grid-area: main;
@@ -46,22 +47,8 @@
     height: 100vh;
     overflow: auto;
   }
-  /* Sidebar Args */
-  aside div {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-  }
-  /* Active/current Arg */
-  aside div.active {
-    background-color: #04AA6D;
-    color: white;
-  }
-  /* Arg on mouse-over */
-  aside div:hover:not(.active) {
-    background-color: #555;
-    color: white;
+  aside .column * {
+    width: 100%;
   }
   .inkWell{
     display: flex;
@@ -90,14 +77,33 @@
     background-color: lightgray;
   }
   .row{
-    display: flex; flex-direction: row; justify-content: center; align-items: center;"
+    display: flex; flex-direction: row; justify-content: center; align-items: center;
   }
   .column{
-    display: flex; flex-direction: column; justify-content: space-around; align-items: center;"
+    display: flex; flex-direction: column; justify-content: space-around; align-items: center;
   }
   img{
     height: 100px;
     width: 100px;
+  }
+  .card-child{
+    height: 300px;
+    width: 300px;
+  }
+  .btn{
+    width: 100%;
+    margin-top: 10px;
+  }
+  .btn p{
+    margin: 0;
+  }
+  .btn .inkWell{
+    display: block;
+    cursor: pointer;
+    padding: 0px;
+  }
+  .btn .inkWell:hover{
+    background-color: transparent;
   }
 </style>
 <script>
@@ -127,6 +133,7 @@ function goBack() {
 </script>
 </head>
 <body>
+<<<<<<< HEAD
 <div  id="Page2"  >
 <header>
 <h1 class="title">
@@ -171,6 +178,30 @@ document.getElementById("param2").textContent = values[2];
 </div>
 </main>
 </div>
+<div  id="Stuff"  >
+</div>
+=======
+<main>
+<div class="column" style="  justify-content: center;  height: 100vh; align-items: center; " >
+<p style="    font-size: 40.0px;
+; ">
+Welcome</p>
+<div class="card-child card shadow p-3 mb-5 bg-white rounded">
+<div class="column" style="  align-items: flex-start; justify-content: center;  height: 100vh; " >
+<p>
+Username</p>
+<input type="text" class="form-control"  >
+<p>
+Password</p>
+<input type="text" class="form-control"  >
+<button type="button" class="btn btn-primary"><div class="inkWell"  onclick="navigate(['Home.html' ]); ; ">
+<p>
+Log in</p>
+</div>
+</button></div>
+</div></div>
+</main>
+>>>>>>> 1cac23cc2a7851ad9cdb3517aa2894befc263dbc
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -1,4 +1,4 @@
-// Generated from D:/Compiler2/compiler/src/Grammers\ParserFile.g4 by ANTLR 4.10.1
+// Generated from D:/Compiler2/compiler/src/Grammers\ParserFile.g4 by ANTLR 4.12.0
 package gen;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
@@ -10,6 +10,7 @@ import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
  * @param <T> The return type of the visit operation. Use {@link Void} for
  * operations with no return type.
  */
+@SuppressWarnings("CheckReturnValue")
 public class ParserFileBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements ParserFileVisitor<T> {
 	/**
 	 * {@inheritDoc}

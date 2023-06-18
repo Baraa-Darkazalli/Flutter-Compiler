@@ -40,11 +40,23 @@ public class Text extends HtmlElement {
     public String generateHtmlCode() {
         StringBuilder sb = new StringBuilder();
 
+
         if(textArgsList != null && !textArgsList.isEmpty())
         {
+            sb.append("<p");// no "\n"
+            for(TextArgs textArg:textArgsList)
+            {
+                sb.append(textArg.generateHtmlAttribute());
+            }
+            sb.append(">\n");
             for(TextArgs textArg:textArgsList)
             {
                 sb.append(textArg.generateHtmlCode());
+            }
+            sb.append("</p>\n");
+            for(TextArgs textArg:textArgsList)
+            {
+                sb.append(textArg.generateScriptCode());
             }
         }
 
