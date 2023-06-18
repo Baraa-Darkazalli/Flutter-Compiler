@@ -27,7 +27,7 @@ public class BaseVisitor extends ParserFileBaseVisitor {
                 }
             }
         }
-        symbolTable.print();
+//        symbolTable.print();
         SemanticCheck semanticCheck=new SemanticCheck();
         semanticCheck.setSymbolTable(symbolTable);
         semanticCheck.check();
@@ -726,12 +726,13 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public ColumnArgs visitColumnArgs(ParserFile.ColumnArgsContext ctx) {
         ColumnArgs columnArgs = new ColumnArgs();
-
-        if (ctx.children != null) {
+        if (ctx.children() != null) {
             columnArgs.setChildren((Children) visitChildren(ctx.children()));
-        } else if (ctx.mainAxis() != null) {
+        }
+         else if (ctx.mainAxis() != null) {
             columnArgs.setMainAxis((MainAxis) visitMainAxis(ctx.mainAxis()));
-        } else if (ctx.crossAxis() != null) {
+        }
+         else if (ctx.crossAxis() != null) {
             columnArgs.setCrossAxis((CrossAxis) visitCrossAxis(ctx.crossAxis()));
         }
         return columnArgs;
@@ -740,11 +741,13 @@ public class BaseVisitor extends ParserFileBaseVisitor {
     @Override
     public RowArgs visitRowArgs(ParserFile.RowArgsContext ctx) {
         RowArgs rowArgs = new RowArgs();
-        if (ctx.children != null) {
+        if (ctx.children() != null) {
             rowArgs.setChildren((Children) visitChildren(ctx.children()));
-        } else if (ctx.mainAxis() != null) {
+        }
+        else if (ctx.mainAxis() != null) {
             rowArgs.setMainAxis((MainAxis) visitMainAxis(ctx.mainAxis()));
-        } else if (ctx.crossAxis() != null) {
+        }
+        else if (ctx.crossAxis() != null) {
             rowArgs.setCrossAxis((CrossAxis) visitCrossAxis(ctx.crossAxis()));
         }
         return rowArgs;

@@ -1,14 +1,16 @@
-// Generated from D:/Compiler2/compiler/src/Grammers\ParserFile.g4 by ANTLR 4.12.0
+// Generated from D:/Compiler2/compiler/src/Grammers\ParserFile.g4 by ANTLR 4.10.1
 package gen;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
 
-@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class ParserFile extends Parser {
-	static { RuntimeMetaData.checkVersion("4.12.0", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.10.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -183,7 +185,6 @@ public class ParserFile extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class RootContext extends ParserRuleContext {
 		public MainContext main() {
 			return getRuleContext(MainContext.class,0);
@@ -249,7 +250,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class MainContext extends ParserRuleContext {
 		public TerminalNode VOID() { return getToken(ParserFile.VOID, 0); }
 		public TerminalNode MAIN() { return getToken(ParserFile.MAIN, 0); }
@@ -328,7 +328,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DartClassContext extends ParserRuleContext {
 		public TerminalNode CLASS() { return getToken(ParserFile.CLASS, 0); }
 		public ClassNameContext className() {
@@ -417,7 +416,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ClassBodyContext extends ParserRuleContext {
 		public ClassArgContext classArg() {
 			return getRuleContext(ClassArgContext.class,0);
@@ -490,7 +488,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ClassArgContext extends ParserRuleContext {
 		public DataTypeContext dataType() {
 			return getRuleContext(DataTypeContext.class,0);
@@ -543,7 +540,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ConstructorDeclarationContext extends ParserRuleContext {
 		public ClassNameContext className() {
 			return getRuleContext(ClassNameContext.class,0);
@@ -618,7 +614,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class BuildFunctionDeclarationContext extends ParserRuleContext {
 		public TerminalNode WIDGET() { return getToken(ParserFile.WIDGET, 0); }
 		public TerminalNode BUILD() { return getToken(ParserFile.BUILD, 0); }
@@ -681,7 +676,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ConstructorArgContext extends ParserRuleContext {
 		public DataTypeContext dataType() {
 			return getRuleContext(DataTypeContext.class,0);
@@ -731,7 +725,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class BuildBodyContext extends ParserRuleContext {
 		public TerminalNode RETURN() { return getToken(ParserFile.RETURN, 0); }
 		public WidgetContext widget() {
@@ -782,7 +775,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DataTypeContext extends ParserRuleContext {
 		public TerminalNode DATA_TYPE() { return getToken(ParserFile.DATA_TYPE, 0); }
 		public DataTypeContext(ParserRuleContext parent, int invokingState) {
@@ -825,7 +817,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class AttributeNameContext extends ParserRuleContext {
 		public TerminalNode IDENTIFIER() { return getToken(ParserFile.IDENTIFIER, 0); }
 		public AttributeNameContext(ParserRuleContext parent, int invokingState) {
@@ -868,7 +859,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ClassNameContext extends ParserRuleContext {
 		public TerminalNode IDENTIFIER() { return getToken(ParserFile.IDENTIFIER, 0); }
 		public ClassNameContext(ParserRuleContext parent, int invokingState) {
@@ -911,7 +901,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class WidgetContext extends ParserRuleContext {
 		public ScaffoldContext scaffold() {
 			return getRuleContext(ScaffoldContext.class,0);
@@ -1214,7 +1203,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ScaffoldContext extends ParserRuleContext {
 		public TerminalNode SCAFFOLD() { return getToken(ParserFile.SCAFFOLD, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -1258,7 +1246,7 @@ public class ParserFile extends Parser {
 			setState(323);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 2216615441596416L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BODY) | (1L << DRAWER_ARG) | (1L << APP_BAR_ARG) | (1L << BOTTOM_NAVIGATION_BAR_ARG) | (1L << FLOATING_ACTION_BUTTON_ARG) | (1L << BACKGROUND_COLOR))) != 0)) {
 				{
 				{
 				setState(320);
@@ -1284,7 +1272,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ContainerContext extends ParserRuleContext {
 		public TerminalNode CONTAINER() { return getToken(ParserFile.CONTAINER, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -1328,7 +1315,7 @@ public class ParserFile extends Parser {
 			setState(333);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((((_la - 51)) & ~0x3f) == 0 && ((1L << (_la - 51)) & 196637L) != 0)) {
+			while (((((_la - 51)) & ~0x3f) == 0 && ((1L << (_la - 51)) & ((1L << (CHILD - 51)) | (1L << (WIDTH - 51)) | (1L << (HEIGHT - 51)) | (1L << (COLOR - 51)) | (1L << (MARGIN - 51)) | (1L << (PADDING - 51)))) != 0)) {
 				{
 				{
 				setState(330);
@@ -1354,7 +1341,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TextContext extends ParserRuleContext {
 		public TerminalNode TEXT() { return getToken(ParserFile.TEXT, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -1398,7 +1384,7 @@ public class ParserFile extends Parser {
 			setState(343);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((((_la - 69)) & ~0x3f) == 0 && ((1L << (_la - 69)) & 528385L) != 0)) {
+			while (((((_la - 69)) & ~0x3f) == 0 && ((1L << (_la - 69)) & ((1L << (STYLE - 69)) | (1L << (IDENTIFIER - 69)) | (1L << (STRING - 69)))) != 0)) {
 				{
 				{
 				setState(340);
@@ -1424,7 +1410,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TextStyleContext extends ParserRuleContext {
 		public TerminalNode TEXT_STYLE() { return getToken(ParserFile.TEXT_STYLE, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -1468,7 +1453,7 @@ public class ParserFile extends Parser {
 			setState(353);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((((_la - 50)) & ~0x3f) == 0 && ((1L << (_la - 50)) & 1048609L) != 0)) {
+			while (((((_la - 50)) & ~0x3f) == 0 && ((1L << (_la - 50)) & ((1L << (BACKGROUND_COLOR - 50)) | (1L << (COLOR - 50)) | (1L << (FONT_SIZE - 50)))) != 0)) {
 				{
 				{
 				setState(350);
@@ -1494,7 +1479,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ImageContext extends ParserRuleContext {
 		public TerminalNode IMAGE() { return getToken(ParserFile.IMAGE, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -1538,7 +1522,7 @@ public class ParserFile extends Parser {
 			setState(363);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((((_la - 53)) & ~0x3f) == 0 && ((1L << (_la - 53)) & 262151L) != 0)) {
+			while (((((_la - 53)) & ~0x3f) == 0 && ((1L << (_la - 53)) & ((1L << (WIDTH - 53)) | (1L << (HEIGHT - 53)) | (1L << (COLOR - 53)) | (1L << (IMAGE_ARG - 53)))) != 0)) {
 				{
 				{
 				setState(360);
@@ -1564,7 +1548,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ListViewContext extends ParserRuleContext {
 		public TerminalNode LIST_VIEW() { return getToken(ParserFile.LIST_VIEW, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -1634,7 +1617,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class AppBarContext extends ParserRuleContext {
 		public TerminalNode APP_BAR() { return getToken(ParserFile.APP_BAR, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -1678,7 +1660,7 @@ public class ParserFile extends Parser {
 			setState(383);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((((_la - 50)) & ~0x3f) == 0 && ((1L << (_la - 50)) & 29360129L) != 0)) {
+			while (((((_la - 50)) & ~0x3f) == 0 && ((1L << (_la - 50)) & ((1L << (BACKGROUND_COLOR - 50)) | (1L << (TITLE - 50)) | (1L << (LEADING - 50)) | (1L << (ACTIONS - 50)))) != 0)) {
 				{
 				{
 				setState(380);
@@ -1704,7 +1686,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TextFieldContext extends ParserRuleContext {
 		public TerminalNode TEXT_FIELD() { return getToken(ParserFile.TEXT_FIELD, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -1774,7 +1755,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ColumnContext extends ParserRuleContext {
 		public TerminalNode COLUMN() { return getToken(ParserFile.COLUMN, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -1818,7 +1798,7 @@ public class ParserFile extends Parser {
 			setState(403);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & -4607182418800017408L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CHILDREN) | (1L << CROSS_AXIS_ALIGNMENT) | (1L << MAIN_AXIS_ALIGNMENT))) != 0)) {
 				{
 				{
 				setState(400);
@@ -1844,7 +1824,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class RowContext extends ParserRuleContext {
 		public TerminalNode ROW() { return getToken(ParserFile.ROW, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -1888,7 +1867,7 @@ public class ParserFile extends Parser {
 			setState(413);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & -4607182418800017408L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CHILDREN) | (1L << CROSS_AXIS_ALIGNMENT) | (1L << MAIN_AXIS_ALIGNMENT))) != 0)) {
 				{
 				{
 				setState(410);
@@ -1914,7 +1893,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class CardContext extends ParserRuleContext {
 		public TerminalNode CARD() { return getToken(ParserFile.CARD, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -1958,7 +1936,7 @@ public class ParserFile extends Parser {
 			setState(423);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((((_la - 51)) & ~0x3f) == 0 && ((1L << (_la - 51)) & 65553L) != 0)) {
+			while (((((_la - 51)) & ~0x3f) == 0 && ((1L << (_la - 51)) & ((1L << (CHILD - 51)) | (1L << (COLOR - 51)) | (1L << (MARGIN - 51)))) != 0)) {
 				{
 				{
 				setState(420);
@@ -1984,7 +1962,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class IconButtonContext extends ParserRuleContext {
 		public TerminalNode ICON_BUTTON() { return getToken(ParserFile.ICON_BUTTON, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2028,7 +2005,7 @@ public class ParserFile extends Parser {
 			setState(433);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((((_la - 55)) & ~0x3f) == 0 && ((1L << (_la - 55)) & 8257L) != 0)) {
+			while (((((_la - 55)) & ~0x3f) == 0 && ((1L << (_la - 55)) & ((1L << (COLOR - 55)) | (1L << (ICON_ARG - 55)) | (1L << (PADDING - 55)))) != 0)) {
 				{
 				{
 				setState(430);
@@ -2054,7 +2031,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class InkWellContext extends ParserRuleContext {
 		public TerminalNode INK_WELL() { return getToken(ParserFile.INK_WELL, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2124,7 +2100,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ExpandedContext extends ParserRuleContext {
 		public TerminalNode EXPANDED() { return getToken(ParserFile.EXPANDED, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2194,7 +2169,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class BottomNavigationBarContext extends ParserRuleContext {
 		public TerminalNode BOTTOM_NAVIGATION_BAR() { return getToken(ParserFile.BOTTOM_NAVIGATION_BAR, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2238,7 +2212,7 @@ public class ParserFile extends Parser {
 			setState(463);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (((((_la - 50)) & ~0x3f) == 0 && ((1L << (_la - 50)) & 98305L) != 0)) {
+			while (((((_la - 50)) & ~0x3f) == 0 && ((1L << (_la - 50)) & ((1L << (BACKGROUND_COLOR - 50)) | (1L << (CURRENT_INDEX - 50)) | (1L << (ITEMS - 50)))) != 0)) {
 				{
 				{
 				setState(460);
@@ -2264,7 +2238,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class SliderContext extends ParserRuleContext {
 		public TerminalNode SLIDER() { return getToken(ParserFile.SLIDER, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2334,7 +2307,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TabBarContext extends ParserRuleContext {
 		public TerminalNode TAB_BAR() { return getToken(ParserFile.TAB_BAR, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2404,7 +2376,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TabBarViewContext extends ParserRuleContext {
 		public TerminalNode TAB_BAR_VIEW() { return getToken(ParserFile.TAB_BAR_VIEW, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2474,7 +2445,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DrawerContext extends ParserRuleContext {
 		public TerminalNode DRAWER() { return getToken(ParserFile.DRAWER, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2518,7 +2488,7 @@ public class ParserFile extends Parser {
 			setState(503);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 12384898975268864L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << BACKGROUND_COLOR) | (1L << CHILD) | (1L << WIDTH))) != 0)) {
 				{
 				{
 				setState(500);
@@ -2544,7 +2514,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class FloatingActionButtonContext extends ParserRuleContext {
 		public TerminalNode FLOATING_ACTION_BUTTON() { return getToken(ParserFile.FLOATING_ACTION_BUTTON, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2614,7 +2583,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class WrapContext extends ParserRuleContext {
 		public TerminalNode WRAP() { return getToken(ParserFile.WRAP, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2684,7 +2652,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class FlexContext extends ParserRuleContext {
 		public TerminalNode FLEX() { return getToken(ParserFile.FLEX, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2754,7 +2721,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TextFormFieldContext extends ParserRuleContext {
 		public TerminalNode TEXT_FORM_FIELD() { return getToken(ParserFile.TEXT_FORM_FIELD, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2824,7 +2790,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TextButtonContext extends ParserRuleContext {
 		public TerminalNode TEXT_BUTTON() { return getToken(ParserFile.TEXT_BUTTON, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2894,7 +2859,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class IconContext extends ParserRuleContext {
 		public TerminalNode ICON() { return getToken(ParserFile.ICON, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -2938,7 +2902,7 @@ public class ParserFile extends Parser {
 			setState(563);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 108095187149914112L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ICONS) | (1L << COLOR) | (1L << SIZE))) != 0)) {
 				{
 				{
 				setState(560);
@@ -2964,7 +2928,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class SizedBoxContext extends ParserRuleContext {
 		public TerminalNode SIZED_BOX() { return getToken(ParserFile.SIZED_BOX, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -3008,7 +2971,7 @@ public class ParserFile extends Parser {
 			setState(573);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 29273397577908224L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CHILD) | (1L << WIDTH) | (1L << HEIGHT))) != 0)) {
 				{
 				{
 				setState(570);
@@ -3034,7 +2997,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class CenterContext extends ParserRuleContext {
 		public TerminalNode CENTER() { return getToken(ParserFile.CENTER, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -3088,7 +3050,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ScaffoldArgsContext extends ParserRuleContext {
 		public BodyContext body() {
 			return getRuleContext(BodyContext.class,0);
@@ -3191,7 +3152,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ContainerArgsContext extends ParserRuleContext {
 		public ChildContext child() {
 			return getRuleContext(ChildContext.class,0);
@@ -3294,7 +3254,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TextArgsContext extends ParserRuleContext {
 		public TextArgContext textArg() {
 			return getRuleContext(TextArgContext.class,0);
@@ -3358,7 +3317,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ImageArgsContext extends ParserRuleContext {
 		public ImageArgContext imageArg() {
 			return getRuleContext(ImageArgContext.class,0);
@@ -3441,7 +3399,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ListviewArgsContext extends ParserRuleContext {
 		public ChildrenContext children() {
 			return getRuleContext(ChildrenContext.class,0);
@@ -3504,7 +3461,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class AppBarArgsContext extends ParserRuleContext {
 		public TitleContext title() {
 			return getRuleContext(TitleContext.class,0);
@@ -3587,7 +3543,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TextFieldArgsContext extends ParserRuleContext {
 		public StyleContext style() {
 			return getRuleContext(StyleContext.class,0);
@@ -3632,7 +3587,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ColumnArgsContext extends ParserRuleContext {
 		public ChildrenContext children() {
 			return getRuleContext(ChildrenContext.class,0);
@@ -3705,7 +3659,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class RowArgsContext extends ParserRuleContext {
 		public ChildrenContext children() {
 			return getRuleContext(ChildrenContext.class,0);
@@ -3778,7 +3731,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class CardArgsContext extends ParserRuleContext {
 		public ColorContext color() {
 			return getRuleContext(ColorContext.class,0);
@@ -3851,7 +3803,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class IconButtonArgsContext extends ParserRuleContext {
 		public IconArgContext iconArg() {
 			return getRuleContext(IconArgContext.class,0);
@@ -3924,7 +3875,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class InkwellArgsContext extends ParserRuleContext {
 		public ChildContext child() {
 			return getRuleContext(ChildContext.class,0);
@@ -3987,7 +3937,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ExpandedArgsContext extends ParserRuleContext {
 		public ChildContext child() {
 			return getRuleContext(ChildContext.class,0);
@@ -4050,7 +3999,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class BottomNavigationBarArgsContext extends ParserRuleContext {
 		public ItemsContext items() {
 			return getRuleContext(ItemsContext.class,0);
@@ -4123,7 +4071,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class SliderArgsContext extends ParserRuleContext {
 		public MinContext min() {
 			return getRuleContext(MinContext.class,0);
@@ -4186,7 +4133,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TabBarArgsContext extends ParserRuleContext {
 		public TabsContext tabs() {
 			return getRuleContext(TabsContext.class,0);
@@ -4249,7 +4195,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TabBarViewArgsContext extends ParserRuleContext {
 		public ChildrenContext children() {
 			return getRuleContext(ChildrenContext.class,0);
@@ -4294,7 +4239,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DrawerArgsContext extends ParserRuleContext {
 		public BackGroundColorContext backGroundColor() {
 			return getRuleContext(BackGroundColorContext.class,0);
@@ -4367,7 +4311,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class FloatingActionButtonArgsContext extends ParserRuleContext {
 		public ChildContext child() {
 			return getRuleContext(ChildContext.class,0);
@@ -4430,7 +4373,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class WrapArgsContext extends ParserRuleContext {
 		public ChildrenContext children() {
 			return getRuleContext(ChildrenContext.class,0);
@@ -4493,7 +4435,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class FlexArgsContext extends ParserRuleContext {
 		public ChildContext child() {
 			return getRuleContext(ChildContext.class,0);
@@ -4556,7 +4497,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TextFormFieldArgsContext extends ParserRuleContext {
 		public StyleContext style() {
 			return getRuleContext(StyleContext.class,0);
@@ -4601,7 +4541,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TextButtonArgsContext extends ParserRuleContext {
 		public ChildContext child() {
 			return getRuleContext(ChildContext.class,0);
@@ -4664,7 +4603,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class IconArgsContext extends ParserRuleContext {
 		public SizeContext size() {
 			return getRuleContext(SizeContext.class,0);
@@ -4735,7 +4673,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class SizedBoxArgsContext extends ParserRuleContext {
 		public ChildContext child() {
 			return getRuleContext(ChildContext.class,0);
@@ -4808,7 +4745,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TextStyleArgsContext extends ParserRuleContext {
 		public BackGroundColorContext backGroundColor() {
 			return getRuleContext(BackGroundColorContext.class,0);
@@ -4881,7 +4817,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class CenterArgsContext extends ParserRuleContext {
 		public ChildContext child() {
 			return getRuleContext(ChildContext.class,0);
@@ -4926,7 +4861,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class BodyContext extends ParserRuleContext {
 		public TerminalNode BODY() { return getToken(ParserFile.BODY, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -4977,7 +4911,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class DrawerArgContext extends ParserRuleContext {
 		public TerminalNode DRAWER_ARG() { return getToken(ParserFile.DRAWER_ARG, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5028,7 +4961,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class AppBarArgContext extends ParserRuleContext {
 		public TerminalNode APP_BAR_ARG() { return getToken(ParserFile.APP_BAR_ARG, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5079,7 +5011,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class BottomNavigationBarArgContext extends ParserRuleContext {
 		public TerminalNode BOTTOM_NAVIGATION_BAR_ARG() { return getToken(ParserFile.BOTTOM_NAVIGATION_BAR_ARG, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5130,7 +5061,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class FloatingActionButtonArgContext extends ParserRuleContext {
 		public TerminalNode FLOATING_ACTION_BUTTON_ARG() { return getToken(ParserFile.FLOATING_ACTION_BUTTON_ARG, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5181,7 +5111,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ChildContext extends ParserRuleContext {
 		public TerminalNode CHILD() { return getToken(ParserFile.CHILD, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5232,7 +5161,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ChildrenContext extends ParserRuleContext {
 		public TerminalNode CHILDREN() { return getToken(ParserFile.CHILDREN, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5279,7 +5207,7 @@ public class ParserFile extends Parser {
 			setState(734);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 3285649973248L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << SCAFFOLD) | (1L << CONTAINER) | (1L << ROW) | (1L << COLUMN) | (1L << LIST_VIEW) | (1L << SIZED_BOX) | (1L << EXPANDED) | (1L << CARD) | (1L << ICON_BUTTON) | (1L << ICON) | (1L << SLIDER) | (1L << DRAWER) | (1L << WRAP) | (1L << FLEX) | (1L << TEXT_BUTTON) | (1L << TEXT) | (1L << IMAGE) | (1L << APP_BAR) | (1L << TEXT_FIELD) | (1L << INK_WELL) | (1L << BOTTOM_NAVIGATION_BAR) | (1L << TAB_BAR) | (1L << TAB_BAR_VIEW) | (1L << FLOATING_ACTION_BUTTON) | (1L << TEXT_FORM_FIELD) | (1L << CENTER))) != 0)) {
 				{
 				{
 				setState(731);
@@ -5305,7 +5233,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class HeightContext extends ParserRuleContext {
 		public TerminalNode HEIGHT() { return getToken(ParserFile.HEIGHT, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5354,7 +5281,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class WidthContext extends ParserRuleContext {
 		public TerminalNode WIDTH() { return getToken(ParserFile.WIDTH, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5403,7 +5329,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ColorContext extends ParserRuleContext {
 		public TerminalNode COLOR() { return getToken(ParserFile.COLOR, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5452,7 +5377,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class MarginContext extends ParserRuleContext {
 		public TerminalNode MARGIN() { return getToken(ParserFile.MARGIN, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5501,7 +5425,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class PaddingContext extends ParserRuleContext {
 		public TerminalNode PADDING() { return getToken(ParserFile.PADDING, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5550,7 +5473,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ItemsContext extends ParserRuleContext {
 		public TerminalNode ITEMS() { return getToken(ParserFile.ITEMS, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5597,7 +5519,7 @@ public class ParserFile extends Parser {
 			setState(765);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 3285649973248L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << SCAFFOLD) | (1L << CONTAINER) | (1L << ROW) | (1L << COLUMN) | (1L << LIST_VIEW) | (1L << SIZED_BOX) | (1L << EXPANDED) | (1L << CARD) | (1L << ICON_BUTTON) | (1L << ICON) | (1L << SLIDER) | (1L << DRAWER) | (1L << WRAP) | (1L << FLEX) | (1L << TEXT_BUTTON) | (1L << TEXT) | (1L << IMAGE) | (1L << APP_BAR) | (1L << TEXT_FIELD) | (1L << INK_WELL) | (1L << BOTTOM_NAVIGATION_BAR) | (1L << TAB_BAR) | (1L << TAB_BAR_VIEW) | (1L << FLOATING_ACTION_BUTTON) | (1L << TEXT_FORM_FIELD) | (1L << CENTER))) != 0)) {
 				{
 				{
 				setState(762);
@@ -5623,7 +5545,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class CurrentIndexContext extends ParserRuleContext {
 		public TerminalNode CURRENT_INDEX() { return getToken(ParserFile.CURRENT_INDEX, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5672,7 +5593,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class BackGroundColorContext extends ParserRuleContext {
 		public TerminalNode BACKGROUND_COLOR() { return getToken(ParserFile.BACKGROUND_COLOR, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5721,7 +5641,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class CrossAxisContext extends ParserRuleContext {
 		public TerminalNode CROSS_AXIS_ALIGNMENT() { return getToken(ParserFile.CROSS_AXIS_ALIGNMENT, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5770,7 +5689,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class MainAxisContext extends ParserRuleContext {
 		public TerminalNode MAIN_AXIS_ALIGNMENT() { return getToken(ParserFile.MAIN_AXIS_ALIGNMENT, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5819,7 +5737,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class StyleContext extends ParserRuleContext {
 		public TerminalNode STYLE() { return getToken(ParserFile.STYLE, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5870,7 +5787,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class FontSizeContext extends ParserRuleContext {
 		public TerminalNode FONT_SIZE() { return getToken(ParserFile.FONT_SIZE, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -5919,7 +5835,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TextArgContext extends ParserRuleContext {
 		public TerminalNode STRING() { return getToken(ParserFile.STRING, 0); }
 		public TerminalNode IDENTIFIER() { return getToken(ParserFile.IDENTIFIER, 0); }
@@ -5972,7 +5887,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ImageArgContext extends ParserRuleContext {
 		public TerminalNode IMAGE_ARG() { return getToken(ParserFile.IMAGE_ARG, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -6031,7 +5945,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class LeadingContext extends ParserRuleContext {
 		public TerminalNode LEADING() { return getToken(ParserFile.LEADING, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -6082,7 +5995,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TitleContext extends ParserRuleContext {
 		public TerminalNode TITLE() { return getToken(ParserFile.TITLE, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -6133,7 +6045,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ActionsContext extends ParserRuleContext {
 		public TerminalNode ACTIONS() { return getToken(ParserFile.ACTIONS, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -6180,7 +6091,7 @@ public class ParserFile extends Parser {
 			setState(814);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 3285649973248L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << SCAFFOLD) | (1L << CONTAINER) | (1L << ROW) | (1L << COLUMN) | (1L << LIST_VIEW) | (1L << SIZED_BOX) | (1L << EXPANDED) | (1L << CARD) | (1L << ICON_BUTTON) | (1L << ICON) | (1L << SLIDER) | (1L << DRAWER) | (1L << WRAP) | (1L << FLEX) | (1L << TEXT_BUTTON) | (1L << TEXT) | (1L << IMAGE) | (1L << APP_BAR) | (1L << TEXT_FIELD) | (1L << INK_WELL) | (1L << BOTTOM_NAVIGATION_BAR) | (1L << TAB_BAR) | (1L << TAB_BAR_VIEW) | (1L << FLOATING_ACTION_BUTTON) | (1L << TEXT_FORM_FIELD) | (1L << CENTER))) != 0)) {
 				{
 				{
 				setState(811);
@@ -6206,7 +6117,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class IconArgContext extends ParserRuleContext {
 		public TerminalNode ICON_ARG() { return getToken(ParserFile.ICON_ARG, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -6257,7 +6167,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class FlexArgContext extends ParserRuleContext {
 		public TerminalNode FLEX_ARG() { return getToken(ParserFile.FLEX_ARG, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -6306,7 +6215,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class MinContext extends ParserRuleContext {
 		public TerminalNode MIN() { return getToken(ParserFile.MIN, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -6355,7 +6263,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class MaxContext extends ParserRuleContext {
 		public TerminalNode MAX() { return getToken(ParserFile.MAX, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -6404,7 +6311,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TabsContext extends ParserRuleContext {
 		public TerminalNode TABS() { return getToken(ParserFile.TABS, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -6451,7 +6357,7 @@ public class ParserFile extends Parser {
 			setState(841);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 3285649973248L) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << SCAFFOLD) | (1L << CONTAINER) | (1L << ROW) | (1L << COLUMN) | (1L << LIST_VIEW) | (1L << SIZED_BOX) | (1L << EXPANDED) | (1L << CARD) | (1L << ICON_BUTTON) | (1L << ICON) | (1L << SLIDER) | (1L << DRAWER) | (1L << WRAP) | (1L << FLEX) | (1L << TEXT_BUTTON) | (1L << TEXT) | (1L << IMAGE) | (1L << APP_BAR) | (1L << TEXT_FIELD) | (1L << INK_WELL) | (1L << BOTTOM_NAVIGATION_BAR) | (1L << TAB_BAR) | (1L << TAB_BAR_VIEW) | (1L << FLOATING_ACTION_BUTTON) | (1L << TEXT_FORM_FIELD) | (1L << CENTER))) != 0)) {
 				{
 				{
 				setState(838);
@@ -6477,7 +6383,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class SizeContext extends ParserRuleContext {
 		public TerminalNode SIZE() { return getToken(ParserFile.SIZE, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -6526,7 +6431,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class OnTapContext extends ParserRuleContext {
 		public TerminalNode ON_TAP() { return getToken(ParserFile.ON_TAP, 0); }
 		public TerminalNode COLON() { return getToken(ParserFile.COLON, 0); }
@@ -6605,7 +6509,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ExpressionContext extends ParserRuleContext {
 		public AllowExpContext allowExp() {
 			return getRuleContext(AllowExpContext.class,0);
@@ -6653,7 +6556,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class AllowExpContext extends ParserRuleContext {
 		public NavigateExpContext navigateExp() {
 			return getRuleContext(NavigateExpContext.class,0);
@@ -6716,7 +6618,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class RunAppExpContext extends ParserRuleContext {
 		public TerminalNode RUN_APP() { return getToken(ParserFile.RUN_APP, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -6770,7 +6671,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class NavigateExpContext extends ParserRuleContext {
 		public TerminalNode NAVIGATOR() { return getToken(ParserFile.NAVIGATOR, 0); }
 		public TerminalNode DOT() { return getToken(ParserFile.DOT, 0); }
@@ -6821,7 +6721,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class TranstionContext extends ParserRuleContext {
 		public PushContext push() {
 			return getRuleContext(PushContext.class,0);
@@ -6884,7 +6783,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class PushContext extends ParserRuleContext {
 		public TerminalNode PUSH() { return getToken(ParserFile.PUSH, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -6938,7 +6836,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class PopContext extends ParserRuleContext {
 		public TerminalNode POP() { return getToken(ParserFile.POP, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -6987,7 +6884,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ConstructorContext extends ParserRuleContext {
 		public TerminalNode IDENTIFIER() { return getToken(ParserFile.IDENTIFIER, 0); }
 		public TerminalNode OPEN_PAREN() { return getToken(ParserFile.OPEN_PAREN, 0); }
@@ -7057,7 +6953,6 @@ public class ParserFile extends Parser {
 		return _localctx;
 	}
 
-	@SuppressWarnings("CheckReturnValue")
 	public static class ConstructoFilledContext extends ParserRuleContext {
 		public TerminalNode STRING() { return getToken(ParserFile.STRING, 0); }
 		public TerminalNode DOUBLE() { return getToken(ParserFile.DOUBLE, 0); }
