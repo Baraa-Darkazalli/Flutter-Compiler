@@ -34,37 +34,37 @@ widget: scaffold | container | text | image | listView | appBar | textField | co
         | floatingActionButton | wrap | flex | textFormField | textButton | icon | sizedBox|center|blocProvider|blocConsumer|blocListener|blocBuilder;
 
 //---------------------------    WIDGETS     -------------------------------
-scaffold: SCAFFOLD OPEN_PAREN scaffoldArgs*  CLOSE_PAREN;
-container: CONTAINER OPEN_PAREN containerArgs* CLOSE_PAREN;
-text: TEXT OPEN_PAREN textArgs* CLOSE_PAREN;
-textStyle:TEXT_STYLE OPEN_PAREN textStyleArgs* CLOSE_PAREN;
-image: IMAGE OPEN_PAREN imageArgs* CLOSE_PAREN;
-listView: LIST_VIEW OPEN_PAREN listviewArgs* CLOSE_PAREN ;
-appBar: APP_BAR OPEN_PAREN appBarArgs* CLOSE_PAREN;
-textField: TEXT_FIELD OPEN_PAREN textFieldArgs* CLOSE_PAREN;
-column: COLUMN OPEN_PAREN columnArgs* CLOSE_PAREN;
-row: ROW OPEN_PAREN rowArgs* CLOSE_PAREN;
-card: CARD OPEN_PAREN cardArgs* CLOSE_PAREN;
-iconButton: ICON_BUTTON OPEN_PAREN iconButtonArgs* CLOSE_PAREN;
-inkWell:  INK_WELL OPEN_PAREN inkwellArgs* CLOSE_PAREN;
-expanded: EXPANDED OPEN_PAREN expandedArgs* CLOSE_PAREN;
-bottomNavigationBar: BOTTOM_NAVIGATION_BAR OPEN_PAREN bottomNavigationBarArgs*  CLOSE_PAREN;
-slider: SLIDER OPEN_PAREN  sliderArgs* CLOSE_PAREN;
-tabBar: TAB_BAR OPEN_PAREN  tabBarArgs* CLOSE_PAREN;
-tabBarView: TAB_BAR_VIEW OPEN_PAREN  tabBarViewArgs* CLOSE_PAREN;
-drawer: DRAWER OPEN_PAREN  drawerArgs* CLOSE_PAREN;
-floatingActionButton: FLOATING_ACTION_BUTTON OPEN_PAREN  floatingActionButtonArgs* CLOSE_PAREN;
-wrap: WRAP OPEN_PAREN  wrapArgs* CLOSE_PAREN;
-flex: FLEX OPEN_PAREN  flexArgs* CLOSE_PAREN;
-textFormField: TEXT_FORM_FIELD OPEN_PAREN  textFormFieldArgs* CLOSE_PAREN;
-textButton: TEXT_BUTTON OPEN_PAREN  textButtonArgs* CLOSE_PAREN;
-icon: ICON OPEN_PAREN  iconArgs* CLOSE_PAREN;
-sizedBox: SIZED_BOX OPEN_PAREN sizedBoxArgs* CLOSE_PAREN ;
-center: CENTER OPEN_PAREN centerArgs CLOSE_PAREN ;
-blocProvider:BLOCPROVIDER OPEN_PAREN blocProviderArgs* CLOSE_PAREN;
-blocConsumer:BLOCCONSUMER OPEN_PAREN blocConsumerArgs* CLOSE_PAREN;
-blocListener:BLOCLISTENER OPEN_PAREN blocListenerArgs* CLOSE_PAREN;
-blocBuilder:BLOCBUILDER OPEN_PAREN blocBuilderArgs* CLOSE_PAREN;
+scaffold: SCAFFOLD OPEN_PAREN (scaffoldArgs COMMA?)*  CLOSE_PAREN;
+container: CONTAINER OPEN_PAREN (containerArgs COMMA?)* CLOSE_PAREN;
+text: TEXT OPEN_PAREN (textArgs COMMA?)* CLOSE_PAREN;
+textStyle:TEXT_STYLE OPEN_PAREN (textStyleArgs COMMA?)* CLOSE_PAREN;
+image: IMAGE OPEN_PAREN (imageArgs COMMA?)* CLOSE_PAREN;
+listView: LIST_VIEW OPEN_PAREN (listviewArgs COMMA?)* CLOSE_PAREN ;
+appBar: APP_BAR OPEN_PAREN (appBarArgs COMMA?)* CLOSE_PAREN;
+textField: TEXT_FIELD OPEN_PAREN (textFieldArgs COMMA?)* CLOSE_PAREN;
+column: COLUMN OPEN_PAREN (columnArgs COMMA?)* CLOSE_PAREN;
+row: ROW OPEN_PAREN (rowArgs COMMA?)* CLOSE_PAREN;
+card: CARD OPEN_PAREN (cardArgs COMMA?)* CLOSE_PAREN;
+iconButton: ICON_BUTTON OPEN_PAREN (iconButtonArgs COMMA?)* CLOSE_PAREN;
+inkWell:  INK_WELL OPEN_PAREN (inkwellArgs COMMA?)* CLOSE_PAREN;
+expanded: EXPANDED OPEN_PAREN (expandedArgs COMMA?)* CLOSE_PAREN;
+bottomNavigationBar: BOTTOM_NAVIGATION_BAR OPEN_PAREN (bottomNavigationBarArgs COMMA?)*  CLOSE_PAREN;
+slider: SLIDER OPEN_PAREN  (sliderArgs COMMA?)* CLOSE_PAREN;
+tabBar: TAB_BAR OPEN_PAREN  (tabBarArgs COMMA?)* CLOSE_PAREN;
+tabBarView: TAB_BAR_VIEW OPEN_PAREN  (tabBarViewArgs COMMA?)* CLOSE_PAREN;
+drawer: DRAWER OPEN_PAREN  (drawerArgs COMMA?)* CLOSE_PAREN;
+floatingActionButton: FLOATING_ACTION_BUTTON OPEN_PAREN  (floatingActionButtonArgs COMMA?)* CLOSE_PAREN;
+wrap: WRAP OPEN_PAREN  (wrapArgs COMMA?)* CLOSE_PAREN;
+flex: FLEX OPEN_PAREN  (flexArgs COMMA?)* CLOSE_PAREN;
+textFormField: TEXT_FORM_FIELD OPEN_PAREN  (textFormFieldArgs COMMA?)* CLOSE_PAREN;
+textButton: TEXT_BUTTON OPEN_PAREN  (textButtonArgs COMMA?)* CLOSE_PAREN;
+icon: ICON OPEN_PAREN  (iconArgs COMMA?)* CLOSE_PAREN;
+sizedBox: SIZED_BOX OPEN_PAREN (sizedBoxArgs COMMA?)* CLOSE_PAREN ;
+center: CENTER OPEN_PAREN (centerArgs COMMA?) CLOSE_PAREN ;
+blocProvider:BLOCPROVIDER OPEN_PAREN (blocProviderArgs COMMA?)* CLOSE_PAREN;
+blocConsumer:BLOCCONSUMER OPEN_PAREN (blocConsumerArgs COMMA?)* CLOSE_PAREN;
+blocListener:BLOCLISTENER OPEN_PAREN (blocListenerArgs COMMA?)* CLOSE_PAREN;
+blocBuilder:BLOCBUILDER OPEN_PAREN (blocBuilderArgs COMMA?)* CLOSE_PAREN;
 
 
 
@@ -110,13 +110,13 @@ appBarArg:APP_BAR_ARG COLON appBar;
 bottomNavigationBarArg:BOTTOM_NAVIGATION_BAR_ARG COLON bottomNavigationBar;
 floatingActionButtonArg:FLOATING_ACTION_BUTTON_ARG COLON floatingActionButton;
 child:CHILD COLON widget;
-children: CHILDREN COLON OPEN_SQUARE widget* CLOSE_SQUARE;
+children: CHILDREN COLON OPEN_SQUARE (widget COMMA?)* CLOSE_SQUARE;
 height:HEIGHT COLON DOUBLE;
 width:WIDTH COLON DOUBLE;
 color:COLOR COLON COLORS;
 margin:MARGIN COLON DOUBLE;
 padding:PADDING COLON DOUBLE;
-items:ITEMS COLON OPEN_SQUARE widget* CLOSE_SQUARE;
+items:ITEMS COLON OPEN_SQUARE (widget COMMA?)* CLOSE_SQUARE;
 currentIndex: CURRENT_INDEX COLON INT;
 backGroundColor:BACKGROUND_COLOR COLON COLORS;
 crossAxis:CROSS_AXIS_ALIGNMENT COLON AXIS;
@@ -127,12 +127,12 @@ textArg:STRING|IDENTIFIER;
 imageArg:IMAGE_ARG COLON (STRING|IDENTIFIER);
 leading:LEADING COLON widget;
 title:TITLE COLON widget;
-actions:ACTIONS COLON OPEN_SQUARE widget* CLOSE_SQUARE;
+actions:ACTIONS COLON OPEN_SQUARE (widget COMMA?)* CLOSE_SQUARE;
 iconArg:ICON_ARG COLON widget;
 flexArg:FLEX_ARG COLON INT;
 min:MIN COLON DOUBLE;
 max:MAX COLON DOUBLE;
-tabs:TABS COLON OPEN_SQUARE widget* CLOSE_SQUARE;
+tabs:TABS COLON OPEN_SQUARE (widget COMMA?)* CLOSE_SQUARE;
 size:SIZE COLON DOUBLE;
 onTap:ON_TAP COLON OPEN_PAREN CLOSE_PAREN OPEN_BRACE expression* CLOSE_BRACE;
 create:CREATE COLON OPEN_PAREN IDENTIFIER CLOSE_PAREN EQUAL LARGER className OPEN_PAREN CLOSE_PAREN;
@@ -153,7 +153,7 @@ push:PUSH OPEN_PAREN constructor CLOSE_PAREN;
 
 pop:POP OPEN_PAREN CLOSE_PAREN;
 
-constructor:IDENTIFIER OPEN_PAREN constructoFilled* CLOSE_PAREN;
+constructor:IDENTIFIER OPEN_PAREN (constructoFilled COMMA?)* CLOSE_PAREN;
 
 constructoFilled:STRING|DOUBLE;
 

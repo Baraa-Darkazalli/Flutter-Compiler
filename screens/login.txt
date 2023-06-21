@@ -3,41 +3,43 @@ void main(){
 }
 
 class Login extends StatelessWidget{
-Login();
+  Login();
   widget build(){
     return Scaffold(
       body:Column(
-      mainAxisAlignment:center
-      crossAxisAlignment:center
-      children:[
-       Text('Welcome' style:TextStyle(fontSize:40))
-       Card(
-       child:Column(
-        crossAxisAlignment:start
         mainAxisAlignment:center
+        crossAxisAlignment:center
         children:[
-        Text('Username')
-        TextField()
-        Text('Password')
-        TextField()
-       IconButton(icon:InkWell(
-        onTap:(){
-               Navigator.push(Home());
-               }
-         child:Text('Log in')
-       ))
-
+          Text('Welcome' style:TextStyle(fontSize:40))
+          Card(
+            child:Column(
+              crossAxisAlignment:start
+              mainAxisAlignment:center
+              children:[
+                Text('Username')
+                TextField()
+                Text('Password')
+                TextField()
+                IconButton(
+                  icon:InkWell(
+                    onTap:(){
+                    Navigator.push(Home());
+                    }
+                    child:Text('Log in')
+                  )
+                )
+              ]
+            )
+          )
         ]
-
-        )
-       )
-      ]
       )
     );
   }
 }
 
-
+class Login{
+Logsdin();
+}
 
 
 

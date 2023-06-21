@@ -3,181 +3,180 @@ void main(){
 }
 
 class Home extends StatelessWidget{
-Home();
+  Home();
   widget build(){
     return Scaffold(
-    appBar:AppBar(
-            title:Text('Home Page')
-            backgroundColor: grey
-            leading: InkWell(
-                        onTap: (){
-                            Navigator.push(Login());
-                            }
-                        child: Icon(back size: 30 color:black)
-                    )
-            actions: [Container()]
-        )
-    drawer:Drawer(
-    child:Column(
-    children:[
-        InkWell(
-            onTap:(){
-                   Navigator.push(Home());
+      appBar:AppBar(
+        title:Text('Home Page')
+        backgroundColor: grey
+        leading: InkWell(
+          onTap: (){
+            Navigator.push(Login());
             }
-            child:Text('Home Page')
+          child: Icon(back size: 30 color:black)
+          )
+        actions: [Container()]
         )
-       InkWell(
-           onTap:(){
-                  Navigator.push(About());
-           }
-           child:Text('About Us Page')
-       )
-    ]
-    )
-    )
-
+      drawer:Drawer(
+        child:Column(
+          children:[
+            InkWell(
+              onTap:(){
+                Navigator.push(Home());
+              }
+              child:Text('Home Page')
+            )
+            InkWell(
+              onTap:(){
+                Navigator.push(About());
+              }
+              child:Text('About Us Page')
+            )
+          ]
+        )
+      )
       body:Row(
-      children:[
-      Column (
+        children:[
+          Column (
+            children:[
+              InkWell(
+                onTap:(){
+                  Navigator.push(Product('../images/product1.png' 'product1'));
+                }
+                child:
+                  Column(
                     children:[
-                        InkWell(
-                        onTap:(){
-                            Navigator.push(Product('../images/product1.png' 'product1'));
-                            }
-                        child:
-                            Column(
-                                children:[
-                                    Text('product1')
-                                    Image(image:'../images/product1.png' height:200 width:200)
-                                    ]
-                                )
-                        )
-                        InkWell(
-                        onTap:(){
-                            Navigator.push(Product('../images/product2.png' 'product2'));
-                            }
-                        child:
-                            Column(
-                                children:[
-                                    Text('product2')
-                                    Image(image:'../images/product2.png')
-                                    ]
-                                )
-                        )
-                        ]
-                    )
-       Column (
-                     children:[
-                         InkWell(
-                         onTap:(){
-                             Navigator.push(Product('../images/product3.png' 'product3'));
-                             }
-                         child:
-                             Column(
-                                 children:[
-                                     Text('product3')
-                                     Image(image:'../images/product3.png' height:200 width:200)
-                                     ]
-                                 )
-                         )
-                         InkWell(
-                         onTap:(){
-                             Navigator.push(Product('../images/product4.png' 'product4'));
-                             }
-                         child:
-                             Column(
-                                 children:[
-                                     Text('product4')
-                                     Image(image:'../images/product4.png')
-                                     ]
-                                 )
-                         )
-                         ]
-                     )
-        Column (
-                      children:[
-                          InkWell(
-                          onTap:(){
-                              Navigator.push(Product('../images/product5.png' 'product5'));
-                              }
-                          child:
-                              Column(
-                                  children:[
-                                      Text('product5')
-                                      Image(image:'../images/product5.png' height:200 width:200)
-                                      ]
-                                  )
-                          )
-                          InkWell(
-                          onTap:(){
-                              Navigator.push(Product('../images/product6.png' 'product6'));
-                              }
-                          child:
-                              Column(
-                                  children:[
-                                      Text('product6')
-                                      Image(image:'../images/product6.png')
-                                      ]
-                                  )
-                          )
-                          ]
-                      )
-         Column (
-                       children:[
-                           InkWell(
-                           onTap:(){
-                               Navigator.push(Product('../images/product7.png' 'product7'));
-                               }
-                           child:
-                               Column(
-                                   children:[
-                                       Text('product7')
-                                       Image(image:'../images/product7.png' height:200 width:200)
-                                       ]
-                                   )
-                           )
-                           InkWell(
-                           onTap:(){
-                               Navigator.push(Product('../images/product8.png' 'product8'));
-                               }
-                           child:
-                               Column(
-                                   children:[
-                                       Text('product8')
-                                       Image(image:'../images/product8.png')
-                                       ]
-                                   )
-                           )
-                           ]
-                       )
-           Column (
-                         children:[
-                             InkWell(
-                             onTap:(){
-                                 Navigator.push(Product('../images/product9.png' 'product9'));
-                                 }
-                             child:
-                                 Column(
-                                     children:[
-                                         Text('product9')
-                                         Image(image:'../images/product9.png' height:200 width:200)
-                                         ]
-                                     )
-                             )
-                             InkWell(
-                             onTap:(){
-                                 Navigator.push(Product('../images/product10.png' 'product10'));
-                                 }
-                             child:
-                                 Column(
-                                     children:[
-                                         Text('product10')
-                                         Image(image:'../images/product10.png')
-                                         ]
-                                     )
-                             )
-                             ]
-                         )
+                      Text('product1')
+                      Image(image:'../images/product1.png' height:200 width:200)
+                    ]
+                  )
+                )
+              InkWell(
+                onTap:(){
+                  Navigator.push(Product('../images/product2.png' 'product2'));
+                }
+                child:
+                  Column(
+                    children:[
+                      Text('product2')
+                      Image(image:'../images/product2.png' height:200 width:200)
+                    ]
+                  )
+                )
+              ]
+            )
+          Column (
+            children:[
+              InkWell(
+                onTap:(){
+                  Navigator.push(Product('../images/product3.png' 'product3'));
+                }
+                child:
+                  Column(
+                    children:[
+                      Text('product3')
+                      Image(image:'../images/product3.png' height:200 width:200)
+                    ]
+                  )
+                )
+              InkWell(
+                onTap:(){
+                  Navigator.push(Product('../images/product4.png' 'product4'));
+                }
+                child:
+                  Column(
+                    children:[
+                      Text('product4')
+                      Image(image:'../images/product4.png' height:200 width:200)
+                    ]
+                  )
+                )
+              ]
+            )
+          Column (
+            children:[
+              InkWell(
+                onTap:(){
+                  Navigator.push(Product('../images/product5.png' 'product5'));
+                }
+                child:
+                  Column(
+                    children:[
+                      Text('product5')
+                      Image(image:'../images/product5.png' height:200 width:200)
+                    ]
+                  )
+                )
+              InkWell(
+                onTap:(){
+                  Navigator.push(Product('../images/product6.png' 'product6'));
+                }
+                child:
+                  Column(
+                    children:[
+                      Text('product6')
+                      Image(image:'../images/product6.png' height:200 width:200)
+                    ]
+                  )
+                )
+              ]
+            )
+          Column (
+            children:[
+              InkWell(
+                onTap:(){
+                  Navigator.push(Product('../images/product7.png' 'product7'));
+                }
+                child:
+                  Column(
+                    children:[
+                      Text('product7')
+                      Image(image:'../images/product7.png' height:200 width:200)
+                    ]
+                  )
+                )
+              InkWell(
+                onTap:(){
+                  Navigator.push(Product('../images/product8.png' 'product8'));
+                }
+                child:
+                  Column(
+                    children:[
+                      Text('product8')
+                      Image(image:'../images/product8.png' height:200 width:200)
+                    ]
+                  )
+                )
+              ]
+            )
+          Column (
+            children:[
+              InkWell(
+                onTap:(){
+                  Navigator.push(Product('../images/product9.png' 'product9'));
+                }
+                child:
+                  Column(
+                    children:[
+                      Text('product9')
+                      Image(image:'../images/product9.png' height:200 width:200)
+                    ]
+                  )
+                )
+              InkWell(
+                onTap:(){
+                  Navigator.push(Product('../images/product10.png' 'product10'));
+                }
+                child:
+                  Column(
+                    children:[
+                      Text('product10')
+                      Image(image:'../images/product10.png' height:200 width:200)
+                    ]
+                  )
+                )
+              ]
+            )
       ])
     );
   }
