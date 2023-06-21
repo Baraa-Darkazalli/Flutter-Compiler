@@ -12,7 +12,6 @@ import java.io.PrintWriter;
 
 import static org.antlr.v4.runtime.CharStreams.fromFileName;
 
-//just to know ahmad is the best
 public class Main {
     public static void main(String[] args) throws IOException {
         //login screen
@@ -30,17 +29,11 @@ public class Main {
         Root productRoot = visitTreeFromFile(productScreen);
         createHtmlFile("D:\\Compiler2\\compiler\\pages\\product.html",productRoot);
 
+        //About Us screen
+        String aboutScreen = "D:\\Compiler2\\compiler\\screens\\about.txt";
+        Root aboutRoot = visitTreeFromFile(aboutScreen);
+        createHtmlFile("D:\\Compiler2\\compiler\\pages\\about.html",aboutRoot);
 
-
-
-        //test
-        String page1 = "D:\\Compiler2\\compiler\\screens\\page1.txt";
-        Root page1root = visitTreeFromFile(page1);
-        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page1.html",page1root);
-
-        String page2 = "D:\\Compiler2\\compiler\\screens\\page2.txt";
-        Root page2root = visitTreeFromFile(page2);
-        createHtmlFile("D:\\Compiler2\\compiler\\pages\\page2.html",page2root);
 
 
     }
