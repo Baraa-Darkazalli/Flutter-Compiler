@@ -1,4 +1,4 @@
-// Generated from D:/Compiler2/compiler/src/Grammers\ParserFile.g4 by ANTLR 4.12.0
+// Generated from D:/Compiler2/compiler/src/Grammers\ParserFile.g4 by ANTLR 4.10.1
 package gen;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -408,6 +408,46 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitCenter(ParserFile.CenterContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ParserFile#blocProvider}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlocProvider(ParserFile.BlocProviderContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#blocProvider}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlocProvider(ParserFile.BlocProviderContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#blocConsumer}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlocConsumer(ParserFile.BlocConsumerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#blocConsumer}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlocConsumer(ParserFile.BlocConsumerContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#blocListener}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlocListener(ParserFile.BlocListenerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#blocListener}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlocListener(ParserFile.BlocListenerContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#blocBuilder}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlocBuilder(ParserFile.BlocBuilderContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#blocBuilder}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlocBuilder(ParserFile.BlocBuilderContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ParserFile#scaffoldArgs}.
 	 * @param ctx the parse tree
 	 */
@@ -677,6 +717,46 @@ public interface ParserFileListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCenterArgs(ParserFile.CenterArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#blocProviderArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlocProviderArgs(ParserFile.BlocProviderArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#blocProviderArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlocProviderArgs(ParserFile.BlocProviderArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#blocConsumerArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlocConsumerArgs(ParserFile.BlocConsumerArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#blocConsumerArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlocConsumerArgs(ParserFile.BlocConsumerArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#blocListenerArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlocListenerArgs(ParserFile.BlocListenerArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#blocListenerArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlocListenerArgs(ParserFile.BlocListenerArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#blocBuilderArgs}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlocBuilderArgs(ParserFile.BlocBuilderArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#blocBuilderArgs}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlocBuilderArgs(ParserFile.BlocBuilderArgsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link ParserFile#body}.
 	 * @param ctx the parse tree
@@ -988,6 +1068,36 @@ public interface ParserFileListener extends ParseTreeListener {
 	 */
 	void exitOnTap(ParserFile.OnTapContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ParserFile#create}.
+	 * @param ctx the parse tree
+	 */
+	void enterCreate(ParserFile.CreateContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#create}.
+	 * @param ctx the parse tree
+	 */
+	void exitCreate(ParserFile.CreateContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#builder}.
+	 * @param ctx the parse tree
+	 */
+	void enterBuilder(ParserFile.BuilderContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#builder}.
+	 * @param ctx the parse tree
+	 */
+	void exitBuilder(ParserFile.BuilderContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#listener}.
+	 * @param ctx the parse tree
+	 */
+	void enterListener(ParserFile.ListenerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#listener}.
+	 * @param ctx the parse tree
+	 */
+	void exitListener(ParserFile.ListenerContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ParserFile#expression}.
 	 * @param ctx the parse tree
 	 */
@@ -1077,4 +1187,14 @@ public interface ParserFileListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitConstructoFilled(ParserFile.ConstructoFilledContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserFile#setStateExp}.
+	 * @param ctx the parse tree
+	 */
+	void enterSetStateExp(ParserFile.SetStateExpContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserFile#setStateExp}.
+	 * @param ctx the parse tree
+	 */
+	void exitSetStateExp(ParserFile.SetStateExpContext ctx);
 }

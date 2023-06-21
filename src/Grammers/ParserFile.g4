@@ -31,7 +31,7 @@ className: IDENTIFIER;
 
 widget: scaffold | container | text | image | listView | appBar | textField | column | row | card | iconButton
         |  inkWell  | expanded | bottomNavigationBar | slider | tabBar | tabBarView | drawer
-        | floatingActionButton | wrap | flex | textFormField | textButton | icon | sizedBox|center;
+        | floatingActionButton | wrap | flex | textFormField | textButton | icon | sizedBox|center|blocProvider|blocConsumer|blocListener|blocBuilder;
 
 //---------------------------    WIDGETS     -------------------------------
 scaffold: SCAFFOLD OPEN_PAREN scaffoldArgs*  CLOSE_PAREN;
@@ -61,6 +61,12 @@ textButton: TEXT_BUTTON OPEN_PAREN  textButtonArgs* CLOSE_PAREN;
 icon: ICON OPEN_PAREN  iconArgs* CLOSE_PAREN;
 sizedBox: SIZED_BOX OPEN_PAREN sizedBoxArgs* CLOSE_PAREN ;
 center: CENTER OPEN_PAREN centerArgs CLOSE_PAREN ;
+blocProvider:BLOCPROVIDER OPEN_PAREN blocProviderArgs* CLOSE_PAREN;
+blocConsumer:BLOCCONSUMER OPEN_PAREN blocConsumerArgs* CLOSE_PAREN;
+blocListener:BLOCLISTENER OPEN_PAREN blocListenerArgs* CLOSE_PAREN;
+blocBuilder:BLOCBUILDER OPEN_PAREN blocBuilderArgs* CLOSE_PAREN;
+
+
 
 //------------------------- WIDGETS ARGS ---------------------
 
@@ -91,7 +97,10 @@ iconArgs:size|color|ICONS;
 sizedBoxArgs:child|height|width;
 textStyleArgs: backGroundColor|color|fontSize;
 centerArgs: child;
-
+blocProviderArgs:create|child;
+blocConsumerArgs:builder|listener|child;
+blocListenerArgs:listener|child;
+blocBuilderArgs:builder;
 
 //---------------------------- ARGS --------------------------
 
@@ -126,12 +135,13 @@ max:MAX COLON DOUBLE;
 tabs:TABS COLON OPEN_SQUARE widget* CLOSE_SQUARE;
 size:SIZE COLON DOUBLE;
 onTap:ON_TAP COLON OPEN_PAREN CLOSE_PAREN OPEN_BRACE expression* CLOSE_BRACE;
-
-
+create:CREATE COLON OPEN_PAREN IDENTIFIER CLOSE_PAREN EQUAL LARGER className OPEN_PAREN CLOSE_PAREN;
+builder:BUILDER COLON OPEN_PAREN IDENTIFIER COMMA IDENTIFIER CLOSE_PAREN OPEN_BRACE RETURN widget SEMICOLON CLOSE_BRACE ;
+listener:LISTENER COLON OPEN_PAREN IDENTIFIER COMMA IDENTIFIER CLOSE_PAREN OPEN_BRACE expression* CLOSE_BRACE;
 //------------------------ NAVIGATION  ------------------
 expression:allowExp SEMICOLON;
 
-allowExp:navigateExp|runAppExp;
+allowExp:navigateExp|runAppExp|setStateExp;
 
 runAppExp:RUN_APP OPEN_PAREN constructor CLOSE_PAREN;
 
@@ -147,7 +157,7 @@ constructor:IDENTIFIER OPEN_PAREN constructoFilled* CLOSE_PAREN;
 
 constructoFilled:STRING|DOUBLE;
 
-
+setStateExp:SETSTATE OPEN_PAREN CLOSE_PAREN OPEN_BRACE expression* CLOSE_BRACE;
 
 
 

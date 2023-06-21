@@ -48,7 +48,10 @@ FLOATING_ACTION_BUTTON:'FloatingActionButton';
 TEXT_FORM_FIELD:'TextFormField';
 TEXT_STYLE:'TextStyle';
 CENTER:'Center';
-
+BLOCPROVIDER:'BlocProvider';
+BLOCCONSUMER:'BlocConsumer';
+BLOCLISTENER:'BlocListener';
+BLOCBUILDER:'BlocBuilder';
 
 //-------------- COLORS ------------
 
@@ -110,9 +113,12 @@ LEADING:'leading';
 ACTIONS:'actions';
 TABS:'tabs';
 TEXT_Arg:'text';
-
+CREATE:'create';
+BUILDER:'builder';
+LISTENER:'listener';
 //--------------------- FUNCTIONS --------------------
 ON_TAP:'onTap';
+SETSTATE:'setState';
 
 //---------------------- NAVIGATION -------------------
 NAVIGATOR:'Navigator';
@@ -165,5 +171,7 @@ UNDER_SCORE:'_';
 
 QUOTES_SQ:'\'\'';
 QUOTES_DQ:'""';
+
+
 
 

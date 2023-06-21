@@ -34,12 +34,12 @@ widget: scaffold | container | text | image | listView | appBar | textField | co
         | floatingActionButton | wrap | flex | textFormField | textButton | icon | sizedBox|center;
 
 //---------------------------    WIDGETS     -------------------------------
-scaffold: SCAFFOLD OPEN_PAREN scaffoldArgs*  CLOSE_PAREN;
-container: CONTAINER OPEN_PAREN containerArgs* CLOSE_PAREN;
-text: TEXT OPEN_PAREN textArgs* CLOSE_PAREN;
-textStyle:TEXT_STYLE OPEN_PAREN textStyleArgs* CLOSE_PAREN;
-image: IMAGE OPEN_PAREN imageArgs* CLOSE_PAREN;
-listView: LIST_VIEW OPEN_PAREN listviewArgs* CLOSE_PAREN ;
+scaffold: SCAFFOLD OPEN_PAREN (scaffoldArgs COMMA)*  CLOSE_PAREN;
+container: CONTAINER OPEN_PAREN (containerArgs COMMA)* CLOSE_PAREN;
+text: TEXT OPEN_PAREN (textArgs COMMA)* CLOSE_PAREN;
+textStyle:TEXT_STYLE OPEN_PAREN (textStyleArgs COMMA)* CLOSE_PAREN;
+image: IMAGE OPEN_PAREN (imageArgs COMMA)* CLOSE_PAREN;
+listView: LIST_VIEW OPEN_PAREN (listviewArgs COMMA)* CLOSE_PAREN ;
 appBar: APP_BAR OPEN_PAREN appBarArgs* CLOSE_PAREN;
 textField: TEXT_FIELD OPEN_PAREN textFieldArgs* CLOSE_PAREN;
 column: COLUMN OPEN_PAREN columnArgs* CLOSE_PAREN;

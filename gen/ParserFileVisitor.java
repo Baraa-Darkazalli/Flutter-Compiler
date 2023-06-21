@@ -1,4 +1,4 @@
-// Generated from D:/Compiler2/compiler/src/Grammers\ParserFile.g4 by ANTLR 4.12.0
+// Generated from D:/Compiler2/compiler/src/Grammers\ParserFile.g4 by ANTLR 4.10.1
 package gen;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -251,6 +251,30 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCenter(ParserFile.CenterContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link ParserFile#blocProvider}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlocProvider(ParserFile.BlocProviderContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#blocConsumer}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlocConsumer(ParserFile.BlocConsumerContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#blocListener}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlocListener(ParserFile.BlocListenerContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#blocBuilder}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlocBuilder(ParserFile.BlocBuilderContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link ParserFile#scaffoldArgs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -412,6 +436,30 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitCenterArgs(ParserFile.CenterArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#blocProviderArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlocProviderArgs(ParserFile.BlocProviderArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#blocConsumerArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlocConsumerArgs(ParserFile.BlocConsumerArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#blocListenerArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlocListenerArgs(ParserFile.BlocListenerArgsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#blocBuilderArgs}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlocBuilderArgs(ParserFile.BlocBuilderArgsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link ParserFile#body}.
 	 * @param ctx the parse tree
@@ -599,6 +647,24 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitOnTap(ParserFile.OnTapContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link ParserFile#create}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCreate(ParserFile.CreateContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#builder}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBuilder(ParserFile.BuilderContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#listener}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitListener(ParserFile.ListenerContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link ParserFile#expression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -652,4 +718,10 @@ public interface ParserFileVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitConstructoFilled(ParserFile.ConstructoFilledContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ParserFile#setStateExp}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSetStateExp(ParserFile.SetStateExpContext ctx);
 }
