@@ -1,0 +1,129 @@
+void main(){
+    runApp(About());
+}
+
+class About extends StatelessWidget{
+
+About();
+
+  widget build(){
+    return Scaffold(
+      appBar:AppBar(
+        backgroundColor: grey
+        title:Text("About Us Page")
+        leading: InkWell(
+                    onTap: (){
+                        Navigator.push(Login());
+                        }
+                    child: Icon(back size: 30 color:black)
+                )
+        actions: [Container()]
+      )
+      drawer:Drawer(
+          child:Column(
+          children:[
+              InkWell(
+                  onTap:(){
+                         Navigator.push(Home());
+                  }
+                  child:Text('Home Page')
+              )
+             InkWell(
+                 onTap:(){
+                        Navigator.push(About());
+                 }
+                 child:Text('About Us Page')
+             )
+          ]
+          )
+          )
+
+
+
+      body:Column(
+        children:[
+           Row(
+           children:[
+          Card(
+            child:Column(
+              children:[
+                Image(image:'../images/ahmad.jpg' height:150 width:150)
+                Column(
+                  crossAxisAlignment:center
+                  children:[
+                    Text('Ahmad Al Baghdadi')
+                    Text('11/6/1501')
+                    Text('Flutter developer')
+                  ]
+                )
+              ]
+            )
+          )
+            Card(
+              child:Column(
+                children:[
+                  Image(image:'../images/baraa.jpg' height:150 width:150)
+                  Column(
+                    children:[
+                      Text('Baraa Darkazli')
+                      Text('13/10/1501')
+                      Text('Laravel developer')
+                    ]
+                  )
+                ]
+              )
+            )
+         Card(
+            child:Column(
+              children:[
+                Image(image:'../images/besher.jpg' height:150 width:150)
+                Column(
+                  children:[
+                    Text('Besher Jumaa')
+                    Text('10/5/2000')
+                    Text('Flutter developer')
+                  ]
+                )
+              ]
+            )
+          )
+          ]
+          )
+          Row(
+          children:[
+         Card(
+              child:Column(
+                children:[
+                  Image(image:'../images/muhammad.jpg' height:150 width:150)
+                  Column(
+                    children:[
+                      Text('Muhammad Al Hallak')
+                      Text('17/8/2000')
+                      Text('Flutter developer')
+                    ]
+                  )
+                ]
+              )
+            )
+           Card(
+                 child:Column(
+                   children:[
+                     Image(image:'../images/omar.jpg' height:150 width:150)
+                     Column(
+                       children:[
+                         Text('Omar Al Hakeem')
+                         Text('19/7/2000')
+                         Text('Flutter developer')
+                       ]
+                     )
+                    ]
+                )
+         )
+        ]
+      )
+      ]
+     )
+
+    );
+  }
+}

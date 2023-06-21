@@ -3,12 +3,19 @@ void main(){
 }
 
 class Home extends StatelessWidget{
-
+Home();
   widget build(){
     return Scaffold(
     appBar:AppBar(
             title:Text('Home Page')
             backgroundColor: grey
+            leading: InkWell(
+                        onTap: (){
+                            Navigator.push(Login());
+                            }
+                        child: Icon(back size: 30 color:black)
+                    )
+            actions: [Container()]
         )
     drawer:Drawer(
     child:Column(
@@ -21,7 +28,7 @@ class Home extends StatelessWidget{
         )
        InkWell(
            onTap:(){
-                  Navigator.push(Home());
+                  Navigator.push(About());
            }
            child:Text('About Us Page')
        )
